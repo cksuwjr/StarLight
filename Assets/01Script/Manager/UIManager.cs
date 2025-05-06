@@ -12,6 +12,9 @@ public enum ButtonType
 public class UIManager : SingletonDestroy<UIManager> 
 {
     private Image bloodScreen;
+    private GameObject informPannel;
+    private TextMeshProUGUI[] informTexts;
+    private OutLineDrawer lineDrawer;
 
     private GameObject mail;
 
@@ -30,6 +33,10 @@ public class UIManager : SingletonDestroy<UIManager>
     private TextMeshProUGUI timer;
 
     private GameObject playMenu;
+
+    private TwoStateButton resumeBtn;
+    private TwoStateButton musicBtn;
+
 
     private GameObject star;
 
@@ -71,6 +78,10 @@ public class UIManager : SingletonDestroy<UIManager>
         if (!ui) return;
 
         GameObject.Find("BloodScreen").TryGetComponent<Image>(out bloodScreen);
+        informPannel = GameObject.Find("InformPannel");
+        informTexts = informPannel.GetComponentsInChildren<TextMeshProUGUI>();
+        GameObject.Find("LineDrawer").TryGetComponent<OutLineDrawer>(out lineDrawer);
+
 
         uiCam.TryGetComponent<Camera>(out uiCamera);
 
@@ -123,10 +134,24 @@ public class UIManager : SingletonDestroy<UIManager>
         if(playMenu.transform.GetChild(0).TryGetComponent<Button>(out btn))
             btn.onClick.AddListener(() => OpenMenuPopup());
 
-        if(playMenu.transform.GetChild(2).TryGetComponent<TwoStateButton>(out var twobtn))
-            twobtn.OnClick += () => GameManager.Instance.StopResume(twobtn.onT_offF);
-        if(playMenu.transform.GetChild(1).TryGetComponent<TwoStateButton>(out var twobtn1))
-            twobtn1.OnClick += () => GameManager.Instance.MusicOnOFF(twobtn1.onT_offF);
+        if(playMenu.transform.GetChild(2).TryGetComponent<TwoStateButton>(out resumeBtn))
+            resumeBtn.OnClick += () => GameManager.Instance.StopResume(resumeBtn.onT_offF);
+        if (playMenu.transform.GetChild(1).TryGetComponent<TwoStateButton>(out musicBtn))
+        {
+            musicBtn.OnClick += () => GameManager.Instance.MusicOnOFF(musicBtn.onT_offF);
+
+            var n = PlayerPrefs.GetInt("Sound", 1);
+            if (n == 0)
+            {
+                musicBtn.onT_offF = false;
+                GameManager.Instance.MusicOnOFF(musicBtn.onT_offF);
+                Debug.Log("설정변경");
+            }
+            else
+            {
+
+            }
+        }
 
 
         star = ui.transform.GetChild(num++).gameObject;
@@ -201,6 +226,36 @@ public class UIManager : SingletonDestroy<UIManager>
             //    OnPressBtnSlot2?.Invoke();
             //    break;
         }
+    }
+
+    public void OpenInformText(string title, string content)
+    {
+        if (informTexts.Length > 1)
+        {
+            informTexts[0].text = title;
+            informTexts[1].text = content;
+        }
+        LeanTween.scale(informPannel, Vector3.one, 0.3f);
+        Invoke("OpenLine", 0.1f);
+    }
+
+    private void OpenLine()
+    {
+        lineDrawer.enabled = true;
+    }
+
+
+    public void LocateInformText(Vector3 pos, Vector3 offset)
+    {
+        informPannel.transform.parent.localPosition = pos - new Vector3(Screen.width * 0.5f, Screen.height * 0.5f);
+        informPannel.transform.localPosition = offset * 100;
+    }
+
+    public void CloseInformText()
+    {
+        LeanTween.scale(informPannel, Vector3.zero, 0.2f);
+        lineDrawer.enabled = false;
+        CancelInvoke("OpenLine");
     }
 
     public void OpenMail()
@@ -347,7 +402,7 @@ public class UIManager : SingletonDestroy<UIManager>
         if (time < 10f)
             timer.text += "<color=red>";
 
-        timer.text += $"{(int)time / 60}:{time % 60}";
+        timer.text += $"{(int)time / 60 :0}:{time % 60 :00}";
 
         if (time < 10f)
             timer.text += "</color>";
@@ -381,6 +436,8 @@ public class UIManager : SingletonDestroy<UIManager>
 
     private void OpenMenuPopup()
     {
+        Time.timeScale = 0f;
+
         menuPopup.SetActive(!menuPopup.activeSelf);
     }
 

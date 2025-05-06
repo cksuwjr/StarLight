@@ -57,6 +57,7 @@ public class LoadingSceneManager : MonoBehaviour
 
     public static void SetNextScene(string sceneName)
     {
+        Time.timeScale = 1f;
         nextSceneName = sceneName;
     }
 
