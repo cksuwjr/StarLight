@@ -34,6 +34,8 @@ public class GameManager : Singleton<GameManager>
             if (!Player) return;
             if(player.TryGetComponent<PlayerController>(out var p))
                 p.Init();
+
+            Time.timeScale = 1f;
         };
     }
 
@@ -94,7 +96,7 @@ public class GameManager : Singleton<GameManager>
 
     public void MusicOnOFF(bool tf)
     {
-        soundManager.SoundOnOFF(tf);
+        soundManager?.SoundOnOFF(tf);
     }
 
     public void StopResume(bool tf)

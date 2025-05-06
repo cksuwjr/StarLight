@@ -26,6 +26,12 @@ public class OutLineEffecter : MonoBehaviour
 
         if(TryGetComponent<InteractionObject>(out var interact))
             interact.OnInteractable += (tf) => { SetEffect(tf); };
+        else
+        {
+            if (transform.parent.TryGetComponent<InteractionObject>(out var interact2))
+                interact2.OnInteractable += (tf) => { SetEffect(tf); };
+        }
+
     }
 
     public void SetEffect(bool tf)

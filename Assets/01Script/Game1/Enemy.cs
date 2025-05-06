@@ -35,6 +35,7 @@ public class Enemy : PoolObject
 
         target = GameManager.Instance.Player;
         SetTarget(target);
+        movable = true;
     }
 
     public void UpgradeSpeed(float value)
@@ -45,6 +46,7 @@ public class Enemy : PoolObject
 
     public void Stop()
     {
+        movable = false;
         ChangeState(EnemyState.Idle);
     }
 
@@ -69,7 +71,8 @@ public class Enemy : PoolObject
     {
         while (target != null)
         {
-            SetMoveTarget(target.transform.position);
+            if(movable)
+                SetMoveTarget(target.transform.position);
             yield return YieldInstructionCache.WaitForSeconds(0.8f);
         }
         ChangeState(EnemyState.Idle);

@@ -9,6 +9,7 @@ public class LogSpawner : MonoBehaviour
     private float endTime;
     private float logSpeed = 2.5f;
 
+    private List<GameObject> logs = new List<GameObject>();
 
     private void Start()
     {
@@ -23,16 +24,25 @@ public class LogSpawner : MonoBehaviour
     private void StopSpawn()
     {
         StopCoroutine("Spawn");
+        for(int i = logs.Count - 1; i >= 0; i--)
+            Destroy(logs[i]);
     }
 
     private IEnumerator Spawn()
     {
         endTime = Time.time + 60;
-        GameManager.Instance.SetTimer(60, () => UIManager.Instance.OpenClearPuzzlePopup(true, () => { GameManager.Instance.LoadScene("tae3");}));
+        GameManager.Instance.SetTimer(60, 
+            () =>
+            {
+                UIManager.Instance.OpenClearPuzzlePopup(true, () => { GameManager.Instance.LoadScene("tae3"); });
+                StopSpawn();
+            }
+        );
         //var player = GameManager.Instance.Player;
         while (Time.time < endTime)
         {
             log = PoolManager.Instance.enemyPool.GetPoolObject();
+            logs.Add(log);
             log.transform.rotation = Quaternion.Euler(0, 0, -90);
             log.transform.position = spawnPosition;
             if (log.TryGetComponent<LogMove>(out var logComponent))

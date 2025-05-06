@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public enum StartMove
@@ -23,11 +24,6 @@ public class Movement : MonoBehaviour, IMove
     [SerializeField] private float jump = 15f;
 
 
-    [SerializeField] private bool reverseMode = false;
-
-    [SerializeField] private int startAngle = (int)StartMove.Forward;
-
-
     public bool movable { get; protected set; }
 
     private bool isGrounded;
@@ -50,6 +46,8 @@ public class Movement : MonoBehaviour, IMove
     private void Start()
     {
         Camera.main.TryGetComponent<CameraMove>(out cam);
+
+        PlayerPrefs.DeleteAll();
     }
 
     public void Move(Vector3 direction)
@@ -59,7 +57,7 @@ public class Movement : MonoBehaviour, IMove
         if (direction == Vector3.zero) return;
         anim.SetBool("Move", true);
         Vector3 dir = direction;
-        if (cam && cam.enabled)
+        if (cam && cam.enabled && cam.cameraRotatable)
         {
             var camAngle = Camera.main.transform.eulerAngles;
 
@@ -92,8 +90,4 @@ public class Movement : MonoBehaviour, IMove
             isGrounded = false;
     }
 
-    public void SetMove(StartMove angle)
-    {
-        startAngle = (int)angle;
-    }
 }

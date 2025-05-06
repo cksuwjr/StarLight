@@ -19,18 +19,18 @@ EditorBuildSettings:
     guid: f04ce06025becbf449d8befc7a8b8453
   - enabled: 1
     path: Assets/Scenes/1-1Stage.unity
-    guid: 94fa9f293d7b65340952d72c3249e84d
+    guid: 3bf3b192f40a0694ba3b52967c575bb5
   - enabled: 1
     path: Assets/Scenes/1-1Puzzle.unity
     guid: 65366d9983a21ca4fa3d3312d91f6370
   - enabled: 1
-    path: Assets/Scenes/tae2.unity
+    path: Assets/Scenes/1-2Stage.unity
     guid: 3402604420337f94da111f6ddf1fb716
   - enabled: 1
     path: Assets/Scenes/1-2Puzzle.unity
     guid: b95692c0bb535d345919cf676689ac58
   - enabled: 1
-    path: Assets/Scenes/tae3.unity
+    path: Assets/Scenes/1-3Stage.unity
     guid: 6caa97e41be2cda4ab4a8913fc8113d2
   - enabled: 1
     path: Assets/Scenes/1-3Puzzle.unity

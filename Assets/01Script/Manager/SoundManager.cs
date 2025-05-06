@@ -47,6 +47,8 @@ public class SoundManager : Singleton<SoundManager>
     public void SoundOnOFF(bool tf)
     {
         soundOnOFF = tf;
+        PlayerPrefs.SetInt("Sound", tf ? 1 : 0);
+        PlayerPrefs.Save();
 
         var pool = soundPool;
         SoundObject audio;
@@ -76,6 +78,8 @@ public class SoundManager : Singleton<SoundManager>
 
     public void StopSound()
     {
+        if (playObject == null) return;
+
         if (playObject.gameObject.activeSelf)
             playObject.Stop();
     }
@@ -84,7 +88,8 @@ public class SoundManager : Singleton<SoundManager>
     {
         if (soundPool.GetPoolObject().TryGetComponent<SoundObject>(out SoundObject soundObject))
         {
-            playObject = soundObject;
+            if(!imortal)
+                playObject = soundObject;
             soundObject.Init(audioClip, imortal);
             if (soundOnOFF)
                 soundObject.SetVolume(1f);
@@ -92,6 +97,7 @@ public class SoundManager : Singleton<SoundManager>
                 soundObject.SetVolume(0f);
             return soundObject;
         }
+
         return null;
     }
 

@@ -14,6 +14,8 @@ public class ScenarioManager : SingletonDestroy<ScenarioManager>
     private int star = 0;
 
 
+    private bool texting = false;
+
     public void StartStory(string typeName)
     {
         var type = StoryType.ContaminatedMushrooms;
@@ -43,13 +45,8 @@ public class ScenarioManager : SingletonDestroy<ScenarioManager>
 
         AddStar();
 
-        var imgSprite = Resources.Load<UnityEngine.Sprite>(story[page].imgSrc);
-        var sound = Resources.Load<AudioClip>(story[page].ttsSrc);
-
-        UIManager.Instance.SetScenarioPannel(imgSprite, story[page].name, story[page].chat);
-        SoundManager.Instance.PlaySound(sound, false);
+        LoadPage();
         UIManager.Instance.OpenScenarioPannel();
-
 
         switch (type.ToString())
         {
@@ -75,6 +72,8 @@ public class ScenarioManager : SingletonDestroy<ScenarioManager>
 
     public void StopStory()
     {
+        SoundManager.Instance.StopSound();
+
         OnStoryEnd?.Invoke();
         OnStoryEnd = null;
 
@@ -85,19 +84,51 @@ public class ScenarioManager : SingletonDestroy<ScenarioManager>
 
     public void NextPage()
     {
+        if (texting)
+        {
+            texting = false;
+            return;
+        }
+
         if (page + 1 < story.Count)
         {
             page++;
-            var imgSprite = Resources.Load<Sprite>(story[page].imgSrc);
-            var sound = Resources.Load<AudioClip>(story[page].ttsSrc);
-
-            UIManager.Instance.SetScenarioPannel(imgSprite, story[page].name, story[page].chat);
-            SoundManager.Instance.StopSound();
-            SoundManager.Instance.PlaySound(sound, false);
+            LoadPage();
         }
         else
             StopStory();
     }
+
+
+    private void LoadPage()
+    {
+        var imgSprite = Resources.Load<Sprite>(story[page].imgSrc);
+        var sound = Resources.Load<AudioClip>(story[page].ttsSrc);
+
+        SoundManager.Instance.StopSound();
+        SoundManager.Instance.PlaySound(sound, false);
+
+        StartCoroutine(LoadText(imgSprite, story[page].name, story[page].chat));
+        //UIManager.Instance.SetScenarioPannel(imgSprite, story[page].name, story[page].chat);
+    }
+
+    private IEnumerator LoadText(Sprite sprite, string name, string chat)
+    {
+        texting = true;
+        string chatText = "";
+
+        int i = 0;
+        while (i < chat.Length && texting) {
+            chatText += chat[i];
+            UIManager.Instance.SetScenarioPannel(sprite, name, chatText);
+            yield return YieldInstructionCache.WaitForSeconds(0.03f);
+            i++;
+        }
+
+        UIManager.Instance.SetScenarioPannel(sprite, name, chat);
+        texting = false;
+    }
+
 
     public void AddStar()
     {
