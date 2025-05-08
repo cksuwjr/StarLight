@@ -34,7 +34,7 @@ public class LogSpawner : MonoBehaviour
         GameManager.Instance.SetTimer(60, 
             () =>
             {
-                UIManager.Instance.OpenClearPuzzlePopup(true, () => { GameManager.Instance.LoadScene("tae3"); });
+                UIManager.Instance.OpenClearPuzzlePopup(true, () => { GameManager.Instance.LoadScene("1-3Stage"); });
                 StopSpawn();
             }
         );

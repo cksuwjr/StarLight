@@ -206,7 +206,7 @@ public class PuzzleManager : MonoBehaviour
             }
         }
 
-        UIManager.Instance.OpenClearPuzzlePopup(true, () => { GameManager.Instance.LoadScene("tae2"); });
+        UIManager.Instance.OpenClearPuzzlePopup(true, () => { GameManager.Instance.LoadScene("1-2Stage"); });
 
         GameManager.Instance.StopTimer();
     }

@@ -2,9 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-using System.Data;
-using System.Drawing;
-using static UnityEditor.PlayerSettings;
 
 public class InformMarker : MonoBehaviour
 {

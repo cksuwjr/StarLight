@@ -221,22 +221,22 @@ public class OutLineDrawer : Image
     }
 
     //__________________________________________________________________________ Editor
-    protected override void OnValidate() // 인스펙터 창에서 프로퍼티를 변경할 때 실행되는 함수
-    {
-        base.OnValidate();
+    //protected override void OnValidate() // 인스펙터 창에서 프로퍼티를 변경할 때 실행되는 함수
+    //{
+    //    base.OnValidate();
 
-        // Sprite를 적용한다.
-        if (targetSprite != sprite)
-            sprite = targetSprite;
+    //    // Sprite를 적용한다.
+    //    if (targetSprite != sprite)
+    //        sprite = targetSprite;
 
-        // WrapMode를 Repeat로 한다.
-        if (targetSprite && targetSprite.texture.wrapMode != TextureWrapMode.Repeat)
-            targetSprite.texture.wrapMode = TextureWrapMode.Repeat;
+    //    // WrapMode를 Repeat로 한다.
+    //    if (targetSprite && targetSprite.texture.wrapMode != TextureWrapMode.Repeat)
+    //        targetSprite.texture.wrapMode = TextureWrapMode.Repeat;
 
-        // Color를 적용한다.
-        if (tintColor != color)
-            color = tintColor;
-    }
+    //    // Color를 적용한다.
+    //    if (tintColor != color)
+    //        color = tintColor;
+    //}
 }
 
 #if UNITY_EDITOR

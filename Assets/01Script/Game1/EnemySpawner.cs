@@ -34,6 +34,33 @@ public class EnemySpawner : MonoBehaviour
         }
     }
 
+    //private IEnumerator Spawn()
+    //{
+    //    GameManager.Instance.SetTimer(61,
+    //        () =>
+    //        {
+    //            UIManager.Instance.OpenClearPuzzlePopup(true, () => { GameManager.Instance.LoadScene("1-1Stage"); });
+    //            StopSpawn();
+    //        }
+    //    );
+
+    //    for (int i = 0; i < 18; i++)
+    //    {
+    //        enemy = PoolManager.Instance.enemyPool.GetPoolObject();
+    //        enemy.transform.position = GetSpawnPosition2();
+    //        if (enemy.TryGetComponent<Enemy>(out var enemyComponent))
+    //        {
+    //            enemyComponent.Init(this, 1f);
+    //            enemies.Add(enemyComponent);
+    //        }
+
+    //    }
+
+    //    yield return null;
+
+    //}
+
+
     private IEnumerator Spawn()
     {
         GameManager.Instance.SetTimer(61,
@@ -44,100 +71,73 @@ public class EnemySpawner : MonoBehaviour
             }
         );
 
-        for (int i = 0; i < 18; i++)
+        for (int j = 0; j < 4; j++)
         {
-            enemy = PoolManager.Instance.enemyPool.GetPoolObject();
-            enemy.transform.position = GetSpawnPosition2();
-            if (enemy.TryGetComponent<Enemy>(out var enemyComponent))
+            for (int i = 0; i < 2; i++)
             {
-                enemyComponent.Init(this, 1f);
-                enemies.Add(enemyComponent);
+                enemy = PoolManager.Instance.enemyPool.GetPoolObject();
+                enemy.transform.position = GetSpawnPosition();
+                if (enemy.TryGetComponent<Enemy>(out var enemyComponent))
+                {
+                    enemyComponent.Init(this, Random.Range(4.5f, 5.5f));
+                    enemies.Add(enemyComponent);
+                }
             }
-
+            yield return YieldInstructionCache.WaitForSeconds(5f);
         }
 
-        yield return null;
+        for (int j = 0; j < 4; j++)
+        {
+            for (int i = 0; i < 2; i++)
+            {
+                enemy = PoolManager.Instance.enemyPool.GetPoolObject();
+                enemy.transform.position = GetSpawnPosition();
+                if (enemy.TryGetComponent<Enemy>(out var enemyComponent))
+                {
+                    enemyComponent.Init(this, Random.Range(5f, 6f));
+                    enemies.Add(enemyComponent);
+                }
+            }
+            for (int i = 0; i < 1; i++)
+            {
+                enemy = PoolManager.Instance.enemyPool2.GetPoolObject();
+                enemy.transform.position = GetSpawnPosition();
+                if (enemy.TryGetComponent<Enemy>(out var enemyComponent))
+                {
+                    enemyComponent.Init(this, 9f);
+                    enemies.Add(enemyComponent);
 
+                }
+            }
+            yield return YieldInstructionCache.WaitForSeconds(5f);
+        }
+
+
+        for (int j = 0; j < 4; j++)
+        {
+            for (int i = 0; i < 4; i++)
+            {
+                enemy = PoolManager.Instance.enemyPool.GetPoolObject();
+                enemy.transform.position = GetSpawnPosition();
+                if (enemy.TryGetComponent<Enemy>(out var enemyComponent))
+                {
+                    enemyComponent.Init(this, Random.Range(5.5f, 6.5f));
+                    enemies.Add(enemyComponent);
+                }
+            }
+            for (int i = 0; i < 2; i++)
+            {
+                enemy = PoolManager.Instance.enemyPool2.GetPoolObject();
+                enemy.transform.position = GetSpawnPosition();
+                if (enemy.TryGetComponent<Enemy>(out var enemyComponent))
+                {
+                    enemyComponent.Init(this, 12f);
+                    enemies.Add(enemyComponent);
+                }
+            }
+            yield return YieldInstructionCache.WaitForSeconds(5f);
+        }
     }
-
-
-    //private IEnumerator Spawn()
-    //{
-    //    GameManager.Instance.SetTimer(61, 
-    //        () =>
-    //        {
-    //            UIManager.Instance.OpenClearPuzzlePopup(true, () => { GameManager.Instance.LoadScene("1-1Stage"); });
-    //            StopSpawn();
-    //        }
-    //    );
-
-    //    for (int j = 0; j < 4; j++)
-    //    {
-    //        for (int i = 0; i < 2; i++)
-    //        {
-    //            enemy = PoolManager.Instance.enemyPool.GetPoolObject();
-    //            enemy.transform.position = GetSpawnPosition();
-    //            if (enemy.TryGetComponent<Enemy>(out var enemyComponent))
-    //            {
-    //                enemyComponent.Init(this, Random.Range(4.5f, 5.5f));
-    //                enemies.Add(enemyComponent);
-    //            }
-    //        }
-    //        yield return YieldInstructionCache.WaitForSeconds(5f);
-    //    }
-
-    //    for (int j = 0; j < 4; j++)
-    //    {
-    //        for (int i = 0; i < 2; i++)
-    //        {
-    //            enemy = PoolManager.Instance.enemyPool.GetPoolObject();
-    //            enemy.transform.position = GetSpawnPosition();
-    //            if (enemy.TryGetComponent<Enemy>(out var enemyComponent))
-    //            {
-    //                enemyComponent.Init(this, Random.Range(5f, 6f));
-    //                enemies.Add(enemyComponent);
-    //            }
-    //        }
-    //        for (int i = 0; i < 1; i++)
-    //        {
-    //            enemy = PoolManager.Instance.enemyPool2.GetPoolObject();
-    //            enemy.transform.position = GetSpawnPosition();
-    //            if (enemy.TryGetComponent<Enemy>(out var enemyComponent))
-    //            {
-    //                enemyComponent.Init(this, 9f);
-    //                enemies.Add(enemyComponent);
-
-    //            }
-    //        }
-    //        yield return YieldInstructionCache.WaitForSeconds(5f);
-    //    }
-
-
-    //    for (int j = 0; j < 4; j++)
-    //    {
-    //        for (int i = 0; i < 4; i++)
-    //        {
-    //            enemy = PoolManager.Instance.enemyPool.GetPoolObject();
-    //            enemy.transform.position = GetSpawnPosition();
-    //            if (enemy.TryGetComponent<Enemy>(out var enemyComponent))
-    //            {
-    //                enemyComponent.Init(this, Random.Range(5.5f, 6.5f));
-    //                enemies.Add(enemyComponent);
-    //            }
-    //        }
-    //        for (int i = 0; i < 2; i++)
-    //        {
-    //            enemy = PoolManager.Instance.enemyPool2.GetPoolObject();
-    //            enemy.transform.position = GetSpawnPosition();
-    //            if (enemy.TryGetComponent<Enemy>(out var enemyComponent))
-    //            {
-    //                enemyComponent.Init(this, 12f);
-    //                enemies.Add(enemyComponent);
-    //            }
-    //        }
-    //        yield return YieldInstructionCache.WaitForSeconds(5f);
-    //    }
-    //}
 
     private IEnumerator Upgrade()
     {
