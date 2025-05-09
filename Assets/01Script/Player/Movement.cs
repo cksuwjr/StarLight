@@ -47,7 +47,7 @@ public class Movement : MonoBehaviour, IMove
     {
         Camera.main.TryGetComponent<CameraMove>(out cam);
 
-        //PlayerPrefs.DeleteAll();
+        PlayerPrefs.DeleteAll();
     }
 
     public void Move(Vector3 direction)
