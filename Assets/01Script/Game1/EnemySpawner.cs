@@ -1,11 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class EnemySpawner : MonoBehaviour
 {
     private GameObject enemy;
     private List<Enemy> enemies = new List<Enemy>();
+
+    public UnityEvent OnFaze1End;
+    public UnityEvent OnFaze2End;
 
     private void Start()
     {
@@ -30,8 +34,9 @@ public class EnemySpawner : MonoBehaviour
         for(int i = 0; i < enemies.Count; i++)
         {
             enemies[i].Stop();
-            Destroy(enemies[i].gameObject);
+            //Destroy(enemies[i].gameObject);
         }
+        enemies.Clear();
     }
 
     //private IEnumerator Spawn()
@@ -58,15 +63,21 @@ public class EnemySpawner : MonoBehaviour
 
     //    yield return null;
 
-    //}
+    //}Z
 
 
     private IEnumerator Spawn()
     {
+        Physics.IgnoreLayerCollision(LayerMask.NameToLayer("Log"), LayerMask.NameToLayer("Log"), false);
+
         GameManager.Instance.SetTimer(61,
             () =>
             {
-                UIManager.Instance.OpenClearPuzzlePopup(true, () => { GameManager.Instance.LoadScene("1-1Stage"); });
+                //UIManager.Instance.OpenClearPuzzlePopup(true, () => { GameManager.Instance.LoadScene("1-1Stage"); });
+
+                OnFaze1End?.Invoke();
+                ScenarioManager.Instance.OnStoryEnd += () => { StartCoroutine("SpawnFaze2"); };
+                GameManager.Instance.Player.GetComponent<PlayerController>().SetHp(3);
                 StopSpawn();
             }
         );
@@ -79,7 +90,7 @@ public class EnemySpawner : MonoBehaviour
                 enemy.transform.position = GetSpawnPosition();
                 if (enemy.TryGetComponent<Enemy>(out var enemyComponent))
                 {
-                    enemyComponent.Init(this, Random.Range(4.5f, 5.5f));
+                    enemyComponent.Init(this, Random.Range(3f, 6f));
                     enemies.Add(enemyComponent);
                 }
             }
@@ -94,7 +105,7 @@ public class EnemySpawner : MonoBehaviour
                 enemy.transform.position = GetSpawnPosition();
                 if (enemy.TryGetComponent<Enemy>(out var enemyComponent))
                 {
-                    enemyComponent.Init(this, Random.Range(5f, 6f));
+                    enemyComponent.Init(this, Random.Range(3f, 7f));
                     enemies.Add(enemyComponent);
                 }
             }
@@ -121,7 +132,7 @@ public class EnemySpawner : MonoBehaviour
                 enemy.transform.position = GetSpawnPosition();
                 if (enemy.TryGetComponent<Enemy>(out var enemyComponent))
                 {
-                    enemyComponent.Init(this, Random.Range(5.5f, 6.5f));
+                    enemyComponent.Init(this, Random.Range(3f, 8f));
                     enemies.Add(enemyComponent);
                 }
             }
@@ -137,6 +148,65 @@ public class EnemySpawner : MonoBehaviour
             }
             yield return YieldInstructionCache.WaitForSeconds(5f);
         }
+    }
+
+    private IEnumerator SpawnFaze2()
+    {
+        Physics.IgnoreLayerCollision(LayerMask.NameToLayer("Log"), LayerMask.NameToLayer("Log"), true);
+
+        for (int i = 0; i < 36; i++)
+        {
+            enemy = PoolManager.Instance.enemyPool.GetPoolObject();
+            enemy.transform.position = GetSpawnPosition2();
+            enemy.GetComponentInChildren<DamageObject>().damage = 3;
+            if (enemy.TryGetComponent<Enemy>(out var enemyComponent))
+            {
+                enemyComponent.Init(this, 5f);
+                enemies.Add(enemyComponent);
+                enemyComponent.ChangeState(EnemyState.Chase2);
+                enemyComponent.SetRepositionable(false);
+            }
+        }
+
+        yield return YieldInstructionCache.WaitForSeconds(1f);
+        for (int i = 0; i < enemies.Count; i++)
+        {
+            enemies[i].SetSpeed(0.1f);
+            enemies[i].SetAnimSpeed(10f);
+            enemies[i].ChangeState(EnemyState.Chase2);
+        }
+
+
+        GameManager.Instance.SetTimer(61,
+              () =>
+              {
+                  OnFaze2End?.Invoke();
+                  ScenarioManager.Instance.OnStoryEnd += () =>
+                  {
+                      UIManager.Instance.OpenClearPuzzlePopup(true, () => { GameManager.Instance.LoadScene("1-1Stage"); });
+                  };
+
+                  StopSpawn();
+              }
+          );
+
+        float spawnTerm = 2f;
+        for(int i = 0; i < 60f / spawnTerm; i++)
+        {
+            enemy = PoolManager.Instance.enemyPool2.GetPoolObject();
+            enemy.transform.position = GetSpawnPosition();
+            if (enemy.TryGetComponent<Enemy>(out var enemyComponent))
+            {
+                enemyComponent.Init(this, 4f + i * 0.2f);
+                enemies.Add(enemyComponent);
+                enemyComponent.ChangeState(EnemyState.Chase2);
+            }
+
+            yield return YieldInstructionCache.WaitForSeconds(spawnTerm);
+        }
+
+
+        yield return null;
     }
 
     private IEnumerator Upgrade()
@@ -176,7 +246,7 @@ public class EnemySpawner : MonoBehaviour
     }
 
 
-    float radius = 10f;
+    float radius = 20f;
     float angle = 0;
 
     private Vector3 GetSpawnPosition2()
@@ -187,7 +257,7 @@ public class EnemySpawner : MonoBehaviour
         spawnPos.y = 1;
 
 
-        angle += 20f;
+        angle += 10f;
 
         //float angle = Random.Range(0f, 360f);
         float radian = angle * Mathf.Deg2Rad;
@@ -204,5 +274,7 @@ public class EnemySpawner : MonoBehaviour
     {
         enemy = obje.gameObject;
         enemy.transform.position = GetSpawnPosition();
+
+        obje.Reboot();
     }
 }

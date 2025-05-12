@@ -7,6 +7,7 @@ public enum EnemyState
 {
     Idle,
     Chase,
+    Chase2,
 }
 
 public class Enemy : PoolObject
@@ -20,6 +21,9 @@ public class Enemy : PoolObject
     private EnemySpawner spawner;
     private Rigidbody rigid;
     private Animator anim;
+
+    private bool destroyable = false;
+    private bool repositionable = true;
 
     public void Init(EnemySpawner spawner , float speed)
     {
@@ -36,11 +40,34 @@ public class Enemy : PoolObject
         target = GameManager.Instance.Player;
         SetTarget(target);
         movable = true;
+        destroyable = false;
+        repositionable = true;
+    }
+
+    public void SetSpeed(float speed)
+    {
+        this.speed = speed;
+        anim.speed = speed;
     }
 
     public void UpgradeSpeed(float value)
     {
         speed += value;
+        //anim.speed = speed;
+    }
+
+    public void Reboot()
+    {
+        ChangeState(enemyState);
+    }
+
+    public void SetRepositionable(bool tf)
+    {
+        repositionable = tf;
+    }
+
+    public void SetAnimSpeed(float speed)
+    {
         anim.speed = speed;
     }
 
@@ -48,9 +75,11 @@ public class Enemy : PoolObject
     {
         movable = false;
         ChangeState(EnemyState.Idle);
+        repositionable = false;
+        destroyable = true;
     }
 
-    private void ChangeState(EnemyState newState)
+    public void ChangeState(EnemyState newState)
     {
         StopCoroutine(enemyState.ToString());
         enemyState = newState;
@@ -76,6 +105,12 @@ public class Enemy : PoolObject
             yield return YieldInstructionCache.WaitForSeconds(0.8f);
         }
         ChangeState(EnemyState.Idle);
+    }
+
+    private IEnumerator Chase2()
+    {
+        SetMoveTarget(target.transform.position);
+        yield return null;
     }
 
     private IEnumerator ChangeDirection(Vector3 before, Vector3 after)
@@ -117,6 +152,20 @@ public class Enemy : PoolObject
     private void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Destroyer"))
-            spawner.RePosition(this);
+        {
+            if(!destroyable && repositionable)
+                spawner.RePosition(this);
+        }
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Destroyer"))
+        {
+            if (destroyable)
+                ReturnToPool();
+        }
+    }
+
+
 }

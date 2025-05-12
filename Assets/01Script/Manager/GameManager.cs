@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.SceneManagement;
 
+
 public class GameManager : Singleton<GameManager>
 {
     private DataManager dataManager;
@@ -19,18 +20,13 @@ public class GameManager : Singleton<GameManager>
 
     protected override void DoAwake()
     {
-        //AssignManagers();
-        //InitManagers();
-
-        //player = GameObject.Find("Player");
-
-        ////if(player.TryGetComponent<PlayerController>(out var p))
-        ////    p.Init();
-
         SceneManager.sceneLoaded += (scene, mode) => {
             AssignManagers();
             InitManagers();
             player = GameObject.Find("Player");
+            if(Camera.main.GetComponent<CameraMove>())
+                Camera.main.GetComponent<CameraMove>().Init();
+
             if (!Player) return;
             if(player.TryGetComponent<PlayerController>(out var p))
                 p.Init();
@@ -92,6 +88,7 @@ public class GameManager : Singleton<GameManager>
             uiManager.SetTimer(timer);
         }
         OnTimerStop?.Invoke();
+        OnTimerStop = null;
     }
 
     public void MusicOnOFF(bool tf)
@@ -134,7 +131,8 @@ public class GameManager : Singleton<GameManager>
 
     public void SavePosition()
     {
-        Debug.Log("¿˙¿Â" + player.transform.position);
+        PlayerPrefs.SetString("SaveScene", SceneManager.GetActiveScene().name);
+        Debug.Log(SceneManager.GetActiveScene().name);
 
         PlayerPrefs.SetFloat("PlayerX", player.transform.position.x);
         PlayerPrefs.SetFloat("PlayerY", player.transform.position.y);
