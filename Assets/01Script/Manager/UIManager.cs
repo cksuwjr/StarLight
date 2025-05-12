@@ -134,8 +134,6 @@ public class UIManager : SingletonDestroy<UIManager>
         if(playMenu.transform.GetChild(0).TryGetComponent<Button>(out btn))
             btn.onClick.AddListener(() => OpenMenuPopup());
 
-        if(playMenu.transform.GetChild(2).TryGetComponent<TwoStateButton>(out resumeBtn))
-            resumeBtn.OnClick += () => GameManager.Instance.StopResume(resumeBtn.onT_offF);
         if (playMenu.transform.GetChild(1).TryGetComponent<TwoStateButton>(out musicBtn))
         {
             musicBtn.OnClick += () => GameManager.Instance.MusicOnOFF(musicBtn.onT_offF);
@@ -158,18 +156,26 @@ public class UIManager : SingletonDestroy<UIManager>
 
         menuPopup = ui.transform.GetChild(num++).gameObject;
 
-        menuPopup.transform.GetChild(0).TryGetComponent<Button>(out btn);
-        btn.onClick.AddListener(() => { 
-            OpenPopup("다시 시작", "해당 스테이지를 다시 시작합니다.", "(주의: 모든 진행 상황이 초기화 됩니다.)"); 
-            menuPopup.SetActive(false);
-            popupOKBtn.onClick.RemoveAllListeners();
-            popupOKBtn.onClick.AddListener(GameManager.Instance.RestartGame);
-            popupCancelBtn.onClick.RemoveAllListeners();
-            popupCancelBtn.onClick.AddListener(ClosePopup);
+        if (menuPopup.transform.GetChild(0).TryGetComponent<Button>(out btn))
+        {
+            btn.onClick.AddListener(() =>
+            {
+                OpenPopup("다시 시작", "해당 스테이지를 다시 시작합니다.", "(주의: 모든 진행 상황이 초기화 됩니다.)");
+                menuPopup.SetActive(false);
+                popupOKBtn.onClick.RemoveAllListeners();
+                popupOKBtn.onClick.AddListener(GameManager.Instance.RestartGame);
+                popupCancelBtn.onClick.RemoveAllListeners();
+                popupCancelBtn.onClick.AddListener(ClosePopup);
+            }
+            );
         }
-        );
-        menuPopup.transform.GetChild(1).TryGetComponent<Button>(out btn);
-        btn.onClick.AddListener(GameManager.Instance.ReturnToLobby);
+        if(menuPopup.transform.GetChild(1).TryGetComponent<Button>(out btn))
+            btn.onClick.AddListener(GameManager.Instance.ReturnToLobby);
+
+        if(menuPopup.transform.GetChild(1).TryGetComponent<Button>(out btn))
+            btn.onClick.AddListener(GameManager.Instance.GameQuit);
+
+
 
         popup = ui.transform.GetChild(num++).gameObject;
         popup.transform.GetChild(0).TryGetComponent<TextMeshProUGUI>(out popupTitleText);
@@ -189,6 +195,7 @@ public class UIManager : SingletonDestroy<UIManager>
 
         btns[0].onClick.AddListener(GameManager.Instance.RestartGame);
         btns[1].onClick.AddListener(GameManager.Instance.ReturnToLobby);
+
 
         puzzleClearPopup = ui.transform.GetChild(num++).gameObject;
 
@@ -436,9 +443,12 @@ public class UIManager : SingletonDestroy<UIManager>
 
     private void OpenMenuPopup()
     {
-        Time.timeScale = 0f;
 
         menuPopup.SetActive(!menuPopup.activeSelf);
+        if(menuPopup.activeSelf)
+            Time.timeScale = 0f;
+        else
+            Time.timeScale = 1f;
     }
 
     private void OpenPopup(string titleText, string text, string subText)

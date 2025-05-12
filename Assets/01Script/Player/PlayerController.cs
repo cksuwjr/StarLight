@@ -47,6 +47,11 @@ public class PlayerController : MonoBehaviour
             hp++;
             OnChangeHp?.Invoke(hp);
         }
+
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            PlayerPrefs.DeleteAll();
+        }
     }
 
     public void RemoveButtonInteraction()

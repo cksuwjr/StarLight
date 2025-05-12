@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PosLoader : MonoBehaviour
 {
     void Start()
     {
-        GameManager.Instance.LoadPosition();
+        if(PlayerPrefs.GetString("SaveScene") == SceneManager.GetActiveScene().name)
+            GameManager.Instance.LoadPosition();
     }
 }

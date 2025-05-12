@@ -10,7 +10,6 @@ public class TouchHandler : MonoBehaviour
     private void Start()
     {
         Camera.main.gameObject.TryGetComponent<CameraMove>(out cam);
-        Debug.Log(Camera.main.gameObject.name);
     }
 
     void Update()
@@ -48,10 +47,12 @@ public class TouchHandler : MonoBehaviour
                 dragPos = Input.mousePosition;
             }
         }
-        if (cam)
+        if (onDrag)
         {
-            if (onDrag)
-                cam.ChangeCameraRotation(new Vector3(Input.GetAxis("Mouse X"), Input.GetAxis("Mouse Y"), 0));
+            if (cam.cameraMoving)
+                cam.cameraMoving.Moving();
+            //if (onDrag)
+            //    cam.ChangeCameraRotation(new Vector3(Input.GetAxis("Mouse X"), Input.GetAxis("Mouse Y"), 0));
         }
 
         if (Input.GetMouseButtonUp(0))

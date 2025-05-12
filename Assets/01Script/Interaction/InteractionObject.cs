@@ -12,16 +12,18 @@ public class InteractionObject : MonoBehaviour, IInteract
     public bool destroy = false;
     public event Action<bool> OnInteractable;
 
+    bool usable = true;
     [SerializeField] private UnityEvent OnClickUnityEvent;
 
     private void Start()
     {
         if (PlayerPrefs.GetInt(gameObject.name, 0) != 0)
         {
+            usable = false;
+            if (destroy) Destroy(gameObject);
             interactable = false;
             OnInteractable?.Invoke(false);
             ScenarioManager.Instance.AddStar();
-            if (destroy) Destroy(gameObject);
             Destroy(this);
         }
     }
@@ -29,22 +31,22 @@ public class InteractionObject : MonoBehaviour, IInteract
     public void Interaction()
     {
         if (!interactable) return;
-
+        interactable = false;
+        OnInteractable?.Invoke(false);
         OnClickUnityEvent?.Invoke();
         OnClick?.Invoke();
 
         if (oneOff)
         {
-            interactable = false;
-            OnInteractable?.Invoke(false);
             PlayerPrefs.SetInt(gameObject.name, 1);
             PlayerPrefs.Save();
-            Destroy(this);
         }
     }
 
     private void OnTriggerEnter(Collider other)
     {
+        if (!usable) return;
+
         if (other.CompareTag("Player"))
         {
             interactable = true;
