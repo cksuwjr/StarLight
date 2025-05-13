@@ -7,10 +7,14 @@ public class CameraMove : MonoBehaviour
 {
     public bool rotateCam = true;
     public CameraMoving cameraMoving;
+    [SerializeField] private float distance = 1.376f;
+    private bool shakeCam = false;
 
     public void Init()
     {
         if (!rotateCam) return;
+        Debug.Log(Vector3.Distance(GameManager.Instance.Player.transform.position, transform.position));
+        Debug.Log(GameManager.Instance.Player.transform.position - transform.position);
 
         var o = new GameObject();
         cameraMoving = o.AddComponent<CameraMoving>();
@@ -20,7 +24,7 @@ public class CameraMove : MonoBehaviour
 
         cameraMoving.realCamera = transform;
 
-        cameraMoving.Init();
+        cameraMoving.Init(distance);
     }
 
     private Transform target;
@@ -51,10 +55,48 @@ public class CameraMove : MonoBehaviour
     private void LateUpdate()
     {
         if (rotateCam) return;
+        if (shakeCam) return;
 
         cameraPos = target.position + offset;
 
         transform.position = cameraPos;
+    }
+
+    public void ShakeCamera(float time)
+    {
+        StartCoroutine("ShakingCamera", 1f);
+    }
+
+    private IEnumerator ShakingCamera(float duration)
+    {
+        float halfDuration = duration / 2;
+        float elapsed = 0f;
+        float tick = Random.Range(-10f, 10f);
+
+        float m_roughness = 10;
+        float m_magnitude = 10;
+
+        Vector3 originPos = transform.position;
+
+        shakeCam = true;
+        if (cameraMoving) cameraMoving.Shaking(true);
+
+        while (elapsed < duration)
+        {
+            elapsed += Time.deltaTime / halfDuration;
+
+            tick += Time.deltaTime * m_roughness;
+            transform.position = target.transform.position + offset + new Vector3(
+                Mathf.PerlinNoise(tick, 0) - .5f,
+                Mathf.PerlinNoise(0, tick) - .5f,
+                0f) * m_magnitude * Mathf.PingPong(elapsed, halfDuration);
+
+            yield return null;
+        }
+
+        shakeCam = false;
+        transform.position = originPos;
+        if (cameraMoving) cameraMoving.Shaking(false);
     }
 
     //public void ChangeCameraRotation(Vector3 change)

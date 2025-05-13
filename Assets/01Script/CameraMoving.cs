@@ -21,11 +21,20 @@ public class CameraMoving : MonoBehaviour
 
     public float smoothness = 10f;
 
-    public void Init()
+    private bool isInit = false;
+    private bool isShaking = false;
+
+    public void Init(float distance)
     {
+        maxDistance = distance;
+
+        isInit = true;
+
         objectTofollow = GameManager.Instance.Player.transform;
 
         transform.position = GameManager.Instance.Player.transform.position;
+
+
         var cam = Camera.main;
         cam.transform.SetParent(transform);
 
@@ -47,6 +56,11 @@ public class CameraMoving : MonoBehaviour
         transform.rotation = rot;
     }
 
+    public void Shaking(bool tf)
+    {
+        isShaking = tf;
+    }
+
     //private void Update()
     //{
     //    rotX -= Input.GetAxis("Mouse Y") * sensivity * Time.deltaTime;
@@ -60,6 +74,8 @@ public class CameraMoving : MonoBehaviour
 
     private void LateUpdate()
     {
+        if (!isInit) return;
+
         transform.position = Vector3.MoveTowards(transform.position, objectTofollow.position, followSpeed * Time.deltaTime);
 
         finalDir = transform.TransformPoint(dirNomalized * maxDistance);
@@ -74,6 +90,9 @@ public class CameraMoving : MonoBehaviour
         {
             finalDistance = maxDistance;
         }
+
+        if (isShaking) return;
+
         realCamera.localPosition = Vector3.Lerp(realCamera.localPosition, dirNomalized * finalDistance, Time.deltaTime * smoothness);
     }
 }

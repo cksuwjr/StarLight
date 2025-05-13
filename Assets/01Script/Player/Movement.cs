@@ -71,6 +71,7 @@ public class Movement : MonoBehaviour, IMove
         //dir.y = 0;
 
         dir.Normalize();
+        dir.y = 0;
         transform.forward = dir;
 
         dir *= speed;
