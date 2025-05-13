@@ -48,7 +48,7 @@ public class CameraMoving : MonoBehaviour
     public void Moving()
     {
         rotX -= Input.GetAxis("Mouse Y") * sensivity * Time.deltaTime;
-        rotY += Input.GetAxis("Mouse X") * sensivity * Time.deltaTime;
+        rotY -= Input.GetAxis("Mouse X") * sensivity * Time.deltaTime;
 
         //rotX = Mathf.Clamp(rotX, -clampAngle, clampAngle);
         rotX = Mathf.Clamp(rotX, -30, 50);

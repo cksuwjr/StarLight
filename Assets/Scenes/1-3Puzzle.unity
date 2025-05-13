@@ -290,6 +290,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotateCam: 0
   cameraMoving: {fileID: 0}
+  distance: 1.376
 --- !u!1 &121983775
 GameObject:
   m_ObjectHideFlags: 0
@@ -1559,6 +1560,36 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnPosition: {x: 8, y: 12.59, z: 40}
+  OnFaze1End:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1664323580}
+        m_TargetAssemblyTypeName: ScenarioManager, Assembly-CSharp
+        m_MethodName: StartStory
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: ContaminatedMushrooms
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnFaze2End:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1664323580}
+        m_TargetAssemblyTypeName: ScenarioManager, Assembly-CSharp
+        m_MethodName: StartStory
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: ContaminatedMushrooms
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!4 &2006627317
 Transform:
   m_ObjectHideFlags: 0
@@ -2422,11 +2453,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 1937666938821894636, guid: 79a877111fe9c124781bb7ebdaa18dfe,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 763168151}
     - target: {fileID: 3212538714041878260, guid: 79a877111fe9c124781bb7ebdaa18dfe,
         type: 3}
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 763168151}
+    - target: {fileID: 3212538714041878260, guid: 79a877111fe9c124781bb7ebdaa18dfe,
+        type: 3}
+      propertyPath: m_VersionIndex
+      value: 19
+      objectReference: {fileID: 0}
+    - target: {fileID: 3516395653759366784, guid: 79a877111fe9c124781bb7ebdaa18dfe,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.871
+      objectReference: {fileID: 0}
     - target: {fileID: 6004781408717250523, guid: 79a877111fe9c124781bb7ebdaa18dfe,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2435,7 +2481,7 @@ PrefabInstance:
     - target: {fileID: 6004781408717250523, guid: 79a877111fe9c124781bb7ebdaa18dfe,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.28
+      value: 0.96
       objectReference: {fileID: 0}
     - target: {fileID: 6004781408717250523, guid: 79a877111fe9c124781bb7ebdaa18dfe,
         type: 3}
@@ -2480,12 +2526,22 @@ PrefabInstance:
     - target: {fileID: 7001247864472720443, guid: 79a877111fe9c124781bb7ebdaa18dfe,
         type: 3}
       propertyPath: jump
-      value: 35
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 7001247864472720443, guid: 79a877111fe9c124781bb7ebdaa18dfe,
         type: 3}
       propertyPath: speed
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7001247864472720443, guid: 79a877111fe9c124781bb7ebdaa18dfe,
+        type: 3}
+      propertyPath: gravityY
+      value: -200
+      objectReference: {fileID: 0}
+    - target: {fileID: 7345375566518425208, guid: 79a877111fe9c124781bb7ebdaa18dfe,
+        type: 3}
+      propertyPath: m_Height
+      value: 1.839205
       objectReference: {fileID: 0}
     - target: {fileID: 7345375566518425208, guid: 79a877111fe9c124781bb7ebdaa18dfe,
         type: 3}
@@ -2494,8 +2550,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7345375566518425208, guid: 79a877111fe9c124781bb7ebdaa18dfe,
         type: 3}
+      propertyPath: m_Center.y
+      value: 0.08039749
+      objectReference: {fileID: 0}
+    - target: {fileID: 7345375566518425208, guid: 79a877111fe9c124781bb7ebdaa18dfe,
+        type: 3}
       propertyPath: m_Center.z
-      value: 0.5
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7345375566518425208, guid: 79a877111fe9c124781bb7ebdaa18dfe,
+        type: 3}
+      propertyPath: m_Material
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
