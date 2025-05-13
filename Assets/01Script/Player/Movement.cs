@@ -23,6 +23,7 @@ public class Movement : MonoBehaviour, IMove
     [SerializeField] private float speed = 50f;
     [SerializeField] private float jump = 15f;
 
+    [SerializeField] private float gravityY = -80f;
 
     public bool movable { get; protected set; }
 
@@ -40,7 +41,7 @@ public class Movement : MonoBehaviour, IMove
         anim = GetComponentInChildren<Animator>();
        
         var n = Physics.gravity;
-        n.y = -80f;
+        n.y = gravityY;
         Physics.gravity = n;
     }
 
@@ -105,7 +106,7 @@ public class Movement : MonoBehaviour, IMove
     {
         if (!jumpCheck) return;
 
-        if (Physics.OverlapSphere(groundCheck.position, 0.02f, checkLayer).Length > 0)
+        if (Physics.OverlapSphere(groundCheck.position, 0.08f, checkLayer).Length > 0)
         {
             isGrounded = true;
             anim.SetBool("Jump", false);

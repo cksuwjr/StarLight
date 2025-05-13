@@ -1,6 +1,10 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
+
+using Random = UnityEngine.Random;
 
 public class PuzzleManager : MonoBehaviour
 {
@@ -12,12 +16,20 @@ public class PuzzleManager : MonoBehaviour
 
     private GameObject player;
 
+    public UnityEvent OnFaze1End;
+    public UnityEvent OnFaze2End;
+
+    private Action action;
+
+    private GameObject puzzle1;
+    private GameObject puzzle2;
+
     private void Awake()
     {
-        var puzzle = GameObject.Find("Puzzle");
-        for(int i = 0; i < puzzle.transform.childCount; i++)
+        puzzle1 = GameObject.Find("Puzzle");
+        for(int i = 0; i < puzzle1.transform.childCount; i++)
         {
-            if (puzzle.transform.GetChild(i).TryGetComponent<PuzzleSlot>(out var puzzleSlot))
+            if (puzzle1.transform.GetChild(i).TryGetComponent<PuzzleSlot>(out var puzzleSlot))
             {
                 puzzleSlot.Init(this);
 
@@ -25,6 +37,9 @@ public class PuzzleManager : MonoBehaviour
                 slots.Add(puzzleSlot, puzzleSlot.puzzle);
             }
         }
+
+        puzzle2 = GameObject.Find("Puzzle2");
+        puzzle2.SetActive(false);
     }
 
     private void Start()
@@ -35,9 +50,32 @@ public class PuzzleManager : MonoBehaviour
             controller.RemoveButtonInteraction();
 
         UIManager.OnPressBtnSlot1 += Select;
+        action = Puzzle1;
 
         Invoke("MixPuzzle", 1f);
     }
+
+    private IEnumerator PuzzleFaze2()
+    {
+        puzzle1.SetActive(false);
+        puzzle2.SetActive(true);
+
+        for (int i = 0; i < puzzle2.transform.childCount; i++)
+        {
+            if (puzzle2.transform.GetChild(i).TryGetComponent<PuzzleSlot>(out var puzzleSlot))
+            {
+                puzzleSlot.Init(this);
+
+                correct.Add(puzzleSlot, puzzleSlot.puzzle);
+                slots.Add(puzzleSlot, puzzleSlot.puzzle);
+            }
+        }
+
+        yield return null;
+        action = Puzzle2;
+        Invoke("MixPuzzle", 1f);
+    }
+
 
     private void Update()
     {
@@ -120,13 +158,6 @@ public class PuzzleManager : MonoBehaviour
             slots[puzzleSlots[i]] = puzzleSlice;
         }
 
-        //foreach(var key in slots.Keys)
-        //{
-        //    puzzleSlice = puzzleSlices[Random.Range(0, puzzleSlices.Count)];
-        //    slots[key] = puzzleSlice;
-        //    puzzleSlices.Remove(puzzleSlice);
-        //}
-
         ArrangePuzzle();
     }
 
@@ -161,6 +192,12 @@ public class PuzzleManager : MonoBehaviour
         Grading();
     }
 
+    private void ClearPuzzle()
+    {
+        correct.Clear();
+        slots.Clear();
+    }
+
     private IEnumerator PutPuzzleSliceTimer(PuzzleSlot slot, Puzzle slice, float time)
     {
         slots[slot] = slice;
@@ -184,7 +221,9 @@ public class PuzzleManager : MonoBehaviour
         }
 
 
-        GameManager.Instance.SetTimer(61f, () => UIManager.Instance.OpenClearPopup(false));
+        GameManager.Instance.SetTimer(61f,
+                () => UIManager.Instance.OpenClearPopup(false)
+            );
     }
 
     private void Grading()
@@ -206,8 +245,30 @@ public class PuzzleManager : MonoBehaviour
             }
         }
 
-        UIManager.Instance.OpenClearPuzzlePopup(true, () => { GameManager.Instance.LoadScene("1-2Stage"); });
+        if (puzzle1.activeSelf)
+        {
+            ClearPuzzle();
+            ScenarioManager.Instance.OnStoryEnd += () => { StartCoroutine("PuzzleFaze2"); };
+            OnFaze1End?.Invoke();
+        }
+        else
+        {
+            OnFaze2End?.Invoke();
+            ScenarioManager.Instance.OnStoryEnd += () => { GameManager.Instance.LoadScene("1-2Stage"); };
+        }
+        //UIManager.Instance.OpenClearPuzzlePopup(true, () => { GameManager.Instance.LoadScene("1-2Stage"); });
 
         GameManager.Instance.StopTimer();
+    }
+
+    private void Puzzle1()
+    {
+        OnFaze1End?.Invoke();
+    }
+
+    private void Puzzle2()
+    {
+        ClearPuzzle();
+        OnFaze2End?.Invoke();
     }
 }
