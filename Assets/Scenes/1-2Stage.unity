@@ -4259,7 +4259,7 @@ Transform:
   m_GameObject: {fileID: 170076733}
   serializedVersion: 2
   m_LocalRotation: {x: -0.4463553, y: -0.5132405, z: 0.60323143, w: 0.41648898}
-  m_LocalPosition: {x: -317.3, y: 40, z: -320.4}
+  m_LocalPosition: {x: -354.74, y: 40, z: -320.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7015,7 +7015,7 @@ PrefabInstance:
     - target: {fileID: 2973666722426518956, guid: d56a859cc54db2b45847083c4ffc3f18,
         type: 3}
       propertyPath: m_Name
-      value: Airplane
+      value: Airplane3
       objectReference: {fileID: 0}
     - target: {fileID: 2973666722426806668, guid: d56a859cc54db2b45847083c4ffc3f18,
         type: 3}
@@ -7085,8 +7085,30 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2973666722426518956, guid: d56a859cc54db2b45847083c4ffc3f18,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 264672717}
   m_SourcePrefab: {fileID: 100100000, guid: d56a859cc54db2b45847083c4ffc3f18, type: 3}
+--- !u!1 &264672716 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2973666722426518956, guid: d56a859cc54db2b45847083c4ffc3f18,
+    type: 3}
+  m_PrefabInstance: {fileID: 264672715}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &264672717
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 264672716}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ddf7cbbc215a40e498271456d9c124ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &270642929
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7713,7 +7735,7 @@ PrefabInstance:
     - target: {fileID: 2035316068902712468, guid: 79a877111fe9c124781bb7ebdaa18dfe,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.09
+      value: -0.815
       objectReference: {fileID: 0}
     - target: {fileID: 2035316068902712468, guid: 79a877111fe9c124781bb7ebdaa18dfe,
         type: 3}
@@ -7733,7 +7755,7 @@ PrefabInstance:
     - target: {fileID: 3516395653759366784, guid: 79a877111fe9c124781bb7ebdaa18dfe,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.133
+      value: -0.8
       objectReference: {fileID: 0}
     - target: {fileID: 6004781408717250523, guid: 79a877111fe9c124781bb7ebdaa18dfe,
         type: 3}
@@ -7758,7 +7780,7 @@ PrefabInstance:
     - target: {fileID: 6004781408717250523, guid: 79a877111fe9c124781bb7ebdaa18dfe,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 15.678
+      value: 17.32
       objectReference: {fileID: 0}
     - target: {fileID: 6004781408717250523, guid: 79a877111fe9c124781bb7ebdaa18dfe,
         type: 3}
@@ -7803,7 +7825,7 @@ PrefabInstance:
     - target: {fileID: 7001247864472720443, guid: 79a877111fe9c124781bb7ebdaa18dfe,
         type: 3}
       propertyPath: jump
-      value: 15
+      value: 22
       objectReference: {fileID: 0}
     - target: {fileID: 7001247864472720443, guid: 79a877111fe9c124781bb7ebdaa18dfe,
         type: 3}
@@ -7838,7 +7860,7 @@ PrefabInstance:
     - target: {fileID: 7345375566518425208, guid: 79a877111fe9c124781bb7ebdaa18dfe,
         type: 3}
       propertyPath: m_Center.y
-      value: 0.4888053
+      value: -0.4
       objectReference: {fileID: 0}
     - target: {fileID: 7345375566518425208, guid: 79a877111fe9c124781bb7ebdaa18dfe,
         type: 3}
@@ -9738,7 +9760,7 @@ PrefabInstance:
     - target: {fileID: 2973666722426518956, guid: d56a859cc54db2b45847083c4ffc3f18,
         type: 3}
       propertyPath: m_Name
-      value: Airplane (1)
+      value: Airplane4
       objectReference: {fileID: 0}
     - target: {fileID: 2973666722426806668, guid: d56a859cc54db2b45847083c4ffc3f18,
         type: 3}
@@ -9808,8 +9830,30 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2973666722426518956, guid: d56a859cc54db2b45847083c4ffc3f18,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 380149112}
   m_SourcePrefab: {fileID: 100100000, guid: d56a859cc54db2b45847083c4ffc3f18, type: 3}
+--- !u!1 &380149111 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2973666722426518956, guid: d56a859cc54db2b45847083c4ffc3f18,
+    type: 3}
+  m_PrefabInstance: {fileID: 380149110}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &380149112
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 380149111}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ddf7cbbc215a40e498271456d9c124ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &381224597
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -44835,6 +44879,18 @@ MonoBehaviour:
           m_StringArgument: DollClawMachine
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 264672717}
+        m_TargetAssemblyTypeName: PaperAirplane, Assembly-CSharp
+        m_MethodName: Dissappear
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: DollClawMachine
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1790830163
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45451,8 +45507,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1817245572}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.0021241892, y: -0.95455056, z: 0.29804057, w: 0.000663276}
-  m_LocalPosition: {x: -354.72, y: 21.18, z: -278.45}
+  m_LocalRotation: {x: 0.0022168458, y: -0.9961922, z: 0.08715558, w: 0.0001939922}
+  m_LocalPosition: {x: -354.72354, y: 17.846, z: -280.177}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -45472,6 +45528,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotateCam: 1
   cameraMoving: {fileID: 0}
+  distance: 3.2
 --- !u!114 &1817245580
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -50798,6 +50855,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: ScenarioManager, Assembly-CSharp
         m_MethodName: StartStory
         m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: RabbitDoll
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 380149112}
+        m_TargetAssemblyTypeName: PaperAirplane, Assembly-CSharp
+        m_MethodName: Dissappear
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

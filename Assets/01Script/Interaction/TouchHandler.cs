@@ -41,7 +41,7 @@ public class TouchHandler : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0))
         {
-            if (Input.mousePosition.y > Screen.height * 0.4f)
+            if (Input.mousePosition.x > Screen.width * 0.194f && Input.mousePosition.x < Screen.width * 0.83f)
             {
                 onDrag = true;
                 dragPos = Input.mousePosition;

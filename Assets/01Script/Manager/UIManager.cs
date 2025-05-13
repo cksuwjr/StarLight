@@ -359,7 +359,7 @@ public class UIManager : SingletonDestroy<UIManager>
         {
             chatterImage.sprite = sprite;
 
-            chatterImage.transform.localScale = new Vector3(sprite.bounds.size.x * 0.3f, sprite.bounds.size.y * 0.3f, 0);
+            chatterImage.transform.localScale = new Vector3(sprite.bounds.size.x * 0.1f, sprite.bounds.size.y * 0.1f, 0);
             chatterImage.enabled = true;
         }
         else
