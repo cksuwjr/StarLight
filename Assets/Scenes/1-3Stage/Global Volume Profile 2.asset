@@ -15,7 +15,7 @@ MonoBehaviour:
   active: 1
   texture:
     m_OverrideState: 1
-    m_Value: {fileID: 2800000, guid: 5612623660322224bb7e4ca11bbb5786, type: 3}
+    m_Value: {fileID: 2800000, guid: 104c246fa45e3644397fdc92a7dab0b1, type: 3}
     dimension: 1
   contribution:
     m_OverrideState: 1
@@ -56,7 +56,7 @@ MonoBehaviour:
     m_Value: 0
   intensity:
     m_OverrideState: 1
-    m_Value: 1.66
+    m_Value: 1.27
   scatter:
     m_OverrideState: 0
     m_Value: 0.7
@@ -67,8 +67,8 @@ MonoBehaviour:
     m_OverrideState: 0
     m_Value: {r: 1, g: 1, b: 1, a: 1}
   highQualityFiltering:
-    m_OverrideState: 1
-    m_Value: 1
+    m_OverrideState: 0
+    m_Value: 0
   downscale:
     m_OverrideState: 0
     m_Value: 0

@@ -34,7 +34,7 @@ Material:
   stringTagMap:
     RenderType: TransparentCutout
   disabledShaderPasses: []
-  m_LockedProperties: 
+  m_LockedProperties: _AlphaClip
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
@@ -78,7 +78,7 @@ Material:
     - _BlendModePreserveSpecular: 1
     - _BumpScale: 1
     - _Cull: 2
-    - _Cutoff: 0.972
+    - _Cutoff: 0.78
     - _DstBlend: 0
     - _DstBlendAlpha: 0
     - _GlossinessSource: 0
