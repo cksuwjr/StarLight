@@ -5,8 +5,10 @@ using UnityEngine;
 public class StageMovePortal : InteractionObject
 {
     [SerializeField] private string sceneName;
-    private void Start()
+
+    private void OnCollisionEnter(Collision collision)
     {
-        OnClick += () => GameManager.Instance.LoadScene(sceneName);
+        if(collision.gameObject.CompareTag("Player"))
+            GameManager.Instance.LoadScene(sceneName);
     }
 }
