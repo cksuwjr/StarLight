@@ -1089,6 +1089,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dcc4d59f83f3d3f489722dcd7938b6f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 0}
 --- !u!4 &458613421
 Transform:
   m_ObjectHideFlags: 0
@@ -1940,17 +1941,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 8ebe8760020753543910ddf812e51197,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 1.7669209
+      value: 1.0955408
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8ebe8760020753543910ddf812e51197,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 1.7669209
+      value: 1.0955408
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8ebe8760020753543910ddf812e51197,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 1.7669209
+      value: 1.0955408
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8ebe8760020753543910ddf812e51197,
         type: 3}
@@ -1960,7 +1961,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 8ebe8760020753543910ddf812e51197,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.642
+      value: 1.585
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8ebe8760020753543910ddf812e51197,
         type: 3}
