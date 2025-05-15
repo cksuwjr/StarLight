@@ -56,7 +56,6 @@ public class InformMarker : MonoBehaviour
                     UIManager.Instance.OpenInformText(title, touchText);
                 else
                 {
-                    Debug.Log(gameObject.name);
                     UIManager.Instance.CloseInformText();
                 }
                 onoff = tf;

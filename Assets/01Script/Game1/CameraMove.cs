@@ -13,8 +13,6 @@ public class CameraMove : MonoBehaviour
     public void Init()
     {
         if (!rotateCam) return;
-        Debug.Log(Vector3.Distance(GameManager.Instance.Player.transform.position, transform.position));
-        Debug.Log(GameManager.Instance.Player.transform.position - transform.position);
 
         var o = new GameObject();
         cameraMoving = o.AddComponent<CameraMoving>();
