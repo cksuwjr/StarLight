@@ -44,14 +44,6 @@ public class PuzzleManager : MonoBehaviour
 
     private void Start()
     {
-        player = GameManager.Instance.Player;
-
-        if (player.TryGetComponent<PlayerController>(out var controller))
-            controller.RemoveButtonInteraction();
-
-        UIManager.OnPressBtnSlot1 += Select;
-        action = Puzzle1;
-
         Invoke("MixPuzzle", 1f);
     }
 
@@ -73,7 +65,7 @@ public class PuzzleManager : MonoBehaviour
 
         yield return null;
         action = Puzzle2;
-        Invoke("MixPuzzle", 1f);
+        Invoke("MixPuzzle", 3f);
     }
 
 
@@ -219,6 +211,14 @@ public class PuzzleManager : MonoBehaviour
                 yield return null;
             }
         }
+
+        player = GameManager.Instance.Player;
+        if (player.TryGetComponent<PlayerController>(out var controller))
+            controller.RemoveButtonInteraction();
+
+        UIManager.OnPressBtnSlot1 -= Select;
+        UIManager.OnPressBtnSlot1 += Select;
+        action = Puzzle1;
 
 
         GameManager.Instance.SetTimer(61f,
