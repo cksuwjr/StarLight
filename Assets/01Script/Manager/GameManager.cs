@@ -13,8 +13,16 @@ public class GameManager : Singleton<GameManager>
     private SoundManager soundManager;
     private Volume volume;
 
-    private GameObject player;
-    public GameObject Player { get => player; }
+    [SerializeField] private GameObject player;
+    public GameObject Player 
+    {
+        get 
+        {
+            if(player == null)
+                player = GameObject.Find("Player");
+            return player; 
+        } 
+    }
 
     public Action OnTimerStop;
 
@@ -23,11 +31,11 @@ public class GameManager : Singleton<GameManager>
         SceneManager.sceneLoaded += (scene, mode) => {
             AssignManagers();
             InitManagers();
-            player = GameObject.Find("Player");
+
+            if (!Player) return;
             if(Camera.main.GetComponent<CameraMove>())
                 Camera.main.GetComponent<CameraMove>().Init();
 
-            if (!Player) return;
             if(player.TryGetComponent<PlayerController>(out var p))
                 p.Init();
 
