@@ -13,6 +13,7 @@ public class CameraMove : MonoBehaviour
     public void Init()
     {
         if (!rotateCam) return;
+        Debug.Log(Vector3.Distance(transform.position, GameManager.Instance.Player.transform.position));
 
         var o = new GameObject();
         cameraMoving = o.AddComponent<CameraMoving>();
@@ -39,7 +40,7 @@ public class CameraMove : MonoBehaviour
 
     private void Awake()
     {
-        if (rotateCam) return;
+        //if (rotateCam) return;
 
         obj = GameObject.Find("Player");
 
@@ -62,7 +63,10 @@ public class CameraMove : MonoBehaviour
 
     public void ShakeCamera(float time)
     {
-        StartCoroutine("ShakingCamera", 1f);
+        if (target == null)
+            target = GameManager.Instance.Player.transform;
+
+        StartCoroutine("ShakingCamera", time);
     }
 
     private IEnumerator ShakingCamera(float duration)
@@ -84,11 +88,11 @@ public class CameraMove : MonoBehaviour
             elapsed += Time.deltaTime / halfDuration;
 
             tick += Time.deltaTime * m_roughness;
+
             transform.position = target.transform.position + offset + new Vector3(
                 Mathf.PerlinNoise(tick, 0) - .5f,
                 Mathf.PerlinNoise(0, tick) - .5f,
                 0f) * m_magnitude * Mathf.PingPong(elapsed, halfDuration);
-
             yield return null;
         }
 
