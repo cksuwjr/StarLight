@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: ChatTable
   m_EditorClassIdentifier: 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   ContaminatedMushrooms:
   - id: 0
     imgSrc: Image/pairy
@@ -70,6 +71,8 @@ MonoBehaviour:
     imgSrc: Image/pairy
     name: "\uBCC4\uC758 \uC815\uB839 : \uC194"
 =======
+=======
+>>>>>>> Stashed changes
   Lobby:
   - id: 1
     imgSrc: Image/pairy
@@ -553,6 +556,9 @@ MonoBehaviour:
     target: "\uC778\uD615\uBF51\uAE30\uAE30\uACC4"
     windowType: large
     font: "\uD3C9\uCC3D\uCCB4_Bold"
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
     chat: "\uB8E8\uBBF8\uAC00 \uD56D\uC0C1 \uB4E4\uACE0 \uB2E4\uB2C8\uB358 \uD1A0\uB07C
       \uC778\uD615 \uAE30\uC5B5\uB098?\n\uC544\uB9C8 \uC5EC\uAE30\uC11C \uB9CC\uB09C
@@ -560,12 +566,15 @@ MonoBehaviour:
       \uB8E8\uBBF8\uC5D0\uAC8C\uB294 \uB458\uB3C4 \uC5C6\uB294 \uCE5C\uAD6C\uAC00
       \uB418\uC5B4 \uC8FC\uC5C8\uACA0\uC9C0."
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     ttsSrc: Sound/Sol_TTS_7
   - id: 1
     imgSrc: Image/pairy
     name: "\uBCC4\uC758 \uC815\uB839 : \uC194"
     chat: "\uC5C4\uB9C8\uAC00 \uACC1\uC5D0 \uC5C6\uC744 \uB54C, \uC774 \uC778\uD615\uC774
 =======
+=======
+>>>>>>> Stashed changes
     ttsSrc: Sound/CH1/Sol_TTS_7
   - id: 12
     imgSrc: Image/pairy
@@ -575,11 +584,15 @@ MonoBehaviour:
     windowType: large
     font: "\uD3C9\uCC3D\uCCB4_Bold"
     chat: "\uC5C4\uB9C8\uAC00 \uACC1\uC5D0 \uC5C6\uC744 \uB54C,\n\uC774 \uC778\uD615\uC774
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
       \uB8E8\uBBF8\uC758 \uC5C4\uB9C8\uB97C \uB300\uC2E0\uD574 \uB8E8\uBBF8\uB97C
       \uC9C0\uCF1C\uC92C\uB358 \uAC78\uAE4C?\n\uB8E8\uBBF8\uB294 \uADF8\uB807\uAC8C
       \uC778\uD615\uACFC \uD568\uAED8 \uC678\uB85C\uC6B4 \uC2DC\uAC04\uC744 \uACAC\uB38C
       \uC628 \uAC78\uC9C0\uB3C4 \uBAB0\uB77C."
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
     ttsSrc: Sound/Sol_TTS_8
   RabbitDoll:
@@ -587,6 +600,8 @@ MonoBehaviour:
     imgSrc: Image/pairy
     name: "\uBCC4\uC758 \uC815\uB839 : \uC194"
 =======
+=======
+>>>>>>> Stashed changes
     ttsSrc: Sound/CH1/Sol_TTS_8
   - id: 13
     imgSrc: Image/pairy
@@ -595,11 +610,15 @@ MonoBehaviour:
     target: "\uD1A0\uB07C\uC778\uD615"
     windowType: large
     font: "\uD3C9\uCC3D\uCCB4_Bold"
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
     chat: "\uC5EC\uAE34 \uB8E8\uBBF8\uAC00 \uD640\uB85C \uC5C4\uB9C8\uB97C \uAE30\uB2E4\uB9AC\uB358
       \uACF5\uC6D0\uC778\uAC00 \uBD10,\n\uC5B4? \uC800\uAC74 \uB8E8\uBBF8\uAC00 \uC544\uB07C\uB294
       \uD1A0\uB07C \uC778\uD615 \uC544\uB2C8\uC57C?\n\uC800 \uBAA8\uC2B5\u2026\uB8E8\uBBF8\uAC00
       \uB290\uAF08\uB358 \uC4F8\uC4F8\uD568\uC774 \uB290\uAEF4\uC838\u2026"
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
     ttsSrc: Sound/Sol_TTS_9
   - id: 1
@@ -670,6 +689,8 @@ MonoBehaviour:
     imgSrc: Image/pairy
     name: "\uBCC4\uC758 \uC815\uB839 : \uC194"
 =======
+=======
+>>>>>>> Stashed changes
     ttsSrc: Sound/CH1/Sol_TTS_9
   - id: 14
     imgSrc: Image/pairy
@@ -849,6 +870,9 @@ MonoBehaviour:
     target: "\uB8E8\uBBF8\uC758\uC9D1"
     windowType: large
     font: "\uD3C9\uCC3D\uCCB4_Bold"
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
     chat: "\uC5EC\uAE30\uAC00... \uB8E8\uBBF8\uAC00 \uAC00\uC7A5 \uC0AC\uB791\uD588\uB358
       \uACF3\uC774\uC57C.\n\uC5C4\uB9C8\uC640 \uD568\uAED8 \uC624\uB798\uC624\uB798
@@ -856,8 +880,11 @@ MonoBehaviour:
       \uC9D1.\n\uC790 \uC774\uC81C \uB8E8\uBBF8\uC758 \uC804\uD558\uC9C0 \uBABB\uD55C
       \uB9C8\uC74C\uC744 \uC804\uB2EC\uD558\uC790."
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     ttsSrc: Sound/Sol_TTS_18
 =======
+=======
+>>>>>>> Stashed changes
     ttsSrc: Sound/CH1/Sol_TTS_18
   Ch_2:
   - id: 1
@@ -1401,4 +1428,7 @@ MonoBehaviour:
       \uB2F4\uACA8\uC788\uB294 \uB4EF \uD569\uB2C8\uB2E4.\n\uD3B8\uC9C0\uB97C \uBC30\uB2EC\uD574
       \uADF8 \uC9C4\uC2EC\uC744 \uC804\uB2EC\uD574 \uC8FC\uC138\uC694."
     ttsSrc: 
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
