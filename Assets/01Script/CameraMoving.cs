@@ -21,11 +21,14 @@ public class CameraMoving : MonoBehaviour
 
     public float smoothness = 10f;
 
+    private bool isNarrowable = true;
+
     private bool isInit = false;
     private bool isShaking = false;
 
-    public void Init(float distance)
+    public void Init(float distance, bool narrowable = true)
     {
+        isNarrowable = narrowable;
         maxDistance = distance;
 
         isInit = true;
@@ -82,7 +85,7 @@ public class CameraMoving : MonoBehaviour
 
         RaycastHit hit;
 
-        if(Physics.Linecast(transform.position, finalDir, out hit))
+        if(Physics.Linecast(transform.position, finalDir, out hit) && isNarrowable)
         {
             finalDistance = Mathf.Clamp(hit.distance, minDistance, maxDistance);
         }

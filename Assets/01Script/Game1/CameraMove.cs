@@ -8,6 +8,7 @@ public class CameraMove : MonoBehaviour
     public bool rotateCam = true;
     public CameraMoving cameraMoving;
     [SerializeField] private float distance = 1.376f;
+    [SerializeField] private bool narrowable = true;
     private bool shakeCam = false;
 
     public void Init()
@@ -23,7 +24,7 @@ public class CameraMove : MonoBehaviour
 
         cameraMoving.realCamera = transform;
 
-        cameraMoving.Init(distance);
+        cameraMoving.Init(distance, narrowable);
     }
 
     private Transform target;

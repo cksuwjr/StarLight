@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Video;
 
@@ -16,54 +17,48 @@ public class ScenarioManager : SingletonDestroy<ScenarioManager>
 
     private bool texting = false;
 
-    public void StartStory(string typeName)
+    public void SetChapter(string name)
     {
-        var type = StoryType.ContaminatedMushrooms;
-        switch (typeName)
+        var type = StoryType.Lobby;
+        switch (name)
         {
-            case "ContaminatedMushrooms": type = StoryType.ContaminatedMushrooms     ;             break;
-            case "Virus"                : type = StoryType.Virus                     ;             break;
-            case "MysteriousTree"       : type = StoryType.MysteriousTree            ;             break;
-            case "DollClawMachine"      : type = StoryType.DollClawMachine           ;             break;
-            case "RabbitDoll"           : type = StoryType.RabbitDoll                ;             break;
-            case "FoodTruck"            : type = StoryType.FoodTruck                 ;             break;
-            case "FallenLeaves"         : type = StoryType.FallenLeaves              ;             break;
-            case "Log"                  : type = StoryType.Log                       ;             break;
-            case "RumiHouse"            : type = StoryType.RumiHouse                 ;             break;
+            case "Lobby": type = StoryType.Lobby; break;
+            case "Tutorial": type = StoryType.Tutorial; break;
+            case "Ch_1": type = StoryType.Ch_1; break;
+            case "Ch_2": type = StoryType.Ch_2; break;
+            case "Loading": type = StoryType.Loading; break;
             default:
                 break;
         }
-
-        StartStory(type);
-
+        SetChapter(type);
     }
 
-    public void StartStory(StoryType type)
+    public void SetChapter(StoryType name)
     {
-        story = DataManager.Instance.GetStoryData(type);
-        page = 0;
+        story = DataManager.Instance.GetStoryData(name);
+    }
+
+    public void StartStory(int num)
+    {
+        page = num;
 
         AddStar();
 
         LoadPage();
         UIManager.Instance.OpenScenarioPannel();
 
-        switch (type.ToString())
+        switch (num)
         {
-           case "ContaminatedMushrooms": type = StoryType.ContaminatedMushrooms     ;                 break;
-           case "Virus"                : OnStoryEnd += ()=> { GameManager.Instance.SavePosition(); GameManager.Instance.LoadScene("1-1Puzzle"); };break;
-           case "MysteriousTree"       : type = StoryType.MysteriousTree            ;             break;
-           case "DollClawMachine"      : type = StoryType.DollClawMachine           ;             break;
-           case "RabbitDoll"           : OnStoryEnd += () => { GameManager.Instance.SavePosition(); GameManager.Instance.LoadScene("1-2Puzzle"); }; break;
-           case "FoodTruck"            : type = StoryType.FoodTruck                 ;             break;
-           case "FallenLeaves"         : type = StoryType.FallenLeaves              ;             break;
-           case "Log"                  : OnStoryEnd += () => { GameManager.Instance.SavePosition(); GameManager.Instance.LoadScene("1-3Puzzle"); }; break;
-           case "RumiHouse"            : OnStoryEnd += () => 
-           {
-               var videoPlay = GameObject.Find("Video Player").GetComponent<VideoPlay>();
-               videoPlay.Play();
-               videoPlay.OnVideoEnd += () => { UIManager.Instance.OpenClearPopup(true); };
-           }; 
+           case 3                : OnStoryEnd += ()=> { GameManager.Instance.SavePosition(); GameManager.Instance.LoadScene("1-1Puzzle"); };break;
+           case 13           : OnStoryEnd += () => { GameManager.Instance.SavePosition(); GameManager.Instance.LoadScene("1-2Puzzle"); }; break;
+           case 23                  : OnStoryEnd += () => { GameManager.Instance.SavePosition(); GameManager.Instance.LoadScene("1-3Puzzle"); }; break;
+           case 30:
+                OnStoryEnd += () =>
+                {
+                    var videoPlay = GameObject.Find("Video Player").GetComponent<VideoPlay>();
+                    videoPlay.Play();
+                    videoPlay.OnVideoEnd += () => { UIManager.Instance.OpenClearPopup(true); };
+                };
                 break;
             default:
                 break;
@@ -90,7 +85,13 @@ public class ScenarioManager : SingletonDestroy<ScenarioManager>
             return;
         }
 
-        if (page + 1 < story.Count)
+        if (story.Count <= page + 1)
+        {
+            StopStory();
+            return;
+        }
+
+        if (story[page].category == story[page + 1].category && story[page].target == story[page + 1].target)
         {
             page++;
             LoadPage();
@@ -106,7 +107,8 @@ public class ScenarioManager : SingletonDestroy<ScenarioManager>
         var sound = Resources.Load<AudioClip>(story[page].ttsSrc);
 
         SoundManager.Instance.StopSound();
-        SoundManager.Instance.PlaySound(sound, false);
+        if (sound) 
+            SoundManager.Instance.PlaySound(sound, false);
 
         StartCoroutine(LoadText(imgSprite, story[page].name, story[page].chat));
         //UIManager.Instance.SetScenarioPannel(imgSprite, story[page].name, story[page].chat);

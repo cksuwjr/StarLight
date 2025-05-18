@@ -5345,14 +5345,26 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1136517680}
         m_TargetAssemblyTypeName: ScenarioManager, Assembly-CSharp
-        m_MethodName: StartStory
+        m_MethodName: SetChapter
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: FoodTruck
+          m_StringArgument: Ch_1
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1136517680}
+        m_TargetAssemblyTypeName: ScenarioManager, Assembly-CSharp
+        m_MethodName: StartStory
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 19
+          m_FloatArgument: 0
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &184326873
@@ -46952,6 +46964,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dcc4d59f83f3d3f489722dcd7938b6f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 0}
 --- !u!4 &1734517176
 Transform:
   m_ObjectHideFlags: 0
@@ -49352,18 +49365,6 @@ MonoBehaviour:
   OnClickUnityEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1136517680}
-        m_TargetAssemblyTypeName: ScenarioManager, Assembly-CSharp
-        m_MethodName: StartStory
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: DollClawMachine
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 264672717}
         m_TargetAssemblyTypeName: PaperAirplane, Assembly-CSharp
         m_MethodName: Dissappear
@@ -49374,6 +49375,30 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: DollClawMachine
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1136517680}
+        m_TargetAssemblyTypeName: ScenarioManager, Assembly-CSharp
+        m_MethodName: SetChapter
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Ch_1
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1136517680}
+        m_TargetAssemblyTypeName: ScenarioManager, Assembly-CSharp
+        m_MethodName: StartStory
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 11
+          m_FloatArgument: 0
+          m_StringArgument: 11
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1790830163
@@ -50060,6 +50085,7 @@ MonoBehaviour:
   rotateCam: 1
   cameraMoving: {fileID: 0}
   distance: 3.2
+  narrowable: 1
 --- !u!114 &1817245580
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -55972,18 +55998,6 @@ MonoBehaviour:
   OnClickUnityEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1136517680}
-        m_TargetAssemblyTypeName: ScenarioManager, Assembly-CSharp
-        m_MethodName: StartStory
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: RabbitDoll
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 380149112}
         m_TargetAssemblyTypeName: PaperAirplane, Assembly-CSharp
         m_MethodName: Dissappear
@@ -55992,6 +56006,30 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: RabbitDoll
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1136517680}
+        m_TargetAssemblyTypeName: ScenarioManager, Assembly-CSharp
+        m_MethodName: SetChapter
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Ch_1
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1136517680}
+        m_TargetAssemblyTypeName: ScenarioManager, Assembly-CSharp
+        m_MethodName: StartStory
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 13
           m_FloatArgument: 0
           m_StringArgument: RabbitDoll
           m_BoolArgument: 0
