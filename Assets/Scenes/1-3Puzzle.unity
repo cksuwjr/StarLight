@@ -291,6 +291,7 @@ MonoBehaviour:
   rotateCam: 0
   cameraMoving: {fileID: 0}
   distance: 1.376
+  narrowable: 1
 --- !u!1 &121983775
 GameObject:
   m_ObjectHideFlags: 0
@@ -495,6 +496,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dcc4d59f83f3d3f489722dcd7938b6f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 0}
 --- !u!4 &458613421
 Transform:
   m_ObjectHideFlags: 0
@@ -838,6 +840,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPool: {fileID: 1173876959}
   enemyPool2: {fileID: 0}
+  enemyPool3: {fileID: 0}
+  enemyPool4: {fileID: 0}
+  enemyPool5: {fileID: 0}
+  enemyPool6: {fileID: 0}
+  enemyPool7: {fileID: 0}
 --- !u!4 &1020464022
 Transform:
   m_ObjectHideFlags: 0
@@ -1367,13 +1374,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1668372215}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.32556805, y: 0, z: 0, w: 0.9455186}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 10, z: -9.7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 38, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1769200156
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1565,14 +1572,26 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1664323580}
         m_TargetAssemblyTypeName: ScenarioManager, Assembly-CSharp
-        m_MethodName: StartStory
+        m_MethodName: SetChapter
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: ContaminatedMushrooms
+          m_StringArgument: Ch_1
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1664323580}
+        m_TargetAssemblyTypeName: ScenarioManager, Assembly-CSharp
+        m_MethodName: StartStory
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 25
+          m_FloatArgument: 0
+          m_StringArgument: Ch_1
           m_BoolArgument: 0
         m_CallState: 2
   OnFaze2End:
@@ -1580,14 +1599,26 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1664323580}
         m_TargetAssemblyTypeName: ScenarioManager, Assembly-CSharp
-        m_MethodName: StartStory
+        m_MethodName: SetChapter
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: ContaminatedMushrooms
+          m_StringArgument: Ch_1
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1664323580}
+        m_TargetAssemblyTypeName: ScenarioManager, Assembly-CSharp
+        m_MethodName: StartStory
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 27
+          m_FloatArgument: 0
+          m_StringArgument: Ch_1
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!4 &2006627317

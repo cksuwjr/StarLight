@@ -21,7 +21,7 @@ public class LoadingSceneManager : MonoBehaviour
     private static string nextSceneName;
     private AsyncOperation asyncScene;
 
-    private float speed = 1f;
+    private float speed = 30f;
 
     private void Awake()
     {

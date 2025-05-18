@@ -22,7 +22,7 @@ public class LogSpawner : MonoBehaviour
 
     private void StartSpawn()
     {
-        StartCoroutine("SpawnFaze2");
+        StartCoroutine("Spawn");
     }
 
     private void StopSpawn()

@@ -248,13 +248,21 @@ public class PuzzleManager : MonoBehaviour
         if (puzzle1.activeSelf)
         {
             ClearPuzzle();
-            ScenarioManager.Instance.OnStoryEnd += () => { StartCoroutine("PuzzleFaze2"); };
+            ScenarioManager.Instance.OnStoryEnd += () => 
+            { 
+                StartCoroutine("PuzzleFaze2");
+                PlayerPrefs.SetInt("Puzzle", 1);
+            };
             OnFaze1End?.Invoke();
         }
         else
         {
             OnFaze2End?.Invoke();
-            ScenarioManager.Instance.OnStoryEnd += () => { GameManager.Instance.LoadScene("1-2Stage"); };
+            ScenarioManager.Instance.OnStoryEnd += () => 
+            {
+                GameManager.Instance.LoadScene("1-2Stage"); 
+                PlayerPrefs.SetInt("Puzzle", 2);
+            };
         }
         //UIManager.Instance.OpenClearPuzzlePopup(true, () => { GameManager.Instance.LoadScene("1-2Stage"); });
 
