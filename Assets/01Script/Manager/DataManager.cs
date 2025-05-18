@@ -21,16 +21,12 @@ public class DataManager : Singleton<DataManager>, IManager
 
 
 
-    private ChatTable storyDatas;
-    private Dictionary<int, ChatData> ContaminatedMushrooms = new Dictionary<int, ChatData>();
-    private Dictionary<int, ChatData> Virus = new Dictionary<int, ChatData>();
-    private Dictionary<int, ChatData> MysteriousTree = new Dictionary<int, ChatData>();
-    private Dictionary<int, ChatData> DollClawMachine = new Dictionary<int, ChatData>();
-    private Dictionary<int, ChatData> RabbitDoll = new Dictionary<int, ChatData>();
-    private Dictionary<int, ChatData> FoodTruck = new Dictionary<int, ChatData>();
-    private Dictionary<int, ChatData> FallenLeaves = new Dictionary<int, ChatData>();
-    private Dictionary<int, ChatData> Log = new Dictionary<int, ChatData>();
-    private Dictionary<int, ChatData> RumiHouse = new Dictionary<int, ChatData>();
+    private ChatTable datas;
+    private Dictionary<int, ChatData> Lobby = new Dictionary<int, ChatData>();
+    private Dictionary<int, ChatData> Tutorial = new Dictionary<int, ChatData>();
+    private Dictionary<int, ChatData> Ch_1 = new Dictionary<int, ChatData>();
+    private Dictionary<int, ChatData> Ch_2 = new Dictionary<int, ChatData>();
+    private Dictionary<int, ChatData> Loading = new Dictionary<int, ChatData>();
 
 
 
@@ -42,7 +38,7 @@ public class DataManager : Singleton<DataManager>, IManager
             if (!loadData)
                 LoadData();
 
-        if(!storyDatas)
+        if(!datas)
             LoadStoryData();
     }
 
@@ -96,42 +92,20 @@ public class DataManager : Singleton<DataManager>, IManager
 
     private void LoadStoryData()
     {
-        storyDatas = Resources.Load<ChatTable>("ChatData/ChatTable");
+        datas = Resources.Load<ChatTable>("ChatData/ChatTable");
 
         Debug.Log("스토리불러오기");
 
-        for (int i = 0; i < storyDatas.ContaminatedMushrooms.Count; i++)
-            ContaminatedMushrooms.Add(storyDatas.ContaminatedMushrooms[i].id, storyDatas.ContaminatedMushrooms[i]);
-        for (int i = 0; i < storyDatas.Virus.Count; i++)
-            Virus.Add(storyDatas.Virus[i].id, storyDatas.Virus[i]);
-        for (int i = 0; i < storyDatas.MysteriousTree.Count; i++)
-            MysteriousTree.Add(storyDatas.MysteriousTree[i].id, storyDatas.MysteriousTree[i]);
-        for (int i = 0; i < storyDatas.DollClawMachine.Count; i++)
-            DollClawMachine.Add(storyDatas.DollClawMachine[i].id, storyDatas.DollClawMachine[i]);
-        for (int i = 0; i < storyDatas.RabbitDoll.Count; i++)
-            RabbitDoll.Add(storyDatas.RabbitDoll[i].id, storyDatas.RabbitDoll[i]);
-        for (int i = 0; i < storyDatas.FoodTruck.Count; i++)
-            FoodTruck.Add(storyDatas.FoodTruck[i].id, storyDatas.FoodTruck[i]);
-        for (int i = 0; i < storyDatas.FallenLeaves.Count; i++)
-            FallenLeaves.Add(storyDatas.FallenLeaves[i].id, storyDatas.FallenLeaves[i]);
-        for (int i = 0; i < storyDatas.Log.Count; i++)
-            Log.Add(storyDatas.Log[i].id, storyDatas.Log[i]);
-        for (int i = 0; i < storyDatas.RumiHouse.Count; i++)
-            RumiHouse.Add(storyDatas.RumiHouse[i].id, storyDatas.RumiHouse[i]);
-
-
-
-        //PlayerPrefs.SetInt(  "ContaminatedMushrooms"   , PlayerPrefs.GetInt(  "ContaminatedMushrooms"     , 0));
-        //PlayerPrefs.SetInt(  "Virus"                   , PlayerPrefs.GetInt(  "Virus"                     , 0));
-        //PlayerPrefs.SetInt(  "MysteriousTree"          , PlayerPrefs.GetInt(  "MysteriousTree"            , 0));
-        //PlayerPrefs.SetInt(  "DollClawMachine"         , PlayerPrefs.GetInt(  "DollClawMachine"           , 0));
-        //PlayerPrefs.SetInt(  "RabbitDoll"              , PlayerPrefs.GetInt(  "RabbitDoll"                , 0));
-        //PlayerPrefs.SetInt(  "FoodTruck"               , PlayerPrefs.GetInt(  "FoodTruck"                 , 0));
-        //PlayerPrefs.SetInt(  "FallenLeaves"            , PlayerPrefs.GetInt(  "FallenLeaves"              , 0));
-        //PlayerPrefs.SetInt(  "Log"                     , PlayerPrefs.GetInt(  "Log"                       , 0));
-        //PlayerPrefs.SetInt(  "RumiHouse"               , PlayerPrefs.GetInt(  "RumiHouse"                 , 0));
-
-        //PlayerPrefs.Save();
+        for (int i = 0; i < datas.Lobby.Count; i++)
+            Lobby.Add(datas.Lobby[i].id, datas.Lobby[i]);
+        for (int i = 0; i < datas.Tutorial.Count; i++)
+            Tutorial.Add(datas.Tutorial[i].id, datas.Tutorial[i]);
+        for (int i = 0; i < datas.Ch_1.Count; i++)
+            Ch_1.Add(datas.Ch_1[i].id, datas.Ch_1[i]);
+        for (int i = 0; i < datas.Ch_2.Count; i++)
+            Ch_2.Add(datas.Ch_2[i].id, datas.Ch_2[i]);
+        for (int i = 0; i < datas.Loading.Count; i++)
+            Loading.Add(datas.Loading[i].id, datas.Loading[i]);
     }
 
 
@@ -143,15 +117,11 @@ public class DataManager : Singleton<DataManager>, IManager
     {
         switch (type)
         {
-                case StoryType.                 ContaminatedMushrooms               :     return ContaminatedMushrooms;
-                case StoryType.                 Virus                               :     return Virus;
-                case StoryType.                 MysteriousTree                      :     return MysteriousTree;
-                case StoryType.                 DollClawMachine                     :     return DollClawMachine;
-                case StoryType.                 RabbitDoll                          :     return RabbitDoll;
-                case StoryType.                 FoodTruck                           :     return FoodTruck;
-                case StoryType.                 FallenLeaves                        :     return FallenLeaves;
-                case StoryType.                 Log                                 :     return Log;
-                case StoryType.                 RumiHouse                           :     return RumiHouse;
+                case StoryType.                 Lobby               :     return Lobby;
+                case StoryType.                 Tutorial                               :     return Tutorial;
+                case StoryType.                 Ch_1                      :     return Ch_1;
+                case StoryType.                 Ch_2                     :     return Ch_2;
+                case StoryType.                 Loading                          :     return Loading;
         }
 
         return null;

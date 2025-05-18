@@ -39,6 +39,7 @@ public class CarSpawner : MonoBehaviour
         StopCoroutine("SpawnFaze2");
         for (int i = cars.Count - 1; i >= 0; i--)
             cars[i].GetComponent<PoolObject>().ReturnToPool();
+        cars.Clear();
     }
 
     private IEnumerator Spawn()
@@ -57,10 +58,31 @@ public class CarSpawner : MonoBehaviour
 
         while (true)
         {
+            int carNum = 0;
             for (int i = 0; i < 2; i++)
             {
                 spawnPosition = transform.position + new Vector3(Random.Range(-xRange, xRange), 0, 0);
-                car = PoolManager.Instance.enemyPool.GetPoolObject();
+
+                carNum = Random.Range(0, 4);
+                switch (carNum)
+                {
+                    case 0:
+                        car = PoolManager.Instance.enemyPool.GetPoolObject();
+                        break;
+                    case 1:
+                        car = PoolManager.Instance.enemyPool4.GetPoolObject();
+                        break;
+                    case 2:
+                        car = PoolManager.Instance.enemyPool5.GetPoolObject();
+                        break;
+                    case 3:
+                        car = PoolManager.Instance.enemyPool6.GetPoolObject();
+                        break;
+                    default:
+                        car = PoolManager.Instance.enemyPool.GetPoolObject();
+                        break;
+                }
+
                 cars.Add(car);
                 car.transform.rotation = Quaternion.Euler(Random.Range(0f, 360f), Random.Range(0f, 360f), Random.Range(0f, 360f));
                 car.transform.position = spawnPosition;
@@ -90,11 +112,27 @@ public class CarSpawner : MonoBehaviour
 
         while (true)
         {
+            int carNum;
             for (int i = 0; i < 4; i++)
             {
 
                 spawnPosition = transform.position + new Vector3(Random.Range(-xRange, xRange), 0, 0);
-                car = PoolManager.Instance.enemyPool.GetPoolObject();
+                carNum = Random.Range(0, 3);
+                switch (carNum)
+                {
+                    case 0:
+                        car = PoolManager.Instance.enemyPool2.GetPoolObject();
+                        break;
+                    case 1:
+                        car = PoolManager.Instance.enemyPool3.GetPoolObject();
+                        break;
+                    case 2:
+                        car = PoolManager.Instance.enemyPool7.GetPoolObject();
+                        break;
+                    default:
+                        car = PoolManager.Instance.enemyPool2.GetPoolObject();
+                        break;
+                }
                 cars.Add(car);
                 car.transform.rotation = Quaternion.Euler(Random.Range(0f, 360f), Random.Range(0f, 360f), Random.Range(0f, 360f));
                 car.transform.position = spawnPosition;

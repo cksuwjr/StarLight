@@ -1,3 +1,4 @@
+using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -26,6 +27,8 @@ public class Movement : MonoBehaviour, IMove
     [SerializeField] private float gravityY = -80f;
 
     public bool movable { get; protected set; }
+
+    private bool notBinded = true;
 
     private bool isGrounded;
     private bool jumpCheck = true;
@@ -56,10 +59,13 @@ public class Movement : MonoBehaviour, IMove
 
     public void Move(Vector3 direction)
     {
-        if (!movable) return;
         anim.SetBool("Move", false);
+        if (!movable) return;
+        if (!notBinded) return;
+
         rb.velocity = new Vector3(0, rb.velocity.y, 0);
 
+        if (UIManager.Instance.touchBlocking) return;
         if (direction == Vector3.zero) return;
         anim.SetBool("Move", true);
         Vector3 dir = direction;
@@ -115,4 +121,22 @@ public class Movement : MonoBehaviour, IMove
             isGrounded = false;
     }
 
+    public void CC(float time)
+    {
+        StartCoroutine("CCApply", time);
+    }
+
+    private IEnumerator CCApply(float time)
+    {
+        float timer = 0f;
+        notBinded = false;
+
+        while (timer < time)
+        {
+            timer += Time.deltaTime;
+            yield return null;
+        }
+
+        notBinded = true;
+    }
 }

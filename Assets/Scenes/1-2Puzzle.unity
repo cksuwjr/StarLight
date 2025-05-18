@@ -291,6 +291,7 @@ MonoBehaviour:
   rotateCam: 0
   cameraMoving: {fileID: 0}
   distance: 1.376
+  narrowable: 1
 --- !u!1 &59574147
 GameObject:
   m_ObjectHideFlags: 0
@@ -4260,14 +4261,26 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1664323580}
         m_TargetAssemblyTypeName: ScenarioManager, Assembly-CSharp
-        m_MethodName: StartStory
+        m_MethodName: SetChapter
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: ContaminatedMushrooms
+          m_StringArgument: Ch_1
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1664323580}
+        m_TargetAssemblyTypeName: ScenarioManager, Assembly-CSharp
+        m_MethodName: StartStory
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 16
+          m_FloatArgument: 0
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
   OnFaze2End:
@@ -4275,14 +4288,26 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1664323580}
         m_TargetAssemblyTypeName: ScenarioManager, Assembly-CSharp
-        m_MethodName: StartStory
+        m_MethodName: SetChapter
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: ContaminatedMushrooms
+          m_StringArgument: Ch_1
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1664323580}
+        m_TargetAssemblyTypeName: ScenarioManager, Assembly-CSharp
+        m_MethodName: StartStory
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 18
+          m_FloatArgument: 0
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!1 &975793419
@@ -5210,6 +5235,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPool: {fileID: 0}
   enemyPool2: {fileID: 0}
+  enemyPool3: {fileID: 0}
+  enemyPool4: {fileID: 0}
+  enemyPool5: {fileID: 0}
+  enemyPool6: {fileID: 0}
+  enemyPool7: {fileID: 0}
 --- !u!4 &1383001165
 Transform:
   m_ObjectHideFlags: 0
