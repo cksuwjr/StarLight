@@ -188,7 +188,11 @@ Camera:
 <<<<<<< Updated upstream:Assets/Scenes/1-1StageBefore.unity
 <<<<<<< Updated upstream:Assets/Scenes/1-1StageBefore.unity
 <<<<<<< Updated upstream:Assets/Scenes/1-1StageBefore.unity
+<<<<<<< Updated upstream:Assets/Scenes/1-1StageBefore.unity
   field of view: 60
+=======
+  field of view: 100
+>>>>>>> Stashed changes:Assets/Scenes/2-2Puzzle.unity
 =======
   field of view: 100
 >>>>>>> Stashed changes:Assets/Scenes/2-2Puzzle.unity
@@ -226,8 +230,13 @@ Transform:
 <<<<<<< Updated upstream:Assets/Scenes/1-1StageBefore.unity
 <<<<<<< Updated upstream:Assets/Scenes/1-1StageBefore.unity
 <<<<<<< Updated upstream:Assets/Scenes/1-1StageBefore.unity
+<<<<<<< Updated upstream:Assets/Scenes/1-1StageBefore.unity
   m_LocalRotation: {x: 0.29804662, y: -0.0030853555, z: -0.0009537417, w: 0.95454586}
   m_LocalPosition: {x: 0.05, y: 8.16, z: -6.528}
+=======
+  m_LocalRotation: {x: -0.05302855, y: -0, z: -0, w: 0.99859303}
+  m_LocalPosition: {x: 0, y: 5.6, z: -3.89}
+>>>>>>> Stashed changes:Assets/Scenes/2-2Puzzle.unity
 =======
   m_LocalRotation: {x: -0.05302855, y: -0, z: -0, w: 0.99859303}
   m_LocalPosition: {x: 0, y: 5.6, z: -3.89}
@@ -247,7 +256,11 @@ Transform:
 <<<<<<< Updated upstream:Assets/Scenes/1-1StageBefore.unity
 <<<<<<< Updated upstream:Assets/Scenes/1-1StageBefore.unity
 <<<<<<< Updated upstream:Assets/Scenes/1-1StageBefore.unity
+<<<<<<< Updated upstream:Assets/Scenes/1-1StageBefore.unity
   m_LocalEulerAnglesHint: {x: 34.68, y: -0.45, z: -0.255}
+=======
+  m_LocalEulerAnglesHint: {x: -6.079, y: 0, z: 0}
+>>>>>>> Stashed changes:Assets/Scenes/2-2Puzzle.unity
 =======
   m_LocalEulerAnglesHint: {x: -6.079, y: 0, z: 0}
 >>>>>>> Stashed changes:Assets/Scenes/2-2Puzzle.unity
@@ -442,6 +455,9 @@ Transform:
   m_LocalEulerAnglesHint: {x: 112.261, y: 0, z: 0}
 <<<<<<< Updated upstream:Assets/Scenes/1-1StageBefore.unity
 <<<<<<< Updated upstream:Assets/Scenes/1-1StageBefore.unity
+<<<<<<< Updated upstream:Assets/Scenes/1-1StageBefore.unity
+>>>>>>> Stashed changes:Assets/Scenes/2-2Puzzle.unity
+=======
 >>>>>>> Stashed changes:Assets/Scenes/2-2Puzzle.unity
 =======
 >>>>>>> Stashed changes:Assets/Scenes/2-2Puzzle.unity
@@ -1639,8 +1655,11 @@ PrefabInstance:
 <<<<<<< Updated upstream:Assets/Scenes/1-1StageBefore.unity
 <<<<<<< Updated upstream:Assets/Scenes/1-1StageBefore.unity
 <<<<<<< Updated upstream:Assets/Scenes/1-1StageBefore.unity
+<<<<<<< Updated upstream:Assets/Scenes/1-1StageBefore.unity
 --- !u!43 &1569700936
 =======
+=======
+>>>>>>> Stashed changes:Assets/Scenes/2-2Puzzle.unity
 =======
 >>>>>>> Stashed changes:Assets/Scenes/2-2Puzzle.unity
 =======
@@ -3389,6 +3408,9 @@ Transform:
   m_LocalEulerAnglesHint: {x: -66.628, y: 0, z: 0}
 <<<<<<< Updated upstream:Assets/Scenes/1-1StageBefore.unity
 <<<<<<< Updated upstream:Assets/Scenes/1-1StageBefore.unity
+<<<<<<< Updated upstream:Assets/Scenes/1-1StageBefore.unity
+>>>>>>> Stashed changes:Assets/Scenes/2-2Puzzle.unity
+=======
 >>>>>>> Stashed changes:Assets/Scenes/2-2Puzzle.unity
 =======
 >>>>>>> Stashed changes:Assets/Scenes/2-2Puzzle.unity
@@ -3444,7 +3466,11 @@ Transform:
 <<<<<<< Updated upstream:Assets/Scenes/1-1StageBefore.unity
 <<<<<<< Updated upstream:Assets/Scenes/1-1StageBefore.unity
 <<<<<<< Updated upstream:Assets/Scenes/1-1StageBefore.unity
+<<<<<<< Updated upstream:Assets/Scenes/1-1StageBefore.unity
 --- !u!1 &1639350857
+=======
+--- !u!1 &1663518804
+>>>>>>> Stashed changes:Assets/Scenes/2-2Puzzle.unity
 =======
 --- !u!1 &1663518804
 >>>>>>> Stashed changes:Assets/Scenes/2-2Puzzle.unity
@@ -3464,6 +3490,7 @@ GameObject:
 <<<<<<< Updated upstream:Assets/Scenes/1-1StageBefore.unity
 <<<<<<< Updated upstream:Assets/Scenes/1-1StageBefore.unity
 <<<<<<< Updated upstream:Assets/Scenes/1-1StageBefore.unity
+<<<<<<< Updated upstream:Assets/Scenes/1-1StageBefore.unity
   - component: {fileID: 1639350865}
   - component: {fileID: 1639350864}
   - component: {fileID: 1639350863}
@@ -3479,6 +3506,8 @@ GameObject:
 >>>>>>> Stashed changes:Assets/Scenes/2-2Puzzle.unity
 =======
 >>>>>>> Stashed changes:Assets/Scenes/2-2Puzzle.unity
+=======
+>>>>>>> Stashed changes:Assets/Scenes/2-2Puzzle.unity
   - component: {fileID: 1663518808}
   - component: {fileID: 1663518807}
   - component: {fileID: 1663518806}
@@ -3487,6 +3516,9 @@ GameObject:
   m_Name: White_Key4
 <<<<<<< Updated upstream:Assets/Scenes/1-1StageBefore.unity
 <<<<<<< Updated upstream:Assets/Scenes/1-1StageBefore.unity
+<<<<<<< Updated upstream:Assets/Scenes/1-1StageBefore.unity
+>>>>>>> Stashed changes:Assets/Scenes/2-2Puzzle.unity
+=======
 >>>>>>> Stashed changes:Assets/Scenes/2-2Puzzle.unity
 =======
 >>>>>>> Stashed changes:Assets/Scenes/2-2Puzzle.unity
@@ -3496,6 +3528,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
+<<<<<<< Updated upstream:Assets/Scenes/1-1StageBefore.unity
 <<<<<<< Updated upstream:Assets/Scenes/1-1StageBefore.unity
 <<<<<<< Updated upstream:Assets/Scenes/1-1StageBefore.unity
 <<<<<<< Updated upstream:Assets/Scenes/1-1StageBefore.unity
@@ -3596,6 +3629,10 @@ SphereCollider:
   m_IsActive: 1
 --- !u!65 &1663518805
 >>>>>>> Stashed changes:Assets/Scenes/2-2Puzzle.unity
+=======
+  m_IsActive: 1
+--- !u!65 &1663518805
+>>>>>>> Stashed changes:Assets/Scenes/2-2Puzzle.unity
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3604,7 +3641,11 @@ BoxCollider:
 <<<<<<< Updated upstream:Assets/Scenes/1-1StageBefore.unity
 <<<<<<< Updated upstream:Assets/Scenes/1-1StageBefore.unity
 <<<<<<< Updated upstream:Assets/Scenes/1-1StageBefore.unity
+<<<<<<< Updated upstream:Assets/Scenes/1-1StageBefore.unity
   m_GameObject: {fileID: 1639350857}
+=======
+  m_GameObject: {fileID: 1663518804}
+>>>>>>> Stashed changes:Assets/Scenes/2-2Puzzle.unity
 =======
   m_GameObject: {fileID: 1663518804}
 >>>>>>> Stashed changes:Assets/Scenes/2-2Puzzle.unity
@@ -3631,7 +3672,11 @@ BoxCollider:
 <<<<<<< Updated upstream:Assets/Scenes/1-1StageBefore.unity
 <<<<<<< Updated upstream:Assets/Scenes/1-1StageBefore.unity
 <<<<<<< Updated upstream:Assets/Scenes/1-1StageBefore.unity
+<<<<<<< Updated upstream:Assets/Scenes/1-1StageBefore.unity
 --- !u!23 &1639350863
+=======
+--- !u!23 &1663518806
+>>>>>>> Stashed changes:Assets/Scenes/2-2Puzzle.unity
 =======
 --- !u!23 &1663518806
 >>>>>>> Stashed changes:Assets/Scenes/2-2Puzzle.unity
@@ -3649,7 +3694,11 @@ MeshRenderer:
 <<<<<<< Updated upstream:Assets/Scenes/1-1StageBefore.unity
 <<<<<<< Updated upstream:Assets/Scenes/1-1StageBefore.unity
 <<<<<<< Updated upstream:Assets/Scenes/1-1StageBefore.unity
+<<<<<<< Updated upstream:Assets/Scenes/1-1StageBefore.unity
   m_GameObject: {fileID: 1639350857}
+=======
+  m_GameObject: {fileID: 1663518804}
+>>>>>>> Stashed changes:Assets/Scenes/2-2Puzzle.unity
 =======
   m_GameObject: {fileID: 1663518804}
 >>>>>>> Stashed changes:Assets/Scenes/2-2Puzzle.unity
@@ -3675,7 +3724,11 @@ MeshRenderer:
 <<<<<<< Updated upstream:Assets/Scenes/1-1StageBefore.unity
 <<<<<<< Updated upstream:Assets/Scenes/1-1StageBefore.unity
 <<<<<<< Updated upstream:Assets/Scenes/1-1StageBefore.unity
+<<<<<<< Updated upstream:Assets/Scenes/1-1StageBefore.unity
   - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+=======
+  - {fileID: 2100000, guid: 0b3f7c34183e01e48a8ee43aec79f53d, type: 2}
+>>>>>>> Stashed changes:Assets/Scenes/2-2Puzzle.unity
 =======
   - {fileID: 2100000, guid: 0b3f7c34183e01e48a8ee43aec79f53d, type: 2}
 >>>>>>> Stashed changes:Assets/Scenes/2-2Puzzle.unity
@@ -3709,7 +3762,11 @@ MeshRenderer:
 <<<<<<< Updated upstream:Assets/Scenes/1-1StageBefore.unity
 <<<<<<< Updated upstream:Assets/Scenes/1-1StageBefore.unity
 <<<<<<< Updated upstream:Assets/Scenes/1-1StageBefore.unity
+<<<<<<< Updated upstream:Assets/Scenes/1-1StageBefore.unity
 --- !u!33 &1639350864
+=======
+--- !u!33 &1663518807
+>>>>>>> Stashed changes:Assets/Scenes/2-2Puzzle.unity
 =======
 --- !u!33 &1663518807
 >>>>>>> Stashed changes:Assets/Scenes/2-2Puzzle.unity
@@ -3727,9 +3784,15 @@ MeshFilter:
 <<<<<<< Updated upstream:Assets/Scenes/1-1StageBefore.unity
 <<<<<<< Updated upstream:Assets/Scenes/1-1StageBefore.unity
 <<<<<<< Updated upstream:Assets/Scenes/1-1StageBefore.unity
+<<<<<<< Updated upstream:Assets/Scenes/1-1StageBefore.unity
   m_GameObject: {fileID: 1639350857}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!4 &1639350865
+=======
+  m_GameObject: {fileID: 1663518804}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &1663518808
+>>>>>>> Stashed changes:Assets/Scenes/2-2Puzzle.unity
 =======
   m_GameObject: {fileID: 1663518804}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
@@ -3753,6 +3816,7 @@ Transform:
 <<<<<<< Updated upstream:Assets/Scenes/1-1StageBefore.unity
 <<<<<<< Updated upstream:Assets/Scenes/1-1StageBefore.unity
 <<<<<<< Updated upstream:Assets/Scenes/1-1StageBefore.unity
+<<<<<<< Updated upstream:Assets/Scenes/1-1StageBefore.unity
   m_GameObject: {fileID: 1639350857}
   serializedVersion: 2
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
@@ -3763,6 +3827,8 @@ Transform:
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 =======
+=======
+>>>>>>> Stashed changes:Assets/Scenes/2-2Puzzle.unity
 =======
 >>>>>>> Stashed changes:Assets/Scenes/2-2Puzzle.unity
 =======
@@ -3778,6 +3844,9 @@ Transform:
   m_LocalEulerAnglesHint: {x: -26, y: 0, z: 0}
 <<<<<<< Updated upstream:Assets/Scenes/1-1StageBefore.unity
 <<<<<<< Updated upstream:Assets/Scenes/1-1StageBefore.unity
+<<<<<<< Updated upstream:Assets/Scenes/1-1StageBefore.unity
+>>>>>>> Stashed changes:Assets/Scenes/2-2Puzzle.unity
+=======
 >>>>>>> Stashed changes:Assets/Scenes/2-2Puzzle.unity
 =======
 >>>>>>> Stashed changes:Assets/Scenes/2-2Puzzle.unity
@@ -4117,6 +4186,7 @@ Transform:
 <<<<<<< Updated upstream:Assets/Scenes/1-1StageBefore.unity
 <<<<<<< Updated upstream:Assets/Scenes/1-1StageBefore.unity
 <<<<<<< Updated upstream:Assets/Scenes/1-1StageBefore.unity
+<<<<<<< Updated upstream:Assets/Scenes/1-1StageBefore.unity
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 50, y: 1, z: 50}
@@ -4182,6 +4252,15 @@ MonoBehaviour:
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: -26, y: 0, z: 0}
 >>>>>>> Stashed changes:Assets/Scenes/2-2Puzzle.unity
+=======
+  m_LocalRotation: {x: -0.22495107, y: 0, z: 0, w: 0.9743701}
+  m_LocalPosition: {x: 0, y: -1, z: 6.66}
+  m_LocalScale: {x: 95.96654, y: 1, z: 15.890734}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: -26, y: 0, z: 0}
+>>>>>>> Stashed changes:Assets/Scenes/2-2Puzzle.unity
 --- !u!1 &1908353160
 GameObject:
   m_ObjectHideFlags: 0
@@ -4213,6 +4292,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< Updated upstream:Assets/Scenes/1-1StageBefore.unity
 <<<<<<< Updated upstream:Assets/Scenes/1-1StageBefore.unity
 <<<<<<< Updated upstream:Assets/Scenes/1-1StageBefore.unity
 <<<<<<< Updated upstream:Assets/Scenes/1-1StageBefore.unity
@@ -4310,6 +4390,8 @@ PrefabInstance:
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 79a877111fe9c124781bb7ebdaa18dfe, type: 3}
 =======
+=======
+>>>>>>> Stashed changes:Assets/Scenes/2-2Puzzle.unity
 =======
 >>>>>>> Stashed changes:Assets/Scenes/2-2Puzzle.unity
 =======
@@ -4421,6 +4503,9 @@ Transform:
   m_LocalEulerAnglesHint: {x: -26, y: 0, z: 0}
 <<<<<<< Updated upstream:Assets/Scenes/1-1StageBefore.unity
 <<<<<<< Updated upstream:Assets/Scenes/1-1StageBefore.unity
+<<<<<<< Updated upstream:Assets/Scenes/1-1StageBefore.unity
+>>>>>>> Stashed changes:Assets/Scenes/2-2Puzzle.unity
+=======
 >>>>>>> Stashed changes:Assets/Scenes/2-2Puzzle.unity
 =======
 >>>>>>> Stashed changes:Assets/Scenes/2-2Puzzle.unity
@@ -4443,11 +4528,14 @@ SceneRoots:
 <<<<<<< Updated upstream:Assets/Scenes/1-1StageBefore.unity
 <<<<<<< Updated upstream:Assets/Scenes/1-1StageBefore.unity
 <<<<<<< Updated upstream:Assets/Scenes/1-1StageBefore.unity
+<<<<<<< Updated upstream:Assets/Scenes/1-1StageBefore.unity
   - {fileID: 1349594789}
   - {fileID: 639037808}
   - {fileID: 1639350865}
   - {fileID: 673063807}
 =======
+=======
+>>>>>>> Stashed changes:Assets/Scenes/2-2Puzzle.unity
 =======
 >>>>>>> Stashed changes:Assets/Scenes/2-2Puzzle.unity
 =======
@@ -4466,6 +4554,9 @@ SceneRoots:
   - {fileID: 1663518808}
 <<<<<<< Updated upstream:Assets/Scenes/1-1StageBefore.unity
 <<<<<<< Updated upstream:Assets/Scenes/1-1StageBefore.unity
+<<<<<<< Updated upstream:Assets/Scenes/1-1StageBefore.unity
+>>>>>>> Stashed changes:Assets/Scenes/2-2Puzzle.unity
+=======
 >>>>>>> Stashed changes:Assets/Scenes/2-2Puzzle.unity
 =======
 >>>>>>> Stashed changes:Assets/Scenes/2-2Puzzle.unity
