@@ -1,0 +1,186 @@
+fileFormatVersion: 2
+guid: 6f74f1f089d4fb241929379ca134dd02
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: candleLow
+    100002: //RootNode
+    100004: palm
+    100006: PalmLeave
+    100008: PalmLeave 1
+    100010: rose
+    100012: roseLeave
+    100014: roseStick
+    100016: roseStick 1
+    100018: Stand
+    100020: Stems001
+    400000: candleLow
+    400002: //RootNode
+    400004: palm
+    400006: PalmLeave
+    400008: PalmLeave 1
+    400010: rose
+    400012: roseLeave
+    400014: roseStick
+    400016: roseStick 1
+    400018: Stand
+    400020: Stems001
+    2100000: Candle
+    2100002: CandleFlame
+    2100004: PalmLeave
+    2100006: Rose
+    2100008: RoseLeaf
+    2100010: Stand
+    2100012: Stem
+    2300000: candleLow
+    2300002: PalmLeave
+    2300004: PalmLeave 1
+    2300006: roseLeave
+    2300008: roseStick
+    2300010: roseStick 1
+    2300012: Stand
+    2300014: Stems001
+    3300000: candleLow
+    3300002: PalmLeave
+    3300004: PalmLeave 1
+    3300006: roseLeave
+    3300008: roseStick
+    3300010: roseStick 1
+    3300012: Stand
+    3300014: Stems001
+    4300000: candleLow
+    4300002: PalmLeave
+    4300004: PalmLeave
+    4300006: roseStick
+    4300008: roseStick
+    4300010: roseLeave
+    4300012: Stand
+    4300014: Stems001
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Candle
+    second: {fileID: 2100000, guid: 0eae16e8863d5074f89dc1964c4219b5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CandleFlame
+    second: {fileID: 2100000, guid: 1e180cc9b18279d4bb95168fdaac703d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: PalmLeave
+    second: {fileID: 2100000, guid: 684e63908d17f2743b3e21ee3c63d5cb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Rose
+    second: {fileID: 2100000, guid: 03f0b473fbf865847ae59fc10ac9a503, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: RoseLeaf
+    second: {fileID: 2100000, guid: facf3b21abfd6b6469a2eb35a1125088, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Stand
+    second: {fileID: 2100000, guid: d5f6755578978484a992a0a9e0b386cd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Stem
+    second: {fileID: 2100000, guid: ad5b6076f8da7fe4591f211c02234ff9, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Diffuse
+    second: {fileID: 2800000, guid: 9a7ff9eaa8c9aab40b0c9327988f5090, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: PalmLeave
+    second: {fileID: 2800000, guid: a7618ba1a90ba3d42abef1693f0c0af0, type: 3}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 1
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

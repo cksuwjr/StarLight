@@ -1,0 +1,205 @@
+fileFormatVersion: 2
+guid: 09c3af475a8e9c647ad79d969ced539e
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: ice_layer001
+    100004: IceCube001
+    100006: icing_bucket001
+    100008: lable
+    100010: Line001
+    100012: moet label001
+    100014: moet_ribbon001
+    100016: Object001
+    100018: towel002
+    100020: water_drop021
+    100022: Bucket
+    400000: //RootNode
+    400002: ice_layer001
+    400004: IceCube001
+    400006: icing_bucket001
+    400008: lable
+    400010: Line001
+    400012: moet label001
+    400014: moet_ribbon001
+    400016: Object001
+    400018: towel002
+    400020: water_drop021
+    400022: Bucket
+    2100000: WaterDrop
+    2100002: IceBucketTowel
+    2100004: BottleTop
+    2100006: BottleBow
+    2100008: Bottlelabel
+    2100010: BottleGlass
+    2100012: Lable
+    2100014: IceBucketStand
+    2100016: IceCube
+    2100018: IceSurface
+    2300000: ice_layer001
+    2300002: IceCube001
+    2300004: icing_bucket001
+    2300006: lable
+    2300008: Line001
+    2300010: moet label001
+    2300012: moet_ribbon001
+    2300014: Object001
+    2300016: towel002
+    2300018: water_drop021
+    2300020: Bucket
+    3300000: ice_layer001
+    3300002: IceCube001
+    3300004: icing_bucket001
+    3300006: lable
+    3300008: Line001
+    3300010: moet label001
+    3300012: moet_ribbon001
+    3300014: Object001
+    3300016: towel002
+    3300018: water_drop021
+    3300020: Bucket
+    4300000: water_drop021
+    4300002: towel002
+    4300004: Object001
+    4300006: moet_ribbon001
+    4300008: moet label001
+    4300010: Line001
+    4300012: lable
+    4300014: icing_bucket001
+    4300016: IceCube001
+    4300018: ice_layer001
+    4300020: Bucket
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BottleBow
+    second: {fileID: 2100000, guid: 1cd0a499a99f91441a66222fc69205d5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BottleGlass
+    second: {fileID: 2100000, guid: 176b7a20ba4a7034a9868ecdff19e128, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BottleTop
+    second: {fileID: 2100000, guid: 84f07c4930d81a74493897e9eb6fdc60, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Bottlelabel
+    second: {fileID: 2100000, guid: e1d8b62b0a05caa47973504d39314eb0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: IceBucketStand
+    second: {fileID: 2100000, guid: 0fd883e909510f74d8a06271b73421c8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: IceBucketTowel
+    second: {fileID: 2100000, guid: 0d0f310e21e65344590a7433de3227a9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: IceCube
+    second: {fileID: 2100000, guid: 8b06db881b9460e48b1f1bd030ecd7b4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: IceSurface
+    second: {fileID: 2100000, guid: 7107658b986fa744199a43c5c686fb00, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Lable
+    second: {fileID: 2100000, guid: aac1a1c7d6d512544b5120c4bc62e432, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: WaterDrop
+    second: {fileID: 2100000, guid: 4dfc83e47f1872541809246475a47670, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 1
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,206 @@
+fileFormatVersion: 2
+guid: 9180c2f8934c7e34bbb086d57646bb47
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: decorative branch 01
+    100002: decorative branch 02
+    100004: decorative branch 03
+    100006: decorative branch 04
+    100008: decorative branch 05
+    100010: decorative branch 06
+    100012: //RootNode
+    100014: Leaf
+    100016: Leaf1
+    100018: orchid_branch05
+    100020: small_ribbon
+    100022: Vase
+    100024: Vase 1
+    400000: decorative branch 01
+    400002: decorative branch 02
+    400004: decorative branch 03
+    400006: decorative branch 04
+    400008: decorative branch 05
+    400010: decorative branch 06
+    400012: //RootNode
+    400014: Leaf
+    400016: Leaf1
+    400018: orchid_branch05
+    400020: small_ribbon
+    400022: Vase
+    400024: Vase 1
+    2100000: glass vase 01 glass
+    2100002: orchid vase cover
+    2100004: SimplygonMaterial
+    2100006: long leaf
+    2100008: orchid branch
+    2100010: orchid branch 2
+    2300000: decorative branch 01
+    2300002: decorative branch 02
+    2300004: decorative branch 03
+    2300006: decorative branch 04
+    2300008: decorative branch 05
+    2300010: decorative branch 06
+    2300012: Leaf
+    2300014: Leaf1
+    2300016: orchid_branch05
+    2300018: small_ribbon
+    2300020: Vase
+    2300022: Vase 1
+    3300000: decorative branch 01
+    3300002: decorative branch 02
+    3300004: decorative branch 03
+    3300006: decorative branch 04
+    3300008: decorative branch 05
+    3300010: decorative branch 06
+    3300012: Leaf
+    3300014: Leaf1
+    3300016: orchid_branch05
+    3300018: small_ribbon
+    3300020: Vase
+    3300022: Vase 1
+    4300000: Vase
+    4300002: Vase
+    4300004: small_ribbon
+    4300006: orchid_branch05
+    4300008: Leaf1
+    4300010: Leaf
+    4300012: decorative branch 06
+    4300014: decorative branch 05
+    4300016: decorative branch 04
+    4300018: decorative branch 03
+    4300020: decorative branch 02
+    4300022: decorative branch 01
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: SimplygonMaterial
+    second: {fileID: 2100000, guid: 6a3714ef4c990c64b826c31e929f9967, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: glass vase 01 glass
+    second: {fileID: 2100000, guid: d9d75f7e66ac69544bcbe6ee3096856a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: long leaf
+    second: {fileID: 2100000, guid: 50a30d7c7e5a0eb4e8a3a7ee5371eb18, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: orchid branch
+    second: {fileID: 2100000, guid: 86cd22ad213e7c543b9858e65e77f58e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: orchid branch 2
+    second: {fileID: 2100000, guid: 528c2a53f53d2df4f93aa37de929ba96, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: orchid vase cover
+    second: {fileID: 2100000, guid: 085b00a887e615e448714b5306eb531a, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Diffuse
+    second: {fileID: 2800000, guid: 49868a442e0f3cd47a0ad76b9e500940, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: magenta2
+    second: {fileID: 2800000, guid: 9084e54c16b1ea34587dd523a3defbeb, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: magenta2light
+    second: {fileID: 2800000, guid: 228aaade363e76d48b9ee5c3ecbf3e46, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: trunk
+    second: {fileID: 2800000, guid: 2390264656e9c7e4aa92fe29edd0e1fb, type: 3}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 1
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
