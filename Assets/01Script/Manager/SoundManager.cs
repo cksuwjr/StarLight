@@ -7,28 +7,12 @@ public class SoundManager : Singleton<SoundManager>
     private SoundObject BGMAudioObject;
     private float current, percent;
 
-    public AudioClip BGM;
+    private AudioClip BGM;
     private SoundObject playObject;
 
     private bool soundOnOFF = true;
 
     public Pool soundPool;
-
-    protected override void Awake()
-    {
-        if (Instance == null)
-        {
-            Instance = this as SoundManager;
-            DontDestroyOnLoad(gameObject);
-        }
-        else
-        {
-            Instance.ChangeBGM(BGM);
-            Destroy(gameObject);
-            return;
-        }
-        DoAwake();
-    }
 
     public void Init()
     {
