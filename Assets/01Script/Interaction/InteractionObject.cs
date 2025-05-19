@@ -23,7 +23,8 @@ public class InteractionObject : MonoBehaviour, IInteract
 
         if (PlayerPrefs.GetInt(gameObject.name, 0) != 0)
         {
-            ScenarioManager.Instance.AddStar();
+            if(ScenarioManager.Instance)
+                ScenarioManager.Instance.AddStar();
             OnClickUnityEventOnce = null;
         }
     }
@@ -36,11 +37,14 @@ public class InteractionObject : MonoBehaviour, IInteract
         OnInteractable?.Invoke(false);
         OnClickUnityEvent?.Invoke();
 
-        ScenarioManager.Instance.OnStoryEnd += () =>
+        if (ScenarioManager.Instance)
         {
-            OnClickUnityEventOnce?.Invoke();
-            OnClickUnityEventOnce = null;
-        };
+            ScenarioManager.Instance.OnStoryEnd += () =>
+            {
+                OnClickUnityEventOnce?.Invoke();
+                OnClickUnityEventOnce = null;
+            };
+        }
         OnClick?.Invoke();
 
         PlayerPrefs.SetInt(gameObject.name, 1);

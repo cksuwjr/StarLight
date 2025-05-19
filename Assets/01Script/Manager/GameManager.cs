@@ -62,7 +62,7 @@ public class GameManager : Singleton<GameManager>
 
     public void Blur(bool tf)
     {
-        volume.enabled = tf;
+        //volume.enabled = tf;
     }
 
     public void GameOver()

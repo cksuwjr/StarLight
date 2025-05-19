@@ -29,17 +29,20 @@ public class ScoreChecker : MonoBehaviour
             checkNode.ReturnToPool();
             string text = "";
             if (checkNode.transform.position.y > transform.position.y + 3)
-                text = "<color=green>Good !!</color>";
+                text = "<color=green>Good</color>";
             else if (checkNode.transform.position.y < transform.position.y - 3)
-                text = "<color=red>Bad !!</color>";
+            {
+                text = "<color=red>Bad</color>";
+                score = 0;
+            }
             else
-                text = "<color=blue>Perfect !!!!</color>";
+                text = "<color=blue>Perfect</color>";
 
 
 
             if (score >= 10)
             {
-                text += "\n<size=20>COMBO</size>";
+                text += "\n<size=30>COMBO</size>";
                 text += $"\n{score : 000}";
             }
             UIManager.Instance.OpenPianoScorePanel(text);
