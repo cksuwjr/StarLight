@@ -86,7 +86,8 @@ public class LogSpawner : MonoBehaviour
                 {
                     UIManager.Instance.OpenClearPuzzlePopup(true, () => { GameManager.Instance.LoadScene("1-3Stage"); });
                 };
-
+                PlayerPrefs.SetInt("1-3", 1);
+                PlayerPrefs.Save();
                 StopSpawn();
             }
         );

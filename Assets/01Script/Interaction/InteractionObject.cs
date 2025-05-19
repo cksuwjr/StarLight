@@ -9,22 +9,22 @@ public class InteractionObject : MonoBehaviour, IInteract
     protected event Action OnClick;
     public bool interactable = true;
     public bool oneOff = false;
-    public bool destroy = false;
+    public bool nonSave = false;
     public event Action<bool> OnInteractable;
 
     bool usable = true;
     [SerializeField] private UnityEvent OnClickUnityEvent;
+    [SerializeField] private UnityEvent OnClickUnityEventOnce;
+
 
     private void Start()
     {
+        if (nonSave) return;
+
         if (PlayerPrefs.GetInt(gameObject.name, 0) != 0)
         {
-            usable = false;
-            if (destroy) Destroy(gameObject);
-            interactable = false;
-            OnInteractable?.Invoke(false);
             ScenarioManager.Instance.AddStar();
-            Destroy(this);
+            OnClickUnityEventOnce = null;
         }
     }
 
@@ -35,31 +35,22 @@ public class InteractionObject : MonoBehaviour, IInteract
         interactable = false;
         OnInteractable?.Invoke(false);
         OnClickUnityEvent?.Invoke();
+
+        ScenarioManager.Instance.OnStoryEnd += () =>
+        {
+            OnClickUnityEventOnce?.Invoke();
+            OnClickUnityEventOnce = null;
+        };
         OnClick?.Invoke();
 
-        if (oneOff)
-        {
-            PlayerPrefs.SetInt(gameObject.name, 1);
-            PlayerPrefs.Save();
-        }
-        else
-        {
-            //if (ScenarioManager.Instance)
-            //{
-            //    ScenarioManager.Instance.OnStoryEnd += () => { interactable = true; OnInteractable?.Invoke(true); };
-            //}
-            //else
-            {
-                interactable = true;
-                OnInteractable?.Invoke(true);
-            }
-        }
+        PlayerPrefs.SetInt(gameObject.name, 1);
+        PlayerPrefs.Save();
+        interactable = true;
+        OnInteractable?.Invoke(true);
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (!usable) return;
-
         if (other.CompareTag("Player"))
         {
             interactable = true;

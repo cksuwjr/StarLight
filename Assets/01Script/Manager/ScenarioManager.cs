@@ -45,8 +45,6 @@ public class ScenarioManager : SingletonDestroy<ScenarioManager>
     {
         page = num;
 
-        AddStar();
-
         LoadPage();
         UIManager.Instance.OpenScenarioPannel();
         if (chapter == "Ch_1")
@@ -56,12 +54,12 @@ public class ScenarioManager : SingletonDestroy<ScenarioManager>
                 case 3: OnStoryEnd += () => { GameManager.Instance.SavePosition(); GameManager.Instance.LoadScene("1-1Puzzle"); }; break;
                 case 13: OnStoryEnd += () => { GameManager.Instance.SavePosition(); GameManager.Instance.LoadScene("1-2Puzzle"); }; break;
                 case 23: OnStoryEnd += () => { GameManager.Instance.SavePosition(); GameManager.Instance.LoadScene("1-3Puzzle"); }; break;
-                case 30:
+                case 29:
                     OnStoryEnd += () =>
                     {
                         var videoPlay = GameObject.Find("Video Player").GetComponent<VideoPlay>();
                         videoPlay.Play();
-                        videoPlay.OnVideoEnd += () => { UIManager.Instance.OpenClearPopup(true); };
+                        videoPlay.OnVideoEnd += () => { UIManager.Instance.OpenClearPopup(true, null); };
                     };
                     break;
                 default:
@@ -76,12 +74,12 @@ public class ScenarioManager : SingletonDestroy<ScenarioManager>
                 case 3: OnStoryEnd += () => { GameManager.Instance.SavePosition(); GameManager.Instance.LoadScene("2-1Puzzle"); }; break;
                 case 13: OnStoryEnd += () => { GameManager.Instance.SavePosition(); GameManager.Instance.LoadScene("2-2Puzzle"); }; break;
                 case 23: OnStoryEnd += () => { GameManager.Instance.SavePosition(); GameManager.Instance.LoadScene("2-3Puzzle"); }; break;
-                case 30:
+                case 29:
                     OnStoryEnd += () =>
                     {
                         var videoPlay = GameObject.Find("Video Player").GetComponent<VideoPlay>();
                         videoPlay.Play();
-                        videoPlay.OnVideoEnd += () => { UIManager.Instance.OpenClearPopup(true); };
+                        videoPlay.OnVideoEnd += () => { UIManager.Instance.OpenClearPopup(true, null); };
                     };
                     break;
                 default:
@@ -111,7 +109,7 @@ public class ScenarioManager : SingletonDestroy<ScenarioManager>
             return;
         }
 
-        if (story.Count <= page + 1)
+        if (story.Count < page + 1)
         {
             StopStory();
             return;
@@ -134,7 +132,7 @@ public class ScenarioManager : SingletonDestroy<ScenarioManager>
 
         SoundManager.Instance.StopSound();
         if (sound) 
-            SoundManager.Instance.PlaySound(sound, false);
+            SoundManager.Instance.PlaySound(sound, 0.7f, false);
 
         StartCoroutine(LoadText(imgSprite, story[page].name, story[page].chat));
         //UIManager.Instance.SetScenarioPannel(imgSprite, story[page].name, story[page].chat);
@@ -158,9 +156,21 @@ public class ScenarioManager : SingletonDestroy<ScenarioManager>
     }
 
 
+    public void AddStarWithStory()
+    {
+        OnStoryEnd += AddStarFunc;
+    }
+
+    public void AddStarFunc()
+    {
+        star++;
+        UIManager.Instance.AddStar(star);
+    }
+
     public void AddStar()
     {
         star++;
         UIManager.Instance.SetStar(star);
+        OnStoryEnd -= AddStar;
     }
 }

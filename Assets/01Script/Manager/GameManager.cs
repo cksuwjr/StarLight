@@ -68,7 +68,7 @@ public class GameManager : Singleton<GameManager>
     public void GameOver()
     {
         StopTimer();
-        UIManager.Instance.OpenClearPopup(false);
+        UIManager.Instance.OpenClearPopup(false, ReturnToLobby);
     }
 
     public void SetTimer(float second, Action action = null)

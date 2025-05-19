@@ -57,6 +57,9 @@ public class UIManager : SingletonDestroy<UIManager>
     private GameObject puzzleClearPopup;
 
     private GameObject video;
+    private GameObject acquire;
+    private GameObject acquireItem;
+
 
     private Camera uiCamera;
 
@@ -208,7 +211,7 @@ public class UIManager : SingletonDestroy<UIManager>
         var btns = clearPopupSlot.transform.GetChild(1).GetComponentsInChildren<Button>();
 
         btns[0].onClick.AddListener(GameManager.Instance.RestartGame);
-        btns[1].onClick.AddListener(GameManager.Instance.ReturnToLobby);
+        //btns[1].onClick.AddListener(GameManager.Instance.ReturnToLobby);
 
 
         puzzleClearPopup = ui.transform.GetChild(num++).gameObject;
@@ -218,6 +221,8 @@ public class UIManager : SingletonDestroy<UIManager>
 
 
         video = ui.transform.GetChild(num++).gameObject;
+        acquire = ui.transform.GetChild(num++).gameObject;
+        acquireItem = acquire.transform.GetChild(0).gameObject;
 
         SetStar(0);
 
@@ -443,6 +448,8 @@ public class UIManager : SingletonDestroy<UIManager>
             color = image.color;
             color.a = 1;
             image.color = color;
+
+            
         }
 
         for(n = count; n < star.transform.childCount; n++)
@@ -452,6 +459,16 @@ public class UIManager : SingletonDestroy<UIManager>
             color.a = 33f/255f;
             image.color = color;
         }
+    }
+
+    public void AddStar(int nowCount)
+    {
+        if (nowCount > 3) return;
+
+        var image = star.transform.GetChild(nowCount - 1).GetComponent<Image>();
+        Acquire(image.sprite, image.transform.position);
+
+        SetStar(nowCount);
     }
 
 
@@ -479,7 +496,7 @@ public class UIManager : SingletonDestroy<UIManager>
         popup.SetActive(false);
     }
 
-    public void OpenClearPopup(bool tf)
+    public void OpenClearPopup(bool tf, Action returnTo)
     {
         if (tf)
         {
@@ -492,6 +509,10 @@ public class UIManager : SingletonDestroy<UIManager>
             clearPopupTitle.text = "FAIL";
             clearPopupSlot.transform.GetChild(0).gameObject.SetActive(false);
             clearPopupSlot.transform.GetChild(1).gameObject.SetActive(true);
+
+            var btns = clearPopupSlot.transform.GetChild(1).GetComponentsInChildren<Button>();
+
+            btns[1].onClick.AddListener(() => returnTo());
         }
 
 
@@ -531,6 +552,33 @@ public class UIManager : SingletonDestroy<UIManager>
         video.SetActive(false);
     }
 
+
+    public void Acquire(Sprite sprite, Vector3 newPosition)
+    {
+        acquire.transform.localScale = Vector3.zero;
+        acquireItem.transform.localPosition = Vector3.zero;
+        acquireItem.GetComponent<Image>().sprite = sprite;
+        acquire.SetActive(true);
+
+
+
+        LeanTween.scale(acquire, Vector3.one, 0.3f);
+        LeanTween.move(acquireItem, newPosition, 0.8f).setDelay(0.3f);
+        LeanTween.scale(acquire, Vector3.zero, 0.01f).setDelay(1.1f);
+        LeanTween.scale(acquire, Vector3.zero, 0.3f).setDelay(1.1f);
+    }
+
+
+
+
+
+
+
+
+
+
+
+    /// //////////////////////
 
     private void TouchBlock(bool tf)
     {

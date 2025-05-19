@@ -41,7 +41,7 @@ public class LoadingSceneManager : MonoBehaviour
 
     private IEnumerator SetSpeed()
     {
-        speed = 80f;
+        speed = 200f; // before 80
         yield return YieldInstructionCache.WaitForSeconds(Random.Range(0.8f, 1.2f));
         speed = 0;
         yield return YieldInstructionCache.WaitForSeconds(Random.Range(0.1f, 1.0f));
