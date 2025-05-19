@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
     private bool hittable = true;
 
     private event Action<int> OnChangeHp;
+    private Animator animator;
 
     public void Init()
     {
@@ -22,6 +23,8 @@ public class PlayerController : MonoBehaviour
 
         OnChangeHp += UIManager.Instance.SetHpUI;
         OnChangeHp?.Invoke(hp);
+
+        animator = GetComponentInChildren<Animator>();
     }
 
     private void Update()
@@ -106,5 +109,8 @@ public class PlayerController : MonoBehaviour
         OnChangeHp?.Invoke(value);
     }
 
-    
+    public void Dance()
+    {
+        animator.SetTrigger("Dance");
+    }
 }

@@ -52,7 +52,7 @@ public class SoundManager : Singleton<SoundManager>
     {
         if (!BGMAudioObject)
         {
-            BGMAudioObject = PlaySound(audioClip, true);
+            BGMAudioObject = PlaySound(audioClip, 0.7f, true);
             BGMAudioObject.AudioSource.loop = true;
             BGMAudioObject.name = "BGM Object";
         }
@@ -68,7 +68,7 @@ public class SoundManager : Singleton<SoundManager>
             playObject.Stop();
     }
 
-    public SoundObject PlaySound(AudioClip audioClip, bool imortal = false)
+    public SoundObject PlaySound(AudioClip audioClip, float volume = 0.7f, bool imortal = false)
     {
         if (soundPool.GetPoolObject().TryGetComponent<SoundObject>(out SoundObject soundObject))
         {
@@ -76,7 +76,7 @@ public class SoundManager : Singleton<SoundManager>
                 playObject = soundObject;
             soundObject.Init(audioClip, imortal);
             if (soundOnOFF)
-                soundObject.SetVolume(1f);
+                soundObject.SetVolume(volume);
             else
                 soundObject.SetVolume(0f);
             return soundObject;

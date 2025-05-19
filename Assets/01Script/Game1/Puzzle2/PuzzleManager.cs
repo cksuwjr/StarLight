@@ -222,7 +222,7 @@ public class PuzzleManager : MonoBehaviour
 
 
         GameManager.Instance.SetTimer(61f,
-                () => UIManager.Instance.OpenClearPopup(false)
+                () => UIManager.Instance.OpenClearPopup(false, () => GameManager.Instance.LoadScene("1-2Stage"))
             );
     }
 
@@ -252,6 +252,7 @@ public class PuzzleManager : MonoBehaviour
             { 
                 StartCoroutine("PuzzleFaze2");
                 PlayerPrefs.SetInt("Puzzle", 1);
+                PlayerPrefs.SetInt("1-2", 1);
             };
             OnFaze1End?.Invoke();
         }
@@ -272,6 +273,7 @@ public class PuzzleManager : MonoBehaviour
     private void Puzzle1()
     {
         OnFaze1End?.Invoke();
+        PlayerPrefs.Save();
     }
 
     private void Puzzle2()

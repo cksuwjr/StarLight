@@ -4449,7 +4449,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactable: 0
   oneOff: 1
-  destroy: 0
+  nonSave: 0
   OnClickUnityEvent:
     m_PersistentCalls:
       m_Calls:
@@ -4473,6 +4473,21 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 21
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnClickUnityEventOnce:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 779847631}
+        m_TargetAssemblyTypeName: ScenarioManager, Assembly-CSharp
+        m_MethodName: AddStarFunc
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -6705,6 +6720,161 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!1001 &1228174328
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5919899265077025084, guid: c9c5a1897a959884092915cd7367e65d,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5919899265077025084, guid: c9c5a1897a959884092915cd7367e65d,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5919899265077025084, guid: c9c5a1897a959884092915cd7367e65d,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5919899265077025084, guid: c9c5a1897a959884092915cd7367e65d,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5919899265077025084, guid: c9c5a1897a959884092915cd7367e65d,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5919899265077025084, guid: c9c5a1897a959884092915cd7367e65d,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5919899265077025084, guid: c9c5a1897a959884092915cd7367e65d,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5919899265077025084, guid: c9c5a1897a959884092915cd7367e65d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5919899265077025084, guid: c9c5a1897a959884092915cd7367e65d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5919899265077025084, guid: c9c5a1897a959884092915cd7367e65d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6484541846069513112, guid: c9c5a1897a959884092915cd7367e65d,
+        type: 3}
+      propertyPath: m_Name
+      value: CheckClearMinigame
+      objectReference: {fileID: 0}
+    - target: {fileID: 8433288612152260541, guid: c9c5a1897a959884092915cd7367e65d,
+        type: 3}
+      propertyPath: minigameName
+      value: 1-3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8433288612152260541, guid: c9c5a1897a959884092915cd7367e65d,
+        type: 3}
+      propertyPath: OnClear.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8433288612152260541, guid: c9c5a1897a959884092915cd7367e65d,
+        type: 3}
+      propertyPath: OnClear.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8433288612152260541, guid: c9c5a1897a959884092915cd7367e65d,
+        type: 3}
+      propertyPath: OnClear.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8433288612152260541, guid: c9c5a1897a959884092915cd7367e65d,
+        type: 3}
+      propertyPath: OnClear.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 779847631}
+    - target: {fileID: 8433288612152260541, guid: c9c5a1897a959884092915cd7367e65d,
+        type: 3}
+      propertyPath: OnClear.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1228174329}
+    - target: {fileID: 8433288612152260541, guid: c9c5a1897a959884092915cd7367e65d,
+        type: 3}
+      propertyPath: OnClear.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8433288612152260541, guid: c9c5a1897a959884092915cd7367e65d,
+        type: 3}
+      propertyPath: OnClear.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8433288612152260541, guid: c9c5a1897a959884092915cd7367e65d,
+        type: 3}
+      propertyPath: OnClear.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: AddStarFunc
+      objectReference: {fileID: 0}
+    - target: {fileID: 8433288612152260541, guid: c9c5a1897a959884092915cd7367e65d,
+        type: 3}
+      propertyPath: OnClear.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: DestroySomeThing
+      objectReference: {fileID: 0}
+    - target: {fileID: 8433288612152260541, guid: c9c5a1897a959884092915cd7367e65d,
+        type: 3}
+      propertyPath: OnClear.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: ScenarioManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8433288612152260541, guid: c9c5a1897a959884092915cd7367e65d,
+        type: 3}
+      propertyPath: OnClear.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: CheckClearMinigame, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8433288612152260541, guid: c9c5a1897a959884092915cd7367e65d,
+        type: 3}
+      propertyPath: OnClear.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 1450273312}
+    - target: {fileID: 8433288612152260541, guid: c9c5a1897a959884092915cd7367e65d,
+        type: 3}
+      propertyPath: OnClear.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 8433288612152260541, guid: c9c5a1897a959884092915cd7367e65d,
+        type: 3}
+      propertyPath: OnClear.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c9c5a1897a959884092915cd7367e65d, type: 3}
+--- !u!114 &1228174329 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8433288612152260541, guid: c9c5a1897a959884092915cd7367e65d,
+    type: 3}
+  m_PrefabInstance: {fileID: 1228174328}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32d6ea9717ccdd84098403692bddbe6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1240583617
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7432,7 +7602,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactable: 0
   oneOff: 1
-  destroy: 0
+  nonSave: 0
   OnClickUnityEvent:
     m_PersistentCalls:
       m_Calls:
@@ -7456,6 +7626,21 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 29
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnClickUnityEventOnce:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 779847631}
+        m_TargetAssemblyTypeName: ScenarioManager, Assembly-CSharp
+        m_MethodName: AddStarFunc
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -11705,7 +11890,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactable: 0
   oneOff: 1
-  destroy: 1
+  nonSave: 1
   OnClickUnityEvent:
     m_PersistentCalls:
       m_Calls:
@@ -11733,6 +11918,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  OnClickUnityEventOnce:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &2059860040
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12540,6 +12728,7 @@ SceneRoots:
   - {fileID: 861572298}
   - {fileID: 1386563187}
   - {fileID: 70184444}
+  - {fileID: 1228174328}
   - {fileID: 1906324938}
   - {fileID: 60266372}
   - {fileID: 1082425953}

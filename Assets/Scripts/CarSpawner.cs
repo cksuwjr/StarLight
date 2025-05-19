@@ -105,7 +105,8 @@ public class CarSpawner : MonoBehaviour
                 {
                     UIManager.Instance.OpenClearPuzzlePopup(true, () => { GameManager.Instance.LoadScene("2-1Stage"); });
                 };
-
+                PlayerPrefs.SetInt("2-1", 1);
+                PlayerPrefs.Save();
                 StopSpawn();
             };
         }
@@ -113,7 +114,19 @@ public class CarSpawner : MonoBehaviour
         while (true)
         {
             int carNum;
-            for (int i = 0; i < 4; i++)
+            for (int i = 0; i < 3; i++)
+            {
+
+                spawnPosition = transform.position + new Vector3(Random.Range(-xRange, xRange), 0, 0);
+                car = PoolManager.Instance.enemyPool6.GetPoolObject();
+                cars.Add(car);
+                car.transform.rotation = Quaternion.Euler(Random.Range(0f, 360f), Random.Range(0f, 360f), Random.Range(0f, 360f));
+                car.transform.position = spawnPosition;
+
+            }
+            yield return YieldInstructionCache.WaitForSeconds(spawnInterval);
+
+            for (int i = 0; i < 2; i++)
             {
 
                 spawnPosition = transform.position + new Vector3(Random.Range(-xRange, xRange), 0, 0);
@@ -139,6 +152,19 @@ public class CarSpawner : MonoBehaviour
 
             }
             yield return YieldInstructionCache.WaitForSeconds(spawnInterval);
+            
+            for (int i = 0; i < 8; i++)
+            {
+
+                spawnPosition = transform.position + new Vector3(Random.Range(-xRange, xRange), 0, 0);
+                car = PoolManager.Instance.enemyPool6.GetPoolObject();
+                cars.Add(car);
+                car.transform.rotation = Quaternion.Euler(Random.Range(0f, 360f), Random.Range(0f, 360f), Random.Range(0f, 360f));
+                car.transform.position = spawnPosition;
+
+            }
+            yield return YieldInstructionCache.WaitForSeconds(spawnInterval);
+
         }
     }
 }

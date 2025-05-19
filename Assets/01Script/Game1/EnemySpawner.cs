@@ -79,6 +79,8 @@ public class EnemySpawner : MonoBehaviour
                 ScenarioManager.Instance.OnStoryEnd += () => { StartCoroutine("SpawnFaze2"); };
                 GameManager.Instance.Player.GetComponent<PlayerController>().SetHp(3);
                 StopSpawn();
+                PlayerPrefs.SetInt("1-1", 1);
+                PlayerPrefs.Save();
             }
         );
 

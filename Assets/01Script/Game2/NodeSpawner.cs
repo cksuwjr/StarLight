@@ -151,6 +151,9 @@ public class NodeSpawner : MonoBehaviour
         OnFaze1End?.Invoke();
         ScenarioManager.Instance.OnStoryEnd += () => { StartCoroutine("SpawnFaze2"); };
         GameManager.Instance.Player.GetComponent<PlayerController>().SetHp(3);
+
+        PlayerPrefs.SetInt("2-2", 1);
+        PlayerPrefs.Save();
     }
 
     private IEnumerator SpawnFaze2()

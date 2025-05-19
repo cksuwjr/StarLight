@@ -33,8 +33,13 @@ public class Movement : MonoBehaviour, IMove
     private bool isGrounded;
     private bool jumpCheck = true;
 
+    private bool isMoving = false;
+    private float walkSoundTimer;
+
     private Vector3 camAngle;
 
+    [SerializeField] private AudioClip walkSound;
+    [SerializeField] private AudioClip jumpSound;
 
     private void Awake()
     {
@@ -59,6 +64,7 @@ public class Movement : MonoBehaviour, IMove
 
     public void Move(Vector3 direction)
     {
+        isMoving = false;
         anim.SetBool("Move", false);
         if (!movable) return;
         if (!notBinded) return;
@@ -69,6 +75,9 @@ public class Movement : MonoBehaviour, IMove
         if (direction == Vector3.zero) return;
         anim.SetBool("Move", true);
         Vector3 dir = direction;
+        isMoving = true;
+
+
         if (cam.rotateCam)
         {
             camAngle = Camera.main.transform.eulerAngles;
@@ -76,6 +85,7 @@ public class Movement : MonoBehaviour, IMove
             dir = Quaternion.Euler(camAngle) * direction;
         }
         //dir.y = 0;
+        
 
         dir.Normalize();
         dir.y = 0;
@@ -96,6 +106,9 @@ public class Movement : MonoBehaviour, IMove
             isGrounded = false;
             jumpCheck = false;
 
+            if (jumpSound)
+                SoundManager.Instance.PlaySound(jumpSound, 0.2f);
+
             anim.SetBool("Jump", true);
             rb.velocity = Vector3.zero;
             rb.AddForce(jump * Vector3.up, ForceMode.Impulse);
@@ -110,6 +123,20 @@ public class Movement : MonoBehaviour, IMove
 
     private void Update()
     {
+        if (isMoving)
+        {
+
+            if (walkSound)
+                if (walkSoundTimer > walkSound.length)
+                {
+                    SoundManager.Instance.PlaySound(walkSound, 0.4f);
+                    walkSoundTimer = 0;
+                }
+                else
+                    walkSoundTimer += Time.deltaTime;
+
+        }
+
         if (!jumpCheck) return;
 
         if (Physics.OverlapSphere(groundCheck.position, 0.08f, checkLayer).Length > 0)
