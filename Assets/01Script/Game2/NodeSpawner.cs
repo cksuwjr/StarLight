@@ -291,25 +291,25 @@ public class NodeSpawner : MonoBehaviour
             {
                 pianoNode = PoolManager.Instance.enemyPool.GetPoolObject();
                 pianoNode.transform.position = new Vector3(-22.05f, 77f, 20.9f);
-                pianoNode.GetComponent<PianoNode>().Init(1, 1);
+                pianoNode.GetComponent<PianoNode>().Init(1, 45);
             }
             if (nodesFaze2[count, 1] == 5)
             {
                 pianoNode = PoolManager.Instance.enemyPool2.GetPoolObject();
                 pianoNode.transform.position = new Vector3(-7.35f, 77f, 20.9f);
-                pianoNode.GetComponent<PianoNode>().Init(2, 1);
+                pianoNode.GetComponent<PianoNode>().Init(2, 45);
             }
             if (nodesFaze2[count, 2] == 5)
             {
                 pianoNode = PoolManager.Instance.enemyPool3.GetPoolObject();
                 pianoNode.transform.position = new Vector3(7.35f, 77f, 20.9f);
-                pianoNode.GetComponent<PianoNode>().Init(3, 1);
+                pianoNode.GetComponent<PianoNode>().Init(3, 45);
             }
             if (nodesFaze2[count, 3] == 5)
             {
                 pianoNode = PoolManager.Instance.enemyPool4.GetPoolObject();
                 pianoNode.transform.position = new Vector3(22.05f, 77f, 20.9f);
-                pianoNode.GetComponent<PianoNode>().Init(4, 1);
+                pianoNode.GetComponent<PianoNode>().Init(4, 45);
             }
             Debug.Log("º“»Ø");
             yield return YieldInstructionCache.WaitForSeconds(speed);
