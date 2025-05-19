@@ -2,13 +2,46 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.Rendering.Universal;
 
 public class NodeSpawner : MonoBehaviour
 {
     [SerializeField] private float speed = 0.5f;
 
+    public UnityEvent OnFaze1End;
+    public UnityEvent OnFaze2End;
+
     private int[,] nodes = new int[,]
+    {
+        { 5,0,0,0},
+        { 0,5,0,0},
+        { 0,0,0,5},
+        { 5,0,0,0},
+        { 0,5,0,0},
+        { 0,0,5,0},
+        { 0,0,0,5},
+        { 0,5,0,0},
+        { 0,0,0,0},
+        { 0,5,0,0},
+        { 0,0,0,5},
+        { 0,0,5,0},
+        { 0,0,5,0},
+        { 0,0,0,0},
+        { 0,0,5,0},
+        { 0,0,0,5},
+        { 0,0,0,0},
+        { 0,5,0,0},
+        { 0,0,0,0},
+        { 0,5,0,0},
+        { 0,0,0,5},
+        { 0,0,0,0},
+        { 0,0,5,0},
+        { 0,5,0,0},
+
+    };
+
+    private int[,] nodesFaze2 = new int[,]
     {
         { 5,0,0,0},
         { 0,5,0,0},
@@ -63,26 +96,26 @@ public class NodeSpawner : MonoBehaviour
             if (nodes[count, 0] == 5)
             {
                 pianoNode = PoolManager.Instance.enemyPool.GetPoolObject();
-                pianoNode.transform.position = new Vector3(-17.9f, 77f, 16.8f);
-                pianoNode.GetComponent<PianoNode>().Init(1);
+                pianoNode.transform.position = new Vector3(-22.05f, 77f, 20.9f);
+                pianoNode.GetComponent<PianoNode>().Init(1, 1);
             }
             if (nodes[count, 1] == 5)
             {
                 pianoNode = PoolManager.Instance.enemyPool2.GetPoolObject();
-                pianoNode.transform.position = new Vector3(-5.7f, 77f, 16.8f);
-                pianoNode.GetComponent<PianoNode>().Init(1);
+                pianoNode.transform.position = new Vector3(-7.35f, 77f, 20.9f);
+                pianoNode.GetComponent<PianoNode>().Init(2, 1);
             }
             if (nodes[count, 2] == 5)
             {
                 pianoNode = PoolManager.Instance.enemyPool3.GetPoolObject();
-                pianoNode.transform.position = new Vector3(5.9f, 77f, 16.8f);
-                pianoNode.GetComponent<PianoNode>().Init(1);
+                pianoNode.transform.position = new Vector3(7.35f, 77f, 20.9f);
+                pianoNode.GetComponent<PianoNode>().Init(3, 1);
             }
             if (nodes[count, 3] == 5)
             {
                 pianoNode = PoolManager.Instance.enemyPool4.GetPoolObject();
-                pianoNode.transform.position = new Vector3(17.7f, 77f, 16.8f);
-                pianoNode.GetComponent<PianoNode>().Init(1);
+                pianoNode.transform.position = new Vector3(22.05f, 77f, 20.9f);
+                pianoNode.GetComponent<PianoNode>().Init(4, 1);
             }
             Debug.Log("家券");
             yield return YieldInstructionCache.WaitForSeconds(speed);
@@ -112,63 +145,58 @@ public class NodeSpawner : MonoBehaviour
         //    //Debug.Log(after + "檬 第");
         //    yield return YieldInstructionCache.WaitForSeconds(Random.Range(0.5f, 1.5f));
         //}
-        yield return null;
+        yield return YieldInstructionCache.WaitForSeconds(3f);
         //Debug.Log("家券 场");
+
+        OnFaze1End?.Invoke();
+        ScenarioManager.Instance.OnStoryEnd += () => { StartCoroutine("SpawnFaze2"); };
+        GameManager.Instance.Player.GetComponent<PlayerController>().SetHp(3);
     }
 
-    //private IEnumerator SpawnFaze2()
-    //{
-    //    endTime = Time.time + 60;
-    //    GameManager.Instance.SetTimer(60,
-    //        () =>
-    //        {
-    //            OnFaze2End?.Invoke();
-    //            ScenarioManager.Instance.OnStoryEnd += () =>
-    //            {
-    //                UIManager.Instance.OpenClearPuzzlePopup(true, () => { GameManager.Instance.LoadScene("1-3Stage"); });
-    //            };
+    private IEnumerator SpawnFaze2()
+    {
+        int count = 0;
+        GameObject pianoNode;
 
-    //            StopSpawn();
-    //        }
-    //    );
-    //    //var player = GameManager.Instance.Player;
-    //    while (Time.time < endTime - 3)
-    //    {
-    //        log = PoolManager.Instance.enemyPool.GetPoolObject();
-    //        logs.Add(log);
-    //        log.transform.rotation = Quaternion.Euler(0, 0, -90);
-    //        log.transform.position = spawnPosition;
-    //        if (log.TryGetComponent<LogMove>(out var logComponent))
-    //            logComponent.Init(logSpeed);
+        while (count < nodesFaze2.Length / 4)
+        {
 
-    //        logSpeed += Random.Range(1, 4f);
+            if (nodesFaze2[count, 0] == 5)
+            {
+                pianoNode = PoolManager.Instance.enemyPool.GetPoolObject();
+                pianoNode.transform.position = new Vector3(-22.05f, 77f, 20.9f);
+                pianoNode.GetComponent<PianoNode>().Init(1, 1);
+            }
+            if (nodesFaze2[count, 1] == 5)
+            {
+                pianoNode = PoolManager.Instance.enemyPool2.GetPoolObject();
+                pianoNode.transform.position = new Vector3(-7.35f, 77f, 20.9f);
+                pianoNode.GetComponent<PianoNode>().Init(2, 1);
+            }
+            if (nodesFaze2[count, 2] == 5)
+            {
+                pianoNode = PoolManager.Instance.enemyPool3.GetPoolObject();
+                pianoNode.transform.position = new Vector3(7.35f, 77f, 20.9f);
+                pianoNode.GetComponent<PianoNode>().Init(3, 1);
+            }
+            if (nodesFaze2[count, 3] == 5)
+            {
+                pianoNode = PoolManager.Instance.enemyPool4.GetPoolObject();
+                pianoNode.transform.position = new Vector3(22.05f, 77f, 20.9f);
+                pianoNode.GetComponent<PianoNode>().Init(4, 1);
+            }
+            Debug.Log("家券");
+            yield return YieldInstructionCache.WaitForSeconds(speed);
+            count++;
+        }
+        yield return YieldInstructionCache.WaitForSeconds(3f);
 
-    //        var after = 3.5f - logSpeed * 0.05f;
+        OnFaze2End?.Invoke();
+        ScenarioManager.Instance.OnStoryEnd += () =>
+        {
+            UIManager.Instance.OpenClearPuzzlePopup(true, () => { GameManager.Instance.LoadScene("2-2Stage"); });
+        };
 
-    //        after = after < 1f ? 1f : after;
-    //        //if (endTime - Time.time > 30f)
-
-    //        logSpeed = logSpeed < 50f ? logSpeed : 50f;
-    //        if (logSpeed > 25f)
-    //            after *= Random.Range(0.5f, 0.7f);
-    //        else
-    //            after *= Random.Range(0.7f, 0.9f);
-
-
-    //        //Debug.Log(logSpeed);
-    //        //Debug.Log(after + "檬 第");
-    //        yield return YieldInstructionCache.WaitForSeconds(after);
-    //    }
-
-    //    for (int i = 0; i < 100; i++)
-    //    {
-    //        log = PoolManager.Instance.enemyPool.GetPoolObject();
-    //        logs.Add(log);
-    //        log.transform.rotation = Quaternion.Euler(0, 0, -90);
-    //        log.transform.position = spawnPosition;
-    //        if (log.TryGetComponent<LogMove>(out var logComponent))
-    //            logComponent.Init(logSpeed);
-    //    }
-    //    //Debug.Log("家券 场");
-    //}
+        StopSpawn();
+    }
 }

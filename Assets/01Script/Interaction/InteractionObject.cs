@@ -31,6 +31,7 @@ public class InteractionObject : MonoBehaviour, IInteract
     public void Interaction()
     {
         if (!interactable) return;
+        Debug.Log("인터랙션");
         interactable = false;
         OnInteractable?.Invoke(false);
         OnClickUnityEvent?.Invoke();
@@ -40,6 +41,18 @@ public class InteractionObject : MonoBehaviour, IInteract
         {
             PlayerPrefs.SetInt(gameObject.name, 1);
             PlayerPrefs.Save();
+        }
+        else
+        {
+            //if (ScenarioManager.Instance)
+            //{
+            //    ScenarioManager.Instance.OnStoryEnd += () => { interactable = true; OnInteractable?.Invoke(true); };
+            //}
+            //else
+            {
+                interactable = true;
+                OnInteractable?.Invoke(true);
+            }
         }
     }
 

@@ -5,8 +5,10 @@ using UnityEngine;
 public class PianoNode : PoolObject
 {
     private float speed = 0;
-    public void Init(float speed)
+    public int id = -1;
+    public void Init(int id, float speed)
     {
+        this.id = id;
         this.speed = speed;
     }
 
