@@ -395,7 +395,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactable: 1
   oneOff: 0
-  destroy: 0
+  nonSave: 0
   OnClickUnityEvent:
     m_PersistentCalls:
       m_Calls:
@@ -411,6 +411,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  OnClickUnityEventOnce:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &121983775
 GameObject:
   m_ObjectHideFlags: 0
@@ -678,7 +681,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce21d09e2d104a941a85ab7c0ccc90ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.5
+  speed: 0.375
   OnFaze1End:
     m_PersistentCalls:
       m_Calls:
@@ -2103,7 +2106,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactable: 1
   oneOff: 0
-  destroy: 0
+  nonSave: 0
   OnClickUnityEvent:
     m_PersistentCalls:
       m_Calls:
@@ -2119,6 +2122,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  OnClickUnityEventOnce:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &506795320
 GameObject:
   m_ObjectHideFlags: 0
@@ -2592,7 +2598,12 @@ PrefabInstance:
         type: 3}
       propertyPath: BGM
       value: 
-      objectReference: {fileID: 8300000, guid: 28560bbc82a318c478a6fc012b591a0d, type: 3}
+      objectReference: {fileID: 8300000, guid: a7269ade1326e124bad798d73ff824ed, type: 3}
+    - target: {fileID: 4834824456348159279, guid: 3da7872bf8372e44980fcba3c2d852f0,
+        type: 3}
+      propertyPath: time
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7038478776713283280, guid: 3da7872bf8372e44980fcba3c2d852f0,
         type: 3}
       propertyPath: m_Name
@@ -3670,7 +3681,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactable: 1
   oneOff: 0
-  destroy: 0
+  nonSave: 0
   OnClickUnityEvent:
     m_PersistentCalls:
       m_Calls:
@@ -3686,6 +3697,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  OnClickUnityEventOnce:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1668372215
 GameObject:
   m_ObjectHideFlags: 0
@@ -4099,7 +4113,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactable: 1
   oneOff: 0
-  destroy: 0
+  nonSave: 0
   OnClickUnityEvent:
     m_PersistentCalls:
       m_Calls:
@@ -4115,6 +4129,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  OnClickUnityEventOnce:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1908353160
 GameObject:
   m_ObjectHideFlags: 0
