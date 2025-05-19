@@ -14,7 +14,7 @@ public class PianoNode : PoolObject
 
     private void Update()
     {
-        transform.position += Vector3.down * speed;
+        transform.position += Vector3.down * speed * Time.deltaTime;
     }
 
     private void OnTriggerEnter(Collider other)
