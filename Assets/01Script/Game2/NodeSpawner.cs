@@ -38,6 +38,74 @@ public class NodeSpawner : MonoBehaviour
         { 0,0,0,0},
         { 0,0,5,0},
         { 0,5,0,0},
+        { 0,5,0,0},
+        { 0,0,0,5},
+        { 0,0,0,0},
+        { 0,0,5,0},
+        { 0,5,0,0},
+        { 0,5,0,0},
+        { 0,0,0,0},
+        { 0,0,5,0},
+        { 0,0,0,5},
+        { 0,0,0,0},
+        { 0,5,0,0},
+        { 0,0,0,0},
+        { 0,5,0,0},
+        { 0,0,0,5},
+        { 0,0,0,0},
+        { 0,0,5,0},
+        { 0,5,0,0},
+        { 0,0,0,0},
+        { 0,0,5,0},
+        { 0,0,0,5},
+        { 0,0,0,0},
+        { 0,0,0,5},
+        { 0,0,0,0},
+        { 0,5,0,0},
+        { 0,0,0,0},
+        { 0,5,0,0},
+        { 0,0,0,5},
+        { 0,0,0,0},
+        { 0,0,5,0},
+        { 0,5,0,0},
+        { 0,5,0,0},
+        { 0,0,0,0},
+        { 0,0,5,0},
+        { 0,0,0,5},
+        { 0,5,0,0},
+        { 0,0,0,5},
+        { 0,0,0,0},
+        { 0,0,5,0},
+        { 0,5,0,0},
+        { 0,5,0,0},
+        { 0,0,0,0},
+        { 0,0,5,0},
+        { 0,0,0,5},
+        { 0,0,0,0},
+        { 0,5,0,0},
+        { 0,0,0,0},
+        { 0,5,0,0},
+        { 0,0,0,5},
+        { 0,0,0,0},
+        { 0,0,5,0},
+        { 0,5,0,0},
+        { 0,0,0,0},
+        { 0,0,5,0},
+        { 0,0,0,5},
+        { 0,0,0,0},
+        { 0,0,0,5},
+        { 0,0,0,0},
+        { 0,5,0,0},
+        { 0,0,0,0},
+        { 0,5,0,0},
+        { 0,0,0,5},
+        { 0,0,0,0},
+        { 0,0,5,0},
+        { 0,5,0,0},
+        { 0,5,0,0},
+        { 0,0,0,0},
+        { 0,0,5,0},
+        { 0,0,0,5},
 
     };
 
@@ -67,7 +135,62 @@ public class NodeSpawner : MonoBehaviour
         { 0,0,0,0},
         { 0,0,5,0},
         { 0,5,0,0},
-
+        { 0,0,0,0},
+        { 0,0,5,0},
+        { 0,0,0,5},
+        { 0,0,0,0},
+        { 0,5,0,0},
+        { 0,0,0,0},
+        { 0,5,0,0},
+        { 0,0,0,5},
+        { 0,0,0,0},
+        { 0,0,5,0},
+        { 0,5,0,0},
+        { 0,0,0,0},
+        { 0,0,5,0},
+        { 0,0,0,5},
+        { 0,0,0,0},
+        { 0,5,0,0},
+        { 0,0,0,0},
+        { 0,5,0,0},
+        { 0,0,0,5},
+        { 0,0,0,0},
+        { 0,0,5,0},
+        { 0,5,0,0},
+        { 0,5,0,0},
+        { 0,0,0,0},
+        { 0,0,5,0},
+        { 0,0,0,5},
+        { 0,0,0,0},
+        { 0,5,0,0},
+        { 0,0,0,0},
+        { 0,5,0,0},
+        { 0,0,0,5},
+        { 0,0,0,0},
+        { 0,0,5,0},
+        { 0,5,0,0},
+        { 0,0,0,0},
+        { 0,0,5,0},
+        { 0,0,0,5},
+        { 0,0,0,0},
+        { 0,0,0,5},
+        { 0,0,0,0},
+        { 0,5,0,0},
+        { 0,0,0,0},
+        { 0,5,0,0},
+        { 0,0,0,5},
+        { 0,0,0,0},
+        { 0,0,5,0},
+        { 0,5,0,0},
+        { 0,5,0,0},
+        { 0,0,0,0},
+        { 0,0,5,0},
+        { 0,0,0,5},
+        { 0,0,0,0},
+        { 0,5,0,0},
+        { 0,0,0,0},
+        { 0,5,0,0},
+        { 0,0,0,5},
     };
     private void Start()
     {
@@ -97,25 +220,25 @@ public class NodeSpawner : MonoBehaviour
             {
                 pianoNode = PoolManager.Instance.enemyPool.GetPoolObject();
                 pianoNode.transform.position = new Vector3(-22.05f, 77f, 20.9f);
-                pianoNode.GetComponent<PianoNode>().Init(1, 1);
+                pianoNode.GetComponent<PianoNode>().Init(1, 20);
             }
             if (nodes[count, 1] == 5)
             {
                 pianoNode = PoolManager.Instance.enemyPool2.GetPoolObject();
                 pianoNode.transform.position = new Vector3(-7.35f, 77f, 20.9f);
-                pianoNode.GetComponent<PianoNode>().Init(2, 1);
+                pianoNode.GetComponent<PianoNode>().Init(2, 20);
             }
             if (nodes[count, 2] == 5)
             {
                 pianoNode = PoolManager.Instance.enemyPool3.GetPoolObject();
                 pianoNode.transform.position = new Vector3(7.35f, 77f, 20.9f);
-                pianoNode.GetComponent<PianoNode>().Init(3, 1);
+                pianoNode.GetComponent<PianoNode>().Init(3, 20);
             }
             if (nodes[count, 3] == 5)
             {
                 pianoNode = PoolManager.Instance.enemyPool4.GetPoolObject();
                 pianoNode.transform.position = new Vector3(22.05f, 77f, 20.9f);
-                pianoNode.GetComponent<PianoNode>().Init(4, 1);
+                pianoNode.GetComponent<PianoNode>().Init(4, 20);
             }
             Debug.Log("º“»Ø");
             yield return YieldInstructionCache.WaitForSeconds(speed);
