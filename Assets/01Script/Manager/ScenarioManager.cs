@@ -16,10 +16,13 @@ public class ScenarioManager : SingletonDestroy<ScenarioManager>
 
 
     private bool texting = false;
+    private string chapter;
+
 
     public void SetChapter(string name)
     {
         var type = StoryType.Lobby;
+        chapter = name;
         switch (name)
         {
             case "Lobby": type = StoryType.Lobby; break;
@@ -46,23 +49,46 @@ public class ScenarioManager : SingletonDestroy<ScenarioManager>
 
         LoadPage();
         UIManager.Instance.OpenScenarioPannel();
-
-        switch (num)
+        if (chapter == "Ch_1")
         {
-           case 3                : OnStoryEnd += ()=> { GameManager.Instance.SavePosition(); GameManager.Instance.LoadScene("1-1Puzzle"); };break;
-           case 13           : OnStoryEnd += () => { GameManager.Instance.SavePosition(); GameManager.Instance.LoadScene("1-2Puzzle"); }; break;
-           case 23                  : OnStoryEnd += () => { GameManager.Instance.SavePosition(); GameManager.Instance.LoadScene("1-3Puzzle"); }; break;
-           case 30:
-                OnStoryEnd += () =>
-                {
-                    var videoPlay = GameObject.Find("Video Player").GetComponent<VideoPlay>();
-                    videoPlay.Play();
-                    videoPlay.OnVideoEnd += () => { UIManager.Instance.OpenClearPopup(true); };
-                };
-                break;
-            default:
-                break;
+            switch (num)
+            {
+                case 3: OnStoryEnd += () => { GameManager.Instance.SavePosition(); GameManager.Instance.LoadScene("1-1Puzzle"); }; break;
+                case 13: OnStoryEnd += () => { GameManager.Instance.SavePosition(); GameManager.Instance.LoadScene("1-2Puzzle"); }; break;
+                case 23: OnStoryEnd += () => { GameManager.Instance.SavePosition(); GameManager.Instance.LoadScene("1-3Puzzle"); }; break;
+                case 30:
+                    OnStoryEnd += () =>
+                    {
+                        var videoPlay = GameObject.Find("Video Player").GetComponent<VideoPlay>();
+                        videoPlay.Play();
+                        videoPlay.OnVideoEnd += () => { UIManager.Instance.OpenClearPopup(true); };
+                    };
+                    break;
+                default:
+                    break;
+            }
         }
+
+        if (chapter == "Ch_2")
+        {
+            switch (num)
+            {
+                case 3: OnStoryEnd += () => { GameManager.Instance.SavePosition(); GameManager.Instance.LoadScene("2-1Puzzle"); }; break;
+                case 13: OnStoryEnd += () => { GameManager.Instance.SavePosition(); GameManager.Instance.LoadScene("2-2Puzzle"); }; break;
+                case 23: OnStoryEnd += () => { GameManager.Instance.SavePosition(); GameManager.Instance.LoadScene("2-3Puzzle"); }; break;
+                case 30:
+                    OnStoryEnd += () =>
+                    {
+                        var videoPlay = GameObject.Find("Video Player").GetComponent<VideoPlay>();
+                        videoPlay.Play();
+                        videoPlay.OnVideoEnd += () => { UIManager.Instance.OpenClearPopup(true); };
+                    };
+                    break;
+                default:
+                    break;
+            }
+        }
+
     }
 
     public void StopStory()

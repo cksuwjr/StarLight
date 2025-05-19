@@ -38,4 +38,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/2-1Stage.unity
     guid: 53090f4c1118f114dba42dc052a1a80b
+  - enabled: 1
+    path: Assets/Scenes/2-1Puzzle.unity
+    guid: e041c9ae7d477a644acd0cdeefad2f39
+  - enabled: 1
+    path: Assets/Scenes/2-2stage.unity
+    guid: 27d8c75db8c10f646a4de7c7e939add4
+  - enabled: 1
+    path: Assets/Scenes/2-2Puzzle.unity
+    guid: e06992355e06f9145a749c591daabe00
   m_configObjects: {}
