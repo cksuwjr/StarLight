@@ -49,8 +49,9 @@ public class TouchHandler : MonoBehaviour
         }
         if (onDrag)
         {
-            if (cam.cameraMoving)
-                cam.cameraMoving.Moving();
+            if(cam)
+                if (cam.cameraMoving)
+                    cam.cameraMoving.Moving();
             //if (onDrag)
             //    cam.ChangeCameraRotation(new Vector3(Input.GetAxis("Mouse X"), Input.GetAxis("Mouse Y"), 0));
         }

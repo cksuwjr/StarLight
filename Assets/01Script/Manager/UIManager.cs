@@ -69,11 +69,25 @@ public class UIManager : SingletonDestroy<UIManager>
 
     public bool useTouchPad = false;
 
+
+
+
+    private GameObject pianoPanel;
+    private TextMeshProUGUI pianoText;
+
+
     public void Init()
     {
         var ui = GameObject.Find("UI");
         var uiCam = GameObject.Find("UI Camera");
 
+        var pianoCanvas = GameObject.Find("PianoCanvas");
+        
+        if (pianoCanvas)
+        {
+            pianoPanel = pianoCanvas.transform.GetChild(0).gameObject;
+            pianoText = pianoPanel.GetComponentInChildren<TextMeshProUGUI>();
+        }
 
         if (!ui) return;
 
@@ -533,5 +547,24 @@ public class UIManager : SingletonDestroy<UIManager>
         var color = bloodScreen.color;
         color.a = value;
         bloodScreen.color = color;
+    }
+
+
+    ///////
+    ///
+
+    public void OpenPianoScorePanel(string text)
+    {
+        pianoText.text = text;
+        if(pianoPanel.transform.localScale.x <= 0)
+            LeanTween.scale(pianoPanel, Vector3.one, 0.1f);
+
+        pianoText.transform.localScale = Vector3.one * 1.3f;
+        LeanTween.scale(pianoText.gameObject, Vector3.one, 0.3f); 
+    }
+
+    public void ClosePianoScorePanel()
+    {
+        LeanTween.scale(pianoPanel, Vector3.zero, 0.3f);
     }
 }
