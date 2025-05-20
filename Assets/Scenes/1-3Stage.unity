@@ -4201,6 +4201,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 773713f05126ac8489aad71c81635ecf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnStarAllCollected:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!4 &779847632
 Transform:
   m_ObjectHideFlags: 0
@@ -4594,7 +4597,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 20.76, y: 2.18, z: 8.68}
-  m_LocalScale: {x: 0.6, y: 0.6, z: 1}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -7664,7 +7667,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 8
+  m_Radius: 5
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!65 &1386563184
 BoxCollider:
@@ -7746,8 +7749,8 @@ Transform:
   m_GameObject: {fileID: 1386563180}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 20.76, y: 12.5, z: 45.1}
-  m_LocalScale: {x: 0.6, y: 0.6, z: 1}
+  m_LocalPosition: {x: 19.47, y: 11.44, z: 43.89}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -9289,6 +9292,36 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 1553765099365122252, guid: 79a877111fe9c124781bb7ebdaa18dfe,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1553765099365122252, guid: 79a877111fe9c124781bb7ebdaa18dfe,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1553765099365122252, guid: 79a877111fe9c124781bb7ebdaa18dfe,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1553765099365122252, guid: 79a877111fe9c124781bb7ebdaa18dfe,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.481
+      objectReference: {fileID: 0}
+    - target: {fileID: 1553765099365122252, guid: 79a877111fe9c124781bb7ebdaa18dfe,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.833
+      objectReference: {fileID: 0}
+    - target: {fileID: 1553765099365122252, guid: 79a877111fe9c124781bb7ebdaa18dfe,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.53
       objectReference: {fileID: 0}
     - target: {fileID: 1937666938821894636, guid: 79a877111fe9c124781bb7ebdaa18dfe,
         type: 3}

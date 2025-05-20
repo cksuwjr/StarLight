@@ -33,11 +33,20 @@ public class LogMove : PoolObject, IMove
     {
         this.speed = speed;
         rigid.velocity = Vector3.zero;
-        Invoke("DestorySelf", 15f);
     }
 
     public void DestorySelf()
     {
         ReturnToPool();
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Destroyer"))
+        {
+            ReturnToPool();
+            rigid.velocity = Vector3.zero;
+        }
+
     }
 }
