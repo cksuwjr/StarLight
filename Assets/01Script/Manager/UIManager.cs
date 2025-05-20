@@ -442,22 +442,28 @@ public class UIManager : SingletonDestroy<UIManager>
         int n;
         Image image;
         Color color;
-        for(n = 0; n < count; n++)
-        {
-            star.transform.GetChild(n).TryGetComponent<Image>(out image);
-            color = image.color;
-            color.a = 1;
-            image.color = color;
 
-            
+
+        for (n = 0; n < count; n++)
+        {
+            if (star.transform.childCount <= n) return;
+
+            if (star.transform.GetChild(n).TryGetComponent<Image>(out image))
+            {
+                color = image.color;
+                color.a = 1;
+                image.color = color;
+            }
         }
 
         for(n = count; n < star.transform.childCount; n++)
         {
-            star.transform.GetChild(n).TryGetComponent<Image>(out image);
-            color = image.color;
-            color.a = 33f/255f;
-            image.color = color;
+            if (star.transform.GetChild(n).TryGetComponent<Image>(out image))
+            {
+                color = image.color;
+                color.a = 33f / 255f;
+                image.color = color;
+            }
         }
     }
 
