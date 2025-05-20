@@ -297,7 +297,7 @@ public class UIManager : SingletonDestroy<UIManager>
 
         GameManager.Instance.Blur(true);
         mail.SetActive(true);
-        uiCamera.enabled = true;
+        //uiCamera.enabled = true;
     }
 
     public void CloseMail()
@@ -331,7 +331,7 @@ public class UIManager : SingletonDestroy<UIManager>
 
         GameManager.Instance.Blur(false);
         chapter.SetActive(false);
-        uiCamera.enabled = false;
+        //uiCamera.enabled = false;
     }
 
     public void OpenMission()
@@ -355,7 +355,7 @@ public class UIManager : SingletonDestroy<UIManager>
         LeanTween.scale(mission, Vector3.zero, 0.2f);
 
         //mission.SetActive(false);
-        Invoke("UICameraShutDown", 0.2f);
+        //Invoke("UICameraShutDown", 0.2f);
     }
 
     public void OpenScenarioPannel()
@@ -442,22 +442,28 @@ public class UIManager : SingletonDestroy<UIManager>
         int n;
         Image image;
         Color color;
-        for(n = 0; n < count; n++)
-        {
-            star.transform.GetChild(n).TryGetComponent<Image>(out image);
-            color = image.color;
-            color.a = 1;
-            image.color = color;
 
-            
+
+        for (n = 0; n < count; n++)
+        {
+            if (star.transform.childCount <= n) return;
+
+            if (star.transform.GetChild(n).TryGetComponent<Image>(out image))
+            {
+                color = image.color;
+                color.a = 1;
+                image.color = color;
+            }
         }
 
         for(n = count; n < star.transform.childCount; n++)
         {
-            star.transform.GetChild(n).TryGetComponent<Image>(out image);
-            color = image.color;
-            color.a = 33f/255f;
-            image.color = color;
+            if (star.transform.GetChild(n).TryGetComponent<Image>(out image))
+            {
+                color = image.color;
+                color.a = 33f / 255f;
+                image.color = color;
+            }
         }
     }
 
@@ -587,7 +593,7 @@ public class UIManager : SingletonDestroy<UIManager>
 
     private void UICameraShutDown()
     {
-        uiCamera.enabled = false;
+        //uiCamera.enabled = false;
     }
 
     public void BloodScreen(float value)
@@ -607,8 +613,8 @@ public class UIManager : SingletonDestroy<UIManager>
         if(pianoPanel.transform.localScale.x <= 0)
             LeanTween.scale(pianoPanel, Vector3.one, 0.1f);
 
-        pianoText.transform.localScale = Vector3.one * 1.3f;
-        LeanTween.scale(pianoText.gameObject, Vector3.one, 0.3f); 
+        pianoPanel.transform.localScale = Vector3.one * 1.3f;
+        LeanTween.scale(pianoPanel, Vector3.one, 0.3f); 
     }
 
     public void ClosePianoScorePanel()

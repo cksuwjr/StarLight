@@ -50,6 +50,8 @@ public class CarSpawner : MonoBehaviour
             clearZone.OnEnter += () =>
             {
                 OnFaze1End?.Invoke();
+                PlayerPrefs.SetInt("2-1", 1);
+                PlayerPrefs.Save();
                 ScenarioManager.Instance.OnStoryEnd += () => { StartCoroutine("SpawnFaze2"); };
                 GameManager.Instance.Player.GetComponent<PlayerController>().SetHp(3);
                 StopSpawn();
@@ -105,7 +107,6 @@ public class CarSpawner : MonoBehaviour
                 {
                     UIManager.Instance.OpenClearPuzzlePopup(true, () => { GameManager.Instance.LoadScene("2-1Stage"); });
                 };
-                PlayerPrefs.SetInt("2-1", 1);
                 PlayerPrefs.Save();
                 StopSpawn();
             };

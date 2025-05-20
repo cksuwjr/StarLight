@@ -109,6 +109,9 @@ public class ScenarioManager : SingletonDestroy<ScenarioManager>
             return;
         }
 
+        if (story == null) return;
+
+        Debug.Log(story.Count + "<" + (page + 1));
         if (story.Count < page + 1)
         {
             StopStory();
@@ -165,6 +168,7 @@ public class ScenarioManager : SingletonDestroy<ScenarioManager>
     {
         star++;
         UIManager.Instance.AddStar(star);
+        Debug.Log("»¡µ¿");
     }
 
     public void AddStar()

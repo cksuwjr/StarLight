@@ -177,25 +177,25 @@ public class NodeSpawner : MonoBehaviour
             {
                 pianoNode = PoolManager.Instance.enemyPool.GetPoolObject();
                 pianoNode.transform.position = new Vector3(-22.05f, 77f, 20.9f);
-                pianoNode.GetComponent<PianoNode>().Init(1, 20);
+                pianoNode.GetComponent<PianoNode>().Init(1, 45);
             }
             if (nodes[count, 1] == 5)
             {
                 pianoNode = PoolManager.Instance.enemyPool2.GetPoolObject();
                 pianoNode.transform.position = new Vector3(-7.35f, 77f, 20.9f);
-                pianoNode.GetComponent<PianoNode>().Init(2, 20);
+                pianoNode.GetComponent<PianoNode>().Init(2, 45);
             }
             if (nodes[count, 2] == 5)
             {
                 pianoNode = PoolManager.Instance.enemyPool3.GetPoolObject();
                 pianoNode.transform.position = new Vector3(7.35f, 77f, 20.9f);
-                pianoNode.GetComponent<PianoNode>().Init(3, 20);
+                pianoNode.GetComponent<PianoNode>().Init(3, 45);
             }
             if (nodes[count, 3] == 5)
             {
                 pianoNode = PoolManager.Instance.enemyPool4.GetPoolObject();
                 pianoNode.transform.position = new Vector3(22.05f, 77f, 20.9f);
-                pianoNode.GetComponent<PianoNode>().Init(4, 20);
+                pianoNode.GetComponent<PianoNode>().Init(4, 45);
             }
             Debug.Log("��ȯ");
             yield return YieldInstructionCache.WaitForSeconds(speed);
@@ -248,25 +248,25 @@ public class NodeSpawner : MonoBehaviour
             {
                 pianoNode = PoolManager.Instance.enemyPool.GetPoolObject();
                 pianoNode.transform.position = new Vector3(-22.05f, 77f, 20.9f);
-                pianoNode.GetComponent<PianoNode>().Init(1, 45);
+                pianoNode.GetComponent<PianoNode>().Init(1, 100);
             }
             if (nodesFaze2[count, 1] == 5)
             {
                 pianoNode = PoolManager.Instance.enemyPool2.GetPoolObject();
                 pianoNode.transform.position = new Vector3(-7.35f, 77f, 20.9f);
-                pianoNode.GetComponent<PianoNode>().Init(2, 45);
+                pianoNode.GetComponent<PianoNode>().Init(2, 100);
             }
             if (nodesFaze2[count, 2] == 5)
             {
                 pianoNode = PoolManager.Instance.enemyPool3.GetPoolObject();
                 pianoNode.transform.position = new Vector3(7.35f, 77f, 20.9f);
-                pianoNode.GetComponent<PianoNode>().Init(3, 45);
+                pianoNode.GetComponent<PianoNode>().Init(3, 100);
             }
             if (nodesFaze2[count, 3] == 5)
             {
                 pianoNode = PoolManager.Instance.enemyPool4.GetPoolObject();
                 pianoNode.transform.position = new Vector3(22.05f, 77f, 20.9f);
-                pianoNode.GetComponent<PianoNode>().Init(4, 45);
+                pianoNode.GetComponent<PianoNode>().Init(4, 100);
             }
             Debug.Log("��ȯ");
             yield return YieldInstructionCache.WaitForSeconds(speed);

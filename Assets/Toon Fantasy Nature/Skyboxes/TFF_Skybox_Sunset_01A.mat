@@ -51,7 +51,8 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
+    - <noninit>: 0
     - _Exposure: 0.5
-    - _Rotation: 71.60833
+    - _Rotation: 8.24152
     m_Colors: []
   m_BuildTextureStacks: []

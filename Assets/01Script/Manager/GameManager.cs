@@ -62,13 +62,17 @@ public class GameManager : Singleton<GameManager>
 
     public void Blur(bool tf)
     {
-        volume.enabled = tf;
+        //volume.enabled = tf;
     }
 
     public void GameOver()
     {
         StopTimer();
-        UIManager.Instance.OpenClearPopup(false, ReturnToLobby);
+        UIManager.Instance.OpenClearPopup(false, () => 
+        { 
+            LoadingSceneManager.SetNextScene(PlayerPrefs.GetString("Scene"));
+            SceneManager.LoadScene("LoadingScene");
+        });
     }
 
     public void SetTimer(float second, Action action = null)
@@ -132,6 +136,7 @@ public class GameManager : Singleton<GameManager>
 
     public void LoadScene(string sceneName)
     {
+        PlayerPrefs.SetString("Scene", SceneManager.GetActiveScene().name);
         LoadingSceneManager.SetNextScene(sceneName);
         SceneManager.LoadScene("LoadingScene");
     }
