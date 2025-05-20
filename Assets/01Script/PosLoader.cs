@@ -7,7 +7,10 @@ public class PosLoader : MonoBehaviour
 {
     void Start()
     {
-        if(PlayerPrefs.GetString("SaveScene") == SceneManager.GetActiveScene().name)
+        if (PlayerPrefs.GetString("SaveScene") == SceneManager.GetActiveScene().name)
+        {
             GameManager.Instance.LoadPosition();
+            UIManager.Instance.CloseInformText();
+        }
     }
 }

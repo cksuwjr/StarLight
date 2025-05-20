@@ -253,6 +253,7 @@ public class PuzzleManager : MonoBehaviour
                 StartCoroutine("PuzzleFaze2");
                 PlayerPrefs.SetInt("Puzzle", 1);
                 PlayerPrefs.SetInt("1-2", 1);
+                PlayerPrefs.Save();
             };
             OnFaze1End?.Invoke();
         }
@@ -263,6 +264,7 @@ public class PuzzleManager : MonoBehaviour
             {
                 GameManager.Instance.LoadScene("1-2Stage"); 
                 PlayerPrefs.SetInt("Puzzle", 2);
+                PlayerPrefs.Save();
             };
         }
         //UIManager.Instance.OpenClearPuzzlePopup(true, () => { GameManager.Instance.LoadScene("1-2Stage"); });
