@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.Video;
 
 public class ScenarioManager : SingletonDestroy<ScenarioManager>
@@ -18,6 +19,7 @@ public class ScenarioManager : SingletonDestroy<ScenarioManager>
     private bool texting = false;
     private string chapter;
 
+    public UnityEvent OnStarAllCollected;
 
     public void SetChapter(string name)
     {
@@ -168,7 +170,9 @@ public class ScenarioManager : SingletonDestroy<ScenarioManager>
     {
         star++;
         UIManager.Instance.AddStar(star);
-        Debug.Log("»¡µ¿");
+
+        if (star > 2)
+            OnStarAllCollected?.Invoke();
     }
 
     public void AddStar()
@@ -176,5 +180,13 @@ public class ScenarioManager : SingletonDestroy<ScenarioManager>
         star++;
         UIManager.Instance.SetStar(star);
         OnStoryEnd -= AddStar;
+
+        if(star > 2)
+            OnStarAllCollected?.Invoke();
+    }
+
+    public void SetActiveTrue(GameObject obj)
+    {
+        obj.SetActive(true);
     }
 }

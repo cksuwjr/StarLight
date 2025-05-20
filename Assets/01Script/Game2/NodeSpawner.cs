@@ -222,11 +222,9 @@ public class NodeSpawner : MonoBehaviour
 
 
         //    Debug.Log(logSpeed);
-        //    //Debug.Log(after + "�� ��");
         //    yield return YieldInstructionCache.WaitForSeconds(Random.Range(0.5f, 1.5f));
         //}
         yield return YieldInstructionCache.WaitForSeconds(3f);
-        //Debug.Log("��ȯ ��");
 
         OnFaze1End?.Invoke();
         ScenarioManager.Instance.OnStoryEnd += () => { StartCoroutine("SpawnFaze2"); };
@@ -268,7 +266,6 @@ public class NodeSpawner : MonoBehaviour
                 pianoNode.transform.position = new Vector3(22.05f, 77f, 20.9f);
                 pianoNode.GetComponent<PianoNode>().Init(4, 100);
             }
-            Debug.Log("��ȯ");
             yield return YieldInstructionCache.WaitForSeconds(speed);
             count++;
         }
