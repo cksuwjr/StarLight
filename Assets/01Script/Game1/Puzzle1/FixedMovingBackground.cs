@@ -19,6 +19,7 @@ public class FixedMovingBackground : MonoBehaviour
     private void Start()
     {
         playerTransform = GameManager.Instance.Player.transform;
+        render.material.mainTextureScale = Vector2.one;
     }
 
     public void Move(float x, float y)

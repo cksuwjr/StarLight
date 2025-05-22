@@ -89,10 +89,10 @@ public class TouchHandler : MonoBehaviour
                     if (t.fingerId == rightFingerId && !isTouchingUI)
                     {
                         // 현재 위치와 이전 위치와의 거리 저장
-                        //Vector2 delta = t.position - lastTouchPosition;
+                        Vector2 delta = t.position - lastTouchPosition;
                         // cinemachine의 회전값에 거리 + 드래그 속도 만큼 더해줌
                         if (cam.cameraMoving)
-                            cam.cameraMoving.Moving();
+                            cam.cameraMoving.Moving(delta);
                         // 최근 위치 갱신
                         lastTouchPosition = t.position;
                     }
