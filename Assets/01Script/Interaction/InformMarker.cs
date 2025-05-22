@@ -5,7 +5,6 @@ using TMPro;
 
 public class InformMarker : MonoBehaviour
 {
-    public GameObject uiPrefab;
     public GameObject iconPrefab;
     public Vector2 offset;
     private GameObject iconUI;
@@ -24,6 +23,14 @@ public class InformMarker : MonoBehaviour
         var local = RectTransformUtility.WorldToScreenPoint(Camera.main, transform.position);
 
         UIManager.Instance.LocateInformText(local, offset);
+
+        if (iconPrefab)
+        {
+            var cam = Camera.main.gameObject;
+            iconUI.transform.LookAt(cam.transform);
+            //if (cam.transform.parent)
+            //    iconUI.transform.LookAt(cam.transform.parent);
+        }
     }
 
     private void LateUpdate()
@@ -34,8 +41,6 @@ public class InformMarker : MonoBehaviour
 
     private void Awake()
     {
-        if (!uiPrefab) return;
-
         UIClicker iconClicker = null;
 
         if (iconPrefab)
