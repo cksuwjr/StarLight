@@ -34,6 +34,8 @@ public class LogSpawner : MonoBehaviour
 
     private IEnumerator Spawn()
     {
+        Physics.IgnoreLayerCollision(LayerMask.NameToLayer("Log"), LayerMask.NameToLayer("Log"), false);
+
         endTime = Time.time + 60;
         GameManager.Instance.SetTimer(60, 
             () =>
@@ -48,17 +50,22 @@ public class LogSpawner : MonoBehaviour
             }
         );
         //var player = GameManager.Instance.Player;
+        logSpeed = 21f;
         while (Time.time < endTime)
         {
-            log = PoolManager.Instance.enemyPool.GetPoolObject();
-            logs.Add(log);
-            log.transform.rotation = Quaternion.Euler(0, 0, -90);
-            log.transform.position = spawnPosition;
-            if (log.TryGetComponent<LogMove>(out var logComponent))
-                logComponent.Init(logSpeed);
 
-            logSpeed = 21f;
-            
+            for (int i = 0; i < Random.Range(1, 4); i++)
+            {
+                log = PoolManager.Instance.enemyPool.GetPoolObject();
+                logs.Add(log);
+                log.transform.rotation = Quaternion.Euler(0, 0, -90);
+                log.transform.position = spawnPosition;
+                if (log.TryGetComponent<LogMove>(out var logComponent))
+                    logComponent.Init(logSpeed);
+
+                yield return YieldInstructionCache.WaitForSeconds(0.02f);
+            }
+
             //logSpeed = logSpeed < 35f ? logSpeed : 35f;
             //if (logSpeed > 25f)
             //    after *= Random.Range(0.5f, 0.7f);
@@ -92,33 +99,36 @@ public class LogSpawner : MonoBehaviour
             }
         );
         //var player = GameManager.Instance.Player;
-        while (Time.time < endTime - 3)
+        logSpeed = 35f;
+        while (Time.time < endTime - 5f)
         {
-            log = PoolManager.Instance.enemyPool.GetPoolObject();
-            logs.Add(log);
-            log.transform.rotation = Quaternion.Euler(0, 0, -90);
-            log.transform.position = spawnPosition;
-            if (log.TryGetComponent<LogMove>(out var logComponent))
-                logComponent.Init(logSpeed);
 
-            logSpeed += Random.Range(1, 4f);
+            for (int i = 0; i < Random.Range(1, 4); i++)
+            {
+                log = PoolManager.Instance.enemyPool.GetPoolObject();
+                logs.Add(log);
+                log.transform.rotation = Quaternion.Euler(0, 0, -90);
+                log.transform.position = spawnPosition;
+                if (log.TryGetComponent<LogMove>(out var logComponent))
+                    logComponent.Init(logSpeed);
 
-            var after = 3.5f - logSpeed * 0.05f;
+                yield return YieldInstructionCache.WaitForSeconds(0.02f);
+            }
 
-            after = after < 1f ? 1f : after;
-            //if (endTime - Time.time > 30f)
-
-            logSpeed = logSpeed < 50f ? logSpeed : 50f;
-            if (logSpeed > 25f)
-                after *= Random.Range(0.5f, 0.7f);
-            else
-                after *= Random.Range(0.7f, 0.9f);
+            //logSpeed = logSpeed < 35f ? logSpeed : 35f;
+            //if (logSpeed > 25f)
+            //    after *= Random.Range(0.5f, 0.7f);
+            //else
+            //    after *= Random.Range(0.7f, 0.9f);
 
 
-            //Debug.Log(logSpeed);
+
+            Debug.Log(logSpeed);
             //Debug.Log(after + "ÃÊ µÚ");
-            yield return YieldInstructionCache.WaitForSeconds(after);
+            yield return YieldInstructionCache.WaitForSeconds(Random.Range(0.5f, 1f));
         }
+        Physics.IgnoreLayerCollision(LayerMask.NameToLayer("Log"), LayerMask.NameToLayer("Log"), false);
+
 
         for (int i = 0; i < 100; i++)
         {

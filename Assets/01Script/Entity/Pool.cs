@@ -6,7 +6,7 @@ public class Pool : MonoBehaviour
 {
     [SerializeField] private PoolObject poolObject; 
     private Queue<PoolObject> poolObjects = new Queue<PoolObject>();
-    private int poolCount = 5;
+    [SerializeField] private int poolCount = 5;
 
     public void Init()
     {

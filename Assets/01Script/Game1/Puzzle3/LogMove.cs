@@ -26,7 +26,9 @@ public class LogMove : PoolObject, IMove
 
     public void Move(Vector3 direction)
     {
+        rigid.velocity = new Vector3(0, rigid.velocity.y, 0);
         transform.position += speed * Time.deltaTime * direction;
+        transform.Rotate(new Vector3(0, -500 * Time.deltaTime, 0));
     }
 
     public void Init(float speed)

@@ -1551,6 +1551,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   poolObject: {fileID: 6199177060293461204, guid: 30c1abc7fd266744ca9da692236829fb,
     type: 3}
+  poolCount: 5
 --- !u!4 &667977299
 Transform:
   m_ObjectHideFlags: 0
@@ -1612,6 +1613,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   poolObject: {fileID: 4391380556986438334, guid: 9da6b2b39ad0ebd4fa734db76cb36044,
     type: 3}
+  poolCount: 30
 --- !u!1 &921495444
 GameObject:
   m_ObjectHideFlags: 0
@@ -1811,6 +1813,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   poolObject: {fileID: 6199177060293461204, guid: 30c1abc7fd266744ca9da692236829fb,
     type: 3}
+  poolCount: 5
 --- !u!114 &1095642771
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1946,6 +1949,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   poolObject: {fileID: 4391380556986438334, guid: 440b5f280cc334645ba4fc3b57dc8f4b,
     type: 3}
+  poolCount: 36
 --- !u!4 &1257744517
 Transform:
   m_ObjectHideFlags: 0
@@ -2091,6 +2095,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 773713f05126ac8489aad71c81635ecf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnStarAllCollected:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!4 &1664323581
 Transform:
   m_ObjectHideFlags: 0
@@ -2501,7 +2508,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c23e914d471b354eb7e903dd91e2950, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.04
+  speed: 0.02
 --- !u!1 &1908353160
 GameObject:
   m_ObjectHideFlags: 0

@@ -6,7 +6,7 @@ public class CameraMoving : MonoBehaviour
 {
     public Transform objectTofollow;
     public float followSpeed = 1000f;
-    public float sensivity = 400f;
+    public float sensivity = 200f;
     public float clampAngle = 30f;
 
     private float rotX;
@@ -51,7 +51,22 @@ public class CameraMoving : MonoBehaviour
     public void Moving()
     {
         rotX -= Input.GetAxis("Mouse Y") * sensivity * Time.deltaTime;
-        rotY -= Input.GetAxis("Mouse X") * sensivity * Time.deltaTime;
+        rotY += Input.GetAxis("Mouse X") * sensivity * Time.deltaTime;
+
+        //rotX = Mathf.Clamp(rotX, -clampAngle, clampAngle);
+        rotX = Mathf.Clamp(rotX, -30, 50);
+        Quaternion rot = Quaternion.Euler(rotX, rotY, 0);
+        transform.rotation = rot;
+    }
+
+    public void Moving(Vector3 pos)
+    {
+        //rotX -= Input.GetAxis("Mouse Y") * sensivity * Time.deltaTime;
+        //rotY += Input.GetAxis("Mouse X") * sensivity * Time.deltaTime;
+
+        rotX -= pos.y * sensivity * Time.deltaTime;
+        rotY += pos.x * sensivity * Time.deltaTime;
+
 
         //rotX = Mathf.Clamp(rotX, -clampAngle, clampAngle);
         rotX = Mathf.Clamp(rotX, -30, 50);
