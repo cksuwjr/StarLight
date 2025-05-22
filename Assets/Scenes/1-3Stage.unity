@@ -4431,8 +4431,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f8e651377a7d94478ebf92de54b0b59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  uiPrefab: {fileID: 1920456004809028190, guid: 3710a77018b93c44ead4655f7040932b,
-    type: 3}
   iconPrefab: {fileID: 1920456004809028190, guid: 5fc0a292b973b8248beffd5bb711c220,
     type: 3}
   offset: {x: 3, y: 1}
@@ -7584,8 +7582,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f8e651377a7d94478ebf92de54b0b59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  uiPrefab: {fileID: 1920456004809028190, guid: 3710a77018b93c44ead4655f7040932b,
-    type: 3}
   iconPrefab: {fileID: 1920456004809028190, guid: 5fc0a292b973b8248beffd5bb711c220,
     type: 3}
   offset: {x: 3, y: 1}
@@ -9361,7 +9357,7 @@ PrefabInstance:
     - target: {fileID: 3212538714041878260, guid: 79a877111fe9c124781bb7ebdaa18dfe,
         type: 3}
       propertyPath: m_VersionIndex
-      value: 25
+      value: 28
       objectReference: {fileID: 0}
     - target: {fileID: 3516395653759366784, guid: 79a877111fe9c124781bb7ebdaa18dfe,
         type: 3}
@@ -11966,8 +11962,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f8e651377a7d94478ebf92de54b0b59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  uiPrefab: {fileID: 1920456004809028190, guid: 3710a77018b93c44ead4655f7040932b,
-    type: 3}
   iconPrefab: {fileID: 0}
   offset: {x: 3, y: 1.5}
   title: "\uD37C\uC990 \uD2B8\uB9AC\uAC70"
