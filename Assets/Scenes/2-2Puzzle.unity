@@ -516,6 +516,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   poolObject: {fileID: 9045874168117985691, guid: db3b614d789ba5c44928b0a96df3e858,
     type: 3}
+  poolCount: 5
 --- !u!4 &141659638
 Transform:
   m_ObjectHideFlags: 0
@@ -2417,6 +2418,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   poolObject: {fileID: 2436381829688881021, guid: 45dfbba3b30d1024da801b3e05630fa7,
     type: 3}
+  poolCount: 5
 --- !u!4 &865857543
 Transform:
   m_ObjectHideFlags: 0
@@ -2695,6 +2697,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   poolObject: {fileID: 6448727906798339379, guid: 856b7fe8c551bfc47a44da458fa58cdc,
     type: 3}
+  poolCount: 5
 --- !u!4 &979585745
 Transform:
   m_ObjectHideFlags: 0
@@ -3226,6 +3229,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   poolObject: {fileID: 6199177060293461204, guid: 30c1abc7fd266744ca9da692236829fb,
     type: 3}
+  poolCount: 5
 --- !u!114 &1385436406
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3672,6 +3676,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 773713f05126ac8489aad71c81635ecf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnStarAllCollected:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!4 &1664323581
 Transform:
   m_ObjectHideFlags: 0
@@ -4024,6 +4031,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   poolObject: {fileID: 6586646308637953478, guid: 3ecc7fcba4a9bc4478b2aecb674bfab7,
     type: 3}
+  poolCount: 5
 --- !u!4 &1689948458
 Transform:
   m_ObjectHideFlags: 0
