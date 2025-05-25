@@ -47,7 +47,8 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.P))
         {
-            hp++;
+            if(hp < 3)
+                hp++;
             OnChangeHp?.Invoke(hp);
         }
 
@@ -75,13 +76,24 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    public void FixDamage(int damage)
+    {
+        if (hp > 0)
+        {
+            SetHp(hp - damage);
+            OnHit();
+            if (hp <= 0)
+                GameManager.Instance.GameOver();
+        }
+    }
+
     private void OnHit()
     {
         hittable = false;
-        StartCoroutine("HitEffect");
+        StartCoroutine("HitEffect", 1f);
     }
 
-    private IEnumerator HitEffect()
+    private IEnumerator HitEffect(float duration)
     {
         float time = 0f;
         if (Camera.main.TryGetComponent<CameraMove>(out var cam))
@@ -90,14 +102,14 @@ public class PlayerController : MonoBehaviour
 
         while (time < 0.5f) {
             time += Time.deltaTime;
-            UIManager.Instance.BloodScreen(time / 0.5f);
+            UIManager.Instance.BloodScreen(time / (duration / 2f));
             yield return null;
         }
         time = 0f;
         while (time < 0.5f)
         {
             time += Time.deltaTime;
-            UIManager.Instance.BloodScreen(1 - (time / 0.5f));
+            UIManager.Instance.BloodScreen(1 - (time / (duration / 2f)));
             yield return null;
         }
         hittable = true;
@@ -105,8 +117,11 @@ public class PlayerController : MonoBehaviour
 
     public void SetHp(int value)
     {
-        hp = value;
-        OnChangeHp?.Invoke(value);
+        if (value >= 0)
+            hp = value;
+        else
+            hp = 0;
+        OnChangeHp?.Invoke(hp);
     }
 
     public void Dance()

@@ -510,6 +510,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   poolObject: {fileID: 6199177060293461204, guid: 30c1abc7fd266744ca9da692236829fb,
     type: 3}
+  poolCount: 5
 --- !u!114 &261469110
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -689,6 +690,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   poolObject: {fileID: -2270787966838570660, guid: d0767ce790f3a4b49a4805043fcf0d43,
     type: 3}
+  poolCount: 5
 --- !u!1 &394840439
 GameObject:
   m_ObjectHideFlags: 0
@@ -749,6 +751,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 750609370}
+        m_TargetAssemblyTypeName: ScenarioManager, Assembly-CSharp
+        m_MethodName: HideStopBtn
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 5
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnFaze2End:
     m_PersistentCalls:
       m_Calls:
@@ -768,6 +782,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: ScenarioManager, Assembly-CSharp
         m_MethodName: StartStory
         m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 7
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 750609370}
+        m_TargetAssemblyTypeName: ScenarioManager, Assembly-CSharp
+        m_MethodName: HideStopBtn
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1182,6 +1208,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   poolObject: {fileID: 386612783868067419, guid: a66d46cc7905f1b4b819b71c44af50a4,
     type: 3}
+  poolCount: 5
 --- !u!1 &594245863
 GameObject:
   m_ObjectHideFlags: 0
@@ -1270,13 +1297,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 594245863}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.0022168458, y: -0.9961922, z: 0.087155595, w: 0.00019399222}
-  m_LocalPosition: {x: 22.98, y: 0.79, z: 113.31}
+  m_LocalRotation: {x: -0.0022174653, y: 0.9964685, z: 0.08393841, w: 0.00018679016}
+  m_LocalPosition: {x: 22.98, y: -1.15, z: 113.31}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: -8.4, y: 180.997, z: 0}
+  m_LocalEulerAnglesHint: {x: -9.63, y: 180, z: -0.255}
 --- !u!114 &594245867
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2158,6 +2185,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   poolObject: {fileID: -1278357000532330750, guid: 2d794c9cc42e03d4181daf6bb873cb54,
     type: 3}
+  poolCount: 5
 --- !u!1 &1236855559
 GameObject:
   m_ObjectHideFlags: 0
@@ -2435,6 +2463,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   poolObject: {fileID: -8588231158761249727, guid: 52b4efece2aca9645a6c4f3021185a24,
     type: 3}
+  poolCount: 5
 --- !u!4 &1386125672 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5278874039753989497, guid: 797a2dbaceea962469b9774c7ed4d4af,
@@ -2799,6 +2828,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   poolObject: {fileID: -4043633395736905829, guid: e329fc94137e5fd44b1f0225844eed0d,
     type: 3}
+  poolCount: 5
 --- !u!1001 &1749923454
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3321,6 +3351,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   poolObject: {fileID: 2755002618805949969, guid: 5f2dc6c90b223ef42b727da379e8c8e9,
     type: 3}
+  poolCount: 5
 --- !u!1 &1888669136
 GameObject:
   m_ObjectHideFlags: 0
@@ -3398,6 +3429,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   poolObject: {fileID: 3960566001814311787, guid: d70433310af71ab48873e66782edf2ca,
     type: 3}
+  poolCount: 5
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

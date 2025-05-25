@@ -36,6 +36,7 @@ public class LogSpawner : MonoBehaviour
     {
         Physics.IgnoreLayerCollision(LayerMask.NameToLayer("Log"), LayerMask.NameToLayer("Log"), false);
 
+
         endTime = Time.time + 60;
         GameManager.Instance.SetTimer(60, 
             () =>
@@ -48,6 +49,7 @@ public class LogSpawner : MonoBehaviour
                 //UIManager.Instance.OpenClearPuzzlePopup(true, () => { GameManager.Instance.LoadScene("1-3Stage"); });
                 //StopSpawn();
             }
+            , "굴러오는 통나무들을 점프로 피하세요!"
         );
         //var player = GameManager.Instance.Player;
         logSpeed = 21f;
@@ -97,6 +99,7 @@ public class LogSpawner : MonoBehaviour
                 PlayerPrefs.Save();
                 StopSpawn();
             }
+            , "쏟아지는 통나무들을 점프로 피하세요!"
         );
         //var player = GameManager.Instance.Player;
         logSpeed = 35f;
