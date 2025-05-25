@@ -32,6 +32,11 @@ public class Car : PoolObject
     private void Hit()
     {
         playerRb.GetComponent<Movement>().CC(0.5f);
+        Invoke("Reposition", 0.5f);
+    }
+
+    private void Reposition()
+    {
         playerRb.transform.position = new Vector3(23f, -1.183f, 110f);
     }
 }

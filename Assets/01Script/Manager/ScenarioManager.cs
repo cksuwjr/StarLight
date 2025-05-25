@@ -103,6 +103,17 @@ public class ScenarioManager : SingletonDestroy<ScenarioManager>
         UIManager.Instance.CloseScenarioPannel();
     }
 
+    public void RemoveStory()
+    {
+        SoundManager.Instance.StopSound();
+        UIManager.Instance.CloseScenarioPannel();
+    }
+
+    public void HideStopBtn(bool tf)
+    {
+        UIManager.Instance.HideSeekScenarioCloseBtn(tf);
+    }
+
     public void NextPage()
     {
         if (texting)

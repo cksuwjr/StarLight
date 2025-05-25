@@ -82,6 +82,7 @@ public class EnemySpawner : MonoBehaviour
                 PlayerPrefs.SetInt("1-1", 1);
                 PlayerPrefs.Save();
             }
+            , "몰려오는 바이러스들로부터 60초간 살아남으세요!"
         );
 
         for (int j = 0; j < 4; j++)
@@ -160,7 +161,10 @@ public class EnemySpawner : MonoBehaviour
         {
             enemy = PoolManager.Instance.enemyPool.GetPoolObject();
             enemy.transform.position = GetSpawnPosition2();
-            enemy.GetComponentInChildren<DamageObject>().damage = 3;
+            var dmgObj = enemy.GetComponentInChildren<DamageObject>();
+            dmgObj.damage = 3;
+            dmgObj.isAlwaysDamage = true;
+
             if (enemy.TryGetComponent<Enemy>(out var enemyComponent))
             {
                 enemyComponent.Init(this, 5f);
@@ -190,6 +194,7 @@ public class EnemySpawner : MonoBehaviour
 
                   StopSpawn();
               }
+              , "좁혀오는 바이러스의 포위망으로부터 60초간 살아남으세요!"
           );
 
         float spawnTerm = 2f;

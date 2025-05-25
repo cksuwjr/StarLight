@@ -166,6 +166,8 @@ public class NodeSpawner : MonoBehaviour
 
     private IEnumerator Spawn()
     {
+        UIManager.Instance.SetGoal("떨어지는 음표에 맞춰 피아노를 연주하세요!");
+
         Debug.Log(nodes.Length);
         int count = 0;
         GameObject pianoNode;
@@ -238,6 +240,7 @@ public class NodeSpawner : MonoBehaviour
     {
         int count = 0;
         GameObject pianoNode;
+        UIManager.Instance.SetGoal("전하지 못한 마지막 연주를 완성하세요!");
 
         while (count < nodesFaze2.Length / 4)
         {

@@ -45,6 +45,7 @@ public class PuzzleManager : MonoBehaviour
     private void Start()
     {
         Invoke("MixPuzzle", 1f);
+        UIManager.Instance.Slot1ButtonText("들기");
     }
 
     private IEnumerator PuzzleFaze2()
@@ -90,9 +91,13 @@ public class PuzzleManager : MonoBehaviour
     public void Select()
     {
         if (selectedPuzzleSlice)
+        {
             PutDownPuzzle(nowPuzzleSlot);
+        }
         else
+        {
             PutUpPuzzle(nowPuzzleSlot);
+        }
     }
 
     public void PutUpPuzzle(PuzzleSlot slot)
@@ -105,6 +110,7 @@ public class PuzzleManager : MonoBehaviour
             selectedPuzzleSlice.GetComponent<SpriteRenderer>().sortingOrder = 1;
 
             PutPuzzleSlice(slot, null);
+            UIManager.Instance.Slot1ButtonText("놓기");
         }
     }
 
@@ -118,6 +124,7 @@ public class PuzzleManager : MonoBehaviour
         //if (selectedPuzzleSlice.transform.GetChild(0).TryGetComponent<OutLineEffecter>(out var lineEffecter))
         //    lineEffecter.SetEffect(false);
         selectedPuzzleSlice = null;
+        UIManager.Instance.Slot1ButtonText("들기");
 
         PutUpPuzzle(slot);
 
@@ -223,7 +230,8 @@ public class PuzzleManager : MonoBehaviour
 
         GameManager.Instance.SetTimer(61f,
                 () => UIManager.Instance.OpenClearPopup(false, () => GameManager.Instance.LoadScene("1-2Stage"))
-            );
+            , "60초 안에 퍼즐을 들어 옮겨 맞추세요!"
+                );
     }
 
     private void Grading()
