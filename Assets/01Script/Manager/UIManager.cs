@@ -31,6 +31,8 @@ public class UIManager : SingletonDestroy<UIManager>
     private GameObject status;
     private GameObject hpStatus;
     private TextMeshProUGUI timer;
+    private TextMeshProUGUI goalText;
+
 
     private GameObject playMenu;
 
@@ -66,6 +68,7 @@ public class UIManager : SingletonDestroy<UIManager>
     public bool touchBlocking = false;
 
     public static event Action OnPressBtnSlot1;
+    private TextMeshProUGUI btnSlot1Text;
 
     private GameObject obj;
 
@@ -140,12 +143,19 @@ public class UIManager : SingletonDestroy<UIManager>
                 btn.onClick.RemoveAllListeners();
                 btn.onClick.AddListener(ScenarioManager.Instance.StopStory);
             }
+
+            if (chat.transform.GetChild(5).TryGetComponent<Button>(out btn))
+            {
+                btn.onClick.RemoveAllListeners();
+                btn.onClick.AddListener(ScenarioManager.Instance.RemoveStory);
+            }
         }
 
 
         status = ui.transform.GetChild(num++).gameObject;
         hpStatus = status.transform.GetChild(0).gameObject;
         status.transform.GetChild(1).GetChild(0).TryGetComponent<TextMeshProUGUI>(out timer);
+        status.transform.GetChild(2).TryGetComponent<TextMeshProUGUI>(out goalText);
 
         playMenu = ui.transform.GetChild(num++).gameObject;
         if(playMenu.transform.GetChild(0).TryGetComponent<Button>(out btn))
@@ -189,7 +199,7 @@ public class UIManager : SingletonDestroy<UIManager>
         if(menuPopup.transform.GetChild(1).TryGetComponent<Button>(out btn))
             btn.onClick.AddListener(GameManager.Instance.ReturnToLobby);
 
-        if(menuPopup.transform.GetChild(1).TryGetComponent<Button>(out btn))
+        if(menuPopup.transform.GetChild(2).TryGetComponent<Button>(out btn))
             btn.onClick.AddListener(GameManager.Instance.GameQuit);
 
 
@@ -231,6 +241,7 @@ public class UIManager : SingletonDestroy<UIManager>
         if (useTouchPad)
         {
             obj = GameObject.Find("BtnSlot1");
+            btnSlot1Text = obj.GetComponentInChildren<TextMeshProUGUI>();
             if (obj.TryGetComponent<Button>(out btn))
                 btn.onClick.AddListener(() => HandleButtonClick(ButtonType.Slot1));
         }
@@ -388,6 +399,11 @@ public class UIManager : SingletonDestroy<UIManager>
         chatText.text = chat;
     }
 
+    public void HideSeekScenarioCloseBtn(bool tf)
+    {
+        chat.transform.GetChild(5).gameObject.SetActive(tf);
+    }
+
     public void SetHpUI(int n)
     {
         int i;
@@ -435,6 +451,11 @@ public class UIManager : SingletonDestroy<UIManager>
 
 
         if (time < 1) status.SetActive(false);
+    }
+
+    public void SetGoal(string text)
+    {
+        goalText.text = text;
     }
 
     public void SetStar(int count)
@@ -500,6 +521,7 @@ public class UIManager : SingletonDestroy<UIManager>
     private void ClosePopup()
     {
         popup.SetActive(false);
+        Time.timeScale = 1f;
     }
 
     public void OpenClearPopup(bool tf, Action returnTo)
@@ -601,6 +623,11 @@ public class UIManager : SingletonDestroy<UIManager>
         var color = bloodScreen.color;
         color.a = value;
         bloodScreen.color = color;
+    }
+
+    public void Slot1ButtonText(string text)
+    {
+        btnSlot1Text.text = text;
     }
 
 

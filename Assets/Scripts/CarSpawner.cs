@@ -44,6 +44,7 @@ public class CarSpawner : MonoBehaviour
 
     private IEnumerator Spawn()
     {
+        UIManager.Instance.SetGoal("쏟아지는 차량을 피해 앞으로 전진하세요!");
         if(GameObject.Find("ClearZone").TryGetComponent<ClearZone>(out var clearZone))
         {
             clearZone.ClearEvent();
@@ -96,7 +97,7 @@ public class CarSpawner : MonoBehaviour
     private IEnumerator SpawnFaze2()
     {
         GameManager.Instance.Player.transform.position = new Vector3(23f, -1.183f, 110f);
-
+        UIManager.Instance.SetGoal("쉴틈없이 쏟아지는 차량을 피해 앞으로 전진하세요!");
         if (GameObject.Find("ClearZone").TryGetComponent<ClearZone>(out var clearZone))
         {
             clearZone.ClearEvent();

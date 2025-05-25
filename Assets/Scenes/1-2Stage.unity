@@ -5394,8 +5394,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f8e651377a7d94478ebf92de54b0b59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  uiPrefab: {fileID: 1920456004809028190, guid: 3710a77018b93c44ead4655f7040932b,
-    type: 3}
   iconPrefab: {fileID: 0}
   offset: {x: 3, y: 3}
   title: "\uAE30\uC5B5\uC758 \uD754\uC8012"
@@ -8728,6 +8726,11 @@ PrefabInstance:
         type: 3}
       propertyPath: reverseMode
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7001247864472720443, guid: 79a877111fe9c124781bb7ebdaa18dfe,
+        type: 3}
+      propertyPath: checkLayer.m_Bits
+      value: 257
       objectReference: {fileID: 0}
     - target: {fileID: 7345375566518425208, guid: 79a877111fe9c124781bb7ebdaa18dfe,
         type: 3}
@@ -13901,6 +13904,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   poolObject: {fileID: 6199177060293461204, guid: 30c1abc7fd266744ca9da692236829fb,
     type: 3}
+  poolCount: 5
 --- !u!114 &486444819
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -49808,8 +49812,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f8e651377a7d94478ebf92de54b0b59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  uiPrefab: {fileID: 1920456004809028190, guid: 3710a77018b93c44ead4655f7040932b,
-    type: 3}
   iconPrefab: {fileID: 0}
   offset: {x: 3, y: 2}
   title: "\uAE30\uC5B5\uC758 \uD754\uC8011"
@@ -56444,8 +56446,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f8e651377a7d94478ebf92de54b0b59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  uiPrefab: {fileID: 1920456004809028190, guid: 3710a77018b93c44ead4655f7040932b,
-    type: 3}
   iconPrefab: {fileID: 0}
   offset: {x: 3, y: 3}
   title: "\uD37C\uC990 \uD2B8\uB9AC\uAC70"

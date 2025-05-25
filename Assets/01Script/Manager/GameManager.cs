@@ -75,10 +75,11 @@ public class GameManager : Singleton<GameManager>
         });
     }
 
-    public void SetTimer(float second, Action action = null)
+    public void SetTimer(float second, Action action = null, string goal = "")
     {
         if(action != null)
             OnTimerStop += action;
+        uiManager.SetGoal(goal);
         StartCoroutine("Timer", second);
     }
 
