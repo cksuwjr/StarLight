@@ -104,7 +104,11 @@ Material:
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
+<<<<<<< HEAD
     - _Rotation: 9.206452
+=======
+    - _Rotation: 2.300446
+>>>>>>> parent of a8be4640 (tutorial)
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1

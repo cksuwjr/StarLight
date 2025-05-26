@@ -65,7 +65,7 @@ public class ScenarioManager : SingletonDestroy<ScenarioManager>
         {
             switch (num)
             {
-                //case 1: OnStoryEnd += () => { StartStory(2); }; break;
+                case 1: OnStoryEnd += () => { StartStory(2); }; break;
             }
         }
 
