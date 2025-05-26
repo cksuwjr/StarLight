@@ -68,6 +68,11 @@ public class EnemySpawner : MonoBehaviour
 
     private IEnumerator Spawn()
     {
+        UIManager.Instance.FloatImage(Resources.Load<Sprite>("Image/Stell_Virus"));
+
+        yield return YieldInstructionCache.WaitForSeconds(3f);
+
+
         Physics.IgnoreLayerCollision(LayerMask.NameToLayer("Log"), LayerMask.NameToLayer("Log"), false);
 
         GameManager.Instance.SetTimer(61,

@@ -44,7 +44,9 @@ public class PuzzleManager : MonoBehaviour
 
     private void Start()
     {
-        Invoke("MixPuzzle", 1f);
+        UIManager.Instance.FloatImage(Resources.Load<Sprite>("Image/Stell_Puzzle"));
+
+        Invoke("MixPuzzle", 4f);
         UIManager.Instance.Slot1ButtonText("µé±â");
     }
 
