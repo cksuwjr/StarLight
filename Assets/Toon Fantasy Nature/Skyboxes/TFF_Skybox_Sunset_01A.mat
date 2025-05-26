@@ -52,7 +52,7 @@ Material:
     m_Ints: []
     m_Floats:
     - <noninit>: 0
-    - _Exposure: 1
-    - _Rotation: 231.13127
+    - _Exposure: 0.48
+    - _Rotation: 27.679083
     m_Colors: []
   m_BuildTextureStacks: []
