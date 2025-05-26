@@ -15,6 +15,7 @@ public enum ButtonType
 public class UIManager : SingletonDestroy<UIManager> 
 {
     private Image bloodScreen;
+    private Image floatImage;
     private GameObject informPannel;
     private TextMeshProUGUI[] informTexts;
     private OutLineDrawer lineDrawer;
@@ -25,6 +26,10 @@ public class UIManager : SingletonDestroy<UIManager>
     private GameObject chapterContent;
 
     private GameObject mission;
+
+    private GameObject readWrite;
+
+
 
     private GameObject chat;
     private Image chatterImage;
@@ -110,6 +115,7 @@ public class UIManager : SingletonDestroy<UIManager>
 
         if (!ui) return;
 
+        GameObject.Find("FloatImage").TryGetComponent<Image>(out floatImage);
         GameObject.Find("BloodScreen").TryGetComponent<Image>(out bloodScreen);
         informPannel = GameObject.Find("InformPannel");
         informTexts = informPannel.GetComponentsInChildren<TextMeshProUGUI>();
@@ -137,6 +143,14 @@ public class UIManager : SingletonDestroy<UIManager>
         mission = ui.transform.GetChild(num++).gameObject;
         if(mission.transform.GetChild(3).TryGetComponent<Button>(out btn))
             btn.onClick.AddListener(CloseMission);
+
+        readWrite = ui.transform.GetChild(num++).gameObject;
+        if (readWrite.transform.GetChild(0).TryGetComponent<Button>(out btn))
+            btn.onClick.AddListener(CloseReadWrite);
+        if (readWrite.transform.GetChild(1).TryGetComponent<Button>(out btn))
+            btn.onClick.AddListener(ForWardReadWrite);
+        if (readWrite.transform.GetChild(2).TryGetComponent<Button>(out btn))
+            btn.onClick.AddListener(BackWardReadWrite);
 
         chat = ui.transform.GetChild(num++).gameObject;
         chat.transform.GetChild(0).TryGetComponent<Image>(out  chatterImage);
@@ -456,6 +470,30 @@ public class UIManager : SingletonDestroy<UIManager>
         }
     }
 
+    public void OpenReadWrite()
+    {
+        TouchBlock(true);
+
+        readWrite.SetActive(true);
+    }
+
+    public void CloseReadWrite()
+    {
+        TouchBlock(false);
+
+        readWrite.SetActive(false);
+    }
+
+    private void ForWardReadWrite()
+    {
+        readWrite.GetComponent<Image>().sprite = Resources.Load<Sprite>("Image/UI_12");
+    }
+
+    private void BackWardReadWrite()
+    {
+        readWrite.GetComponent<Image>().sprite = Resources.Load<Sprite>("Image/UI_11");
+    }
+
     public void SetScenarioPannel(Sprite sprite, string name, string chat)
     {
         if (sprite != null) 
@@ -705,6 +743,16 @@ public class UIManager : SingletonDestroy<UIManager>
     private void UICameraShutDown()
     {
         //uiCamera.enabled = false;
+    }
+
+    public void FloatImage(Sprite sprite)
+    {
+        floatImage.gameObject.transform.localScale = Vector3.zero;
+        floatImage.sprite = sprite;
+        floatImage.enabled = true;
+
+        LeanTween.scale(floatImage.gameObject, Vector3.one, 2f).setEase(LeanTweenType.easeOutElastic);
+        LeanTween.scale(floatImage.gameObject, Vector3.zero, 0.2f).setEase(LeanTweenType.easeOutElastic).setDelay(2f);
     }
 
     public void BloodScreen(float value)
