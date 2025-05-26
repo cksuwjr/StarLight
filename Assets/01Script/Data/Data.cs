@@ -12,4 +12,6 @@ public class ChatData
     public string font;
     public string chat;
     public string ttsSrc;
+    public float x;
+    public float y;
 }

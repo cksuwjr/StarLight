@@ -2,6 +2,9 @@ using System;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.Rendering;
+using UnityEngine.Rendering.Universal;
+using static UnityEditor.PlayerSettings;
 
 public enum ButtonType
 {
@@ -27,6 +30,12 @@ public class UIManager : SingletonDestroy<UIManager>
     private Image chatterImage;
     private TextMeshProUGUI chatterNameText;
     private TextMeshProUGUI chatText;
+
+    private GameObject smallchat;
+    private Image smallchatterImage;
+    private TextMeshProUGUI smallchatterNameText;
+    private TextMeshProUGUI smallchatText;
+
 
     private GameObject status;
     private GameObject hpStatus;
@@ -81,6 +90,7 @@ public class UIManager : SingletonDestroy<UIManager>
     private GameObject pianoPanel;
     private TextMeshProUGUI pianoText;
 
+    private GameObject vignetVolume;
 
     public void Init()
     {
@@ -88,7 +98,10 @@ public class UIManager : SingletonDestroy<UIManager>
         var uiCam = GameObject.Find("UI Camera");
 
         var pianoCanvas = GameObject.Find("PianoCanvas");
-        
+        vignetVolume = GameObject.Find("Vignet Volume");
+        if(vignetVolume)
+            vignetVolume.SetActive(false);
+
         if (pianoCanvas)
         {
             pianoPanel = pianoCanvas.transform.GetChild(0).gameObject;
@@ -130,6 +143,11 @@ public class UIManager : SingletonDestroy<UIManager>
         chat.transform.GetChild(1).TryGetComponent<TextMeshProUGUI>(out chatterNameText);
         chat.transform.GetChild(2).TryGetComponent<TextMeshProUGUI>(out chatText);
 
+        smallchat = ui.transform.GetChild(num++).gameObject;
+        smallchat.transform.GetChild(0).TryGetComponent<Image>(out smallchatterImage);
+        smallchat.transform.GetChild(1).TryGetComponent<TextMeshProUGUI>(out smallchatterNameText);
+        smallchat.transform.GetChild(2).TryGetComponent<TextMeshProUGUI>(out smallchatText);
+
         if (ScenarioManager.Instance)
         {
             if (chat.transform.GetChild(3).TryGetComponent<Button>(out btn))
@@ -145,6 +163,24 @@ public class UIManager : SingletonDestroy<UIManager>
             }
 
             if (chat.transform.GetChild(5).TryGetComponent<Button>(out btn))
+            {
+                btn.onClick.RemoveAllListeners();
+                btn.onClick.AddListener(ScenarioManager.Instance.RemoveStory);
+            }
+
+            if (smallchat.transform.GetChild(3).TryGetComponent<Button>(out btn))
+            {
+                btn.onClick.RemoveAllListeners();
+                btn.onClick.AddListener(ScenarioManager.Instance.NextPage);
+            }
+
+            if (smallchat.transform.GetChild(4).TryGetComponent<Button>(out btn))
+            {
+                btn.onClick.RemoveAllListeners();
+                btn.onClick.AddListener(ScenarioManager.Instance.StopStory);
+            }
+
+            if (smallchat.transform.GetChild(5).TryGetComponent<Button>(out btn))
             {
                 btn.onClick.RemoveAllListeners();
                 btn.onClick.AddListener(ScenarioManager.Instance.RemoveStory);
@@ -376,11 +412,48 @@ public class UIManager : SingletonDestroy<UIManager>
         chat.SetActive(true);
     }
 
+    public void OpenSmallScenarioPannel(Vector2 pos)
+    {
+        TouchBlock(true);
+
+        smallchat.SetActive(true);
+        smallchat.GetComponent<RectTransform>().localPosition = pos;
+
+        var vigPos = pos + new Vector2(0, 250) + new Vector2(Screen.width / 2f, Screen.height / 2f);
+         
+
+        if (vignetVolume)
+        {
+            vignetVolume.SetActive(true);
+            if (vignetVolume.TryGetComponent<Volume>(out var volum))
+            {
+                if (volum.profile.TryGet<Vignette>(out var vol))
+                {
+                    vol.center.value = new Vector2(vigPos.x / Screen.width, vigPos.y / Screen.height);
+                }
+            }
+        }
+
+    }
+
+
     public void CloseScenarioPannel()
     {
         TouchBlock(false);
 
         chat.SetActive(false);
+    }
+
+    public void CloseSmallScenarioPannel()
+    {
+        TouchBlock(false);
+
+        smallchat.SetActive(false);
+
+        if (vignetVolume)
+        {
+            vignetVolume.SetActive(false);
+        }
     }
 
     public void SetScenarioPannel(Sprite sprite, string name, string chat)
@@ -397,6 +470,22 @@ public class UIManager : SingletonDestroy<UIManager>
 
         chatterNameText.text = name;
         chatText.text = chat;
+    }
+
+    public void SetSmallScenarioPanel(Sprite sprite, string name, string chat)
+    {
+        if (sprite != null)
+        {
+            smallchatterImage.sprite = sprite;
+
+            smallchatterImage.transform.localScale = new Vector3(sprite.bounds.size.x * 0.1f, sprite.bounds.size.y * 0.1f, 0);
+            smallchatterImage.enabled = true;
+        }
+        else
+            smallchatterImage.enabled = false;
+
+        smallchatterNameText.text = name;
+        smallchatText.text = chat;
     }
 
     public void HideSeekScenarioCloseBtn(bool tf)

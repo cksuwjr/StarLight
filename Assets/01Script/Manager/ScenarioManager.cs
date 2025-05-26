@@ -48,7 +48,31 @@ public class ScenarioManager : SingletonDestroy<ScenarioManager>
         page = num;
 
         LoadPage();
-        UIManager.Instance.OpenScenarioPannel();
+        if(story[page].windowType == "large")
+            UIManager.Instance.OpenScenarioPannel();
+        else
+            UIManager.Instance.OpenSmallScenarioPannel(new Vector2(story[page].x, story[page].y));
+
+        if (chapter == "Lobby")
+        {
+            switch (num)
+            {
+                case 1: OnStoryEnd += () => { GameManager.Instance.LoadScene("Tutorial"); }; break;
+            }
+        }
+
+        if (chapter == "Tutorial")
+        {
+            switch (num)
+            {
+                case 1: OnStoryEnd += () => { StartStory(2); }; break;
+            }
+        }
+
+
+
+
+
         if (chapter == "Ch_1")
         {
             switch (num)
@@ -93,6 +117,9 @@ public class ScenarioManager : SingletonDestroy<ScenarioManager>
 
     public void StopStory()
     {
+        UIManager.Instance.CloseScenarioPannel();
+        UIManager.Instance.CloseSmallScenarioPannel();
+
         SoundManager.Instance.StopSound();
 
         OnStoryEnd?.Invoke();
@@ -100,13 +127,13 @@ public class ScenarioManager : SingletonDestroy<ScenarioManager>
 
         story = null;
         page = 0;
-        UIManager.Instance.CloseScenarioPannel();
     }
 
     public void RemoveStory()
     {
         SoundManager.Instance.StopSound();
         UIManager.Instance.CloseScenarioPannel();
+        UIManager.Instance.CloseSmallScenarioPannel();
     }
 
     public void HideStopBtn(bool tf)
@@ -145,17 +172,25 @@ public class ScenarioManager : SingletonDestroy<ScenarioManager>
     {
         var imgSprite = Resources.Load<Sprite>(story[page].imgSrc);
         var sound = Resources.Load<AudioClip>(story[page].ttsSrc);
+        var size = story[page].windowType;
 
         SoundManager.Instance.StopSound();
         if (sound) 
             SoundManager.Instance.PlaySound(sound, 0.7f, false);
 
-        StartCoroutine(LoadText(imgSprite, story[page].name, story[page].chat));
+        if(size == "large")
+            StartCoroutine(LoadText(imgSprite, story[page].name, story[page].chat));
+        else
+            StartCoroutine(LoadTextSmall(imgSprite, story[page].name, story[page].chat));
+
         //UIManager.Instance.SetScenarioPannel(imgSprite, story[page].name, story[page].chat);
     }
 
     private IEnumerator LoadText(Sprite sprite, string name, string chat)
     {
+        UIManager.Instance.OpenScenarioPannel();
+        UIManager.Instance.CloseSmallScenarioPannel();
+
         texting = true;
         string chatText = "";
 
@@ -168,6 +203,27 @@ public class ScenarioManager : SingletonDestroy<ScenarioManager>
         }
 
         UIManager.Instance.SetScenarioPannel(sprite, name, chat);
+        texting = false;
+    }
+
+    private IEnumerator LoadTextSmall(Sprite sprite, string name, string chat)
+    {
+        UIManager.Instance.CloseScenarioPannel();
+        UIManager.Instance.OpenSmallScenarioPannel(new Vector2(story[page].x, story[page].y));
+
+        texting = true;
+        string chatText = "";
+
+        int i = 0;
+        while (i < chat.Length && texting)
+        {
+            chatText += chat[i];
+            UIManager.Instance.SetSmallScenarioPanel(sprite, name, chatText);
+            yield return YieldInstructionCache.WaitForSeconds(0.03f);
+            i++;
+        }
+
+        UIManager.Instance.SetSmallScenarioPanel(sprite, name, chat);
         texting = false;
     }
 
