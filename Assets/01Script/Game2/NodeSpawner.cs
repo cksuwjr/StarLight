@@ -12,6 +12,8 @@ public class NodeSpawner : MonoBehaviour
     public UnityEvent OnFaze1End;
     public UnityEvent OnFaze2End;
 
+    [SerializeField] private AudioClip BGM;
+
     private int[,] nodes = new int[,]
     {
         { 0,0,0,0},
@@ -328,13 +330,20 @@ public class NodeSpawner : MonoBehaviour
 
     private IEnumerator Spawn()
     {
+        UIManager.Instance.FloatImage(Resources.Load<Sprite>("Image/2-2_tut"));
+
+        yield return YieldInstructionCache.WaitForSeconds(3f);
+
+
         UIManager.Instance.SetGoal("떨어지는 음표에 맞춰 피아노를 연주하세요!");
 
         Debug.Log(nodes.Length);
         int count = 0;
         GameObject pianoNode;
 
-        while(count < nodes.Length / 4)
+        SoundManager.Instance.ChangeBGM(BGM);
+
+        while (count < nodes.Length / 4)
         {
 
             if (nodes[count, 0] == 5)
@@ -403,6 +412,8 @@ public class NodeSpawner : MonoBehaviour
         int count = 0;
         GameObject pianoNode;
         UIManager.Instance.SetGoal("전하지 못한 마지막 연주를 완성하세요!");
+
+        SoundManager.Instance.ChangeBGM(BGM);
 
         while (count < nodesFaze2.Length / 4)
         {

@@ -34,6 +34,11 @@ public class LogSpawner : MonoBehaviour
 
     private IEnumerator Spawn()
     {
+        UIManager.Instance.FloatImage(Resources.Load<Sprite>("Image/Stell_Log"));
+
+        yield return YieldInstructionCache.WaitForSeconds(3f);
+
+
         Physics.IgnoreLayerCollision(LayerMask.NameToLayer("Log"), LayerMask.NameToLayer("Log"), false);
 
 
