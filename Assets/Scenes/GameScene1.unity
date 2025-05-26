@@ -38,7 +38,6 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.12731749, g: 0.13414757, b: 0.1210787, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -294,7 +293,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 1}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -402,12 +401,12 @@ MonoBehaviour:
   m_RequiresColorTexture: 0
   m_Version: 2
   m_TaaSettings:
-    quality: 3
-    frameInfluence: 0.1
-    jitterScale: 1
-    mipBias: 0
-    varianceClampScale: 0.9
-    contrastAdaptiveSharpening: 0
+    m_Quality: 3
+    m_FrameInfluence: 0.1
+    m_JitterScale: 1
+    m_MipBias: 0
+    m_VarianceClampScale: 0.9
+    m_ContrastAdaptiveSharpening: 0
 --- !u!114 &14855694
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -420,7 +419,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac9157e1988563c43afe00df7dd78875, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  offset: {x: 0, y: 13.5, z: -6}
+  rotateCam: 1
+  cameraMoving: {fileID: 0}
+  distance: 1.376
+  narrowable: 1
 --- !u!1 &121983775
 GameObject:
   m_ObjectHideFlags: 0
@@ -450,6 +452,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b8f2851c71eff147929f4a300158e7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  touchBlocking: 0
+  useTouchPad: 0
 --- !u!4 &121983777
 Transform:
   m_ObjectHideFlags: 0
@@ -1038,6 +1042,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dcc4d59f83f3d3f489722dcd7938b6f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 0}
 --- !u!4 &458613421
 Transform:
   m_ObjectHideFlags: 0
@@ -2866,6 +2871,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22f5bf1d74dd3714d8ad5f74d5af0d2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mask:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!4 &1599312693
 Transform:
   m_ObjectHideFlags: 0
@@ -3026,12 +3034,12 @@ MonoBehaviour:
   m_RequiresColorTexture: 0
   m_Version: 2
   m_TaaSettings:
-    quality: 3
-    frameInfluence: 0.1
-    jitterScale: 1
-    mipBias: 0
-    varianceClampScale: 0.9
-    contrastAdaptiveSharpening: 0
+    m_Quality: 3
+    m_FrameInfluence: 0.1
+    m_JitterScale: 1
+    m_MipBias: 0
+    m_VarianceClampScale: 0.9
+    m_ContrastAdaptiveSharpening: 0
 --- !u!20 &1668372219
 Camera:
   m_ObjectHideFlags: 0
@@ -3571,7 +3579,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38e76587707bf04409438191185058f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  groundCheck: {fileID: 0}
+  checkLayer:
+    serializedVersion: 2
+    m_Bits: 0
   speed: 10
+  jump: 15
+  gravityY: -80
+  walkSound: {fileID: 0}
+  jumpSound: {fileID: 0}
 --- !u!114 &1973264427
 MonoBehaviour:
   m_ObjectHideFlags: 0
