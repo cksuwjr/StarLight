@@ -8,7 +8,6 @@ public class InteractionObject : MonoBehaviour, IInteract
 {
     protected event Action OnClick;
     public bool interactable = true;
-    public bool oneOff = false;
     public bool nonSave = false;
     public event Action<bool> OnInteractable;
 

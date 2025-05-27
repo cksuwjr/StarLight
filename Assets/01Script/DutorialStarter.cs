@@ -8,14 +8,12 @@ public class DutorialStarter : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        StartDutorial();
         if (PlayerPrefs.GetString("Dutorial") == "Done")
         {
         }
         else
         {
             StartDutorial();
-            PlayerPrefs.SetString("Dutorial", "Done");
         }
     }
 
