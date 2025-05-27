@@ -65,7 +65,7 @@ public class ScenarioManager : SingletonDestroy<ScenarioManager>
         {
             switch (num)
             {
-                //case 1: OnStoryEnd += () => { StartStory(2); }; break;
+                case 12: OnStoryEnd += () => { GameManager.Instance.SavePosition();}; break;
             }
         }
 
@@ -188,8 +188,8 @@ public class ScenarioManager : SingletonDestroy<ScenarioManager>
 
     private IEnumerator LoadText(Sprite sprite, string name, string chat)
     {
-        UIManager.Instance.OpenScenarioPannel();
         UIManager.Instance.CloseSmallScenarioPannel();
+        UIManager.Instance.OpenScenarioPannel();
 
         texting = true;
         string chatText = "";

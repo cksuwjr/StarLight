@@ -1,23 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor;
+//using UnityEditor;
 using UnityEngine;
 
-[CustomEditor(typeof(OnOFF))]
-public class ButtonGenerator : Editor
+//[CustomEditor(typeof(OnOFF))]
+public class ButtonGenerator //: Editor
 {
-    public override void OnInspectorGUI()
-    {
-        base.OnInspectorGUI();
-        OnOFF onOFF = (OnOFF)target;
-        if (GUILayout.Button("技泼1"))
-        {
-            onOFF.Setting1();
-        }
+    //public override void OnInspectorGUI()
+    //{
+    //    base.OnInspectorGUI();
+    //    OnOFF onOFF = (OnOFF)target;
+    //    if (GUILayout.Button("技泼1"))
+    //    {
+    //        onOFF.Setting1();
+    //    }
 
-        if (GUILayout.Button("技泼2"))
-        {
-            onOFF.Setting2();
-        }
-    }
+    //    if (GUILayout.Button("技泼2"))
+    //    {
+    //        onOFF.Setting2();
+    //    }
+    //}
 }
