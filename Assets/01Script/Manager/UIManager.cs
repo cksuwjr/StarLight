@@ -563,6 +563,8 @@ public class UIManager : SingletonDestroy<UIManager>
 
     public void SetTimer(float time)
     {
+        if (!status) return;
+
         status.SetActive(true);
         status.transform.GetChild(1).gameObject.SetActive(true);
 

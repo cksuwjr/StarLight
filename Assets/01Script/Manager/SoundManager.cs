@@ -14,6 +14,8 @@ public class SoundManager : Singleton<SoundManager>
 
     public Pool soundPool;
 
+    private float volumeSize = 0.5f;
+
     public void Init()
     {
         TryGetComponent<Pool>(out soundPool);
@@ -41,7 +43,7 @@ public class SoundManager : Singleton<SoundManager>
             if(pool.transform.GetChild(i).TryGetComponent<SoundObject>(out audio))
             {
                 if(soundOnOFF)
-                    audio.SetVolume(1f);
+                    audio.SetVolume(volumeSize);
                 else
                     audio.SetVolume(0f);
             }
@@ -52,7 +54,7 @@ public class SoundManager : Singleton<SoundManager>
     {
         if (!BGMAudioObject)
         {
-            BGMAudioObject = PlaySound(audioClip, 0.7f, true);
+            BGMAudioObject = PlaySound(audioClip, volumeSize, true);
             BGMAudioObject.AudioSource.loop = true;
             BGMAudioObject.name = "BGM Object";
         }
@@ -68,7 +70,7 @@ public class SoundManager : Singleton<SoundManager>
             playObject.Stop();
     }
 
-    public SoundObject PlaySound(AudioClip audioClip, float volume = 0.7f, bool imortal = false)
+    public SoundObject PlaySound(AudioClip audioClip, float volume = 0.5f, bool imortal = false)
     {
         if (soundPool.GetPoolObject().TryGetComponent<SoundObject>(out SoundObject soundObject))
         {
@@ -93,7 +95,7 @@ public class SoundManager : Singleton<SoundManager>
         {
             current += Time.deltaTime;
             percent = current / 1.0f;
-            BGMAudioObject.AudioSource.volume = Mathf.Lerp(1f, 0f, percent);
+            BGMAudioObject.AudioSource.volume = Mathf.Lerp(volumeSize, 0f, percent);
             yield return null;
         }
 
@@ -105,7 +107,7 @@ public class SoundManager : Singleton<SoundManager>
         {
             current += Time.deltaTime;
             percent = current / 1.0f;
-            BGMAudioObject.AudioSource.volume = Mathf.Lerp(0f, 1f, percent);
+            BGMAudioObject.AudioSource.volume = Mathf.Lerp(0f, volumeSize, percent);
             yield return null;
         }
 
