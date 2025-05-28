@@ -53,6 +53,8 @@ Material:
     m_Floats:
     - <noninit>: 0
     - _Exposure: 0.48
-    - _Rotation: 7.786628
+
+    - _Rotation: 33.196476
+
     m_Colors: []
   m_BuildTextureStacks: []
