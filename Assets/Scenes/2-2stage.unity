@@ -645,7 +645,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactable: 0
-  oneOff: 1
   nonSave: 1
   OnClickUnityEvent:
     m_PersistentCalls:
@@ -1825,7 +1824,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactable: 0
-  oneOff: 1
   nonSave: 0
   OnClickUnityEvent:
     m_PersistentCalls:
@@ -3526,7 +3524,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactable: 0
-  oneOff: 1
   nonSave: 0
   OnClickUnityEvent:
     m_PersistentCalls:
@@ -3680,7 +3677,22 @@ PrefabInstance:
     - target: {fileID: 3212538714041878260, guid: 79a877111fe9c124781bb7ebdaa18dfe,
         type: 3}
       propertyPath: m_VersionIndex
-      value: 55
+      value: 61
+      objectReference: {fileID: 0}
+    - target: {fileID: 5748498920999184090, guid: 79a877111fe9c124781bb7ebdaa18dfe,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.0208
+      objectReference: {fileID: 0}
+    - target: {fileID: 5748498920999184090, guid: 79a877111fe9c124781bb7ebdaa18dfe,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.0213
+      objectReference: {fileID: 0}
+    - target: {fileID: 5748498920999184090, guid: 79a877111fe9c124781bb7ebdaa18dfe,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.0251
       objectReference: {fileID: 0}
     - target: {fileID: 6004781408717250523, guid: 79a877111fe9c124781bb7ebdaa18dfe,
         type: 3}
