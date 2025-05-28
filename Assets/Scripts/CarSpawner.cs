@@ -44,6 +44,11 @@ public class CarSpawner : MonoBehaviour
 
     private IEnumerator Spawn()
     {
+        UIManager.Instance.FloatImage(Resources.Load<Sprite>("Image/2-1_tut"));
+
+        yield return YieldInstructionCache.WaitForSeconds(3f);
+
+
         UIManager.Instance.SetGoal("쏟아지는 차량을 피해 앞으로 전진하세요!");
         if(GameObject.Find("ClearZone").TryGetComponent<ClearZone>(out var clearZone))
         {

@@ -28,6 +28,7 @@ public class Sol : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+        GameManager.Instance.StopTimer();
         PlayerPrefs.SetInt("Tuto", 1);
         PlayerPrefs.Save();
         GameManager.Instance.LoadScene("Tutorial");

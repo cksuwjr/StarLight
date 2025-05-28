@@ -19,13 +19,15 @@ public class StoryStarter : MonoBehaviour
             OnStart?.Invoke();
             ScenarioManager.Instance.OnStoryEnd += () =>
             {
-                OnStoryEnd?.Invoke();
                 PlayerPrefs.SetString(key, "True");
                 PlayerPrefs.Save();
+                OnStoryEnd?.Invoke();
             };
         }
         else
         {
+            PlayerPrefs.SetString("Dutorial", "Done");
+            PlayerPrefs.Save();
             OnStart2?.Invoke();
         }
     }
