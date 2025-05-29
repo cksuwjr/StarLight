@@ -6,6 +6,8 @@ public class SkyRotater : MonoBehaviour
 {
     private float degree;
     // Update is called once per frame
+
+
     void Update()
     {
         degree += Time.deltaTime;
@@ -13,5 +15,10 @@ public class SkyRotater : MonoBehaviour
             degree = 0;
 
         RenderSettings.skybox.SetFloat("_Rotation", degree);
+    }
+
+    private void OnApplicationQuit()
+    {
+        RenderSettings.skybox.SetFloat("_Rotation", 0);
     }
 }
