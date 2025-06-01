@@ -64,15 +64,20 @@ public class Movement : MonoBehaviour, IMove
 
     public void Move(Vector3 direction)
     {
+        if (isGrounded)
+            rb.drag = 50f;
+
         isMoving = false;
         anim.SetBool("Move", false);
         if (!movable) return;
         if (!notBinded) return;
 
-        rb.velocity = new Vector3(0, rb.velocity.y, 0);
+        //rb.velocity = new Vector3(0, rb.velocity.y, 0);
 
         if (UIManager.Instance.touchBlocking) return;
         if (direction == Vector3.zero) return;
+
+        rb.drag = 0f;
         anim.SetBool("Move", true);
         Vector3 dir = direction;
         isMoving = true;
@@ -91,9 +96,15 @@ public class Movement : MonoBehaviour, IMove
         dir.y = 0;
         transform.forward = dir;
 
-        dir *= speed;
-        dir.y = rb.velocity.y;
-        rb.velocity = dir;
+        //dir *= speed;
+        //dir.y = rb.velocity.y;
+        //rb.velocity = dir;
+
+        Vector3 newVelocity = dir * speed;
+        newVelocity.y = rb.velocity.y;
+
+        rb.velocity = Vector3.zero;
+        rb.AddForce(newVelocity, ForceMode.VelocityChange);
     }
 
     public void Jump()
@@ -103,6 +114,7 @@ public class Movement : MonoBehaviour, IMove
 
         if (isGrounded)
         {
+            rb.drag = 0;
             isGrounded = false;
             jumpCheck = false;
 
