@@ -256,4 +256,9 @@ public class ScenarioManager : SingletonDestroy<ScenarioManager>
     {
         obj.SetActive(true);
     }
+
+    public void SetActiveFalse(GameObject obj)
+    {
+        obj.SetActive(false);
+    }
 }

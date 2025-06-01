@@ -198,7 +198,7 @@ MonoBehaviour:
       \uAC1C\uC218\uB97C \uD655\uC778\uD560 \uC218 \uC788\uC5B4.\n\uC790, \uACC4\uC18D\uD574\uC11C
       \uC55E\uC73C\uB85C \uAC00\uBCF4\uC790!"
     ttsSrc: 
-    x: 0
+    x: 400
     y: 0
   - id: 8
     imgSrc: Image/pairy
@@ -362,7 +362,7 @@ MonoBehaviour:
       \uB420 \uAC70\uC57C."
     ttsSrc: 
     x: 584
-    y: 206
+    y: -206
   - id: 19
     imgSrc: Image/pairy
     name: "\uBCC4\uC758 \uC815\uB839 : \uC194"
@@ -1201,7 +1201,7 @@ MonoBehaviour:
       \uD604\uC2E4\uB85C \uC774\uB8E8\uC5B4\uC9C0\uC9C4 \uBABB\uD588\uC9C0\uB9CC,\n\uADF8
       \uB9C8\uC74C\uB9CC\uD07C\uC740 \uC6B0\uB9AC\uAC00 \uC804\uD574\uC904 \uC218
       \uC788\uC5B4!"
-    ttsSrc: Sound/CH1/Sol_TTS_17
+    ttsSrc: Sound/CH2/Sol_TTS_17
     x: 0
     y: 0
   - id: 30
@@ -1213,7 +1213,7 @@ MonoBehaviour:
     font: "\uD3C9\uCC3D\uCCB4_Bold"
     chat: "\uC790 \uC2A4\uD154 \uC774\uC81C \uB85C\uC2DC\uC758 \uC804\uD558\uC9C0
       \uBABB\uD55C \uC9C4\uC2EC\uC744 \uC804\uD574\uC8FC\uC790!"
-    ttsSrc: Sound/CH1/Sol_TTS_18
+    ttsSrc: Sound/CH2/Sol_TTS_18
     x: 0
     y: 0
   Loading:

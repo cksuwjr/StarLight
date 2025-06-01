@@ -901,7 +901,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactable: 1
-  oneOff: 0
   nonSave: 0
   OnClickUnityEvent:
     m_PersistentCalls:
@@ -1868,7 +1867,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactable: 1
-  oneOff: 0
   nonSave: 0
   OnClickUnityEvent:
     m_PersistentCalls:
@@ -2262,7 +2260,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactable: 1
-  oneOff: 0
   nonSave: 0
   OnClickUnityEvent:
     m_PersistentCalls:
@@ -3240,6 +3237,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3183240705193900689, guid: fc14a0f134eac8249ac199ef26c9ae8a,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 0.8117647
+      objectReference: {fileID: 0}
     - target: {fileID: 3230025560714124115, guid: fc14a0f134eac8249ac199ef26c9ae8a,
         type: 3}
       propertyPath: m_IsActive
@@ -3448,6 +3450,11 @@ PrefabInstance:
     - target: {fileID: 7394765287764303199, guid: fc14a0f134eac8249ac199ef26c9ae8a,
         type: 3}
       propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7477306467543592417, guid: fc14a0f134eac8249ac199ef26c9ae8a,
+        type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7586709475413062183, guid: fc14a0f134eac8249ac199ef26c9ae8a,
@@ -4018,7 +4025,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactable: 1
-  oneOff: 0
   nonSave: 0
   OnClickUnityEvent:
     m_PersistentCalls:
