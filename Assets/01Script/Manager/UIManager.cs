@@ -144,11 +144,11 @@ public class UIManager : SingletonDestroy<UIManager>
             btn.onClick.AddListener(CloseMission);
 
         readWrite = ui.transform.GetChild(num++).gameObject;
-        if (readWrite.transform.GetChild(0).TryGetComponent<Button>(out btn))
-            btn.onClick.AddListener(CloseReadWrite);
         if (readWrite.transform.GetChild(1).TryGetComponent<Button>(out btn))
-            btn.onClick.AddListener(ForWardReadWrite);
+            btn.onClick.AddListener(CloseReadWrite);
         if (readWrite.transform.GetChild(2).TryGetComponent<Button>(out btn))
+            btn.onClick.AddListener(ForWardReadWrite);
+        if (readWrite.transform.GetChild(3).TryGetComponent<Button>(out btn))
             btn.onClick.AddListener(BackWardReadWrite);
 
         chat = ui.transform.GetChild(num++).gameObject;
@@ -485,12 +485,12 @@ public class UIManager : SingletonDestroy<UIManager>
 
     private void ForWardReadWrite()
     {
-        readWrite.GetComponent<Image>().sprite = Resources.Load<Sprite>("Image/UI_12");
+        readWrite.transform.GetChild(0).GetComponent<Image>().sprite = Resources.Load<Sprite>("Image/UI_12");
     }
 
     private void BackWardReadWrite()
     {
-        readWrite.GetComponent<Image>().sprite = Resources.Load<Sprite>("Image/UI_11");
+        readWrite.transform.GetChild(0).GetComponent<Image>().sprite = Resources.Load<Sprite>("Image/UI_11");
     }
 
     public void SetScenarioPannel(Sprite sprite, string name, string chat)
