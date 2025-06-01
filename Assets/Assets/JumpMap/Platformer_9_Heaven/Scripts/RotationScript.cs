@@ -4,6 +4,7 @@ namespace ithappy
 {
     public class RotationScript : MonoBehaviour
     {
+        private Rigidbody rb;
         public enum RotationAxis
         {
             X,
@@ -13,6 +14,11 @@ namespace ithappy
 
         public RotationAxis rotationAxis = RotationAxis.Y;
         public float rotationSpeed = 50.0f;
+
+        private void Awake()
+        {
+            TryGetComponent<Rigidbody>(out rb);
+        }
 
         void Update()
         {
@@ -32,7 +38,10 @@ namespace ithappy
                     break;
             }
 
-            transform.Rotate(axis, rotationValue);
+            if (rb)
+                rb.MoveRotation(rb.rotation * Quaternion.AngleAxis(rotationValue, axis));
+            else
+                transform.Rotate(axis, rotationValue);
         }
     }
 }
