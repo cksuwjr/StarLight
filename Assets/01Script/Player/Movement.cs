@@ -157,7 +157,10 @@ public class Movement : MonoBehaviour, IMove
             anim.SetBool("Jump", false);
         }
         else
+        {
             isGrounded = false;
+            rb.drag = 0f;
+        }
     }
 
     public void CC(float time)
