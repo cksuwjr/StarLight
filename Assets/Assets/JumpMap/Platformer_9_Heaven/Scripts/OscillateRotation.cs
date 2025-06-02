@@ -15,6 +15,13 @@ namespace ithappy
         private bool isReversing = false;
         private float randomDelay = 0f;
 
+        private Rigidbody rb;
+
+        private void Awake()
+        {
+            TryGetComponent<Rigidbody>(out rb);
+        }
+
         void Start()
         {
             startRotation = transform.rotation;
@@ -41,7 +48,10 @@ namespace ithappy
             float currentAngle = rotationAngle * (isReversing ? (1 - progress) : progress);
             Quaternion currentRotation = startRotation * Quaternion.AngleAxis(currentAngle, rotationAxis);
 
-            transform.rotation = currentRotation;
+            if(rb)
+                rb.rotation = currentRotation;
+            else
+                transform.rotation = currentRotation;
 
             timeElapsed += Time.deltaTime;
 

@@ -7,6 +7,8 @@ public class Car : PoolObject
     private Rigidbody rb;
     private Rigidbody playerRb;
 
+    [SerializeField] private Vector3 respawnPos = new Vector3(23f, -1.183f, 110f);
+
     private void Awake()
     {
         TryGetComponent<Rigidbody>(out rb);    
@@ -37,6 +39,6 @@ public class Car : PoolObject
 
     private void Reposition()
     {
-        playerRb.transform.position = new Vector3(23f, -1.183f, 110f);
+        playerRb.transform.position = respawnPos;
     }
 }
