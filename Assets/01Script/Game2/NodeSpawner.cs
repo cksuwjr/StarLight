@@ -341,38 +341,45 @@ public class NodeSpawner : MonoBehaviour
         int count = 0;
         GameObject pianoNode;
 
-        SoundManager.Instance.ChangeBGM(BGM);
+        SoundManager.Instance.PlaySound(BGM);
 
+        float timer = 0f;
         while (count < nodes.Length / 4)
         {
+            if (timer >= speed)
+            {
 
-            if (nodes[count, 0] == 5)
-            {
-                pianoNode = PoolManager.Instance.enemyPool.GetPoolObject();
-                pianoNode.transform.position = new Vector3(-22.05f, 77f, 20.9f);
-                pianoNode.GetComponent<PianoNode>().Init(1, 45);
+                if (nodes[count, 0] == 5)
+                {
+                    pianoNode = PoolManager.Instance.enemyPool.GetPoolObject();
+                    pianoNode.transform.position = new Vector3(-22.05f, 85f, 20.9f);
+                    pianoNode.GetComponent<PianoNode>().Init(1, 45);
+                }
+                if (nodes[count, 1] == 5)
+                {
+                    pianoNode = PoolManager.Instance.enemyPool2.GetPoolObject();
+                    pianoNode.transform.position = new Vector3(-7.35f, 85f, 20.9f);
+                    pianoNode.GetComponent<PianoNode>().Init(2, 45);
+                }
+                if (nodes[count, 2] == 5)
+                {
+                    pianoNode = PoolManager.Instance.enemyPool3.GetPoolObject();
+                    pianoNode.transform.position = new Vector3(7.35f, 85f, 20.9f);
+                    pianoNode.GetComponent<PianoNode>().Init(3, 45);
+                }
+                if (nodes[count, 3] == 5)
+                {
+                    pianoNode = PoolManager.Instance.enemyPool4.GetPoolObject();
+                    pianoNode.transform.position = new Vector3(22.05f, 85f, 20.9f);
+                    pianoNode.GetComponent<PianoNode>().Init(4, 45);
+                }
+                timer = 0f;
+                count++;
             }
-            if (nodes[count, 1] == 5)
-            {
-                pianoNode = PoolManager.Instance.enemyPool2.GetPoolObject();
-                pianoNode.transform.position = new Vector3(-7.35f, 77f, 20.9f);
-                pianoNode.GetComponent<PianoNode>().Init(2, 45);
-            }
-            if (nodes[count, 2] == 5)
-            {
-                pianoNode = PoolManager.Instance.enemyPool3.GetPoolObject();
-                pianoNode.transform.position = new Vector3(7.35f, 77f, 20.9f);
-                pianoNode.GetComponent<PianoNode>().Init(3, 45);
-            }
-            if (nodes[count, 3] == 5)
-            {
-                pianoNode = PoolManager.Instance.enemyPool4.GetPoolObject();
-                pianoNode.transform.position = new Vector3(22.05f, 77f, 20.9f);
-                pianoNode.GetComponent<PianoNode>().Init(4, 45);
-            }
-            Debug.Log("��ȯ");
-            yield return YieldInstructionCache.WaitForSeconds(speed);
-            count++;
+            yield return YieldInstructionCache.waitForFixedUpdate;
+            timer += Time.fixedDeltaTime;
+            //yield return YieldInstructionCache.WaitForSeconds(speed);
+
         }
         
         //while ()
@@ -413,37 +420,45 @@ public class NodeSpawner : MonoBehaviour
         GameObject pianoNode;
         UIManager.Instance.SetGoal("전하지 못한 마지막 연주를 완성하세요!");
 
-        SoundManager.Instance.ChangeBGM(BGM);
+        yield return YieldInstructionCache.WaitForSeconds(3f);
+        SoundManager.Instance.PlaySound(BGM);
 
+        float timer = 0f;
         while (count < nodesFaze2.Length / 4)
         {
+            if (timer >= speed)
+            {
 
-            if (nodesFaze2[count, 0] == 5)
-            {
-                pianoNode = PoolManager.Instance.enemyPool.GetPoolObject();
-                pianoNode.transform.position = new Vector3(-22.05f, 77f, 20.9f);
-                pianoNode.GetComponent<PianoNode>().Init(1, 100);
+                if (nodesFaze2[count, 0] == 5)
+                {
+                    pianoNode = PoolManager.Instance.enemyPool.GetPoolObject();
+                    pianoNode.transform.position = new Vector3(-22.05f, 85f, 20.9f);
+                    pianoNode.GetComponent<PianoNode>().Init(1, 100);
+                }
+                if (nodesFaze2[count, 1] == 5)
+                {
+                    pianoNode = PoolManager.Instance.enemyPool2.GetPoolObject();
+                    pianoNode.transform.position = new Vector3(-7.35f, 85f, 20.9f);
+                    pianoNode.GetComponent<PianoNode>().Init(2, 100);
+                }
+                if (nodesFaze2[count, 2] == 5)
+                {
+                    pianoNode = PoolManager.Instance.enemyPool3.GetPoolObject();
+                    pianoNode.transform.position = new Vector3(7.35f, 85f, 20.9f);
+                    pianoNode.GetComponent<PianoNode>().Init(3, 100);
+                }
+                if (nodesFaze2[count, 3] == 5)
+                {
+                    pianoNode = PoolManager.Instance.enemyPool4.GetPoolObject();
+                    pianoNode.transform.position = new Vector3(22.05f, 85f, 20.9f);
+                    pianoNode.GetComponent<PianoNode>().Init(4, 100);
+                }
+                count++;
+                timer = 0f;
             }
-            if (nodesFaze2[count, 1] == 5)
-            {
-                pianoNode = PoolManager.Instance.enemyPool2.GetPoolObject();
-                pianoNode.transform.position = new Vector3(-7.35f, 77f, 20.9f);
-                pianoNode.GetComponent<PianoNode>().Init(2, 100);
-            }
-            if (nodesFaze2[count, 2] == 5)
-            {
-                pianoNode = PoolManager.Instance.enemyPool3.GetPoolObject();
-                pianoNode.transform.position = new Vector3(7.35f, 77f, 20.9f);
-                pianoNode.GetComponent<PianoNode>().Init(3, 100);
-            }
-            if (nodesFaze2[count, 3] == 5)
-            {
-                pianoNode = PoolManager.Instance.enemyPool4.GetPoolObject();
-                pianoNode.transform.position = new Vector3(22.05f, 77f, 20.9f);
-                pianoNode.GetComponent<PianoNode>().Init(4, 100);
-            }
-            yield return YieldInstructionCache.WaitForSeconds(speed);
-            count++;
+            yield return YieldInstructionCache.waitForFixedUpdate;
+            timer += Time.fixedDeltaTime;
+            //yield return YieldInstructionCache.WaitForSeconds(speed);
         }
         yield return YieldInstructionCache.WaitForSeconds(3f);
 

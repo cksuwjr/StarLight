@@ -8,6 +8,18 @@ public class ScoreChecker : MonoBehaviour
 
     private int score;
 
+    private IInteract key1;
+    private IInteract key2;
+    private IInteract key3;
+    private IInteract key4;
+
+    private void Awake()
+    {
+        GameObject.Find("Key_White1").TryGetComponent<IInteract>(out key1);
+        GameObject.Find("Key_White2").TryGetComponent<IInteract>(out key2);
+        GameObject.Find("Key_White3").TryGetComponent<IInteract>(out key3);
+        GameObject.Find("Key_White4").TryGetComponent<IInteract>(out key4);
+    }
 
     public void CheckNode(int n)
     {
@@ -53,13 +65,13 @@ public class ScoreChecker : MonoBehaviour
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Q) || Input.GetKeyDown(KeyCode.Alpha1))
-            CheckNode(1);
+            key1.Interaction();
         if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.Alpha2))
-            CheckNode(2);
+            key2.Interaction();
         if (Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown(KeyCode.Alpha3))
-            CheckNode(3);
+            key3.Interaction();
         if (Input.GetKeyDown(KeyCode.R) || Input.GetKeyDown(KeyCode.Alpha4))
-            CheckNode(4);
+            key4.Interaction();
     }
 
     private void OnTriggerEnter(Collider other)
