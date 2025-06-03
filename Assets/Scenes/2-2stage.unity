@@ -5259,6 +5259,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3256285565178696321, guid: fe78e6c8fa5534c42b753e9b26f06cd9,
         type: 3}
+      propertyPath: m_Name
+      value: 2-2StageTrigger2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3256285565178696321, guid: fe78e6c8fa5534c42b753e9b26f06cd9,
+        type: 3}
       propertyPath: m_Layer
       value: 3
       objectReference: {fileID: 0}
@@ -5581,6 +5586,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7330286129581993956, guid: fe78e6c8fa5534c42b753e9b26f06cd9,
+        type: 3}
+      propertyPath: m_Name
+      value: 2-2StageTrigger1
       objectReference: {fileID: 0}
     - target: {fileID: 7330286129581993956, guid: fe78e6c8fa5534c42b753e9b26f06cd9,
         type: 3}

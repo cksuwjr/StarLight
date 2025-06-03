@@ -10,4 +10,10 @@ public class LobbySceneManager : MonoBehaviour
         LoadingSceneManager.SetNextScene(value);
         SceneManager.LoadScene("LoadingScene");
     }
+
+    public void DeletePlayerPrefs(string s)
+    {
+        PlayerPrefs.DeleteKey(s);
+        PlayerPrefs.Save();
+    }
 }
