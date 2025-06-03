@@ -100,6 +100,15 @@ public class ScenarioManager : SingletonDestroy<ScenarioManager>
                 case 3: OnStoryEnd += () => { GameManager.Instance.SavePosition(); GameManager.Instance.LoadScene("2-1Puzzle"); }; break;
                 case 13: OnStoryEnd += () => { GameManager.Instance.SavePosition(); GameManager.Instance.LoadScene("2-2Puzzle"); }; break;
                 case 23: OnStoryEnd += () => { GameManager.Instance.SavePosition(); GameManager.Instance.LoadScene("2-3Puzzle"); }; break;
+
+
+                case 25: OnStoryEnd += () => 
+                {
+                    GameManager.Instance.Player.transform.position = new Vector3(13.27f, 282.19f, 2.10f);
+                    PlayerPrefs.SetInt("2-3", 1);
+                    PlayerPrefs.Save();
+                }; break;
+
                 case 29:
                     OnStoryEnd += () =>
                     {
