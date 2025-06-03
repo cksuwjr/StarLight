@@ -395,7 +395,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactable: 1
-  oneOff: 0
   nonSave: 0
   OnClickUnityEvent:
     m_PersistentCalls:
@@ -572,8 +571,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 3, z: 0}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 4.0476165, z: 0}
+  m_Center: {x: 0, y: 0.523808, z: 0}
 --- !u!23 &155038893
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2162,7 +2161,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactable: 1
-  oneOff: 0
   nonSave: 0
   OnClickUnityEvent:
     m_PersistentCalls:
@@ -3766,7 +3764,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactable: 1
-  oneOff: 0
   nonSave: 0
   OnClickUnityEvent:
     m_PersistentCalls:
@@ -4224,7 +4221,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactable: 1
-  oneOff: 0
   nonSave: 0
   OnClickUnityEvent:
     m_PersistentCalls:

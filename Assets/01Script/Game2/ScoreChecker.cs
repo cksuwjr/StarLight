@@ -50,6 +50,18 @@ public class ScoreChecker : MonoBehaviour
 
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Q) || Input.GetKeyDown(KeyCode.Alpha1))
+            CheckNode(1);
+        if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.Alpha2))
+            CheckNode(2);
+        if (Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown(KeyCode.Alpha3))
+            CheckNode(3);
+        if (Input.GetKeyDown(KeyCode.R) || Input.GetKeyDown(KeyCode.Alpha4))
+            CheckNode(4);
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         var node = other.GetComponent<PianoNode>();
