@@ -5288,7 +5288,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 84a4c3a3d4d41d045818293551441c90,
         type: 3}
       propertyPath: m_Name
-      value: hotdog
+      value: 1-2StageTrigger2
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 84a4c3a3d4d41d045818293551441c90,
         type: 3}
@@ -49692,7 +49692,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 12a125d687bd6cd4eb5ea118e35611dd,
         type: 3}
       propertyPath: m_Name
-      value: inheung
+      value: 1-2StageTrigger1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 12a125d687bd6cd4eb5ea118e35611dd,
         type: 3}
