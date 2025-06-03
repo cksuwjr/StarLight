@@ -56,6 +56,32 @@ public class PlayerController : MonoBehaviour
         {
             PlayerPrefs.DeleteAll();
         }
+
+        if (Input.GetKeyDown(KeyCode.T))
+        {
+            PlayerPrefs.SetInt("1-1StageTrigger1", 1);
+            PlayerPrefs.SetInt("1-1StageTrigger2", 1);
+            PlayerPrefs.SetInt("1-2StageTrigger1", 1);
+            PlayerPrefs.SetInt("1-2StageTrigger2", 1);
+            PlayerPrefs.SetInt("1-3StageTrigger1", 1);
+            PlayerPrefs.SetInt("1-3StageTrigger2", 1);
+            PlayerPrefs.SetInt("1-1", 1);
+            PlayerPrefs.SetInt("1-2", 1);
+            PlayerPrefs.SetInt("1-3", 1);
+
+
+
+            PlayerPrefs.SetInt("2-1StageTrigger1", 1);
+            PlayerPrefs.SetInt("2-1StageTrigger2", 1);
+            PlayerPrefs.SetInt("2-2StageTrigger1", 1);
+            PlayerPrefs.SetInt("2-2StageTrigger2", 1);
+            PlayerPrefs.SetInt("2-3StageTrigger1", 1);
+            PlayerPrefs.SetInt("2-3StageTrigger2", 1);
+            PlayerPrefs.SetInt("2-1", 1);
+            PlayerPrefs.SetInt("2-2", 1);
+            PlayerPrefs.SetInt("2-3", 1);
+            PlayerPrefs.Save();
+        }
     }
 
     public void RemoveButtonInteraction()

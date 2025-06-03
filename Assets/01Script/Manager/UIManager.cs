@@ -525,6 +525,12 @@ public class UIManager : SingletonDestroy<UIManager>
         smallchatText.text = chat;
     }
 
+    public void SetFont(TMP_FontAsset font)
+    {
+        chatText.font = font;
+        smallchatText.font = font;
+    }
+
     public void HideSeekScenarioCloseBtn(bool tf)
     {
         chat.transform.GetChild(5).gameObject.SetActive(tf);
