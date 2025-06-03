@@ -12,9 +12,9 @@ public class PianoNode : PoolObject
         this.speed = speed;
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
-        transform.position += Vector3.down * speed * Time.deltaTime;
+        transform.position += Vector3.down * speed * Time.fixedDeltaTime;
     }
 
     private void OnTriggerEnter(Collider other)
