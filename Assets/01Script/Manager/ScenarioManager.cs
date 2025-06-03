@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
@@ -20,6 +21,16 @@ public class ScenarioManager : SingletonDestroy<ScenarioManager>
     private string chapter;
 
     public UnityEvent OnStarAllCollected;
+
+    private TMP_FontAsset fontRegular;
+    private TMP_FontAsset fontBold;
+
+
+    protected override void DoAwake()
+    {
+         fontBold = Resources.Load<TMP_FontAsset>("Font/PyeongChang-Bold SDF");
+         fontRegular = Resources.Load<TMP_FontAsset>("Font/PyeongChang-Regular SDF");
+    }
 
     public void SetChapter(string name)
     {
@@ -182,12 +193,18 @@ public class ScenarioManager : SingletonDestroy<ScenarioManager>
         var imgSprite = Resources.Load<Sprite>(story[page].imgSrc);
         var sound = Resources.Load<AudioClip>(story[page].ttsSrc);
         var size = story[page].windowType;
-
+        var font = story[page].font;
         SoundManager.Instance.StopSound();
         if (sound) 
             SoundManager.Instance.PlaySound(sound, 0.7f, false);
 
-        if(size == "large")
+        if (font == "Bold")
+            UIManager.Instance.SetFont(fontBold);
+        else if (font == "Regular")
+            UIManager.Instance.SetFont(fontRegular);
+
+
+        if (size == "large")
             StartCoroutine(LoadText(imgSprite, story[page].name, story[page].chat));
         else
             StartCoroutine(LoadTextSmall(imgSprite, story[page].name, story[page].chat));
