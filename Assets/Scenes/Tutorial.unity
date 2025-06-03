@@ -466,6 +466,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Destination: {x: -36.88, y: -12.62611, z: -18.130558}
+  OnTeleport:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &249026528
 GameObject:
   m_ObjectHideFlags: 0
@@ -2121,6 +2124,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Destination: {x: -56.9, y: -12.62, z: -18.130558}
+  OnTeleport:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!65 &1112962575
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3633,12 +3639,12 @@ PrefabInstance:
     - target: {fileID: 7001247864472720443, guid: 79a877111fe9c124781bb7ebdaa18dfe,
         type: 3}
       propertyPath: jump
-      value: 22
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 7001247864472720443, guid: 79a877111fe9c124781bb7ebdaa18dfe,
         type: 3}
       propertyPath: speed
-      value: 4.5
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 7001247864472720443, guid: 79a877111fe9c124781bb7ebdaa18dfe,
         type: 3}
