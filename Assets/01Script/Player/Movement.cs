@@ -100,7 +100,7 @@ public class Movement : MonoBehaviour, IMove
         //dir.y = rb.velocity.y;
         //rb.velocity = dir;
 
-        Vector3 newVelocity = dir * speed;
+        Vector3 newVelocity = dir * speed * 20f * Time.deltaTime;
         newVelocity.y = rb.velocity.y;
 
         rb.velocity = Vector3.zero;
