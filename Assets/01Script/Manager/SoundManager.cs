@@ -62,6 +62,14 @@ public class SoundManager : Singleton<SoundManager>
             StartCoroutine("ChangeBGMClip", audioClip);
     }
 
+    public void StopBGM()
+    {
+        if (BGMAudioObject)
+        {
+            BGMAudioObject.AudioSource.Stop();
+        }
+    }
+
     public void StopSound()
     {
         if (playObject == null) return;
