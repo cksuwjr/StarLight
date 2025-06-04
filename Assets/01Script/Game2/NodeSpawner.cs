@@ -444,6 +444,8 @@ public class NodeSpawner : MonoBehaviour
 
     private IEnumerator Spawn()
     {
+        SoundManager.Instance.StopBGM();
+
         UIManager.Instance.FloatImage(Resources.Load<Sprite>("Image/2-2_tut"));
 
         yield return YieldInstructionCache.WaitForSeconds(3f);
