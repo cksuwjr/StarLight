@@ -3639,12 +3639,17 @@ PrefabInstance:
     - target: {fileID: 7001247864472720443, guid: 79a877111fe9c124781bb7ebdaa18dfe,
         type: 3}
       propertyPath: jump
-      value: 15
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 7001247864472720443, guid: 79a877111fe9c124781bb7ebdaa18dfe,
         type: 3}
       propertyPath: speed
-      value: 0.6
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7001247864472720443, guid: 79a877111fe9c124781bb7ebdaa18dfe,
+        type: 3}
+      propertyPath: gravityY
+      value: -20
       objectReference: {fileID: 0}
     - target: {fileID: 7001247864472720443, guid: 79a877111fe9c124781bb7ebdaa18dfe,
         type: 3}
