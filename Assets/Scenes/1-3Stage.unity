@@ -9258,8 +9258,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clips:
-  - {fileID: 32900000, guid: 768b4c85e3c16cd428f6a91939f5c920, type: 3}
-  - {fileID: 32900000, guid: 0910a4c043da8d24393635fd32198831, type: 3}
+  - {fileID: 32900000, guid: fceea26de0a1cb9449a9613252354f4c, type: 3}
 --- !u!1001 &1563465017
 PrefabInstance:
   m_ObjectHideFlags: 0

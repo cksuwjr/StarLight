@@ -358,7 +358,7 @@ MonoBehaviour:
         m_MethodName: SetActiveTrue
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgument: {fileID: 1591297732}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
@@ -3679,6 +3679,11 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 1222701511639641139, guid: 99dfc03da67ef3048b5b0a4c52cdac78,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1535182405738288855, guid: 99dfc03da67ef3048b5b0a4c52cdac78,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4020,7 +4025,7 @@ PrefabInstance:
     - target: {fileID: 6280198024570482410, guid: a501bc5d8d9d85a4daf8914b0cc58201,
         type: 3}
       propertyPath: OnStart2.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_IntArgument
-      value: 22
+      value: 21
       objectReference: {fileID: 0}
     - target: {fileID: 6280198024570482410, guid: a501bc5d8d9d85a4daf8914b0cc58201,
         type: 3}
