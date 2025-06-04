@@ -1208,7 +1208,17 @@ PrefabInstance:
     - target: {fileID: 7001247864472720443, guid: 79a877111fe9c124781bb7ebdaa18dfe,
         type: 3}
       propertyPath: speed
-      value: 1
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 7001247864472720443, guid: 79a877111fe9c124781bb7ebdaa18dfe,
+        type: 3}
+      propertyPath: checkLayer.m_Bits
+      value: 257
+      objectReference: {fileID: 0}
+    - target: {fileID: 7345375566518425208, guid: 79a877111fe9c124781bb7ebdaa18dfe,
+        type: 3}
+      propertyPath: m_Material
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
