@@ -13,6 +13,9 @@ public class DutorialStarter : MonoBehaviour
         }
         else
         {
+            GameObject.Find("Inform1").SetActive(false);
+            GameObject.Find("Inform2").SetActive(false);
+            GameObject.Find("Inform3").SetActive(false);
             StartDutorial();
         }
     }
