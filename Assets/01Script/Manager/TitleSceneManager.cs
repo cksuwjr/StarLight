@@ -7,6 +7,9 @@ using UnityEngine.SceneManagement;
 using System;
 //using GooglePlayGames;
 //using GooglePlayGames.BasicApi;
+using UnityEngine.AddressableAssets;
+using UnityEngine.ResourceManagement.AsyncOperations;
+
 
 public class TitleSceneManager : MonoBehaviour
 {
@@ -28,6 +31,8 @@ public class TitleSceneManager : MonoBehaviour
 
     private void Start()
     {
+        StartDownload();
+
         SetPopupsScaleZero();
 
         DataManager.Instance.Init();
@@ -35,6 +40,11 @@ public class TitleSceneManager : MonoBehaviour
         InitTitleScene();
 
         StartCoroutine("WelcomeText");
+    }
+
+    public void StartDownload()
+    {
+        Addressables.DownloadDependenciesAsync("default");
     }
 
     private IEnumerator WelcomeText()
