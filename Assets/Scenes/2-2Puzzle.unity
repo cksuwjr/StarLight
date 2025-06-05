@@ -706,7 +706,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce21d09e2d104a941a85ab7c0ccc90ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.375
   OnFaze1End:
     m_PersistentCalls:
       m_Calls:
@@ -785,7 +784,7 @@ MonoBehaviour:
           m_StringArgument: Ch_2
           m_BoolArgument: 0
         m_CallState: 2
-  BGM: {fileID: 8300000, guid: a7269ade1326e124bad798d73ff824ed, type: 3}
+  BGM: {fileID: 8300000, guid: a890fc51ecbebfd4db789aabd3956565, type: 3}
 --- !u!4 &195221936
 Transform:
   m_ObjectHideFlags: 0
