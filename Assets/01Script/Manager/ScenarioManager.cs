@@ -25,11 +25,17 @@ public class ScenarioManager : SingletonDestroy<ScenarioManager>
     private TMP_FontAsset fontRegular;
     private TMP_FontAsset fontBold;
 
+    public UnityEvent OnStart;
 
     protected override void DoAwake()
     {
          fontBold = Resources.Load<TMP_FontAsset>("Font/PyeongChang-Bold SDF");
          fontRegular = Resources.Load<TMP_FontAsset>("Font/PyeongChang-Regular SDF");
+    }
+
+    private void Start()
+    {
+        OnStart?.Invoke();
     }
 
     public void SetChapter(string name)
@@ -286,5 +292,37 @@ public class ScenarioManager : SingletonDestroy<ScenarioManager>
     public void SetActiveFalse(GameObject obj)
     {
         obj.SetActive(false);
+    }
+
+    public void GetPicture(string name)
+    {
+        PlayerPrefs.SetInt(name, 1);
+        PlayerPrefs.Save();
+
+        CheckPicture();
+        UIManager.Instance.AcquirePictureEffect();
+    }
+
+    public void CheckPicture()
+    {
+        int count = 0;
+        string name;
+        if (chapter == "Ch_1")
+        {
+            name = "Picture1";
+
+            for (int i = 1; i <= 12; i++)
+                if (PlayerPrefs.GetInt(name + "-" + i, 0) == 1) count++;
+        }
+
+        if (chapter == "Ch_2")
+        {
+            name = "Picture2";
+
+            for (int i = 1; i <= 12; i++)
+                if (PlayerPrefs.GetInt(name + "-" + i, 0) == 1) count++;
+        }
+
+        UIManager.Instance.SetPicture(count, 12);
     }
 }

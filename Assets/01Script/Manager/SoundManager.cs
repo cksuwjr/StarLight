@@ -28,6 +28,9 @@ public class SoundManager : Singleton<SoundManager>
                 if(BGM != BGMAudioObject.AudioSource.clip)
                     ChangeBGM(BGM);
         } 
+
+        var onOff = PlayerPrefs.GetInt("Sound") == 1 ? true : false;
+        SoundOnOFF(onOff);
     }
 
     public void SoundOnOFF(bool tf)
@@ -98,26 +101,35 @@ public class SoundManager : Singleton<SoundManager>
     IEnumerator ChangeBGMClip(AudioClip newClip)
     {
         current = percent = 0f;
-
-        while (percent < 1f)
+        if (PlayerPrefs.GetInt("Sound") == 1)
         {
-            current += Time.deltaTime;
-            percent = current / 1.0f;
-            BGMAudioObject.AudioSource.volume = Mathf.Lerp(volumeSize, 0f, percent);
-            yield return null;
+            while (percent < 1f)
+            {
+                current += Time.deltaTime;
+                percent = current / 1.0f;
+                BGMAudioObject.AudioSource.volume = Mathf.Lerp(volumeSize, 0f, percent);
+                yield return null;
+            }
+
+            BGMAudioObject.AudioSource.clip = newClip;
+            BGMAudioObject.AudioSource.Play();
+            current = percent = 0f;
+
+            while (percent < 1f)
+            {
+                current += Time.deltaTime;
+                percent = current / 1.0f;
+                BGMAudioObject.AudioSource.volume = Mathf.Lerp(0f, volumeSize, percent);
+                yield return null;
+            }
+        }
+        else
+        {
+            BGMAudioObject.AudioSource.clip = newClip;
+            BGMAudioObject.AudioSource.Play();
+            BGMAudioObject.AudioSource.volume = 0f;
         }
 
-        BGMAudioObject.AudioSource.clip = newClip;
-        BGMAudioObject.AudioSource.Play();
-        current = percent = 0f;
-
-        while (percent < 1f)
-        {
-            current += Time.deltaTime;
-            percent = current / 1.0f;
-            BGMAudioObject.AudioSource.volume = Mathf.Lerp(0f, volumeSize, percent);
-            yield return null;
-        }
 
     }
 }

@@ -9,6 +9,16 @@ public class TwoStateButton : UIClicker
 {
     public bool onT_offF = false;
 
+    public bool OnT_OffF
+    {
+        get { return onT_offF; }
+        set 
+        { 
+            onT_offF = value;
+            ChangeSprite();
+        }
+    }
+
     [SerializeField] private Sprite onSprite;
     [SerializeField] private Sprite offSprite;
 
@@ -23,16 +33,14 @@ public class TwoStateButton : UIClicker
         if(offSprite == null) offSprite = image.sprite;
         if(onSprite == null) onSprite = image.sprite;
 
-        OnClick += ChangeSprite;
+        //OnClick += ChangeSprite;
 
-        onT_offF = !onT_offF;
         ChangeSprite();
     }
 
     private void ChangeSprite()
     {
-        onT_offF = !onT_offF;
-        if (onT_offF)
+        if (OnT_OffF)
             image.sprite = onSprite;
         else
             image.sprite = offSprite;

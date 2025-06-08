@@ -46,9 +46,9 @@ public class GameManager : Singleton<GameManager>
     private void AssignManagers()
     {
         GameObject.Find("DataManager")?.TryGetComponent<DataManager>(out dataManager);
+        GameObject.Find("SoundManager")?.TryGetComponent<SoundManager>(out soundManager);
         GameObject.Find("UIManager")?.TryGetComponent<UIManager>(out uiManager);
         GameObject.Find("PoolManager")?.TryGetComponent<PoolManager>(out poolManager);
-        GameObject.Find("SoundManager")?.TryGetComponent<SoundManager>(out soundManager);
         GameObject.Find("Global Volume")?.TryGetComponent<Volume>(out volume);
     }
 

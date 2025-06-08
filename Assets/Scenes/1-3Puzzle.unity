@@ -1334,6 +1334,9 @@ MonoBehaviour:
   OnStarAllCollected:
     m_PersistentCalls:
       m_Calls: []
+  OnStart:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!4 &1664323581
 Transform:
   m_ObjectHideFlags: 0
@@ -2443,6 +2446,11 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1664323580}
+    - target: {fileID: 5308575601383414230, guid: fc14a0f134eac8249ac199ef26c9ae8a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5665017282408680036, guid: fc14a0f134eac8249ac199ef26c9ae8a,
         type: 3}
       propertyPath: m_AnchorMax.y
