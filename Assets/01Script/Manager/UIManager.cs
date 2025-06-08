@@ -45,6 +45,9 @@ public class UIManager : SingletonDestroy<UIManager>
     private GameObject hpStatus;
     private TextMeshProUGUI timer;
     private TextMeshProUGUI goalText;
+    private TextMeshProUGUI picture;
+    private Image pictureImage;
+
 
 
     private GameObject playMenu;
@@ -205,6 +208,8 @@ public class UIManager : SingletonDestroy<UIManager>
         hpStatus = status.transform.GetChild(0).gameObject;
         status.transform.GetChild(1).GetChild(0).TryGetComponent<TextMeshProUGUI>(out timer);
         status.transform.GetChild(2).TryGetComponent<TextMeshProUGUI>(out goalText);
+        status.transform.GetChild(3).GetChild(0).TryGetComponent<TextMeshProUGUI>(out picture);
+        status.transform.GetChild(3).GetChild(1).TryGetComponent<Image>(out pictureImage);
 
         playMenu = ui.transform.GetChild(num++).gameObject;
         if(playMenu.transform.GetChild(0).TryGetComponent<Button>(out btn))
@@ -212,18 +217,20 @@ public class UIManager : SingletonDestroy<UIManager>
 
         if (playMenu.transform.GetChild(1).TryGetComponent<TwoStateButton>(out musicBtn))
         {
-            musicBtn.OnClick += () => GameManager.Instance.MusicOnOFF(musicBtn.onT_offF);
-
-            var n = PlayerPrefs.GetInt("Sound", 1);
+            musicBtn.OnClick += () =>
+            {
+                musicBtn.OnT_OffF = !musicBtn.OnT_OffF;
+                GameManager.Instance.MusicOnOFF(musicBtn.OnT_OffF);
+            };
+            var n = PlayerPrefs.GetInt("Sound");
             if (n == 0)
             {
-                musicBtn.onT_offF = false;
-                GameManager.Instance.MusicOnOFF(musicBtn.onT_offF);
+                musicBtn.OnT_OffF = false;
                 Debug.Log("설정변경");
             }
             else
             {
-
+                musicBtn.OnT_OffF = true;
             }
         }
 
@@ -327,7 +334,8 @@ public class UIManager : SingletonDestroy<UIManager>
 
     private void OpenLine()
     {
-        lineDrawer.enabled = true;
+        if(lineDrawer)
+            lineDrawer.enabled = true;
     }
 
 
@@ -340,8 +348,11 @@ public class UIManager : SingletonDestroy<UIManager>
     public void CloseInformText()
     {
         LeanTween.scale(informPannel, Vector3.zero, 0.2f);
-        lineDrawer.enabled = false;
-        CancelInvoke("OpenLine");
+        if (lineDrawer)
+        {
+            lineDrawer.enabled = false;
+            CancelInvoke("OpenLine");
+        }
     }
 
     public void OpenMail()
@@ -630,6 +641,15 @@ public class UIManager : SingletonDestroy<UIManager>
         SetStar(nowCount);
     }
 
+    public void SetPicture(int count, int maxCount)
+    {
+        picture.text = $"{count}/{maxCount}";
+    }
+
+    public void AcquirePictureEffect()
+    {
+        Acquire(pictureImage.sprite, pictureImage.transform.position);
+    }
 
     private void OpenMenuPopup()
     {

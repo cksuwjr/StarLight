@@ -30776,14 +30776,28 @@ PrefabInstance:
       propertyPath: m_Name
       value: murempew4
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 7171509269185351796, guid: 60e3e3804a418824386d6ac15f43189a,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 5261158278651297712, guid: 60e3e3804a418824386d6ac15f43189a, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 6345265710777324057, guid: 60e3e3804a418824386d6ac15f43189a,
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1472717470}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7171509269185351796, guid: 60e3e3804a418824386d6ac15f43189a,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1097494041}
+    - targetCorrespondingSourceObject: {fileID: 7171509269185351796, guid: 60e3e3804a418824386d6ac15f43189a,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1097494040}
   m_SourcePrefab: {fileID: 100100000, guid: 60e3e3804a418824386d6ac15f43189a, type: 3}
 --- !u!4 &1097494038 stripped
 Transform:
@@ -30791,6 +30805,77 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1097494037}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1097494039 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7171509269185351796, guid: 60e3e3804a418824386d6ac15f43189a,
+    type: 3}
+  m_PrefabInstance: {fileID: 1097494037}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1097494040
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1097494039}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 298f856b8ec60cd4b99057c3f4ffa297, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactable: 1
+  nonSave: 1
+  OnClickUnityEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1136517680}
+        m_TargetAssemblyTypeName: ScenarioManager, Assembly-CSharp
+        m_MethodName: GetPicture
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Picture1-8
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1136517680}
+        m_TargetAssemblyTypeName: ScenarioManager, Assembly-CSharp
+        m_MethodName: SetActiveFalse
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1097494039}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Picture1-8
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnClickUnityEventOnce:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!65 &1097494041
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1097494039}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 4.5, y: 1, z: 3.5}
 --- !u!1001 &1105814019
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -31783,6 +31868,33 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 3870033890783034856}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnStart:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1136517680}
+        m_TargetAssemblyTypeName: ScenarioManager, Assembly-CSharp
+        m_MethodName: SetChapter
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Ch_1
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1136517680}
+        m_TargetAssemblyTypeName: ScenarioManager, Assembly-CSharp
+        m_MethodName: CheckPicture
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -44795,14 +44907,28 @@ PrefabInstance:
       propertyPath: m_Name
       value: murempew2
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 7171509269185351796, guid: 60e3e3804a418824386d6ac15f43189a,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 5261158278651297712, guid: 60e3e3804a418824386d6ac15f43189a, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 6345265710777324057, guid: 60e3e3804a418824386d6ac15f43189a,
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1720896024}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7171509269185351796, guid: 60e3e3804a418824386d6ac15f43189a,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1647431436}
+    - targetCorrespondingSourceObject: {fileID: 7171509269185351796, guid: 60e3e3804a418824386d6ac15f43189a,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1647431435}
   m_SourcePrefab: {fileID: 100100000, guid: 60e3e3804a418824386d6ac15f43189a, type: 3}
 --- !u!4 &1647431433 stripped
 Transform:
@@ -44810,6 +44936,77 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1647431432}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1647431434 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7171509269185351796, guid: 60e3e3804a418824386d6ac15f43189a,
+    type: 3}
+  m_PrefabInstance: {fileID: 1647431432}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1647431435
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1647431434}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 298f856b8ec60cd4b99057c3f4ffa297, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactable: 1
+  nonSave: 1
+  OnClickUnityEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1136517680}
+        m_TargetAssemblyTypeName: ScenarioManager, Assembly-CSharp
+        m_MethodName: GetPicture
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Picture1-6
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1136517680}
+        m_TargetAssemblyTypeName: ScenarioManager, Assembly-CSharp
+        m_MethodName: SetActiveFalse
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1647431434}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Picture1-6
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnClickUnityEventOnce:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!65 &1647431436
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1647431434}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 4.5, y: 1, z: 3.5}
 --- !u!1 &1649972321
 GameObject:
   m_ObjectHideFlags: 0
@@ -47036,14 +47233,28 @@ PrefabInstance:
       propertyPath: m_Name
       value: murempew
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 7171509269185351796, guid: 60e3e3804a418824386d6ac15f43189a,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 5261158278651297712, guid: 60e3e3804a418824386d6ac15f43189a, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 6345265710777324057, guid: 60e3e3804a418824386d6ac15f43189a,
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 2033174721}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7171509269185351796, guid: 60e3e3804a418824386d6ac15f43189a,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1726739893}
+    - targetCorrespondingSourceObject: {fileID: 7171509269185351796, guid: 60e3e3804a418824386d6ac15f43189a,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1726739892}
   m_SourcePrefab: {fileID: 100100000, guid: 60e3e3804a418824386d6ac15f43189a, type: 3}
 --- !u!4 &1726739890 stripped
 Transform:
@@ -47051,6 +47262,77 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1726739889}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1726739891 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7171509269185351796, guid: 60e3e3804a418824386d6ac15f43189a,
+    type: 3}
+  m_PrefabInstance: {fileID: 1726739889}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1726739892
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1726739891}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 298f856b8ec60cd4b99057c3f4ffa297, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactable: 1
+  nonSave: 1
+  OnClickUnityEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1136517680}
+        m_TargetAssemblyTypeName: ScenarioManager, Assembly-CSharp
+        m_MethodName: GetPicture
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Picture1-5
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1136517680}
+        m_TargetAssemblyTypeName: ScenarioManager, Assembly-CSharp
+        m_MethodName: SetActiveFalse
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1726739891}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Picture1-5
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnClickUnityEventOnce:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!65 &1726739893
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1726739891}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 4.5, y: 1, z: 3.5}
 --- !u!1001 &1727700781
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -58215,14 +58497,28 @@ PrefabInstance:
       propertyPath: m_Name
       value: murempew3
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 7171509269185351796, guid: 60e3e3804a418824386d6ac15f43189a,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 5261158278651297712, guid: 60e3e3804a418824386d6ac15f43189a, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 6345265710777324057, guid: 60e3e3804a418824386d6ac15f43189a,
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 208918028}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7171509269185351796, guid: 60e3e3804a418824386d6ac15f43189a,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2124593296}
+    - targetCorrespondingSourceObject: {fileID: 7171509269185351796, guid: 60e3e3804a418824386d6ac15f43189a,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2124593295}
   m_SourcePrefab: {fileID: 100100000, guid: 60e3e3804a418824386d6ac15f43189a, type: 3}
 --- !u!4 &2124593293 stripped
 Transform:
@@ -58230,6 +58526,77 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2124593292}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2124593294 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7171509269185351796, guid: 60e3e3804a418824386d6ac15f43189a,
+    type: 3}
+  m_PrefabInstance: {fileID: 2124593292}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2124593295
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2124593294}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 298f856b8ec60cd4b99057c3f4ffa297, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactable: 1
+  nonSave: 1
+  OnClickUnityEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1136517680}
+        m_TargetAssemblyTypeName: ScenarioManager, Assembly-CSharp
+        m_MethodName: GetPicture
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Picture1-7
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1136517680}
+        m_TargetAssemblyTypeName: ScenarioManager, Assembly-CSharp
+        m_MethodName: SetActiveFalse
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 2124593294}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Picture1-7
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnClickUnityEventOnce:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!65 &2124593296
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2124593294}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 4.5, y: 1, z: 3.5}
 --- !u!1001 &2127161428
 PrefabInstance:
   m_ObjectHideFlags: 0
