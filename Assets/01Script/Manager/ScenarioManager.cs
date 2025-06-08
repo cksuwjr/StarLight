@@ -100,6 +100,8 @@ public class ScenarioManager : SingletonDestroy<ScenarioManager>
                 case 29:
                     OnStoryEnd += () =>
                     {
+                        PlayerPrefs.SetInt("Stage1Clear", 1);
+                        PlayerPrefs.Save();
                         var videoPlay = GameObject.Find("Video Player").GetComponent<VideoPlay>();
                         videoPlay.Play();
                         videoPlay.OnVideoEnd += () => { UIManager.Instance.OpenClearPopup(true, null); };
@@ -129,6 +131,8 @@ public class ScenarioManager : SingletonDestroy<ScenarioManager>
                 case 29:
                     OnStoryEnd += () =>
                     {
+                        PlayerPrefs.SetInt("Stage2Clear", 1);
+                        PlayerPrefs.Save();
                         var videoPlay = GameObject.Find("Video Player").GetComponent<VideoPlay>();
                         videoPlay.Play();
                         videoPlay.OnVideoEnd += () => { UIManager.Instance.OpenClearPopup(true, null); };
