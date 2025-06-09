@@ -9033,6 +9033,7 @@ MonoBehaviour:
   cameraMoving: {fileID: 0}
   distance: 1.9367
   narrowable: 1
+  yReverse: 1
 --- !u!114 &1488553379
 MonoBehaviour:
   m_ObjectHideFlags: 0

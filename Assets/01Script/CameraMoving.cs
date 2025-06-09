@@ -26,6 +26,8 @@ public class CameraMoving : MonoBehaviour
     private bool isInit = false;
     private bool isShaking = false;
 
+    public int yDir = 1;
+
     public void Init(float distance, bool narrowable = true)
     {
         isNarrowable = narrowable;
@@ -50,7 +52,7 @@ public class CameraMoving : MonoBehaviour
 
     public void Moving()
     {
-        rotX += Input.GetAxis("Mouse Y") * sensivity * Time.deltaTime;
+        rotX += yDir * Input.GetAxis("Mouse Y") * sensivity * Time.deltaTime;
         rotY += Input.GetAxis("Mouse X") * sensivity * Time.deltaTime;
 
         //rotX = Mathf.Clamp(rotX, -clampAngle, clampAngle);
@@ -64,7 +66,7 @@ public class CameraMoving : MonoBehaviour
         //rotX -= Input.GetAxis("Mouse Y") * sensivity * Time.deltaTime;
         //rotY += Input.GetAxis("Mouse X") * sensivity * Time.deltaTime;
 
-        rotX += pos.y * sensivity * Time.deltaTime;
+        rotX += yDir * pos.y * sensivity * Time.deltaTime;
         rotY += pos.x * sensivity * Time.deltaTime;
 
 
