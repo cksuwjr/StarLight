@@ -70,15 +70,4 @@ public class InteractionObject : MonoBehaviour, IInteract
         }
     }
 
-    private void OnDisable()
-    {
-        if(UIManager.Instance)
-            UIManager.Instance.CloseInformText();
-    }
-
-    private void OnDestroy()
-    {
-        if(UIManager.Instance)
-            UIManager.Instance.CloseInformText();
-    }
 }

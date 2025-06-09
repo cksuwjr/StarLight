@@ -64,13 +64,13 @@ public class ScoreChecker : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Q) || Input.GetKeyDown(KeyCode.Alpha1))
+        if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.Alpha1))
             key1.Interaction();
-        if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.Alpha2))
+        if (Input.GetKeyDown(KeyCode.F) || Input.GetKeyDown(KeyCode.Alpha2))
             key2.Interaction();
-        if (Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown(KeyCode.Alpha3))
+        if (Input.GetKeyDown(KeyCode.J) || Input.GetKeyDown(KeyCode.Alpha3))
             key3.Interaction();
-        if (Input.GetKeyDown(KeyCode.R) || Input.GetKeyDown(KeyCode.Alpha4))
+        if (Input.GetKeyDown(KeyCode.K) || Input.GetKeyDown(KeyCode.Alpha4))
             key4.Interaction();
     }
 

@@ -192,6 +192,9 @@ public class EnemySpawner : MonoBehaviour
               () =>
               {
                   OnFaze2End?.Invoke();
+                  ScenarioManager.Instance.GetPicture("Picture1-10");
+                  ScenarioManager.Instance.CheckPicture();
+
                   ScenarioManager.Instance.OnStoryEnd += () =>
                   {
                       UIManager.Instance.OpenClearPuzzlePopup(true, () => { GameManager.Instance.LoadScene("1-1Stage"); });
