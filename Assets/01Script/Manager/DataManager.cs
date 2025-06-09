@@ -34,7 +34,7 @@ public class DataManager : Singleton<DataManager>, IManager
     {
         // '일반' 계정 불러오기
 
-        if (testSkip)
+        if (!testSkip)
             if (!loadData)
                 LoadData();
 
