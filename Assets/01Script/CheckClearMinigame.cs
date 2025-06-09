@@ -23,6 +23,8 @@ public class CheckClearMinigame : MonoBehaviour
 
     public void DestroySomeThing(GameObject obj)
     {
-        Destroy(obj);
+        obj.SetActive(false);
+        if (UIManager.Instance)
+            UIManager.Instance.CloseInformText();
     }
 }

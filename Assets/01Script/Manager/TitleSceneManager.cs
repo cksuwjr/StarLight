@@ -31,7 +31,6 @@ public class TitleSceneManager : MonoBehaviour
 
     private void Start()
     {
-        StartDownload();
 
         SetPopupsScaleZero();
 
@@ -40,11 +39,6 @@ public class TitleSceneManager : MonoBehaviour
         InitTitleScene();
 
         StartCoroutine("WelcomeText");
-    }
-
-    public void StartDownload()
-    {
-        Addressables.DownloadDependenciesAsync("default");
     }
 
     private IEnumerator WelcomeText()
