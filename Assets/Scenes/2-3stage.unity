@@ -3572,6 +3572,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Item_QuestionMark
       objectReference: {fileID: 0}
+    - target: {fileID: 1584544932172798437, guid: 5f10c3dd59fbb5542aef4162e31738ee,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4727315001767157055, guid: 5f10c3dd59fbb5542aef4162e31738ee,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -3637,14 +3642,23 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7155908778830580131, guid: 5f10c3dd59fbb5542aef4162e31738ee, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 4727315001767157055, guid: 5f10c3dd59fbb5542aef4162e31738ee,
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 12158189}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1584544932172798437, guid: 5f10c3dd59fbb5542aef4162e31738ee,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 502363408}
+    - targetCorrespondingSourceObject: {fileID: 1584544932172798437, guid: 5f10c3dd59fbb5542aef4162e31738ee,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 502363407}
   m_SourcePrefab: {fileID: 100100000, guid: 5f10c3dd59fbb5542aef4162e31738ee, type: 3}
 --- !u!4 &502363405 stripped
 Transform:
@@ -3652,6 +3666,89 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 502363404}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &502363406 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1584544932172798437, guid: 5f10c3dd59fbb5542aef4162e31738ee,
+    type: 3}
+  m_PrefabInstance: {fileID: 502363404}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &502363407
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 502363406}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 298f856b8ec60cd4b99057c3f4ffa297, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactable: 1
+  nonSave: 1
+  OnClickUnityEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 111180273}
+        m_TargetAssemblyTypeName: ScenarioManager, Assembly-CSharp
+        m_MethodName: GetPicture
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Picture2-6
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 111180273}
+        m_TargetAssemblyTypeName: ScenarioManager, Assembly-CSharp
+        m_MethodName: CheckPicture
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 111180273}
+        m_TargetAssemblyTypeName: ScenarioManager, Assembly-CSharp
+        m_MethodName: SetActiveFalse
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 502363406}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnClickUnityEventOnce:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!65 &502363408
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 502363406}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &502498672
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8469,6 +8566,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Item_QuestionMark (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1584544932172798437, guid: 5f10c3dd59fbb5542aef4162e31738ee,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4727315001767157055, guid: 5f10c3dd59fbb5542aef4162e31738ee,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -8534,14 +8636,23 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7155908778830580131, guid: 5f10c3dd59fbb5542aef4162e31738ee, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 4727315001767157055, guid: 5f10c3dd59fbb5542aef4162e31738ee,
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1541671752}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1584544932172798437, guid: 5f10c3dd59fbb5542aef4162e31738ee,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1013722908}
+    - targetCorrespondingSourceObject: {fileID: 1584544932172798437, guid: 5f10c3dd59fbb5542aef4162e31738ee,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1013722907}
   m_SourcePrefab: {fileID: 100100000, guid: 5f10c3dd59fbb5542aef4162e31738ee, type: 3}
 --- !u!4 &1013722905 stripped
 Transform:
@@ -8549,6 +8660,89 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1013722904}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1013722906 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1584544932172798437, guid: 5f10c3dd59fbb5542aef4162e31738ee,
+    type: 3}
+  m_PrefabInstance: {fileID: 1013722904}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1013722907
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1013722906}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 298f856b8ec60cd4b99057c3f4ffa297, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactable: 1
+  nonSave: 1
+  OnClickUnityEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 111180273}
+        m_TargetAssemblyTypeName: ScenarioManager, Assembly-CSharp
+        m_MethodName: GetPicture
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Picture2-7
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 111180273}
+        m_TargetAssemblyTypeName: ScenarioManager, Assembly-CSharp
+        m_MethodName: CheckPicture
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 111180273}
+        m_TargetAssemblyTypeName: ScenarioManager, Assembly-CSharp
+        m_MethodName: SetActiveFalse
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1013722906}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnClickUnityEventOnce:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!65 &1013722908
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1013722906}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &1029389229
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12945,6 +13139,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Item_QuestionMark (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 1584544932172798437, guid: 5f10c3dd59fbb5542aef4162e31738ee,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4727315001767157055, guid: 5f10c3dd59fbb5542aef4162e31738ee,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -13010,14 +13209,23 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7155908778830580131, guid: 5f10c3dd59fbb5542aef4162e31738ee, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 4727315001767157055, guid: 5f10c3dd59fbb5542aef4162e31738ee,
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 979013121}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1584544932172798437, guid: 5f10c3dd59fbb5542aef4162e31738ee,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1574781918}
+    - targetCorrespondingSourceObject: {fileID: 1584544932172798437, guid: 5f10c3dd59fbb5542aef4162e31738ee,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1574781917}
   m_SourcePrefab: {fileID: 100100000, guid: 5f10c3dd59fbb5542aef4162e31738ee, type: 3}
 --- !u!4 &1574781915 stripped
 Transform:
@@ -13025,6 +13233,89 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1574781914}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1574781916 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1584544932172798437, guid: 5f10c3dd59fbb5542aef4162e31738ee,
+    type: 3}
+  m_PrefabInstance: {fileID: 1574781914}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1574781917
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1574781916}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 298f856b8ec60cd4b99057c3f4ffa297, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactable: 1
+  nonSave: 1
+  OnClickUnityEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 111180273}
+        m_TargetAssemblyTypeName: ScenarioManager, Assembly-CSharp
+        m_MethodName: GetPicture
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Picture2-9
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 111180273}
+        m_TargetAssemblyTypeName: ScenarioManager, Assembly-CSharp
+        m_MethodName: CheckPicture
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 111180273}
+        m_TargetAssemblyTypeName: ScenarioManager, Assembly-CSharp
+        m_MethodName: SetActiveFalse
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1574781916}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnClickUnityEventOnce:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!65 &1574781918
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1574781916}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &1576339599
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13883,6 +14174,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Item_QuestionMark (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 1584544932172798437, guid: 5f10c3dd59fbb5542aef4162e31738ee,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4727315001767157055, guid: 5f10c3dd59fbb5542aef4162e31738ee,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -13948,14 +14244,23 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7155908778830580131, guid: 5f10c3dd59fbb5542aef4162e31738ee, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 4727315001767157055, guid: 5f10c3dd59fbb5542aef4162e31738ee,
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1057153856}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1584544932172798437, guid: 5f10c3dd59fbb5542aef4162e31738ee,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1634716606}
+    - targetCorrespondingSourceObject: {fileID: 1584544932172798437, guid: 5f10c3dd59fbb5542aef4162e31738ee,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1634716605}
   m_SourcePrefab: {fileID: 100100000, guid: 5f10c3dd59fbb5542aef4162e31738ee, type: 3}
 --- !u!4 &1634716603 stripped
 Transform:
@@ -13963,6 +14268,89 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1634716602}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1634716604 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1584544932172798437, guid: 5f10c3dd59fbb5542aef4162e31738ee,
+    type: 3}
+  m_PrefabInstance: {fileID: 1634716602}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1634716605
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1634716604}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 298f856b8ec60cd4b99057c3f4ffa297, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactable: 1
+  nonSave: 1
+  OnClickUnityEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 111180273}
+        m_TargetAssemblyTypeName: ScenarioManager, Assembly-CSharp
+        m_MethodName: GetPicture
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Picture2-8
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 111180273}
+        m_TargetAssemblyTypeName: ScenarioManager, Assembly-CSharp
+        m_MethodName: CheckPicture
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 111180273}
+        m_TargetAssemblyTypeName: ScenarioManager, Assembly-CSharp
+        m_MethodName: SetActiveFalse
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1634716604}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnClickUnityEventOnce:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!65 &1634716606
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1634716604}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &1677006687
 PrefabInstance:
   m_ObjectHideFlags: 0

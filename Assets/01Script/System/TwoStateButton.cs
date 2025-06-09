@@ -33,16 +33,23 @@ public class TwoStateButton : UIClicker
         if(offSprite == null) offSprite = image.sprite;
         if(onSprite == null) onSprite = image.sprite;
 
-        //OnClick += ChangeSprite;
-
         ChangeSprite();
     }
 
     private void ChangeSprite()
     {
+        if(image == null)
+            TryGetComponent<Image>(out image);
+
         if (OnT_OffF)
-            image.sprite = onSprite;
+        {
+            if(onSprite)
+                image.sprite = onSprite;
+        }
         else
-            image.sprite = offSprite;
+        {
+            if(offSprite)
+                image.sprite = offSprite;
+        }
     }
 }

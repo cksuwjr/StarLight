@@ -311,12 +311,22 @@ public class ScenarioManager : SingletonDestroy<ScenarioManager>
     {
         int count = 0;
         string name;
+
+        if (chapter == "Tutorial")
+        {
+            if (PlayerPrefs.GetInt("DutorialPicture", 0) == 1) count++;
+
+            UIManager.Instance.SetPicture(count, 1);
+        }
+
         if (chapter == "Ch_1")
         {
             name = "Picture1";
 
             for (int i = 1; i <= 12; i++)
                 if (PlayerPrefs.GetInt(name + "-" + i, 0) == 1) count++;
+            
+            UIManager.Instance.SetPicture(count, 12);
         }
 
         if (chapter == "Ch_2")
@@ -325,8 +335,9 @@ public class ScenarioManager : SingletonDestroy<ScenarioManager>
 
             for (int i = 1; i <= 12; i++)
                 if (PlayerPrefs.GetInt(name + "-" + i, 0) == 1) count++;
+
+            UIManager.Instance.SetPicture(count, 12);
         }
 
-        UIManager.Instance.SetPicture(count, 12);
     }
 }

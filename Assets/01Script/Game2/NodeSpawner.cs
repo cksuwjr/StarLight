@@ -594,6 +594,9 @@ public class NodeSpawner : MonoBehaviour
         yield return YieldInstructionCache.WaitForSeconds(3f);
 
         OnFaze2End?.Invoke();
+        ScenarioManager.Instance.GetPicture("Picture2-11");
+        ScenarioManager.Instance.CheckPicture();
+
         ScenarioManager.Instance.OnStoryEnd += () =>
         {
             UIManager.Instance.OpenClearPuzzlePopup(true, () => { GameManager.Instance.LoadScene("2-2Stage"); });

@@ -644,6 +644,7 @@ public class UIManager : SingletonDestroy<UIManager>
     public void SetPicture(int count, int maxCount)
     {
         picture.text = $"{count}/{maxCount}";
+        picture.transform.parent.gameObject.SetActive(true);
     }
 
     public void AcquirePictureEffect()
