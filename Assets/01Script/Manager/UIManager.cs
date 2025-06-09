@@ -27,6 +27,7 @@ public class UIManager : SingletonDestroy<UIManager>
     private GameObject mission;
 
     private GameObject readWrite;
+    private GameObject picturePannel;
 
 
 
@@ -153,6 +154,12 @@ public class UIManager : SingletonDestroy<UIManager>
             btn.onClick.AddListener(ForWardReadWrite);
         if (readWrite.transform.GetChild(3).TryGetComponent<Button>(out btn))
             btn.onClick.AddListener(BackWardReadWrite);
+        if (readWrite.transform.GetChild(4).TryGetComponent<Button>(out btn))
+            btn.onClick.AddListener(OpenPictures);
+        if (readWrite.transform.GetChild(5).TryGetComponent<Button>(out btn))
+            btn.onClick.AddListener(OpenPictures);
+        picturePannel = readWrite.transform.GetChild(5).gameObject;
+
 
         chat = ui.transform.GetChild(num++).gameObject;
         chat.transform.GetChild(0).TryGetComponent<Image>(out  chatterImage);
@@ -502,6 +509,11 @@ public class UIManager : SingletonDestroy<UIManager>
     private void BackWardReadWrite()
     {
         readWrite.transform.GetChild(0).GetComponent<Image>().sprite = Resources.Load<Sprite>("Image/UI_11");
+    }
+
+    private void OpenPictures()
+    {
+        picturePannel.SetActive(!picturePannel.activeSelf);
     }
 
     public void SetScenarioPannel(Sprite sprite, string name, string chat)
