@@ -292,6 +292,7 @@ MonoBehaviour:
   cameraMoving: {fileID: 0}
   distance: 1.376
   narrowable: 1
+  yReverse: 0
 --- !u!1 &121983775
 GameObject:
   m_ObjectHideFlags: 0
@@ -2709,6 +2710,11 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 763168151}
+    - target: {fileID: 2223588049189509750, guid: 79a877111fe9c124781bb7ebdaa18dfe,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3212538714041878260, guid: 79a877111fe9c124781bb7ebdaa18dfe,
         type: 3}
       propertyPath: m_Mesh

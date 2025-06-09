@@ -128,6 +128,12 @@ public class ScenarioManager : SingletonDestroy<ScenarioManager>
                     PlayerPrefs.Save();
                 }; break;
 
+                case 27:
+                    OnStoryEnd += () =>
+                    {
+                        UIManager.Instance.OpenClearPuzzlePopup(true, () => { GameManager.Instance.LoadScene("2-3Stage"); });
+                    }; break;
+
                 case 29:
                     OnStoryEnd += () =>
                     {
@@ -339,5 +345,10 @@ public class ScenarioManager : SingletonDestroy<ScenarioManager>
             UIManager.Instance.SetPicture(count, 12);
         }
 
+    }
+
+    public void GiveUp()
+    {
+        GameManager.Instance.GameOver();
     }
 }
