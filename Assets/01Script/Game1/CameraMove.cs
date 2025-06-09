@@ -25,6 +25,9 @@ public class CameraMove : MonoBehaviour
         cameraMoving.realCamera = transform;
 
         cameraMoving.Init(distance, narrowable);
+
+        if (yReverse)
+            cameraMoving.yDir = -1;
     }
 
     private Transform target;
@@ -32,6 +35,7 @@ public class CameraMove : MonoBehaviour
     private Vector3 offset;
     private Vector3 cameraPos;
 
+    [SerializeField] bool yReverse = false;
     //private Vector2 xRange = Vector2.zero;
     //private Vector2 yRange = Vector2.zero; 
 
