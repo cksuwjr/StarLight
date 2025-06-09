@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AddressableAssets;
 using UnityEngine.Events;
 using UnityEngine.Rendering.Universal;
 
@@ -461,7 +462,8 @@ public class NodeSpawner : MonoBehaviour
     {
         SoundManager.Instance.StopBGM();
 
-        UIManager.Instance.FloatImage(Resources.Load<Sprite>("Image/2-2_tut"));
+        //UIManager.Instance.FloatImage(Resources.Load<Sprite>("Image/2-2_tut"));
+        UIManager.Instance.FloatImage(Addressables.LoadAssetAsync<Sprite>("2-2").WaitForCompletion());
 
         yield return YieldInstructionCache.WaitForSeconds(3f);
 

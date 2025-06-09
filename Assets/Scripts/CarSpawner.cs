@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AddressableAssets;
 using UnityEngine.Events;
 
 public class CarSpawner : MonoBehaviour
@@ -44,7 +45,8 @@ public class CarSpawner : MonoBehaviour
 
     private IEnumerator Spawn()
     {
-        UIManager.Instance.FloatImage(Resources.Load<Sprite>("Image/2-1_tut"));
+        //UIManager.Instance.FloatImage(Resources.Load<Sprite>("Image/2-1_tut"));
+        UIManager.Instance.FloatImage(Addressables.LoadAssetAsync<Sprite>("2-1").WaitForCompletion());
 
         yield return YieldInstructionCache.WaitForSeconds(3f);
 

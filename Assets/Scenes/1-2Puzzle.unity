@@ -5995,6 +5995,7 @@ MonoBehaviour:
   OnStart:
     m_PersistentCalls:
       m_Calls: []
+  downloadResourceSrc: Stage1-2
 --- !u!4 &1664323581
 Transform:
   m_ObjectHideFlags: 0
@@ -6862,6 +6863,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1203a204fb4c30b4198d2ab94489a360, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  chaseDistance: 0.2
 --- !u!54 &1893823469
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -443,6 +443,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  downloadResourceSrc: Stage2-2
 --- !u!4 &111180274
 Transform:
   m_ObjectHideFlags: 0
@@ -3008,6 +3009,11 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.x
       value: -182.50012
       objectReference: {fileID: 0}
+    - target: {fileID: 6855114696163752865, guid: fc14a0f134eac8249ac199ef26c9ae8a,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8955067159265323325, guid: fc14a0f134eac8249ac199ef26c9ae8a,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -5499,6 +5505,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Portal blue
+      objectReference: {fileID: 0}
+    - target: {fileID: 5607819269926399345, guid: 45e0f06c750176947862c10346226439,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

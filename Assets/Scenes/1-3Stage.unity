@@ -4826,6 +4826,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  downloadResourceSrc: Stage1-3
 --- !u!4 &779847632
 Transform:
   m_ObjectHideFlags: 0
@@ -13794,6 +13795,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1203a204fb4c30b4198d2ab94489a360, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  chaseDistance: 0.2
 --- !u!54 &2089343594
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -4,6 +4,7 @@ using UnityEngine.UI;
 using TMPro;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
+using UnityEngine.AddressableAssets;
 
 public enum ButtonType
 {
@@ -503,12 +504,16 @@ public class UIManager : SingletonDestroy<UIManager>
 
     private void ForWardReadWrite()
     {
-        readWrite.transform.GetChild(0).GetComponent<Image>().sprite = Resources.Load<Sprite>("Image/UI_12");
+        //readWrite.transform.GetChild(0).GetComponent<Image>().sprite = Resources.Load<Sprite>("Image/UI_12");
+        readWrite.transform.GetChild(0).GetComponent<Image>().sprite =
+        Addressables.LoadAssetAsync<Sprite>("UI1-1").WaitForCompletion();
     }
 
     private void BackWardReadWrite()
     {
-        readWrite.transform.GetChild(0).GetComponent<Image>().sprite = Resources.Load<Sprite>("Image/UI_11");
+        //readWrite.transform.GetChild(0).GetComponent<Image>().sprite = Resources.Load<Sprite>("Image/UI_11");
+        readWrite.transform.GetChild(0).GetComponent<Image>().sprite =
+        Addressables.LoadAssetAsync<Sprite>("UI1-2").WaitForCompletion();
     }
 
     private void OpenPictures()

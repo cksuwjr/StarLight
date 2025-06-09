@@ -3208,6 +3208,7 @@ MonoBehaviour:
   OnStart:
     m_PersistentCalls:
       m_Calls: []
+  downloadResourceSrc: Lobby
 --- !u!4 &1740718474
 Transform:
   m_ObjectHideFlags: 0

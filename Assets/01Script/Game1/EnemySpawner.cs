@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AddressableAssets;
 using UnityEngine.Events;
 
 public class EnemySpawner : MonoBehaviour
@@ -68,7 +69,9 @@ public class EnemySpawner : MonoBehaviour
 
     private IEnumerator Spawn()
     {
-        UIManager.Instance.FloatImage(Resources.Load<Sprite>("Image/Stell_Virus"));
+        //UIManager.Instance.FloatImage(Resources.Load<Sprite>("Image/Stell_Virus"));
+        UIManager.Instance.FloatImage(Addressables.LoadAssetAsync<Sprite>("1-1").WaitForCompletion());
+
 
         yield return YieldInstructionCache.WaitForSeconds(3f);
 

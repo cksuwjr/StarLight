@@ -2,10 +2,12 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.Video;
+
+using UnityEngine.AddressableAssets;
+using UnityEngine.ResourceManagement.AsyncOperations;
 
 public class ScenarioManager : SingletonDestroy<ScenarioManager>
 {
@@ -27,10 +29,29 @@ public class ScenarioManager : SingletonDestroy<ScenarioManager>
 
     public UnityEvent OnStart;
 
+    [SerializeField] private string downloadResourceSrc;
+
     protected override void DoAwake()
     {
-         fontBold = Resources.Load<TMP_FontAsset>("Font/PyeongChang-Bold SDF");
-         fontRegular = Resources.Load<TMP_FontAsset>("Font/PyeongChang-Regular SDF");
+        Addressables.LoadResourceLocationsAsync("default").WaitForCompletion();
+        if(downloadResourceSrc != "" && downloadResourceSrc != null)
+            Addressables.LoadResourceLocationsAsync(downloadResourceSrc).WaitForCompletion();
+
+        Addressables.LoadAssetAsync<TMP_FontAsset>("FontBold").Completed += handle =>
+        {
+            if (handle.Status == AsyncOperationStatus.Succeeded)
+                fontBold = handle.Result;
+        };
+
+        Addressables.LoadAssetAsync<TMP_FontAsset>("FontRegular").Completed += handle =>
+        {
+            if (handle.Status == AsyncOperationStatus.Succeeded)
+                fontRegular = handle.Result;
+        };
+
+
+        // fontBold = Resources.Load<TMP_FontAsset>("Font/PyeongChang-Bold SDF");
+        // fontRegular = Resources.Load<TMP_FontAsset>("Font/PyeongChang-Regular SDF");
     }
 
     private void Start()
@@ -187,7 +208,6 @@ public class ScenarioManager : SingletonDestroy<ScenarioManager>
 
         if (story == null) return;
 
-        Debug.Log(story.Count + "<" + (page + 1));
         if (story.Count < page + 1)
         {
             StopStory();
@@ -208,6 +228,13 @@ public class ScenarioManager : SingletonDestroy<ScenarioManager>
     {
         var imgSprite = Resources.Load<Sprite>(story[page].imgSrc);
         var sound = Resources.Load<AudioClip>(story[page].ttsSrc);
+
+        imgSprite = Addressables.LoadAssetAsync<Sprite>(story[page].imgSrc).WaitForCompletion();
+
+        if(story[page].ttsSrc != "")
+            sound = Addressables.LoadAssetAsync<AudioClip>(story[page].ttsSrc).WaitForCompletion();
+
+
         var size = story[page].windowType;
         var font = story[page].font;
         SoundManager.Instance.StopSound();
@@ -215,10 +242,15 @@ public class ScenarioManager : SingletonDestroy<ScenarioManager>
             SoundManager.Instance.PlaySound(sound, 0.7f, false);
 
         if (font == "Bold")
-            UIManager.Instance.SetFont(fontBold);
+        {
+            if(fontBold != null)
+                UIManager.Instance.SetFont(fontBold);
+        }
         else if (font == "Regular")
-            UIManager.Instance.SetFont(fontRegular);
-
+        {
+            if(fontRegular != null)
+                UIManager.Instance.SetFont(fontRegular);
+        }
 
         if (size == "large")
             StartCoroutine(LoadText(imgSprite, story[page].name, story[page].chat));

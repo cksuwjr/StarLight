@@ -16,7 +16,433 @@ MonoBehaviour:
   m_Data:
     m_SerializedData: []
   m_GUID: 38c4da4eec11cfd478fe4e9dad05dddc
-  m_SerializeEntries: []
+  m_SerializeEntries:
+  - m_GUID: 010d7a7acbede6d4bb4f60d5783c1985
+    m_Address: FontBold
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - default
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 075fdb58fc9304141b4758f36edc01ca
+    m_Address: Sound/CH2/Sol_TTS_14
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Stage2-3
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0769ed6d78a51c04b800c30616471b24
+    m_Address: Sound/CH2/Sol_TTS_09
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Stage2-2
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0832c891642b04d42ba5b926326d802c
+    m_Address: Sound/CH1/Sol_TTS_17
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Stage1-3
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 09cd8d591ac82484384469d48f355efd
+    m_Address: Sound/CH2/Sol_TTS_03
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Stage2-1
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0edfca9619fb3ab4ab9d3c1d85bbbcb4
+    m_Address: Sound/Mini/Sol_TTS_MG09
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Stage1-3
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 16430af4c6f549446928479c7a70f4eb
+    m_Address: Sound/CH1/Sol_TTS_9
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Stage1-2
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1bef5474acfb0bb4a9554f3fedf67334
+    m_Address: Sound/Mini/Sol_TTS_MG21
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Stage2-3
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1f846723bd692d248ae85b685347efb8
+    m_Address: Sound/CH2/Sol_TTS_17
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Stage2-3
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2091bf942057a92419baaf657ff2c052
+    m_Address: Sound/CH2/Sol_TTS_10
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Stage2-2
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 20b9f9812b79c184380d344fcf2b86ca
+    m_Address: Sound/CH2/Sol_TTS_08
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Stage2-2
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 210a893964e913448acde311cea09bc6
+    m_Address: Sound/Mini/Sol_TTS_MG23
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Stage2-3
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 219d9267a3380714c9ccd92cdde8b27d
+    m_Address: Sound/CH1/Sol_TTS_1
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Stage1-1
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 246ee202c16503a4784a3eedd933060c
+    m_Address: Sound/Mini/Sol_TTS_MG05
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Stage1-2
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2672d3317ce1b1d4e8c57e3d98f72e45
+    m_Address: Sound/Mini/Sol_TTS_MG10
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Stage1-3
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 27fe8e7ab7c8fe84697257055bdaa009
+    m_Address: 2-1
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Stage2-1
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2b5cddc3561bb6847bfcbb5b7ff165d6
+    m_Address: Sound/CH2/Sol_TTS_01
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Stage2-1
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2b8610cbec11b8044bca228298ba4aeb
+    m_Address: Sound/CH1/Sol_TTS_14
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Stage1-3
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2c888661a2121d04aab5a982df589bf1
+    m_Address: Sound/CH1/Sol_TTS_18
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Stage1-3
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2d7a3cb71abe83941b812c2ac266e8b5
+    m_Address: Sound/Mini/Sol_TTS_MG16
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Stage2-1
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2e6163d97f9541f47b3b95faf5f365d9
+    m_Address: Sound/CH1/Sol_TTS_13
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Stage1-3
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2e78b5a6aae9336478ad94dd014abb86
+    m_Address: Sound/CH1/Sol_TTS_4
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Stage1-1
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 36c3b01bde4012a44b99bb3fad3693a6
+    m_Address: Sound/Mini/Sol_TTS_MG14
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Stage2-1
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3727516ecd0df9a49b5efbc13a4adca5
+    m_Address: Sound/CH1/Sol_TTS_16
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Stage1-3
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3ed784385672b7b4f8cc5a87415f7465
+    m_Address: UI1-2
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Lobby
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3f1eb88f86bcf3d44ab6176f41cbc2ca
+    m_Address: Sound/CH2/Sol_TTS_13
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Stage2-3
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 40f15dad1894efb4cbf0c01ddb004065
+    m_Address: Sound/CH1/Sol_TTS_8
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Stage1-2
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4262a0e2733e3f743bb055bfaaa0ddd0
+    m_Address: Sound/Mini/Sol_TTS_MG18
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Stage2-2
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4272a46ea9cbc8a419c63a88be26d42e
+    m_Address: Sound/CH2/Sol_TTS_05
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Stage2-1
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4473d290cc57a9646b0d7ab964d577ce
+    m_Address: Sound/Mini/Sol_TTS_MG11
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Stage1-3
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4736c69e00ed1c743ad934859f1570d8
+    m_Address: Sound/CH2/Sol_TTS_12
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Stage2-2
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4cbc44abe477b514da996112481484bf
+    m_Address: Sound/Mini/Sol_TTS_MG24
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Stage2-3
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4e3cf987215589e499978d67d9ef58e8
+    m_Address: Sound/CH1/Sol_TTS_7
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Stage1-2
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 500d91327a98ec349a0cad1da28035f8
+    m_Address: Sound/Mini/Sol_TTS_MG01
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Stage1-1
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 52f868e266398ab49a853c0a79c15856
+    m_Address: 2-2
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Stage2-2
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5a9271ad77504df41b31a8799d381aab
+    m_Address: Sound/CH2/Sol_TTS_18
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Stage2-3
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 64d17a51bac9c004baff5b57350d5f4d
+    m_Address: Sound/CH2/Sol_TTS_06
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Stage2-1
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 67aa0cce568fdab4a987d164ca1728a4
+    m_Address: Sound/CH1/Sol_TTS_5
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Stage1-1
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6804d16a9772b8745a07e829ddfd28b0
+    m_Address: 2-3
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Stage2-3
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 79aebab9002b0ab45b0e6e502ac268fa
+    m_Address: UI1-1
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Lobby
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7b1508d5ad0ee1c4eabe9b9552b58945
+    m_Address: Sound/Mini/Sol_TTS_MG02
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Stage1-1
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 824b3250f17274846b29ee40e52bb4d1
+    m_Address: Sound/Mini/Sol_TTS_MG19
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Stage2-2
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 831556c8d2f4a534d87c52fb2b6cfc32
+    m_Address: Sound/Mini/Sol_TTS_MG15
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Stage2-1
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8f5545574bfc4b7458916fb75eed1b44
+    m_Address: Sound/Mini/Sol_TTS_MG13
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Stage2-1
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 93effdd57a9c2964cad8b1aef26fa96d
+    m_Address: 1-3
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Stage1-3
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9c02b1b21403a5840b5df2efc3156918
+    m_Address: Sound/CH2/Sol_TTS_16
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Stage2-3
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9d30960b8f7c47b47b0741e4a8def54a
+    m_Address: Image/pairy
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - default
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a481cd6284eef7249ab64baa640d74da
+    m_Address: Sound/CH2/Sol_TTS_07
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Stage2-2
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a7f5c7242b753544cb1176809a3c8651
+    m_Address: Sound/CH1/Sol_TTS_3
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Stage1-1
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a96f10906afcdef43821a572f2bfb733
+    m_Address: Sound/Mini/Sol_TTS_MG03
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Stage1-1
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ab21586f98759544e8deac3f8da8c33e
+    m_Address: 1-1
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Stage1-1
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ad378fdec1ca0664aa418ad04c19ab8e
+    m_Address: Sound/CH1/Sol_TTS_12
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Stage1-2
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b05fe6afeea8bca4cac3db0da55c5bb7
+    m_Address: Sound/Mini/Sol_TTS_MG22
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Stage2-3
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b17dff2060f7927449b4cf3f9e8d63ba
+    m_Address: Sound/CH1/Sol_TTS_11
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Stage1-2
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b3eeaca6f61b4f14785778506e86f827
+    m_Address: Sound/CH1/Sol_TTS_2
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Stage1-1
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b67bcbfbaae4b354badd8e28300ded52
+    m_Address: Sound/CH1/Sol_TTS_10
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Stage1-2
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b6f5f2a5b9e4fd646a33beab9c113bb9
+    m_Address: Sound/Mini/Sol_TTS_MG12
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Stage1-3
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b78ef28fd6095254186eb3a66e7e069a
+    m_Address: Sound/Mini/Sol_TTS_MG17
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Stage2-2
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b7e82e9223ff38f4d91830fb0acbb301
+    m_Address: Sound/Mini/Sol_TTS_MG08
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Stage1-2
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b81f13d988264ea4d897a7cddfca65db
+    m_Address: FontRegular
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - default
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c36738b9a4e569942af813d38d69a7ff
+    m_Address: Sound/Mini/Sol_TTS_MG07
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Stage1-2
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c7492d67d7f42944192d6096469d891e
+    m_Address: Sound/Mini/Sol_TTS_MG04
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Stage1-1
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d48ca44cd54ad7e4b87456f48d3890c3
+    m_Address: Sound/CH1/Sol_TTS_6
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Stage1-1
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d92b663c550e75049848c5230c7a3df5
+    m_Address: Sound/Mini/Sol_TTS_MG06
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Stage1-2
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: de70f1d6fc3cbe54e96e19d56c4f6fde
+    m_Address: Sound/CH1/Sol_TTS_15
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Stage1-3
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: dfde1931a8232db459bb38d57c8c050b
+    m_Address: Sound/Mini/Sol_TTS_MG20
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Stage2-2
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e416a968c59b33a4682517c92124a31e
+    m_Address: 1-2
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Stage1-2
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e623ffacb1c7f9a4ca92aa4bf9353f46
+    m_Address: Sound/CH2/Sol_TTS_02
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Stage2-1
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: eab513eb7a774f74cae92500bbfeacb7
+    m_Address: Sound/CH2/Sol_TTS_11
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Stage2-2
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f0260e3e556e1124ebd28db3fe6d83eb
+    m_Address: Sound/CH2/Sol_TTS_04
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Stage2-1
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f91cb85a8f300ae46a5f3e95a27b6dd3
+    m_Address: Sound/CH2/Sol_TTS_15
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Stage2-3
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 650a01a6a0c112740b3b4eb55089e5af, type: 2}
   m_SchemaSet:
