@@ -151,7 +151,7 @@ public class Movement : MonoBehaviour, IMove
 
         if (!jumpCheck) return;
 
-        if (Physics.OverlapSphere(groundCheck.position, 0.08f, checkLayer).Length > 0)
+        if (Physics.OverlapSphere(groundCheck.position, 0.14f, checkLayer).Length > 0)
         {
             isGrounded = true;
             anim.SetBool("Jump", false);
