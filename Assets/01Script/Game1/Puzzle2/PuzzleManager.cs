@@ -270,6 +270,10 @@ public class PuzzleManager : MonoBehaviour
         else
         {
             OnFaze2End?.Invoke();
+            ScenarioManager.Instance.GetPicture("Picture1-11");
+            ScenarioManager.Instance.CheckPicture();
+
+
             ScenarioManager.Instance.OnStoryEnd += () => 
             {
                 GameManager.Instance.LoadScene("1-2Stage"); 

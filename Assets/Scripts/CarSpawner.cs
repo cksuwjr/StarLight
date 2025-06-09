@@ -109,6 +109,9 @@ public class CarSpawner : MonoBehaviour
             clearZone.OnEnter += () =>
             {
                 OnFaze2End?.Invoke();
+                ScenarioManager.Instance.GetPicture("Picture2-10");
+                ScenarioManager.Instance.CheckPicture();
+
                 ScenarioManager.Instance.OnStoryEnd += () =>
                 {
                     UIManager.Instance.OpenClearPuzzlePopup(true, () => { GameManager.Instance.LoadScene("2-1Stage"); });

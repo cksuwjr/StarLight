@@ -96,6 +96,9 @@ public class LogSpawner : MonoBehaviour
             () =>
             {
                 OnFaze2End?.Invoke();
+                ScenarioManager.Instance.GetPicture("Picture1-12");
+                ScenarioManager.Instance.CheckPicture();
+
                 ScenarioManager.Instance.OnStoryEnd += () =>
                 {
                     UIManager.Instance.OpenClearPuzzlePopup(true, () => { GameManager.Instance.LoadScene("1-3Stage"); });
