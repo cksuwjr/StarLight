@@ -292,6 +292,7 @@ MonoBehaviour:
   cameraMoving: {fileID: 0}
   distance: 1.376
   narrowable: 1
+  yReverse: 0
 --- !u!1 &121983775
 GameObject:
   m_ObjectHideFlags: 0
@@ -1103,7 +1104,11 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 7477306467543592417, guid: fc14a0f134eac8249ac199ef26c9ae8a, type: 3}
+    - {fileID: 7586709475413062183, guid: fc14a0f134eac8249ac199ef26c9ae8a, type: 3}
+    - {fileID: 8555527847111566556, guid: fc14a0f134eac8249ac199ef26c9ae8a, type: 3}
+    - {fileID: 9130243024184589549, guid: fc14a0f134eac8249ac199ef26c9ae8a, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fc14a0f134eac8249ac199ef26c9ae8a, type: 3}
@@ -1208,7 +1213,7 @@ PrefabInstance:
     - target: {fileID: 7001247864472720443, guid: 79a877111fe9c124781bb7ebdaa18dfe,
         type: 3}
       propertyPath: speed
-      value: 14
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 7001247864472720443, guid: 79a877111fe9c124781bb7ebdaa18dfe,
         type: 3}
@@ -2154,6 +2159,9 @@ MonoBehaviour:
   OnStarAllCollected:
     m_PersistentCalls:
       m_Calls: []
+  OnStart:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!4 &1664323581
 Transform:
   m_ObjectHideFlags: 0
@@ -2552,6 +2560,7 @@ MonoBehaviour:
   cameraMoving: {fileID: 0}
   distance: 1.376
   narrowable: 1
+  yReverse: 0
 --- !u!114 &1799382145
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3101,6 +3110,7 @@ MonoBehaviour:
   cameraMoving: {fileID: 0}
   distance: 1.376
   narrowable: 1
+  yReverse: 0
 --- !u!1 &2039864355
 GameObject:
   m_ObjectHideFlags: 0

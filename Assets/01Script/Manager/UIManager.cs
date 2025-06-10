@@ -4,6 +4,7 @@ using UnityEngine.UI;
 using TMPro;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
+using UnityEngine.SceneManagement;
 
 public enum ButtonType
 {
@@ -28,7 +29,9 @@ public class UIManager : SingletonDestroy<UIManager>
 
     private GameObject readWrite;
     private GameObject picturePannel;
-
+    private int readWritePage = 0;
+    private int readWriteMaxPage = 0;
+    private int chap = 1;
 
 
     private GameObject chat;
@@ -118,48 +121,60 @@ public class UIManager : SingletonDestroy<UIManager>
 
         if (!ui) return;
 
-        GameObject.Find("FloatImage").TryGetComponent<Image>(out floatImage);
-        GameObject.Find("BloodScreen").TryGetComponent<Image>(out bloodScreen);
-        informPannel = GameObject.Find("InformPannel");
-        informTexts = informPannel.GetComponentsInChildren<TextMeshProUGUI>();
-        GameObject.Find("LineDrawer").TryGetComponent<OutLineDrawer>(out lineDrawer);
-
+        if (SceneManager.GetActiveScene().name != "LobbyScene")
+        {
+            GameObject.Find("FloatImage").TryGetComponent<Image>(out floatImage);
+            GameObject.Find("BloodScreen").TryGetComponent<Image>(out bloodScreen);
+            informPannel = GameObject.Find("InformPannel");
+            informTexts = informPannel.GetComponentsInChildren<TextMeshProUGUI>();
+            GameObject.Find("LineDrawer").TryGetComponent<OutLineDrawer>(out lineDrawer);
+        }
 
         uiCam.TryGetComponent<Camera>(out uiCamera);
 
         int num = 0;
         Button btn;
 
-        mail = ui.transform.GetChild(num++).gameObject;
-        if (mail.transform.GetChild(4).TryGetComponent<Button>(out btn))
+        if (SceneManager.GetActiveScene().name == "LobbyScene")
         {
-            btn.onClick.AddListener(CloseMail);
-            btn.onClick.AddListener(OpenMission);
+
+            mail = ui.transform.GetChild(num++).gameObject;
+            if (mail.transform.GetChild(4).TryGetComponent<Button>(out btn))
+            {
+                btn.onClick.AddListener(CloseMail);
+                btn.onClick.AddListener(OpenMission);
+            }
+
+            chapter = ui.transform.GetChild(num++).gameObject;
+            if (chapter.transform.GetChild(1).TryGetComponent<Button>(out btn))
+                btn.onClick.AddListener(CloseChapter);
+
+            chapterContent = chapter.GetComponentInChildren<ContentSizeFitter>().gameObject;
+
+            mission = ui.transform.GetChild(num++).gameObject;
+            if (mission.transform.GetChild(3).TryGetComponent<Button>(out btn))
+                btn.onClick.AddListener(CloseMission);
+
+            readWrite = ui.transform.GetChild(num++).gameObject;
+            if (readWrite.transform.GetChild(1).TryGetComponent<Button>(out btn))
+                btn.onClick.AddListener(CloseReadWrite);
+            if (readWrite.transform.GetChild(2).TryGetComponent<Button>(out btn))
+                btn.onClick.AddListener(ForWardReadWrite);
+            if (readWrite.transform.GetChild(3).TryGetComponent<Button>(out btn))
+                btn.onClick.AddListener(BackWardReadWrite);
+            if (readWrite.transform.GetChild(4).TryGetComponent<Button>(out btn))
+                btn.onClick.AddListener(() => ChangeChapter(1));
+            if (readWrite.transform.GetChild(5).TryGetComponent<Button>(out btn))
+                btn.onClick.AddListener(() => ChangeChapter(2));
+            if (readWrite.transform.GetChild(6).TryGetComponent<Button>(out btn))
+                btn.onClick.AddListener(OpenPictures);
+            picturePannel = readWrite.transform.GetChild(7).gameObject;
+            if (picturePannel.TryGetComponent<Button>(out btn))
+                btn.onClick.AddListener(OpenPictures);
+
+            ChangeChapter(1);
+
         }
-
-        chapter = ui.transform.GetChild(num++).gameObject;
-        if (chapter.transform.GetChild(1).TryGetComponent<Button>(out btn))
-            btn.onClick.AddListener(CloseChapter);
-
-        chapterContent = chapter.GetComponentInChildren<ContentSizeFitter>().gameObject;
-        
-        mission = ui.transform.GetChild(num++).gameObject;
-        if(mission.transform.GetChild(3).TryGetComponent<Button>(out btn))
-            btn.onClick.AddListener(CloseMission);
-
-        readWrite = ui.transform.GetChild(num++).gameObject;
-        if (readWrite.transform.GetChild(1).TryGetComponent<Button>(out btn))
-            btn.onClick.AddListener(CloseReadWrite);
-        if (readWrite.transform.GetChild(2).TryGetComponent<Button>(out btn))
-            btn.onClick.AddListener(ForWardReadWrite);
-        if (readWrite.transform.GetChild(3).TryGetComponent<Button>(out btn))
-            btn.onClick.AddListener(BackWardReadWrite);
-        if (readWrite.transform.GetChild(4).TryGetComponent<Button>(out btn))
-            btn.onClick.AddListener(OpenPictures);
-        if (readWrite.transform.GetChild(5).TryGetComponent<Button>(out btn))
-            btn.onClick.AddListener(OpenPictures);
-        picturePannel = readWrite.transform.GetChild(5).gameObject;
-
 
         chat = ui.transform.GetChild(num++).gameObject;
         chat.transform.GetChild(0).TryGetComponent<Image>(out  chatterImage);
@@ -210,95 +225,98 @@ public class UIManager : SingletonDestroy<UIManager>
             }
         }
 
-
-        status = ui.transform.GetChild(num++).gameObject;
-        hpStatus = status.transform.GetChild(0).gameObject;
-        status.transform.GetChild(1).GetChild(0).TryGetComponent<TextMeshProUGUI>(out timer);
-        status.transform.GetChild(2).TryGetComponent<TextMeshProUGUI>(out goalText);
-        status.transform.GetChild(3).GetChild(0).TryGetComponent<TextMeshProUGUI>(out picture);
-        status.transform.GetChild(3).GetChild(1).TryGetComponent<Image>(out pictureImage);
-
-        playMenu = ui.transform.GetChild(num++).gameObject;
-        if(playMenu.transform.GetChild(0).TryGetComponent<Button>(out btn))
-            btn.onClick.AddListener(() => OpenMenuPopup());
-
-        if (playMenu.transform.GetChild(1).TryGetComponent<TwoStateButton>(out musicBtn))
+        if (SceneManager.GetActiveScene().name != "LobbyScene")
         {
-            musicBtn.OnClick += () =>
+
+
+            status = ui.transform.GetChild(num++).gameObject;
+            hpStatus = status.transform.GetChild(0).gameObject;
+            status.transform.GetChild(1).GetChild(0).TryGetComponent<TextMeshProUGUI>(out timer);
+            status.transform.GetChild(2).TryGetComponent<TextMeshProUGUI>(out goalText);
+            status.transform.GetChild(3).GetChild(0).TryGetComponent<TextMeshProUGUI>(out picture);
+            status.transform.GetChild(3).GetChild(1).TryGetComponent<Image>(out pictureImage);
+
+            playMenu = ui.transform.GetChild(num++).gameObject;
+            if (playMenu.transform.GetChild(0).TryGetComponent<Button>(out btn))
+                btn.onClick.AddListener(() => OpenMenuPopup());
+
+            if (playMenu.transform.GetChild(1).TryGetComponent<TwoStateButton>(out musicBtn))
             {
-                musicBtn.OnT_OffF = !musicBtn.OnT_OffF;
-                GameManager.Instance.MusicOnOFF(musicBtn.OnT_OffF);
-            };
-            var n = PlayerPrefs.GetInt("Sound");
-            if (n == 0)
-            {
-                musicBtn.OnT_OffF = false;
-                Debug.Log("설정변경");
+                musicBtn.OnClick += () =>
+                {
+                    musicBtn.OnT_OffF = !musicBtn.OnT_OffF;
+                    GameManager.Instance.MusicOnOFF(musicBtn.OnT_OffF);
+                };
+                var n = PlayerPrefs.GetInt("Sound", 1);
+                if (n == 0)
+                {
+                    musicBtn.OnT_OffF = false;
+                    Debug.Log("설정변경");
+                }
+                else
+                {
+                    musicBtn.OnT_OffF = true;
+                }
             }
-            else
+
+
+            star = ui.transform.GetChild(num++).gameObject;
+
+            menuPopup = ui.transform.GetChild(num++).gameObject;
+
+            if (menuPopup.transform.GetChild(0).TryGetComponent<Button>(out btn))
             {
-                musicBtn.OnT_OffF = true;
+                btn.onClick.AddListener(() =>
+                {
+                    OpenPopup("다시 시작", "해당 스테이지를 다시 시작합니다.", "(주의: 모든 진행 상황이 초기화 됩니다.)");
+                    menuPopup.SetActive(false);
+                    popupOKBtn.onClick.RemoveAllListeners();
+                    popupOKBtn.onClick.AddListener(GameManager.Instance.RestartGame);
+                    popupCancelBtn.onClick.RemoveAllListeners();
+                    popupCancelBtn.onClick.AddListener(ClosePopup);
+                }
+                );
             }
+            if (menuPopup.transform.GetChild(1).TryGetComponent<Button>(out btn))
+                btn.onClick.AddListener(GameManager.Instance.ReturnToLobby);
+
+            if (menuPopup.transform.GetChild(2).TryGetComponent<Button>(out btn))
+                btn.onClick.AddListener(GameManager.Instance.GameQuit);
+
+
+
+            popup = ui.transform.GetChild(num++).gameObject;
+            popup.transform.GetChild(0).TryGetComponent<TextMeshProUGUI>(out popupTitleText);
+            popup.transform.GetChild(1).TryGetComponent<TextMeshProUGUI>(out popupText);
+            popup.transform.GetChild(2).TryGetComponent<TextMeshProUGUI>(out popupSubText);
+            popup.transform.GetChild(3).TryGetComponent<Button>(out popupOKBtn);
+            popup.transform.GetChild(4).TryGetComponent<Button>(out popupCancelBtn);
+
+            clearPopup = ui.transform.GetChild(num++).gameObject;
+
+            clearPopup.transform.GetChild(0).TryGetComponent<TextMeshProUGUI>(out clearPopupTitle);
+            clearPopupStar = clearPopup.transform.GetChild(1).gameObject;
+            clearPopupSlot = clearPopup.transform.GetChild(2).gameObject;
+
+            clearPopupSlot.transform.GetChild(0).GetComponentInChildren<Button>().onClick.AddListener(GameManager.Instance.ReturnToLobby);
+            var btns = clearPopupSlot.transform.GetChild(1).GetComponentsInChildren<Button>();
+
+            btns[0].onClick.AddListener(GameManager.Instance.RestartGame);
+            //btns[1].onClick.AddListener(GameManager.Instance.ReturnToLobby);
+
+
+            puzzleClearPopup = ui.transform.GetChild(num++).gameObject;
+
+            puzzleClearPopup.transform.GetChild(2).GetComponent<Button>().onClick.AddListener(GameManager.Instance.RestartGame);
+
+
+
+            video = ui.transform.GetChild(num++).gameObject;
+            acquire = ui.transform.GetChild(num++).gameObject;
+            acquireItem = acquire.transform.GetChild(0).gameObject;
+
+            SetStar(0);
         }
-
-
-        star = ui.transform.GetChild(num++).gameObject;
-
-        menuPopup = ui.transform.GetChild(num++).gameObject;
-
-        if (menuPopup.transform.GetChild(0).TryGetComponent<Button>(out btn))
-        {
-            btn.onClick.AddListener(() =>
-            {
-                OpenPopup("다시 시작", "해당 스테이지를 다시 시작합니다.", "(주의: 모든 진행 상황이 초기화 됩니다.)");
-                menuPopup.SetActive(false);
-                popupOKBtn.onClick.RemoveAllListeners();
-                popupOKBtn.onClick.AddListener(GameManager.Instance.RestartGame);
-                popupCancelBtn.onClick.RemoveAllListeners();
-                popupCancelBtn.onClick.AddListener(ClosePopup);
-            }
-            );
-        }
-        if(menuPopup.transform.GetChild(1).TryGetComponent<Button>(out btn))
-            btn.onClick.AddListener(GameManager.Instance.ReturnToLobby);
-
-        if(menuPopup.transform.GetChild(2).TryGetComponent<Button>(out btn))
-            btn.onClick.AddListener(GameManager.Instance.GameQuit);
-
-
-
-        popup = ui.transform.GetChild(num++).gameObject;
-        popup.transform.GetChild(0).TryGetComponent<TextMeshProUGUI>(out popupTitleText);
-        popup.transform.GetChild(1).TryGetComponent<TextMeshProUGUI>(out popupText);
-        popup.transform.GetChild(2).TryGetComponent<TextMeshProUGUI>(out popupSubText);
-        popup.transform.GetChild(3).TryGetComponent<Button>(out popupOKBtn);
-        popup.transform.GetChild(4).TryGetComponent<Button>(out popupCancelBtn);
-
-        clearPopup = ui.transform.GetChild(num++).gameObject;
-
-        clearPopup.transform.GetChild(0).TryGetComponent<TextMeshProUGUI>(out clearPopupTitle);
-        clearPopupStar = clearPopup.transform.GetChild(1).gameObject;
-        clearPopupSlot = clearPopup.transform.GetChild(2).gameObject;
-
-        clearPopupSlot.transform.GetChild(0).GetComponentInChildren<Button>().onClick.AddListener(GameManager.Instance.ReturnToLobby);
-        var btns = clearPopupSlot.transform.GetChild(1).GetComponentsInChildren<Button>();
-
-        btns[0].onClick.AddListener(GameManager.Instance.RestartGame);
-        //btns[1].onClick.AddListener(GameManager.Instance.ReturnToLobby);
-
-
-        puzzleClearPopup = ui.transform.GetChild(num++).gameObject;
-
-        puzzleClearPopup.transform.GetChild(2).GetComponent<Button>().onClick.AddListener(GameManager.Instance.RestartGame);
-
-
-
-        video = ui.transform.GetChild(num++).gameObject;
-        acquire = ui.transform.GetChild(num++).gameObject;
-        acquireItem = acquire.transform.GetChild(0).gameObject;
-
-        SetStar(0);
-
 
 
         if (useTouchPad)
@@ -501,19 +519,92 @@ public class UIManager : SingletonDestroy<UIManager>
         readWrite.SetActive(false);
     }
 
+    private void ChangeChapter(int chapNum)
+    {
+        chap = chapNum;
+
+        if (PlayerPrefs.GetInt("Stage1Clear") == 0)
+            chap = 1;
+
+        if (chap == 1)
+        {
+            readWriteMaxPage = 2;
+            readWritePage = PlayerPrefs.GetInt("Stage1Clear");
+        }
+        if (chap == 2)
+        {
+            readWriteMaxPage = 3;
+            readWritePage = PlayerPrefs.GetInt("Stage2Clear");
+        }
+
+        SetReadWritePageUI();
+    }
+
     private void ForWardReadWrite()
     {
-        readWrite.transform.GetChild(0).GetComponent<Image>().sprite = Resources.Load<Sprite>("Image/UI_12");
+        if (chap == 1)
+        {
+            if (PlayerPrefs.GetInt("Stage1Clear") == 0)
+                return;
+        }
+        if(chap == 2)
+        {
+            if (PlayerPrefs.GetInt("Stage2Clear") == 0)
+                return;
+        }
+
+        if (readWritePage < readWriteMaxPage)
+            readWritePage++;
+        else
+            readWritePage = readWriteMaxPage;
+
+        SetReadWritePageUI();
     }
 
     private void BackWardReadWrite()
     {
-        readWrite.transform.GetChild(0).GetComponent<Image>().sprite = Resources.Load<Sprite>("Image/UI_11");
+        if (chap == 1)
+        {
+            if (PlayerPrefs.GetInt("Stage1Clear") == 0)
+                return;
+        }
+        if (chap == 2)
+        {
+            if (PlayerPrefs.GetInt("Stage2Clear") == 0)
+                return;
+        }
+
+        if (1 < readWritePage)
+            readWritePage--;
+        else
+            readWritePage = 1;
+
+        SetReadWritePageUI();
     }
+
+    private void SetReadWritePageUI()
+    {
+        Debug.Log(chap + "챕터/" + readWritePage + "/" + readWriteMaxPage);
+
+        readWrite.transform.GetChild(0).GetComponent<Image>().sprite = Resources.Load<Sprite>("Image/UI_" + chap + readWritePage);
+
+    }
+
 
     private void OpenPictures()
     {
         picturePannel.SetActive(!picturePannel.activeSelf);
+
+        if (chap == 1)
+        {
+            picturePannel.transform.GetChild(0).gameObject.SetActive(true);
+            picturePannel.transform.GetChild(1).gameObject.SetActive(false);
+        }
+        if (chap == 2)
+        {
+            picturePannel.transform.GetChild(0).gameObject.SetActive(false);
+            picturePannel.transform.GetChild(1).gameObject.SetActive(true);
+        }
     }
 
     public void SetScenarioPannel(Sprite sprite, string name, string chat)
@@ -561,6 +652,8 @@ public class UIManager : SingletonDestroy<UIManager>
 
     public void SetHpUI(int n)
     {
+        if (hpStatus == null) return;
+
         int i;
         for(i = 0; i < n; i++)
             hpStatus.transform.GetChild(i).gameObject.SetActive(true);
