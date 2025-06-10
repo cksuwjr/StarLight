@@ -14,6 +14,8 @@ public class PlayerController : MonoBehaviour
     private event Action<int> OnChangeHp;
     private Animator animator;
 
+    private bool jumpable = true;
+
     public void Init()
     {
         TryGetComponent<IMove>(out movement);
@@ -41,7 +43,7 @@ public class PlayerController : MonoBehaviour
         movement.Move(input);
 
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && jumpable)
             movement.Jump();
 
 
@@ -68,6 +70,7 @@ public class PlayerController : MonoBehaviour
             PlayerPrefs.SetInt("1-1", 1);
             PlayerPrefs.SetInt("1-2", 1);
             PlayerPrefs.SetInt("1-3", 1);
+            PlayerPrefs.SetInt("Stage1Clear", 1);
 
 
 
@@ -80,13 +83,18 @@ public class PlayerController : MonoBehaviour
             PlayerPrefs.SetInt("2-1", 1);
             PlayerPrefs.SetInt("2-2", 1);
             PlayerPrefs.SetInt("2-3", 1);
+            PlayerPrefs.SetInt("Stage2Clear", 1);
+
             PlayerPrefs.Save();
+
+            Debug.Log("All Clear");
         }
     }
 
     public void RemoveButtonInteraction()
     {
         UIManager.OnPressBtnSlot1 -= movement.Jump;
+        jumpable = false;
     }
 
     public void GetDamage(int damage)
