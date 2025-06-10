@@ -27,6 +27,7 @@ public class VideoPlay : MonoBehaviour
             UIManager.Instance.PlayVideo(player.clip.width, player.clip.height);
             player.Play();
             yield return YieldInstructionCache.WaitForSeconds((float)player.clip.length);
+            SoundManager.Instance.StopBGM();
         }
         UIManager.Instance.StopVideo();
         OnVideoEnd?.Invoke();
