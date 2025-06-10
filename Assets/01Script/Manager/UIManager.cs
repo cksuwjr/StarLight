@@ -299,6 +299,7 @@ public class UIManager : SingletonDestroy<UIManager>
             clearPopupSlot = clearPopup.transform.GetChild(2).gameObject;
 
             clearPopupSlot.transform.GetChild(0).GetComponentInChildren<Button>().onClick.AddListener(GameManager.Instance.ReturnToLobby);
+
             var btns = clearPopupSlot.transform.GetChild(1).GetComponentsInChildren<Button>();
 
             btns[0].onClick.AddListener(GameManager.Instance.RestartGame);
@@ -784,6 +785,9 @@ public class UIManager : SingletonDestroy<UIManager>
 
     public void OpenClearPopup(bool tf, Action returnTo)
     {
+        TouchBlock(true);
+
+
         if (tf)
         {
             clearPopupTitle.text = "VICTORY";
@@ -798,7 +802,8 @@ public class UIManager : SingletonDestroy<UIManager>
 
             var btns = clearPopupSlot.transform.GetChild(1).GetComponentsInChildren<Button>();
 
-            btns[1].onClick.AddListener(() => returnTo());
+        
+            btns[1].onClick.AddListener(() => { TouchBlock(false); returnTo(); });
         }
 
 
@@ -821,6 +826,8 @@ public class UIManager : SingletonDestroy<UIManager>
 
     public void PlayVideo(float width, float height)
     {
+        TouchBlock(true);
+
         video.SetActive(true);
         //video.transform.localScale = new Vector3(width / 1000f, height / 1000f, 0);
 
@@ -835,6 +842,8 @@ public class UIManager : SingletonDestroy<UIManager>
 
     public void StopVideo()
     {
+        TouchBlock(false);
+
         video.SetActive(false);
     }
 
