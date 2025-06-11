@@ -4693,7 +4693,7 @@ MonoBehaviour:
   id: Stage2Clear
   beforeClearId: Stage1Clear
   notClear: {fileID: 21300000, guid: 30271fc61b6d56543830fdb4b656296a, type: 3}
-  clear: {fileID: 21300000, guid: b26491f380afc2d48a3cad08d90c4a67, type: 3}
+  clear: {fileID: 21300000, guid: 41c0e5f7cb6b8234597043f39c084c36, type: 3}
 --- !u!114 &1778295240
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4709,7 +4709,7 @@ MonoBehaviour:
   id: Stage1Clear
   beforeClearId: 
   notClear: {fileID: 21300000, guid: 3f8bf3bbf8e24994283b579cdb6ada41, type: 3}
-  clear: {fileID: 21300000, guid: 39abf4d4fac1d444ca55ce71a54d5a51, type: 3}
+  clear: {fileID: 21300000, guid: c576bfab4e48ddb40a97d94ab5e28d28, type: 3}
 --- !u!1001 &1843204050
 PrefabInstance:
   m_ObjectHideFlags: 0
