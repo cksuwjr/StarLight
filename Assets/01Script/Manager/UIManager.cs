@@ -785,7 +785,7 @@ public class UIManager : SingletonDestroy<UIManager>
 
     public void OpenClearPopup(bool tf, Action returnTo)
     {
-        TouchBlock(true);
+        TouchBlock(false);
 
 
         if (tf)
