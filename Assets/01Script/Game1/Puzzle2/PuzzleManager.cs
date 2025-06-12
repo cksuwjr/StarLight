@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AddressableAssets;
 using UnityEngine.Events;
 
 using Random = UnityEngine.Random;
@@ -44,7 +45,8 @@ public class PuzzleManager : MonoBehaviour
 
     private void Start()
     {
-        UIManager.Instance.FloatImage(Resources.Load<Sprite>("Image/Stell_Puzzle"));
+        //UIManager.Instance.FloatImage(Resources.Load<Sprite>("Image/Stell_Puzzle"));
+        UIManager.Instance.FloatImage(Addressables.LoadAssetAsync<Sprite>("1-2").WaitForCompletion());
 
         Invoke("MixPuzzle", 4f);
         UIManager.Instance.Slot1ButtonText("µé±â");

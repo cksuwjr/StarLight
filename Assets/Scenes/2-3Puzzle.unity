@@ -760,6 +760,7 @@ MonoBehaviour:
   OnStart:
     m_PersistentCalls:
       m_Calls: []
+  downloadResourceSrc: Stage2-3
 --- !u!4 &111180274
 Transform:
   m_ObjectHideFlags: 0
@@ -3243,6 +3244,18 @@ MonoBehaviour:
           m_IntArgument: 27
           m_FloatArgument: 0
           m_StringArgument: Ch_2
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 111180273}
+        m_TargetAssemblyTypeName: ScenarioManager, Assembly-CSharp
+        m_MethodName: GetPicture
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 27
+          m_FloatArgument: 0
+          m_StringArgument: Picture2-12
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!65 &717603842

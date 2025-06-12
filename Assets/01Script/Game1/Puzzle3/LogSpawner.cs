@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.AddressableAssets;
 using UnityEngine.Events;
 
 public class LogSpawner : MonoBehaviour
@@ -34,8 +36,10 @@ public class LogSpawner : MonoBehaviour
 
     private IEnumerator Spawn()
     {
-        UIManager.Instance.FloatImage(Resources.Load<Sprite>("Image/Stell_Log"));
-
+        
+        //UIManager.Instance.FloatImage(Resources.Load<Sprite>("Image/Stell_Log"));
+        UIManager.Instance.FloatImage(Addressables.LoadAssetAsync<Sprite>("1-3").WaitForCompletion());
+        
         yield return YieldInstructionCache.WaitForSeconds(3f);
 
 

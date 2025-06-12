@@ -1806,6 +1806,7 @@ MonoBehaviour:
   OnStart:
     m_PersistentCalls:
       m_Calls: []
+  downloadResourceSrc: Stage2-1
 --- !u!4 &750609371
 Transform:
   m_ObjectHideFlags: 0

@@ -4,6 +4,7 @@ using UnityEngine.UI;
 using TMPro;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
+using UnityEngine.AddressableAssets;
 using UnityEngine.SceneManagement;
 
 public enum ButtonType
@@ -587,7 +588,9 @@ public class UIManager : SingletonDestroy<UIManager>
     {
         Debug.Log(chap + "ц╘ем/" + readWritePage + "/" + readWriteMaxPage);
 
-        readWrite.transform.GetChild(0).GetComponent<Image>().sprite = Resources.Load<Sprite>("Image/UI_" + chap + readWritePage);
+        readWrite.transform.GetChild(0).GetComponent<Image>().sprite = Addressables.LoadAssetAsync<Sprite>("UI" + chap + "-" + readWritePage).WaitForCompletion();
+
+        //readWrite.transform.GetChild(0).GetComponent<Image>().sprite = Resources.Load<Sprite>("Image/UI_" + chap + readWritePage);
 
     }
 

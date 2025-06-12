@@ -693,6 +693,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3455373038352773952, guid: fc14a0f134eac8249ac199ef26c9ae8a,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -182.49994
+      objectReference: {fileID: 0}
     - target: {fileID: 3710453560107518362, guid: fc14a0f134eac8249ac199ef26c9ae8a,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -938,6 +943,11 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6855114696163752865, guid: fc14a0f134eac8249ac199ef26c9ae8a,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6989514423838408391, guid: fc14a0f134eac8249ac199ef26c9ae8a,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -1158,7 +1168,7 @@ PrefabInstance:
     - target: {fileID: 3212538714041878260, guid: 79a877111fe9c124781bb7ebdaa18dfe,
         type: 3}
       propertyPath: m_VersionIndex
-      value: 25
+      value: 28
       objectReference: {fileID: 0}
     - target: {fileID: 5334541723661258546, guid: 79a877111fe9c124781bb7ebdaa18dfe,
         type: 3}
@@ -2172,6 +2182,7 @@ MonoBehaviour:
   OnStart:
     m_PersistentCalls:
       m_Calls: []
+  downloadResourceSrc: 
 --- !u!4 &1664323581
 Transform:
   m_ObjectHideFlags: 0
