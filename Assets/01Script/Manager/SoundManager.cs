@@ -29,7 +29,7 @@ public class SoundManager : Singleton<SoundManager>
                     ChangeBGM(BGM);
         } 
 
-        var onOff = PlayerPrefs.GetInt("Sound") == 1 ? true : false;
+        var onOff = PlayerPrefs.GetInt("Sound", 1) == 1 ? true : false;
         SoundOnOFF(onOff);
     }
 

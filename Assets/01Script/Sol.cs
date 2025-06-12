@@ -23,7 +23,7 @@ public class Sol : MonoBehaviour
         transform.forward = dir;
 
         if (Vector3.Distance(player.transform.position, transform.position) < 10f)
-            transform.position += dir * Time.deltaTime * 6;
+            transform.position += dir * Time.deltaTime * 4.5f;
     }
 
     private void OnCollisionEnter(Collision collision)

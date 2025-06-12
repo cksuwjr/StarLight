@@ -8729,12 +8729,17 @@ PrefabInstance:
     - target: {fileID: 7001247864472720443, guid: 79a877111fe9c124781bb7ebdaa18dfe,
         type: 3}
       propertyPath: jump
-      value: 22
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7001247864472720443, guid: 79a877111fe9c124781bb7ebdaa18dfe,
         type: 3}
       propertyPath: speed
       value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 7001247864472720443, guid: 79a877111fe9c124781bb7ebdaa18dfe,
+        type: 3}
+      propertyPath: gravityY
+      value: -30
       objectReference: {fileID: 0}
     - target: {fileID: 7001247864472720443, guid: 79a877111fe9c124781bb7ebdaa18dfe,
         type: 3}
@@ -45244,7 +45249,7 @@ MonoBehaviour:
         m_MethodName: SetActiveFalse
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 1097494039}
+          m_ObjectArgument: {fileID: 1647431434}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
@@ -47570,7 +47575,7 @@ MonoBehaviour:
         m_MethodName: SetActiveFalse
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 1097494039}
+          m_ObjectArgument: {fileID: 1726739891}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
@@ -48181,7 +48186,11 @@ PrefabInstance:
       value: -35
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 7477306467543592417, guid: fc14a0f134eac8249ac199ef26c9ae8a, type: 3}
+    - {fileID: 7586709475413062183, guid: fc14a0f134eac8249ac199ef26c9ae8a, type: 3}
+    - {fileID: 8555527847111566556, guid: fc14a0f134eac8249ac199ef26c9ae8a, type: 3}
+    - {fileID: 9130243024184589549, guid: fc14a0f134eac8249ac199ef26c9ae8a, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fc14a0f134eac8249ac199ef26c9ae8a, type: 3}
@@ -58840,7 +58849,7 @@ MonoBehaviour:
         m_MethodName: SetActiveFalse
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 1097494039}
+          m_ObjectArgument: {fileID: 2124593294}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0

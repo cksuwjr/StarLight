@@ -292,6 +292,7 @@ MonoBehaviour:
   cameraMoving: {fileID: 0}
   distance: 1.376
   narrowable: 1
+  yReverse: 0
 --- !u!1 &121983775
 GameObject:
   m_ObjectHideFlags: 0
@@ -437,6 +438,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: 3b6424d2141840145b1ae796c6d9b2e1,
         type: 3}
+    - target: {fileID: 1595400584914664079, guid: fc14a0f134eac8249ac199ef26c9ae8a,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1649454055975071613, guid: fc14a0f134eac8249ac199ef26c9ae8a,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -687,6 +693,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3455373038352773952, guid: fc14a0f134eac8249ac199ef26c9ae8a,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -182.49994
+      objectReference: {fileID: 0}
     - target: {fileID: 3710453560107518362, guid: fc14a0f134eac8249ac199ef26c9ae8a,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -748,6 +759,11 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5129700815828066883, guid: fc14a0f134eac8249ac199ef26c9ae8a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5447017029180751913, guid: fc14a0f134eac8249ac199ef26c9ae8a,
         type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -905,7 +921,7 @@ PrefabInstance:
     - target: {fileID: 6729566679013815814, guid: fc14a0f134eac8249ac199ef26c9ae8a,
         type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6757628750433923273, guid: fc14a0f134eac8249ac199ef26c9ae8a,
         type: 3}
@@ -925,6 +941,11 @@ PrefabInstance:
     - target: {fileID: 6757628750433923273, guid: fc14a0f134eac8249ac199ef26c9ae8a,
         type: 3}
       propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6855114696163752865, guid: fc14a0f134eac8249ac199ef26c9ae8a,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6989514423838408391, guid: fc14a0f134eac8249ac199ef26c9ae8a,
@@ -1103,7 +1124,11 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 7477306467543592417, guid: fc14a0f134eac8249ac199ef26c9ae8a, type: 3}
+    - {fileID: 7586709475413062183, guid: fc14a0f134eac8249ac199ef26c9ae8a, type: 3}
+    - {fileID: 8555527847111566556, guid: fc14a0f134eac8249ac199ef26c9ae8a, type: 3}
+    - {fileID: 9130243024184589549, guid: fc14a0f134eac8249ac199ef26c9ae8a, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fc14a0f134eac8249ac199ef26c9ae8a, type: 3}
@@ -1143,7 +1168,7 @@ PrefabInstance:
     - target: {fileID: 3212538714041878260, guid: 79a877111fe9c124781bb7ebdaa18dfe,
         type: 3}
       propertyPath: m_VersionIndex
-      value: 25
+      value: 28
       objectReference: {fileID: 0}
     - target: {fileID: 5334541723661258546, guid: 79a877111fe9c124781bb7ebdaa18dfe,
         type: 3}
@@ -1208,7 +1233,7 @@ PrefabInstance:
     - target: {fileID: 7001247864472720443, guid: 79a877111fe9c124781bb7ebdaa18dfe,
         type: 3}
       propertyPath: speed
-      value: 14
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 7001247864472720443, guid: 79a877111fe9c124781bb7ebdaa18dfe,
         type: 3}
@@ -2154,6 +2179,10 @@ MonoBehaviour:
   OnStarAllCollected:
     m_PersistentCalls:
       m_Calls: []
+  OnStart:
+    m_PersistentCalls:
+      m_Calls: []
+  downloadResourceSrc: 
 --- !u!4 &1664323581
 Transform:
   m_ObjectHideFlags: 0
@@ -2552,6 +2581,7 @@ MonoBehaviour:
   cameraMoving: {fileID: 0}
   distance: 1.376
   narrowable: 1
+  yReverse: 0
 --- !u!114 &1799382145
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3101,6 +3131,7 @@ MonoBehaviour:
   cameraMoving: {fileID: 0}
   distance: 1.376
   narrowable: 1
+  yReverse: 0
 --- !u!1 &2039864355
 GameObject:
   m_ObjectHideFlags: 0

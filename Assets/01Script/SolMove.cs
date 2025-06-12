@@ -33,7 +33,6 @@ public class SolMove : MonoBehaviour
             {
                 var origin = direction;
                 direction = target.position - transform.position;
-                direction.y = 0;
                 direction.Normalize();
 
                 StartCoroutine(ChangeDirection(origin, direction));

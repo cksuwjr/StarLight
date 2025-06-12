@@ -1,3 +1,4 @@
+//using GooglePlayGames.BasicApi;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -14,6 +15,9 @@ public class EnemySpawner : MonoBehaviour
 
     private void Start()
     {
+        var player = GameManager.Instance.Player;
+        if (player.TryGetComponent<PlayerController>(out var controller))
+            controller.RemoveButtonInteraction();
         StartSpawn();
     }
 

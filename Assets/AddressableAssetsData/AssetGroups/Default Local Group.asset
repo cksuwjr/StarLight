@@ -59,6 +59,12 @@ MonoBehaviour:
     m_SerializedLabels:
     - Stage1-2
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 165f3b4bba6c2fb4ca46474350ea7774
+    m_Address: 2-3
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Stage2-3
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 1bef5474acfb0bb4a9554f3fedf67334
     m_Address: Sound/Mini/Sol_TTS_MG21
     m_ReadOnly: 0
@@ -106,12 +112,6 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels:
     - Stage1-3
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 27fe8e7ab7c8fe84697257055bdaa009
-    m_Address: 2-1
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - Stage2-1
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 2b5cddc3561bb6847bfcbb5b7ff165d6
     m_Address: Sound/CH2/Sol_TTS_01
@@ -179,6 +179,12 @@ MonoBehaviour:
     m_SerializedLabels:
     - Stage1-2
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 418f684e059cfdd4cad64d22297b88f3
+    m_Address: UI2-3
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Lobby
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 4262a0e2733e3f743bb055bfaaa0ddd0
     m_Address: Sound/Mini/Sol_TTS_MG18
     m_ReadOnly: 0
@@ -221,12 +227,6 @@ MonoBehaviour:
     m_SerializedLabels:
     - Stage1-1
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 52f868e266398ab49a853c0a79c15856
-    m_Address: 2-2
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - Stage2-2
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 5a9271ad77504df41b31a8799d381aab
     m_Address: Sound/CH2/Sol_TTS_18
     m_ReadOnly: 0
@@ -239,17 +239,17 @@ MonoBehaviour:
     m_SerializedLabels:
     - Stage2-1
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 66e016b95c009bc408fcd022d3fab0a6
+    m_Address: 1-1
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Stage1-1
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 67aa0cce568fdab4a987d164ca1728a4
     m_Address: Sound/CH1/Sol_TTS_5
     m_ReadOnly: 0
     m_SerializedLabels:
     - Stage1-1
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 6804d16a9772b8745a07e829ddfd28b0
-    m_Address: 2-3
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - Stage2-3
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 79aebab9002b0ab45b0e6e502ac268fa
     m_Address: UI1-1
@@ -263,6 +263,12 @@ MonoBehaviour:
     m_SerializedLabels:
     - Stage1-1
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 815191e5eab132f47b1543891797239e
+    m_Address: 1-2
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Stage1-2
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 824b3250f17274846b29ee40e52bb4d1
     m_Address: Sound/Mini/Sol_TTS_MG19
     m_ReadOnly: 0
@@ -275,17 +281,17 @@ MonoBehaviour:
     m_SerializedLabels:
     - Stage2-1
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 86b929c30a6eb0244a9283b52f983200
+    m_Address: UI2-0
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Lobby
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 8f5545574bfc4b7458916fb75eed1b44
     m_Address: Sound/Mini/Sol_TTS_MG13
     m_ReadOnly: 0
     m_SerializedLabels:
     - Stage2-1
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 93effdd57a9c2964cad8b1aef26fa96d
-    m_Address: 1-3
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - Stage1-3
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 9c02b1b21403a5840b5df2efc3156918
     m_Address: Sound/CH2/Sol_TTS_16
@@ -299,11 +305,23 @@ MonoBehaviour:
     m_SerializedLabels:
     - default
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a1fb8e123705b7d47be32d9e59910775
+    m_Address: UI1-0
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Lobby
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: a481cd6284eef7249ab64baa640d74da
     m_Address: Sound/CH2/Sol_TTS_07
     m_ReadOnly: 0
     m_SerializedLabels:
     - Stage2-2
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a487aa3eedb77d14191cbd4f0d4f9678
+    m_Address: 1-3
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Stage1-3
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: a7f5c7242b753544cb1176809a3c8651
     m_Address: Sound/CH1/Sol_TTS_3
@@ -313,12 +331,6 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: a96f10906afcdef43821a572f2bfb733
     m_Address: Sound/Mini/Sol_TTS_MG03
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - Stage1-1
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: ab21586f98759544e8deac3f8da8c33e
-    m_Address: 1-1
     m_ReadOnly: 0
     m_SerializedLabels:
     - Stage1-1
@@ -346,6 +358,12 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels:
     - Stage1-1
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b49d448e7de90e54696640019b88041c
+    m_Address: UI2-2
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Lobby
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: b67bcbfbaae4b354badd8e28300ded52
     m_Address: Sound/CH1/Sol_TTS_10
@@ -413,17 +431,23 @@ MonoBehaviour:
     m_SerializedLabels:
     - Stage2-2
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: e416a968c59b33a4682517c92124a31e
-    m_Address: 1-2
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - Stage1-2
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: e623ffacb1c7f9a4ca92aa4bf9353f46
     m_Address: Sound/CH2/Sol_TTS_02
     m_ReadOnly: 0
     m_SerializedLabels:
     - Stage2-1
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e7179c1e0cb8fc64ea5d9b59f8b52ff6
+    m_Address: 2-2
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Stage2-2
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e7a2582fd4074364eabae56809a71996
+    m_Address: UI2-1
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Lobby
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: eab513eb7a774f74cae92500bbfeacb7
     m_Address: Sound/CH2/Sol_TTS_11
@@ -433,6 +457,12 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: f0260e3e556e1124ebd28db3fe6d83eb
     m_Address: Sound/CH2/Sol_TTS_04
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Stage2-1
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f1431a86e38904848aa08db666cc7ac4
+    m_Address: 2-1
     m_ReadOnly: 0
     m_SerializedLabels:
     - Stage2-1

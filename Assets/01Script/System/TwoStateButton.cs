@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 public class TwoStateButton : UIClicker
 {
-    public bool onT_offF = false;
+    public bool onT_offF = true;
 
     public bool OnT_OffF
     {

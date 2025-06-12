@@ -94,7 +94,9 @@ public class Movement : MonoBehaviour, IMove
 
         dir.Normalize();
         dir.y = 0;
-        transform.forward = dir;
+        //transform.forward = dir;
+        Quaternion targetRotation = Quaternion.LookRotation(dir);
+        transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, 500f * Time.deltaTime);
 
         //dir *= speed;
         //dir.y = rb.velocity.y;
