@@ -266,7 +266,7 @@ PlayerSettings:
   AndroidTargetDevices: 0
   AndroidSplashScreenScale: 0
   androidSplashScreen: {fileID: 0}
-  AndroidKeystoreName: C:/Users/cksuw/Desktop/StartLightKey/user.keystore
+  AndroidKeystoreName: C:/Users/GameSW/Desktop/key/user.keystore
   AndroidKeyaliasName: cksuwjr
   AndroidEnableArmv9SecurityFeatures: 0
   AndroidBuildApkPerCpuArchitecture: 0
