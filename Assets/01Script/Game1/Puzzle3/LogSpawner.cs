@@ -20,6 +20,7 @@ public class LogSpawner : MonoBehaviour
     private void Start()
     {
         StartSpawn();
+        UIManager.Instance.FloatImage(Addressables.LoadAssetAsync<Sprite>("1-3").WaitForCompletion());
     }
 
     private void StartSpawn()
@@ -38,7 +39,6 @@ public class LogSpawner : MonoBehaviour
     {
         
         //UIManager.Instance.FloatImage(Resources.Load<Sprite>("Image/Stell_Log"));
-        UIManager.Instance.FloatImage(Addressables.LoadAssetAsync<Sprite>("1-3").WaitForCompletion());
         
         yield return YieldInstructionCache.WaitForSeconds(3f);
 

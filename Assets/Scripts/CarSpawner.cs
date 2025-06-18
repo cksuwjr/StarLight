@@ -27,6 +27,7 @@ public class CarSpawner : MonoBehaviour
     private void Start()
     {
         StartSpawn();
+        UIManager.Instance.FloatImage(Addressables.LoadAssetAsync<Sprite>("2-1").WaitForCompletion());
     }
 
     private void StartSpawn()
@@ -46,7 +47,7 @@ public class CarSpawner : MonoBehaviour
     private IEnumerator Spawn()
     {
         //UIManager.Instance.FloatImage(Resources.Load<Sprite>("Image/2-1_tut"));
-        UIManager.Instance.FloatImage(Addressables.LoadAssetAsync<Sprite>("2-1").WaitForCompletion());
+        
 
         yield return YieldInstructionCache.WaitForSeconds(3f);
 

@@ -451,6 +451,7 @@ public class NodeSpawner : MonoBehaviour
     private void StartSpawn()
     {
         StartCoroutine("Spawn");
+        UIManager.Instance.FloatImage(Addressables.LoadAssetAsync<Sprite>("2-2").WaitForCompletion());
     }
 
     private void StopSpawn()
@@ -463,7 +464,7 @@ public class NodeSpawner : MonoBehaviour
         SoundManager.Instance.StopBGM();
 
         //UIManager.Instance.FloatImage(Resources.Load<Sprite>("Image/2-2_tut"));
-        UIManager.Instance.FloatImage(Addressables.LoadAssetAsync<Sprite>("2-2").WaitForCompletion());
+        
 
         yield return YieldInstructionCache.WaitForSeconds(3f);
 

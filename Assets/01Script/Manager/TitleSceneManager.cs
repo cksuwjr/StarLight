@@ -31,6 +31,7 @@ public class TitleSceneManager : MonoBehaviour
 
     private void Start()
     {
+        Addressables.InitializeAsync().WaitForCompletion();
 
         SetPopupsScaleZero();
 

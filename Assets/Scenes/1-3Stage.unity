@@ -13654,11 +13654,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1203a204fb4c30b4198d2ab94489a360, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-<<<<<<< HEAD
-  chaseDistance: 0.2
-=======
   chaseDistance: 0.4
->>>>>>> origin/main
 --- !u!54 &2089343594
 Rigidbody:
   m_ObjectHideFlags: 0

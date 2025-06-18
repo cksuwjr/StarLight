@@ -24,6 +24,7 @@ public class EnemySpawner : MonoBehaviour
     private void StartSpawn()
     {
         StartCoroutine("Spawn");
+        UIManager.Instance.FloatImage(Addressables.LoadAssetAsync<Sprite>("1-1").WaitForCompletion());
         StartCoroutine("Upgrade");
     }
 
@@ -74,7 +75,6 @@ public class EnemySpawner : MonoBehaviour
     private IEnumerator Spawn()
     {
         //UIManager.Instance.FloatImage(Resources.Load<Sprite>("Image/Stell_Virus"));
-        UIManager.Instance.FloatImage(Addressables.LoadAssetAsync<Sprite>("1-1").WaitForCompletion());
 
 
         yield return YieldInstructionCache.WaitForSeconds(3f);
