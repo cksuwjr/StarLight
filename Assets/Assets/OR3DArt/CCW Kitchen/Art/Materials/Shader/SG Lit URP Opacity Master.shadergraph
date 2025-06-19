@@ -1657,7 +1657,7 @@
     },
     "m_FragmentContext": {
         "m_Position": {
-            "x": 662.0000610351563,
+            "x": 625.5999755859375,
             "y": 716.0
         },
         "m_Blocks": [
@@ -1692,7 +1692,7 @@
         "preventRotation": false
     },
     "m_Path": "Shader Graphs",
-    "m_GraphPrecision": 0,
+    "m_GraphPrecision": 2,
     "m_PreviewMode": 2,
     "m_OutputNode": {
         "m_Id": ""
@@ -8834,7 +8834,7 @@
         "m_Id": "cead9dd817064c7cb9c4254d1267a1d3"
     },
     "m_AllowMaterialOverride": false,
-    "m_SurfaceType": 1,
+    "m_SurfaceType": 0,
     "m_ZTestMode": 4,
     "m_ZWriteControl": 0,
     "m_AlphaMode": 0,
