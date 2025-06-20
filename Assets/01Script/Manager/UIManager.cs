@@ -6,6 +6,7 @@ using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
 using UnityEngine.AddressableAssets;
 using UnityEngine.SceneManagement;
+using System.Collections;
 
 public enum ButtonType
 {
@@ -491,7 +492,6 @@ public class UIManager : SingletonDestroy<UIManager>
     public void CloseScenarioPannel()
     {
         TouchBlock(false);
-
         chat.SetActive(false);
     }
 
@@ -586,14 +586,20 @@ public class UIManager : SingletonDestroy<UIManager>
 
     private void SetReadWritePageUI()
     {
-        Debug.Log(chap + "ц╘ем/" + readWritePage + "/" + readWriteMaxPage);
+        StartCoroutine(SetReadWriteImage("UI" + chap + "-" + readWritePage));
 
-        readWrite.transform.GetChild(0).GetComponent<Image>().sprite = Addressables.LoadAssetAsync<Sprite>("UI" + chap + "-" + readWritePage).WaitForCompletion();
+        //readWrite.transform.GetChild(0).GetComponent<Image>().sprite = Addressables.LoadAssetAsync<Sprite>("UI" + chap + "-" + readWritePage).WaitForCompletion();
 
         //readWrite.transform.GetChild(0).GetComponent<Image>().sprite = Resources.Load<Sprite>("Image/UI_" + chap + readWritePage);
 
     }
 
+    private IEnumerator SetReadWriteImage(string source)
+    {
+        var handle = Addressables.LoadAssetAsync<Sprite>(source);
+        yield return handle;
+        readWrite.transform.GetChild(0).GetComponent<Image>().sprite = handle.Result;
+    }
 
     private void OpenPictures()
     {

@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class SoundManager : Singleton<SoundManager>
@@ -18,6 +17,8 @@ public class SoundManager : Singleton<SoundManager>
 
     public void Init()
     {
+        SoundManager.Instance.StopSound();
+
         TryGetComponent<Pool>(out soundPool);
 
         if (BGM)

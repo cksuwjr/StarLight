@@ -2,10 +2,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.AddressableAssets;
 using UnityEngine.Events;
 
-public class EnemySpawner : MonoBehaviour
+public class EnemySpawner : GamePlayer
 {
     private GameObject enemy;
     private List<Enemy> enemies = new List<Enemy>();
@@ -24,7 +23,7 @@ public class EnemySpawner : MonoBehaviour
     private void StartSpawn()
     {
         StartCoroutine("Spawn");
-        UIManager.Instance.FloatImage(Addressables.LoadAssetAsync<Sprite>("1-1").WaitForCompletion());
+        FloatAddressableImage("1-1");
         StartCoroutine("Upgrade");
     }
 
