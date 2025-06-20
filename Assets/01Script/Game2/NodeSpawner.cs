@@ -1,12 +1,8 @@
-using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.AddressableAssets;
 using UnityEngine.Events;
-using UnityEngine.Rendering.Universal;
 
-public class NodeSpawner : MonoBehaviour
+public class NodeSpawner : GamePlayer
 {
     //[SerializeField] private float speed = 0.5f;
 
@@ -451,7 +447,7 @@ public class NodeSpawner : MonoBehaviour
     private void StartSpawn()
     {
         StartCoroutine("Spawn");
-        UIManager.Instance.FloatImage(Addressables.LoadAssetAsync<Sprite>("2-2").WaitForCompletion());
+        FloatAddressableImage("2-2");
     }
 
     private void StopSpawn()

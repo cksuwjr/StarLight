@@ -2,10 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.AddressableAssets;
 using UnityEngine.Events;
 
-public class LogSpawner : MonoBehaviour
+public class LogSpawner : GamePlayer
 {
     private GameObject log;
     [SerializeField] private Vector3 spawnPosition;
@@ -20,8 +19,9 @@ public class LogSpawner : MonoBehaviour
     private void Start()
     {
         StartSpawn();
-        UIManager.Instance.FloatImage(Addressables.LoadAssetAsync<Sprite>("1-3").WaitForCompletion());
+        FloatAddressableImage("1-3");
     }
+
 
     private void StartSpawn()
     {

@@ -132,7 +132,7 @@ public class PlayerController : MonoBehaviour
         float time = 0f;
         if (Camera.main.TryGetComponent<CameraMove>(out var cam))
             cam.ShakeCamera(1f);
-        Vibration.Vibrate();
+        //Vibration.Vibrate();
 
         while (time < 0.5f) {
             time += Time.deltaTime;

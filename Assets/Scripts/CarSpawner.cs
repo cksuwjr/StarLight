@@ -1,10 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.AddressableAssets;
 using UnityEngine.Events;
 
-public class CarSpawner : MonoBehaviour
+public class CarSpawner : GamePlayer
 {
     [Header("자동차 프리팹")]
     public GameObject carPrefab;
@@ -27,7 +26,7 @@ public class CarSpawner : MonoBehaviour
     private void Start()
     {
         StartSpawn();
-        UIManager.Instance.FloatImage(Addressables.LoadAssetAsync<Sprite>("2-1").WaitForCompletion());
+        FloatAddressableImage("2-1");
     }
 
     private void StartSpawn()
