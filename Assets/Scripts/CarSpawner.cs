@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class CarSpawner : MonoBehaviour
+public class CarSpawner : GamePlayer
 {
     [Header("자동차 프리팹")]
     public GameObject carPrefab;
@@ -26,6 +26,7 @@ public class CarSpawner : MonoBehaviour
     private void Start()
     {
         StartSpawn();
+        FloatAddressableImage("2-1");
     }
 
     private void StartSpawn()
@@ -44,7 +45,8 @@ public class CarSpawner : MonoBehaviour
 
     private IEnumerator Spawn()
     {
-        UIManager.Instance.FloatImage(Resources.Load<Sprite>("Image/2-1_tut"));
+        //UIManager.Instance.FloatImage(Resources.Load<Sprite>("Image/2-1_tut"));
+        
 
         yield return YieldInstructionCache.WaitForSeconds(3f);
 

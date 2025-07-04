@@ -1,9 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class LogSpawner : MonoBehaviour
+public class LogSpawner : GamePlayer
 {
     private GameObject log;
     [SerializeField] private Vector3 spawnPosition;
@@ -18,7 +19,9 @@ public class LogSpawner : MonoBehaviour
     private void Start()
     {
         StartSpawn();
+        FloatAddressableImage("1-3");
     }
+
 
     private void StartSpawn()
     {
@@ -34,8 +37,9 @@ public class LogSpawner : MonoBehaviour
 
     private IEnumerator Spawn()
     {
-        UIManager.Instance.FloatImage(Resources.Load<Sprite>("Image/Stell_Log"));
-
+        
+        //UIManager.Instance.FloatImage(Resources.Load<Sprite>("Image/Stell_Log"));
+        
         yield return YieldInstructionCache.WaitForSeconds(3f);
 
 

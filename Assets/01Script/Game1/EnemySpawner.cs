@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class EnemySpawner : MonoBehaviour
+public class EnemySpawner : GamePlayer
 {
     private GameObject enemy;
     private List<Enemy> enemies = new List<Enemy>();
@@ -23,6 +23,7 @@ public class EnemySpawner : MonoBehaviour
     private void StartSpawn()
     {
         StartCoroutine("Spawn");
+        FloatAddressableImage("1-1");
         StartCoroutine("Upgrade");
     }
 
@@ -72,7 +73,8 @@ public class EnemySpawner : MonoBehaviour
 
     private IEnumerator Spawn()
     {
-        UIManager.Instance.FloatImage(Resources.Load<Sprite>("Image/Stell_Virus"));
+        //UIManager.Instance.FloatImage(Resources.Load<Sprite>("Image/Stell_Virus"));
+
 
         yield return YieldInstructionCache.WaitForSeconds(3f);
 

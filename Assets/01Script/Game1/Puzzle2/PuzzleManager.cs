@@ -6,7 +6,7 @@ using UnityEngine.Events;
 
 using Random = UnityEngine.Random;
 
-public class PuzzleManager : MonoBehaviour
+public class PuzzleManager : GamePlayer
 {
     private Dictionary<PuzzleSlot, Puzzle> correct = new Dictionary<PuzzleSlot, Puzzle>();
     private Dictionary<PuzzleSlot, Puzzle> slots = new Dictionary<PuzzleSlot, Puzzle>();
@@ -44,7 +44,8 @@ public class PuzzleManager : MonoBehaviour
 
     private void Start()
     {
-        UIManager.Instance.FloatImage(Resources.Load<Sprite>("Image/Stell_Puzzle"));
+        //UIManager.Instance.FloatImage(Resources.Load<Sprite>("Image/Stell_Puzzle"));
+        FloatAddressableImage("1-2");
 
         Invoke("MixPuzzle", 4f);
         UIManager.Instance.Slot1ButtonText("µé±â");

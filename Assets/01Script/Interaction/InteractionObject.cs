@@ -1,6 +1,4 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -31,7 +29,6 @@ public class InteractionObject : MonoBehaviour, IInteract
     public void Interaction()
     {
         if (!interactable) return;
-        Debug.Log("인터랙션");
         interactable = false;
         OnInteractable?.Invoke(false);
         OnClickUnityEvent?.Invoke();

@@ -1,8 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
-using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.AddressableAssets;
 
 // 데이터 형태는 SaveDatas.cs 참고
 
@@ -28,7 +28,7 @@ public class DataManager : Singleton<DataManager>, IManager
     private Dictionary<int, ChatData> Ch_2 = new Dictionary<int, ChatData>();
     private Dictionary<int, ChatData> Loading = new Dictionary<int, ChatData>();
 
-
+    public bool addressableLoad = false;
 
     public void Init()
     {
@@ -40,6 +40,9 @@ public class DataManager : Singleton<DataManager>, IManager
 
         if(!datas)
             LoadStoryData();
+
+        if (!addressableLoad)
+            StartCoroutine("AddressableLoad");
     }
 
 
@@ -92,6 +95,7 @@ public class DataManager : Singleton<DataManager>, IManager
 
     private void LoadStoryData()
     {
+
         datas = Resources.Load<ChatTable>("ChatData/ChatTable");
 
         Debug.Log("스토리불러오기");
@@ -106,6 +110,14 @@ public class DataManager : Singleton<DataManager>, IManager
             Ch_2.Add(datas.Ch_2[i].id, datas.Ch_2[i]);
         for (int i = 0; i < datas.Loading.Count; i++)
             Loading.Add(datas.Loading[i].id, datas.Loading[i]);
+
+    }
+
+    private IEnumerator AddressableLoad()
+    {
+        var handle = Addressables.InitializeAsync();
+        yield return handle;
+        addressableLoad = true;
     }
 
 

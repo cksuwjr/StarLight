@@ -1,14 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using TMPro;
 using UnityEngine.SceneManagement;
 using System;
 //using GooglePlayGames;
 //using GooglePlayGames.BasicApi;
-using UnityEngine.AddressableAssets;
-using UnityEngine.ResourceManagement.AsyncOperations;
 
 
 public class TitleSceneManager : MonoBehaviour
@@ -31,7 +28,6 @@ public class TitleSceneManager : MonoBehaviour
 
     private void Start()
     {
-
         SetPopupsScaleZero();
 
         DataManager.Instance.Init();

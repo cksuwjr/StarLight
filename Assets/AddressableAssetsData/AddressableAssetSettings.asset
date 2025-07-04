@@ -15,7 +15,7 @@ MonoBehaviour:
   m_DefaultGroup: 38c4da4eec11cfd478fe4e9dad05dddc
   m_currentHash:
     serializedVersion: 2
-    Hash: 3b3d8433a6505f242f39aa6b14844b22
+    Hash: c1da05a17fc59fbff6f7363044ef3e99
   m_OptimizeCatalogSize: 0
   m_BuildRemoteCatalog: 0
   m_BundleLocalCatalog: 0
@@ -38,7 +38,7 @@ MonoBehaviour:
     m_Id: 
   m_RemoteCatalogLoadPath:
     m_Id: 
-  m_ContentStateBuildPathProfileVariableName: 
+  m_ContentStateBuildPathProfileVariableName: <default settings path>
   m_CustomContentStateBuildPath: 
   m_ContentStateBuildPath: 
   m_BuildAddressablesWithPlayerBuild: 0
@@ -58,11 +58,11 @@ MonoBehaviour:
       m_ProfileName: Default
       m_Values:
       - m_Id: 5023ea5bb6c5be048b4447ed7bda497a
-        m_Value: http://[PrivateIpAddress]:[HostingServicePort]
+        m_Value: '{UnityEngine.AddressableAssets.Addressables.RuntimePath}/[BuildTarget]'
       - m_Id: 76b8c6b27913b1f40b9b352763a86adf
         m_Value: '[UnityEngine.AddressableAssets.Addressables.BuildPath]/[BuildTarget]'
       - m_Id: b3dddbbd172bcc54f8d2c9dca6676a7f
-        m_Value: ServerData/[BuildTarget]
+        m_Value: '[UnityEngine.AddressableAssets.Addressables.BuildPath]/[BuildTarget]'
       - m_Id: ee44e6434b279d0408537b06d624c4c8
         m_Value: '[UnityEditor.EditorUserBuildSettings.activeBuildTarget]'
       - m_Id: fa4a899091035e142b784ea410d2040e
@@ -87,6 +87,13 @@ MonoBehaviour:
   m_LabelTable:
     m_LabelNames:
     - default
+    - Lobby
+    - Stage1-1
+    - Stage1-2
+    - Stage1-3
+    - Stage2-1
+    - Stage2-2
+    - Stage2-3
   m_SchemaTemplates: []
   m_GroupTemplateObjects:
   - {fileID: 11400000, guid: 51e7bbcf7d26d5a41901c73c675a46e4, type: 2}

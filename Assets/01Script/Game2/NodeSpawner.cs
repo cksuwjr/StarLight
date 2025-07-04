@@ -1,11 +1,8 @@
-using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.Rendering.Universal;
 
-public class NodeSpawner : MonoBehaviour
+public class NodeSpawner : GamePlayer
 {
     //[SerializeField] private float speed = 0.5f;
 
@@ -450,6 +447,7 @@ public class NodeSpawner : MonoBehaviour
     private void StartSpawn()
     {
         StartCoroutine("Spawn");
+        FloatAddressableImage("2-2");
     }
 
     private void StopSpawn()
@@ -461,7 +459,8 @@ public class NodeSpawner : MonoBehaviour
     {
         SoundManager.Instance.StopBGM();
 
-        UIManager.Instance.FloatImage(Resources.Load<Sprite>("Image/2-2_tut"));
+        //UIManager.Instance.FloatImage(Resources.Load<Sprite>("Image/2-2_tut"));
+        
 
         yield return YieldInstructionCache.WaitForSeconds(3f);
 

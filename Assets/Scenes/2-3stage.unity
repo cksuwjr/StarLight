@@ -1241,6 +1241,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  downloadResourceSrc: Stage2-3
 --- !u!4 &111180274
 Transform:
   m_ObjectHideFlags: 0
