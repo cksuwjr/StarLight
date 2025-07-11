@@ -3040,6 +3040,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   testSkip: 0
+  addressableLoad: 0
 --- !u!4 &667292146
 Transform:
   m_ObjectHideFlags: 0
@@ -7101,7 +7102,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Camera
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 249026529}
     - target: {fileID: 614313383740797333, guid: fc14a0f134eac8249ac199ef26c9ae8a,
         type: 3}
       propertyPath: m_AnchorMax.y
