@@ -416,6 +416,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  fontRegular: {fileID: 0}
+  fontBold: {fileID: 0}
   OnStart:
     m_PersistentCalls:
       m_Calls:
@@ -2150,6 +2152,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   testSkip: 0
+  addressableLoad: 0
 --- !u!4 &667292146
 Transform:
   m_ObjectHideFlags: 0
@@ -12305,12 +12308,17 @@ PrefabInstance:
     - target: {fileID: 7001247864472720443, guid: 79a877111fe9c124781bb7ebdaa18dfe,
         type: 3}
       propertyPath: speed
-      value: 22
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 7001247864472720443, guid: 79a877111fe9c124781bb7ebdaa18dfe,
         type: 3}
       propertyPath: gravityY
       value: -45
+      objectReference: {fileID: 0}
+    - target: {fileID: 7001247864472720443, guid: 79a877111fe9c124781bb7ebdaa18dfe,
+        type: 3}
+      propertyPath: jumpPower
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 7001247864472720443, guid: 79a877111fe9c124781bb7ebdaa18dfe,
         type: 3}

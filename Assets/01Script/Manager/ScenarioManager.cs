@@ -23,34 +23,18 @@ public class ScenarioManager : SingletonDestroy<ScenarioManager>
 
     public UnityEvent OnStarAllCollected;
 
-    private TMP_FontAsset fontRegular;
-    private TMP_FontAsset fontBold;
+    [SerializeField] private TMP_FontAsset fontRegular;
+    [SerializeField] private TMP_FontAsset fontBold;
 
     public UnityEvent OnStart;
 
     [SerializeField] private string downloadResourceSrc;
 
+
     protected override void DoAwake()
     {
-        StartCoroutine(LoadAddressablesSet("default"));
         if (downloadResourceSrc != "" && downloadResourceSrc != null)
             StartCoroutine(LoadAddressablesSet(downloadResourceSrc));
-
-        Addressables.LoadAssetAsync<TMP_FontAsset>("FontBold").Completed += handle =>
-        {
-            if (handle.Status == AsyncOperationStatus.Succeeded)
-                fontBold = handle.Result;
-        };
-
-        Addressables.LoadAssetAsync<TMP_FontAsset>("FontRegular").Completed += handle =>
-        {
-            if (handle.Status == AsyncOperationStatus.Succeeded)
-                fontRegular = handle.Result;
-        };
-
-
-        // fontBold = Resources.Load<TMP_FontAsset>("Font/PyeongChang-Bold SDF");
-        // fontRegular = Resources.Load<TMP_FontAsset>("Font/PyeongChang-Regular SDF");
     }
 
     private IEnumerator LoadAddressablesSet(string str)
@@ -252,21 +236,19 @@ public class ScenarioManager : SingletonDestroy<ScenarioManager>
             var handle = Addressables.LoadAssetAsync<AudioClip>(source);
             yield return handle;
             SoundManager.Instance.PlaySound(handle.Result, 0.7f, false);
-            Debug.Log(handle.Result);
+
+            StartCoroutine(ReleaseAfterSound(handle, handle.Result.length));
         }
     }
 
+    private IEnumerator ReleaseAfterSound(AsyncOperationHandle<AudioClip> handle, float duration)
+    {
+        yield return new WaitForSeconds(duration + 0.1f);
+        Addressables.Release(handle);
+    }
 
     private void LoadPage()
     {
-        //var imgSprite = Resources.Load<Sprite>(story[page].imgSrc);
-        //AudioClip sound;
-
-        //imgSprite = Addressables.LoadAssetAsync<Sprite>(story[page].imgSrc).WaitForCompletion();
-
-        //if(story[page].ttsSrc != "")
-        //    sound = Addressables.LoadAssetAsync<AudioClip>(story[page].ttsSrc).WaitForCompletion();
-        
 
         var size = story[page].windowType;
         var font = story[page].font;
@@ -274,28 +256,8 @@ public class ScenarioManager : SingletonDestroy<ScenarioManager>
 
         if (story[page].ttsSrc != "")
             StartCoroutine(PlayAddressableSound(story[page].ttsSrc));
-        //if (sound) 
-        //    SoundManager.Instance.PlaySound(sound, 0.7f, false);
-
-        if (font == "Bold")
-        {
-            if(fontBold != null)
-                UIManager.Instance.SetFont(fontBold);
-        }
-        else if (font == "Regular")
-        {
-            if(fontRegular != null)
-                UIManager.Instance.SetFont(fontRegular);
-        }
 
         StartCoroutine(SetAddressableImage(story[page].imgSrc, size));
-
-        //if (size == "large")
-        //    StartCoroutine(LoadText(imgSprite, story[page].name, story[page].chat));
-        //else
-        //    StartCoroutine(LoadTextSmall(imgSprite, story[page].name, story[page].chat));
-
-        //UIManager.Instance.SetScenarioPannel(imgSprite, story[page].name, story[page].chat);
     }
 
     private IEnumerator LoadText(Sprite sprite, string name, string chat)

@@ -20,113 +20,117 @@ public class Movement : MonoBehaviour, IMove
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask checkLayer;
 
-    [SerializeField] private float speed = 50f;
-    [SerializeField] private float jump = 15f;
-
+    [SerializeField] private float speed = 3f;      
+    [SerializeField] private float jumpPower = 15f;
     [SerializeField] private float gravityY = -80f;
 
-    public bool movable { get; protected set; }
+    public bool movable { get; protected set; } = true;
 
     private bool notBinded = true;
-
-    private bool isGrounded;
+    private bool isGrounded = true;
     private bool jumpCheck = true;
 
-    private bool isMoving = false;
     private float walkSoundTimer;
 
     private Vector3 camAngle;
+    private Vector3 inputDirection = Vector3.zero;
 
     [SerializeField] private AudioClip walkSound;
     [SerializeField] private AudioClip jumpSound;
 
     private void Awake()
     {
-        movable = true;
-        TryGetComponent<Rigidbody>(out rb);
-        TryGetComponent<CapsuleCollider>(out cc);
+        TryGetComponent(out rb);
+        TryGetComponent(out cc);
         anim = GetComponentInChildren<Animator>();
-       
-        var n = Physics.gravity;
-        n.y = gravityY;
-        Physics.gravity = n;
-    }
 
+        // 물리 중력 설정
+        Physics.gravity = new Vector3(0, gravityY, 0);
+    }
 
     private void Start()
     {
-        Camera.main.TryGetComponent<CameraMove>(out cam);
-
+        Camera.main.TryGetComponent(out cam);
         camAngle = cam.transform.rotation.eulerAngles;
-        //PlayerPrefs.DeleteAll();
     }
 
     public void Move(Vector3 direction)
     {
-        if (isGrounded)
-            rb.drag = 50f;
-
-        isMoving = false;
-        anim.SetBool("Move", false);
-        if (!movable) return;
-        if (!notBinded) return;
-
-        //rb.velocity = new Vector3(0, rb.velocity.y, 0);
-
-        if (UIManager.Instance.touchBlocking) return;
-        if (direction == Vector3.zero) return;
-
-        rb.drag = 0f;
-        anim.SetBool("Move", true);
-        Vector3 dir = direction;
-        isMoving = true;
-
-
-        if (cam.rotateCam)
+        if (!movable || !notBinded || UIManager.Instance.touchBlocking)
         {
-            camAngle = Camera.main.transform.eulerAngles;
-
-            dir = Quaternion.Euler(camAngle) * direction;
+            inputDirection = Vector3.zero;
+            return;
         }
-        //dir.y = 0;
-        
 
-        dir.Normalize();
-        dir.y = 0;
-        //transform.forward = dir;
-        Quaternion targetRotation = Quaternion.LookRotation(dir);
-        transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, 500f * Time.deltaTime);
+        inputDirection = direction;
+    }
 
-        //dir *= speed;
-        //dir.y = rb.velocity.y;
-        //rb.velocity = dir;
+    private void FixedUpdate()
+    {
+        // 지면 체크
+        isGrounded = Physics.OverlapSphere(groundCheck.position, 0.14f, checkLayer).Length > 0;
+        anim.SetBool("Jump", !isGrounded);
 
-        Vector3 newVelocity = dir * speed * 20f * Time.deltaTime;
-        newVelocity.y = rb.velocity.y;
+        // 입력 없을 경우 속도 0 처리 및 애니메이션 해제
+        if (!movable || !notBinded || inputDirection == Vector3.zero)
+        {
+            anim.SetBool("Move", false);
+            rb.velocity = new Vector3(0, rb.velocity.y, 0);
+            return;
+        }
 
-        rb.velocity = Vector3.zero;
-        rb.AddForce(newVelocity, ForceMode.VelocityChange);
+        // 카메라 기준 방향으로 회전 보정
+        Vector3 moveDir = inputDirection;
+        if (cam && cam.rotateCam)
+        {
+            camAngle = cam.transform.eulerAngles;
+            moveDir = Quaternion.Euler(0, camAngle.y, 0) * moveDir;
+        }
+
+        moveDir.y = 0;
+        moveDir.Normalize();
+
+        // 회전 처리
+        Quaternion targetRotation = Quaternion.LookRotation(moveDir);
+        transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, 500f * Time.fixedDeltaTime);
+
+        // 속도 계산 및 적용
+        Vector3 desiredVelocity = moveDir * speed;
+        desiredVelocity.y = rb.velocity.y;
+        Vector3 velocityDiff = desiredVelocity - rb.velocity;
+
+        rb.AddForce(velocityDiff, ForceMode.VelocityChange);
+
+        // 애니메이션
+        anim.SetBool("Move", true);
+
+        // 걷는 소리
+        if (walkSound)
+        {
+            walkSoundTimer += Time.fixedDeltaTime;
+            if (walkSoundTimer > walkSound.length)
+            {
+                SoundManager.Instance.PlaySound(walkSound, 0.4f);
+                walkSoundTimer = 0f;
+            }
+        }
     }
 
     public void Jump()
     {
-        if (!rb) return;
-        if (!jumpCheck) return;
+        if (!rb || !jumpCheck || !isGrounded) return;
 
-        if (isGrounded)
-        {
-            rb.drag = 0;
-            isGrounded = false;
-            jumpCheck = false;
+        jumpCheck = false;
+        isGrounded = false;
 
-            if (jumpSound)
-                SoundManager.Instance.PlaySound(jumpSound, 0.2f);
+        anim.SetBool("Jump", true);
+        rb.velocity = new Vector3(rb.velocity.x, 0, rb.velocity.z);
+        rb.AddForce(Vector3.up * jumpPower, ForceMode.Impulse);
 
-            anim.SetBool("Jump", true);
-            rb.velocity = Vector3.zero;
-            rb.AddForce(jump * Vector3.up, ForceMode.Impulse);
-            Invoke("JumpCheckOn", 0.2f);
-        }
+        if (jumpSound)
+            SoundManager.Instance.PlaySound(jumpSound, 0.2f);
+
+        Invoke(nameof(JumpCheckOn), 0.2f);
     }
 
     private void JumpCheckOn()
@@ -134,52 +138,15 @@ public class Movement : MonoBehaviour, IMove
         jumpCheck = true;
     }
 
-    private void Update()
-    {
-        if (isMoving)
-        {
-
-            if (walkSound)
-                if (walkSoundTimer > walkSound.length)
-                {
-                    SoundManager.Instance.PlaySound(walkSound, 0.4f);
-                    walkSoundTimer = 0;
-                }
-                else
-                    walkSoundTimer += Time.deltaTime;
-
-        }
-
-        if (!jumpCheck) return;
-
-        if (Physics.OverlapSphere(groundCheck.position, 0.14f, checkLayer).Length > 0)
-        {
-            isGrounded = true;
-            anim.SetBool("Jump", false);
-        }
-        else
-        {
-            isGrounded = false;
-            rb.drag = 0f;
-        }
-    }
-
     public void CC(float time)
     {
-        StartCoroutine("CCApply", time);
+        StartCoroutine(CCApply(time));
     }
 
     private IEnumerator CCApply(float time)
     {
-        float timer = 0f;
         notBinded = false;
-
-        while (timer < time)
-        {
-            timer += Time.deltaTime;
-            yield return null;
-        }
-
+        yield return new WaitForSeconds(time);
         notBinded = true;
     }
 }

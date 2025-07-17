@@ -283,12 +283,17 @@ PrefabInstance:
     - target: {fileID: 7001247864472720443, guid: 79a877111fe9c124781bb7ebdaa18dfe,
         type: 3}
       propertyPath: speed
-      value: 17
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 7001247864472720443, guid: 79a877111fe9c124781bb7ebdaa18dfe,
         type: 3}
       propertyPath: gravityY
       value: -40
+      objectReference: {fileID: 0}
+    - target: {fileID: 7001247864472720443, guid: 79a877111fe9c124781bb7ebdaa18dfe,
+        type: 3}
+      propertyPath: jumpPower
+      value: 21
       objectReference: {fileID: 0}
     - target: {fileID: 7345375566518425208, guid: 79a877111fe9c124781bb7ebdaa18dfe,
         type: 3}
@@ -1558,7 +1563,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotateCam: 1
   cameraMoving: {fileID: 0}
-  distance: 6
+  distance: 8
   narrowable: 1
   yReverse: 0
 --- !u!1 &678169857
@@ -1803,6 +1808,8 @@ MonoBehaviour:
   OnStarAllCollected:
     m_PersistentCalls:
       m_Calls: []
+  fontRegular: {fileID: 0}
+  fontBold: {fileID: 0}
   OnStart:
     m_PersistentCalls:
       m_Calls: []
@@ -3427,6 +3434,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   testSkip: 0
+  addressableLoad: 0
 --- !u!4 &1780275116
 Transform:
   m_ObjectHideFlags: 0

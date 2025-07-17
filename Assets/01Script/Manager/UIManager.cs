@@ -7,6 +7,8 @@ using UnityEngine.Rendering.Universal;
 using UnityEngine.AddressableAssets;
 using UnityEngine.SceneManagement;
 using System.Collections;
+using UnityEngine.ResourceManagement.AsyncOperations;
+using System.Collections.Generic;
 
 public enum ButtonType
 {
@@ -104,6 +106,8 @@ public class UIManager : SingletonDestroy<UIManager>
     private TextMeshProUGUI pianoText;
 
     private GameObject vignetVolume;
+
+    private List<AsyncOperationHandle> readWriteHandles;
 
     public void Init()
     {
@@ -519,6 +523,17 @@ public class UIManager : SingletonDestroy<UIManager>
         TouchBlock(false);
 
         readWrite.SetActive(false);
+
+    }
+
+    private void OnDestroy()
+    {
+        if (readWriteHandles == null) return;
+
+        for (int i = 0; i < readWriteHandles.Count; i++)
+        {
+            Addressables.Release(readWriteHandles[i]);
+        }
     }
 
     private void ChangeChapter(int chapNum)
@@ -599,6 +614,13 @@ public class UIManager : SingletonDestroy<UIManager>
         var handle = Addressables.LoadAssetAsync<Sprite>(source);
         yield return handle;
         readWrite.transform.GetChild(0).GetComponent<Image>().sprite = handle.Result;
+
+        if (readWriteHandles == null)
+        {
+            readWriteHandles = new List<AsyncOperationHandle>();
+        }
+        if (!readWriteHandles.Contains(handle))
+            readWriteHandles.Add(handle);
     }
 
     private void OpenPictures()
@@ -621,7 +643,7 @@ public class UIManager : SingletonDestroy<UIManager>
     {
         if (sprite != null) 
         {
-            chatterImage.sprite = sprite;
+            //chatterImage.sprite = sprite;
 
             chatterImage.transform.localScale = new Vector3(sprite.bounds.size.x * 0.1f, sprite.bounds.size.y * 0.1f, 0);
             chatterImage.enabled = true;
@@ -637,7 +659,7 @@ public class UIManager : SingletonDestroy<UIManager>
     {
         if (sprite != null)
         {
-            smallchatterImage.sprite = sprite;
+            //smallchatterImage.sprite = sprite;
 
             smallchatterImage.transform.localScale = new Vector3(sprite.bounds.size.x * 0.1f, sprite.bounds.size.y * 0.1f, 0);
             smallchatterImage.enabled = true;

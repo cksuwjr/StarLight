@@ -17,12 +17,6 @@ MonoBehaviour:
     m_SerializedData: []
   m_GUID: 38c4da4eec11cfd478fe4e9dad05dddc
   m_SerializeEntries:
-  - m_GUID: 010d7a7acbede6d4bb4f60d5783c1985
-    m_Address: FontBold
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - default
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 075fdb58fc9304141b4758f36edc01ca
     m_Address: Sound/CH2/Sol_TTS_14
     m_ReadOnly: 0
@@ -388,12 +382,6 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels:
     - Stage1-2
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: b81f13d988264ea4d897a7cddfca65db
-    m_Address: FontRegular
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - default
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: c36738b9a4e569942af813d38d69a7ff
     m_Address: Sound/Mini/Sol_TTS_MG07

@@ -2529,7 +2529,7 @@ PrefabInstance:
     - target: {fileID: 7001247864472720443, guid: 79a877111fe9c124781bb7ebdaa18dfe,
         type: 3}
       propertyPath: speed
-      value: 14
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 7001247864472720443, guid: 79a877111fe9c124781bb7ebdaa18dfe,
         type: 3}
@@ -4883,6 +4883,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   testSkip: 0
+  addressableLoad: 0
 --- !u!4 &1193046288
 Transform:
   m_ObjectHideFlags: 0
@@ -5996,6 +5997,8 @@ MonoBehaviour:
   OnStarAllCollected:
     m_PersistentCalls:
       m_Calls: []
+  fontRegular: {fileID: 0}
+  fontBold: {fileID: 0}
   OnStart:
     m_PersistentCalls:
       m_Calls: []

@@ -17,5 +17,9 @@ public class GamePlayer : MonoBehaviour
         var handle = Addressables.LoadAssetAsync<Sprite>(sourceImg);
         yield return handle;
         UIManager.Instance.FloatImage(handle.Result);
+
+        yield return YieldInstructionCache.WaitForSeconds(3f);
+
+        Addressables.Release(handle);
     }
 }
