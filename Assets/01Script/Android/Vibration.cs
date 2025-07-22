@@ -40,7 +40,8 @@ public static class Vibration
             {
                 using (AndroidJavaClass vibrationEffectClass = new AndroidJavaClass("android.os.VibrationEffect"))
                 {
-                    AndroidJavaObject vibrationEffect = vibrationEffectClass.CallStatic<AndroidJavaObject>("createOneShot", milliseconds, vibrationEffectClass.GetStatic<int>("DEFAULT_AMPLITUDE"));
+                    AndroidJavaObject vibrationEffect = vibrationEffectClass.CallStatic<AndroidJavaObject>
+                        ("createOneShot", milliseconds, vibrationEffectClass.GetStatic<int>("DEFAULT_AMPLITUDE"));
                     vibrator.Call("vibrate", vibrationEffect);
                 }
             }
